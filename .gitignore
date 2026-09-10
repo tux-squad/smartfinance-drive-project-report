@@ -1,0 +1,8 @@
+# IDEs & Editor files
+.idea/
+.vscode/
+*.swp
+
+# Generated Typst build outputs
+typst/informe_completo.md
+typst/informe_final.pdf
