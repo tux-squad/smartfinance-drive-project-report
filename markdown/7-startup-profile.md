@@ -40,10 +40,11 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-| Integrante | Código | Usuario GitHub | Rol / Perfil |
-| :--- | :---: | :---: | :--- |
-| Castillo Yataco, Mauricio Sebastian | U202113229 | [@M4uricioCastillo](https://github.com/M4uricioCastillo) | Software Engineer / Backend Developer |
-| Cotrina Siclla, Sofia Alessandra | U20231B120 | [@IamAndreek](https://github.com/IamAndreek) | UX/UI Designer / Frontend Specialist |
-| Jonseck Choque, Oliver | U202312912 | [@Olizzy-upc](https://github.com/Olizzy-upc) | DevOps Engineer / QA Analyst |
-| Machacca Soto, Aldo Jeanfranco | U202419485 | [@MarkOne-dev](https://github.com/MarkOne-dev) | Full Stack Developer / Software Architect |
-| Paucar Zenteno, Jesús Fernando | U202316687 | [@AbraamAcostae](https://github.com/AbraamAcostae) | Data Engineer / Data Analyst |
+| Foto | Integrante | Descripción |
+| :---: | :---: | :---: |
+| ![Mauricio Photo](../assets/Chapter-1/mauricio-photo.png) | **Castillo Yataco, Mauricio Sebastian**<br/>*(U202113229)* | Estudiante de Ingeniería de Software enfocado en desarrollo Backend y lógica de negocios. Responsable del diseño de servicios RESTful y arquitectura de la plataforma. |
+| ![Sofia Photo](../assets/Chapter-1/sofia-photo.png) | **Cotrina Siclla, Sofia Alessandra**<br/>*(U20231B120)* | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
+| ![Oliver Photo](../assets/Chapter-1/oliver-photo.png) | **Jonseck Choque, Oliver**<br/>*(U202312912)* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
+| ![Aldo Photo](../assets/Chapter-1/aldo-photo.png) | **Machacca Soto, Aldo Jeanfranco**<br/>*(U202419485)* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |
+| ![Jesus Photo](../assets/Chapter-1/jesus-photo.png) | **Paucar Zenteno, Jesús Fernando**<br/>*(U202316687)* | Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos. |
+
