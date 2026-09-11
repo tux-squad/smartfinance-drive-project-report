@@ -24,9 +24,9 @@
 | Código | Apellidos y Nombres | Usuario GitHub |
 | :---: | :--- | :---: |
 | U202113229 | Castillo Yataco, Mauricio Sebastian | [@M4uricioCastillo](https://github.com/M4uricioCastillo) |
-| U20231B120 | Cotrina Siclla, Sofia Alessandra | [@CotrinaAlessandra](https://github.com/CotrinaAlessandra) |
+| U20231B120 | Cotrina Siclla, Sofia Alessandra | [@IamAndreek](https://github.com/IamAndreek) |
 | U202312912 | Jonseck Choque, Oliver | [@Olizzy-upc](https://github.com/Olizzy-upc) |
-| U202419485 | Machacca Soto, Aldo Jeanfranco | [@IamAndreek](https://github.com/IamAndreek) |
+| U202419485 | Machacca Soto, Aldo Jeanfranco | [@MarkOne-dev](https://github.com/MarkOne-dev) |
 | U202316687 | Paucar Zenteno, Jesús Fernando | [@AbraamAcostae](https://github.com/AbraamAcostae) |
 
 <br>
