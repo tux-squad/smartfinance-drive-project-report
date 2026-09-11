@@ -27,16 +27,17 @@ Ofrecemos soluciones digitales orientadas a reducir la complejidad del proceso d
 
 La plataforma adapta la experiencia de acuerdo con el nivel de decisión del comprador: ofrece orientación a quienes aún no han definido qué vehículo necesitan y un canal virtual directo para quienes ya tienen definido el vehículo que desean adquirir.
 
-**Características principales**
-* **Marketplace automotriz:** conecta compradores con vehículos nuevos y usados disponibles en diferentes concesionarias.
-* **Recomendaciones inteligentes:** analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
-* **Experiencia personalizada:** diferencia el proceso de compra entre usuarios que necesitan orientación y aquellos que ya tienen definida su decisión.
-* **Canal retail guiado:** acompaña a los compradores que necesitan ayuda para identificar qué vehículo se adapta mejor a sus necesidades.
-* **Canal virtual directo:** permite a compradores con una decisión definida encontrar rápidamente vehículos disponibles y avanzar hacia el proceso de adquisición.
-* **Acceso a financiamiento:** facilita el acceso a procesos de evaluación crediticia mediante entidades financieras externas, sin que SmartFinance Drive realice directamente la aprobación de créditos.
-* **Gestión de inventario:** proporciona a las concesionarias un canal digital para publicar y promocionar sus vehículos disponibles.
-* **Modelo de negocio escalable:** genera ingresos mediante membresías dirigidas a las concesionarias que desean formar parte del marketplace.
-* **Análisis de información:** utiliza los datos proporcionados por los usuarios y la información de los vehículos para facilitar la búsqueda y apoyar la toma de decisiones.
+#### Características principales
+
+* **Marketplace automotriz:** Conecta compradores con vehículos nuevos y usados disponibles en diferentes concesionarias.
+* **Recomendaciones inteligentes:** Analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
+* **Experiencia personalizada:** Diferencia el proceso de compra entre usuarios que necesitan orientación y aquellos que ya tienen definida su decisión.
+* **Canal retail guiado:** Acompaña a los compradores que necesitan ayuda para identificar qué vehículo se adapta mejor a sus necesidades.
+* **Canal virtual directo:** Permite a compradores con una decisión definida encontrar rápidamente vehículos disponibles y avanzar hacia el proceso de adquisición.
+* **Acceso a financiamiento:** Facilita el acceso a procesos de evaluación crediticia mediante entidades financieras externas, sin que SmartFinance Drive realice directamente la aprobación de créditos.
+* **Gestión de inventario:** Proporciona a las concesionarias un canal digital para publicar y promocionar sus vehículos disponibles.
+* **Modelo de negocio escalable:** Genera ingresos mediante membresías dirigidas a las concesionarias que desean formar parte del marketplace.
+* **Análisis de información:** Utiliza los datos proporcionados por los usuarios y la información de los vehículos para facilitar la búsqueda y apoyar la toma de decisiones.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 

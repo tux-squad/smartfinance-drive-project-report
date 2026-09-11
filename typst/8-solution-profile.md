@@ -44,6 +44,7 @@ Hemos observado que las soluciones actuales no integran eficazmente la oferta de
 **¿Cómo podríamos** centralizar la oferta disponible de concesionarios de autos nuevos y usados y personalizar el proceso de recomendación para los compradores, de modo que reduzcamos la fricción en el descubrimiento del vehículo ideal y mejoremos la conexión con oportunidades comerciales cualificadas?
 
 Sabremos que la solución es exitosa cuando observemos:
+
 * **Reducción del 35%** en el tiempo promedio requerido por los compradores para identificar alternativas de vehículos que se ajusten a su presupuesto y perfil.
 * **Incremento del 25%** en la tasa de conversión de prospectos cualificados generados para los concesionarios.
 * **Puntuación de satisfacción del cliente (NPS)** superior a 50 puntos en la experiencia global de búsqueda.
@@ -51,6 +52,7 @@ Sabremos que la solución es exitosa cuando observemos:
 #### 1.2.2.2. Lean UX Assumptions
 
 **Business Assumptions**
+
 * Creemos que los compradores de vehículos enfrentan fricción al buscar opciones que se ajusten a su presupuesto debido a la fragmentación de la oferta digital.
 * Creemos que los concesionarios de autos nuevos necesitan un canal digital para captar prospectos cualificados sin depender únicamente del tráfico físico en salón.
 * Creemos que los concesionarios de autos usados sufren por altos costos de publicación y baja confianza del comprador en la condición del vehículo.
