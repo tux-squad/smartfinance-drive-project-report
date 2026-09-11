@@ -37,7 +37,7 @@
     [
       #text(size: 12pt, weight: "bold", fill: rgb("#1e3a8a"))[Cotrina Siclla, Sofia Alessandra]
       #h(1fr)
-      #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U20231B120 (\@CotrinaAlessandra)] \
+      #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U20231B120 (\@IamAndreek)] \
       #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[UX/UI Designer / Frontend Specialist]
     ]
   ),
@@ -65,7 +65,7 @@
     [
       #text(size: 12pt, weight: "bold", fill: rgb("#1e3a8a"))[Machacca Soto, Aldo Jeanfranco]
       #h(1fr)
-      #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U202419485 (\@IamAndreek)] \
+      #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U202419485 (\@MarkOne-dev)] \
       #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[Full Stack Developer / Software Architect]
     ]
   ),
