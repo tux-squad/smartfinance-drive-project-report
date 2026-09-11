@@ -1,7 +1,7 @@
 ```{=typst}
 #align(center)[
   #v(0.5cm)
-  #image("assets/Chapter-1/upc_logo.png", width: 130pt)
+  #image("../assets/Chapter-1/upc_logo.png", width: 130pt)
   #v(1em)
   #text(size: 15pt, weight: "bold", fill: rgb("#1e3a8a"))[Universidad Peruana de Ciencias Aplicadas]
   
