@@ -66,14 +66,19 @@
   v(0.4em)
 }
 
+// Permitir que las figuras y tablas se dividan entre páginas sin colapsar en el pie de página
+#show figure: set block(breakable: true)
+#show figure.where(kind: table): set block(breakable: true)
+
 // Diseños de Tabla Estilo UPC
 #set table(
   stroke: 0.4pt + rgb("#cbd5e1"),
   fill: (x, y) => if y == 0 { rgb("#1e3a8a") } else if calc.even(y) { rgb("#f8fafc") } else { rgb("#ffffff") },
-  inset: (x: 10pt, y: 7pt)
+  inset: (x: 6pt, y: 5pt)
 )
 
-#show table.cell.where(y: 0): set text(fill: white, weight: "bold")
+#show table: set text(size: 8.5pt)
+#show table.cell.where(y: 0): set text(fill: white, weight: "bold", size: 9pt)
 
 // Diseño de Figuras e Imágenes
 #show figure.where(kind: image): it => [
