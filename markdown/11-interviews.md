@@ -26,15 +26,15 @@ Detalle de las sesiones realizadas con representantes de los segmentos objetivo.
 
 | Campo | Detalle |
 |---|---|
-| **Nombre** | Pendiente |
-| **Apellidos** | Pendiente |
-| **Edad** | Pendiente |
-| **Distrito** | Pendiente |
+| **Nombre** |  |
+| **Apellidos** |  |
+| **Edad** |  |
+| **Distrito** |  |
 | **Evidencia** | <div align="center"><img src="../assets/Chapter-2/Segmento2-Entrevista1.png" alt="Entrevista Segmento 2" width="250"></div> |
 | **Link** | |
 | **Timing donde inicia la entrevista** | |
-| **Duración de la entrevista** | Pendiente |
-| **Resumen** | *A la espera de los datos de la entrevista para generar el resumen.* |
+| **Duración de la entrevista** |  |
+| **Resumen** |  |
 
 <br>
 
