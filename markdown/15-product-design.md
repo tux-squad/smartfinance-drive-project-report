@@ -438,8 +438,50 @@ El diseño de la arquitectura de software de SmartFinance Drive sigue los princi
 
 *(Tabla descriptiva de las clases principales representadas en los diagramas UML, definiendo sus atributos, métodos y responsabilidades dentro del dominio).*
 
-## 4.10. Database Design
+## 4.10 Database Design
 
-### 4.10.1. Relational/Non-Relational Database Diagram
+### 4.10.1 Database Diagram
 
-*(Aquí se insertará el Modelo Entidad-Relación (ERD) o el esquema NoSQL que soportará el catálogo unificado).*
+![Database diagram general](../assets/Chapter-4/dbgeneral.png "Diagrama de base de datos general")
+
+#### Bounded Context: Identity & Security
+
+Este esquema representa la lógica del contexto de identidad y seguridad de SmartFinance. La tabla `users` almacena las credenciales de acceso y controles de bloqueo de los usuarios. Se apoya en las tablas `roles` y `user_roles` para la gestión de permisos, mientras que `revoked_tokens` maneja la invalidación de sesiones por seguridad.
+
+![Database diagram identity](../assets/Chapter-4/db1.png "Identity & Security")
+
+#### Bounded Context: Profile
+
+Este esquema representa el contexto de gestión de clientes. La tabla `profiles` concentra toda la información personal, financiera (ingresos mensuales) y laboral del usuario, la cual es indispensable para perfilar al cliente antes de una evaluación crediticia.
+
+![Database diagram profile](../assets/Chapter-4/db2.png "Profile")
+
+#### Bounded Context: Subscriptions & Billing
+
+Este esquema controla el modelo de negocio SaaS de la plataforma. La tabla `plans` define los límites de simulaciones y vehículos por paquete. La tabla `subscriptions` vincula al usuario con un plan activo usando los identificadores de Stripe, y la tabla `invoices` registra el historial de facturación y cobros.
+
+![Database diagram subscriptions](../assets/Chapter-4/db3.png "Subscriptions & Billing")
+
+#### Bounded Context: Vehicle Catalog
+
+Este esquema aísla la gestión del inventario automotriz. La tabla `vehicles` centraliza los datos técnicos, año de fabricación, marca, condición y precio del vehículo a financiar, estableciendo además su vínculo con una entidad financiera.
+
+![Database diagram vehicle catalog](../assets/Chapter-4/db4.png "Vehicle Catalog")
+
+#### Bounded Context: Financial Configuration
+
+Este esquema administra los parámetros macroeconómicos del sistema. La tabla `financial_entities` registra los bancos o financieras disponibles, mientras que `financial_entity_rate_benchmarks` almacena el historial de tasas referenciales aplicables a los créditos.
+
+![Database diagram financial config](../assets/Chapter-4/db5.png "Financial Configuration")
+
+#### Bounded Context: Simulation
+
+Este esquema define el núcleo de cálculo del sistema. La tabla `simulations` concentra todas las variables del crédito (TEA, TCEA, cuota inicial, seguros y montos a financiar). La tabla `simulation_payment_periods` desglosa el cronograma mes a mes, separando el capital, interés y los seguros aplicados en cada cuota.
+
+![Database diagram simulation](../assets/Chapter-4/db6.png "Simulation")
+
+#### Bounded Context: Planning
+
+Este esquema se enfoca en el análisis predictivo y la viabilidad del crédito. La tabla `credit_scores` evalúa el riesgo financiero del perfil asociado a una simulación particular, determinando ratios de deuda e ingresos. La tabla `depreciation_projections` planifica el valor futuro del vehículo, calculando la depreciación anual para ofrecer acciones recomendadas al cliente.
+
+![Database diagram planning](../assets/Chapter-4/db7.png "Planning")
