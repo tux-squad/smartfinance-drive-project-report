@@ -428,15 +428,76 @@ El diseño de la arquitectura de software de SmartFinance Drive sigue los princi
 
 *(Aquí se incluirá el diagrama C4 de Nivel 3 - Componentes. Detallará la estructura interna de los contenedores más críticos, como el módulo de inventario o el simulador de inteligencia artificial).*
 
-## 4.9. Software Object-Oriented Design
+## 4.9 Software Object-Oriented Design
 
-### 4.9.1. Class Diagrams
+### 4.9.1 Class Diagram
 
-*(Aquí se documentarán los diagramas de clases UML para los principales Bounded Contexts identificados, detallando entidades, value objects y agregados).*
+El siguiente diagrama de clases general representa la estructura orientada a objetos de toda la plataforma SmartFinance. Se modelan las entidades principales del dominio y sus interacciones, promoviendo una separación clara de responsabilidades bajo el enfoque de Domain-Driven Design (DDD).
 
-### 4.9.2. Class Dictionary
+![General Class Diagram](../assets/Chapter-4/oopgeneral.png "Diagrama de Clases General")
 
-*(Tabla descriptiva de las clases principales representadas en los diagramas UML, definiendo sus atributos, métodos y responsabilidades dentro del dominio).*
+#### Bounded Context: Identity & Security
+
+Este diagrama representa el contexto de Identity & Security, el cual centraliza la autenticación, autorización y administración de usuarios del sistema. En este contexto, el Aggregate Root es `User`, el cual contiene la información de acceso y sus vínculos directos con los roles del sistema (`Role`). Además, se gestionan los tokens revocados (`RevokedToken`) para garantizar la integridad y seguridad de las sesiones activas. El diseño separa claramente las responsabilidades de identidad de la información personal del usuario.
+
+![Class diagram identity](../assets/Chapter-4/oop1.png "Identity & Security")
+
+#### Bounded Context: Profile
+
+El contexto Profile encapsula todo lo relacionado con la representación y datos demográficos de los usuarios en el sistema. El Aggregate Root es `Profile`, que contiene la información no sensible y de contacto (nombres, teléfono, país), así como datos críticos para el negocio como ingresos mensuales y estado laboral. Este diseño permite a los usuarios gestionar su identidad financiera y es el punto de integración principal con los módulos de evaluación crediticia.
+
+![Class diagram profile](../assets/Chapter-4/oop2.png "Profile")
+
+#### Bounded Context: Subscriptions & Billing
+
+El diagrama de clases presentado pertenece al contexto de Subscriptions & Billing, el cual representa el núcleo de las funcionalidades relacionadas con la gestión de planes SaaS y facturación. El Aggregate Root principal es `Subscription`, que vincula a un usuario con un `Plan` específico. La entidad `Invoice` encapsula los datos relacionados con el cobro, montos y fechas de pago. Este diseño refleja un enfoque modular preparado para integraciones con gateways de pago externos (como Stripe) mediante capas de infraestructura.
+
+![Class diagram subscriptions](../assets/Chapter-4/oop3.png "Subscriptions & Billing")
+
+#### Bounded Context: Vehicle Catalog
+
+Este esquema representa la lógica del contexto de Vehicle Catalog. La clase principal es `Vehicle`, que almacena los detalles técnicos, de marca, modelo, año de fabricación y precio de los automóviles disponibles para financiamiento. Su diseño flexible permite gestionar de manera eficiente el catálogo que los usuarios explorarán antes de realizar una cotización.
+
+![Class diagram vehicle catalog](../assets/Chapter-4/oop4.png "Vehicle Catalog")
+
+#### Bounded Context: Financial Configuration
+
+Este diagrama enfoca su diseño en la parametrización del mercado a través del contexto Financial Configuration. El Aggregate Root es `FinancialEntity`, representando a los bancos, cajas o instituciones de crédito. Se relaciona con `RateBenchmark`, que modela las tasas de referencia (TEA, TCEA), tipos de interés y reglas de negocio vigentes que dictan las condiciones de financiamiento en la plataforma.
+
+![Class diagram financial config](../assets/Chapter-4/oop5.png "Financial Configuration")
+
+#### Bounded Context: Simulation
+
+Este esquema representa el contexto Simulation, el motor matemático y central del sistema. El Aggregate Root es `Simulation`, que encapsula todas las variables ingresadas por el usuario (cuota inicial, plazo, tasa seleccionada, monto financiado). Se compone de múltiples instancias de `SimulationPaymentPeriod`, las cuales modelan el detalle individual de cada cuota del cronograma de pagos (amortización, interés, seguros y saldos).
+
+![Class diagram simulation](../assets/Chapter-4/oop6.png "Simulation")
+
+#### Bounded Context: Planning
+
+El contexto de Planning aborda la proyección y viabilidad de las decisiones del usuario. Modela clases analíticas como `CreditScore`, que evalúa la capacidad de endeudamiento, ratio DTI (Debt-to-Income) y el nivel de riesgo del perfil frente a una simulación; y `DepreciationProjection`, que encapsula el comportamiento del valor del vehículo a lo largo del tiempo, permitiendo generar recomendaciones estratégicas al usuario.
+
+![Class diagram planning](../assets/Chapter-4/oop7.png "Planning")
+
+### 4.9.2 Class Dictionary
+
+| Entidad | Descripción |
+| :--- | :--- |
+| **User** | Entidad raíz de seguridad que representa a cualquier persona que interactúa con la plataforma, almacenando sus credenciales de acceso y estado de cuenta. |
+| **Role** | Define los permisos y el nivel de acceso asignado a un usuario dentro del sistema (ej. Cliente, Administrador). |
+| **RevokedToken** | Entidad de seguridad utilizada para llevar el registro de tokens de sesión que han sido invalidados o han expirado. |
+| **Profile** | Contiene la información personal, laboral y financiera detallada del usuario, fundamental para la evaluación de perfiles crediticios. |
+| **SunatRuc** | Entidad de apoyo (o Value Object) utilizada para consultar y verificar información tributaria y empresarial conectada al usuario. |
+| **Plan** | Define los paquetes de suscripción disponibles en la plataforma, estableciendo límites operativos (ej. simulaciones máximas) y precios. |
+| **Subscription** | Representa el contrato activo o inactivo de un usuario con un plan específico, gestionando su ciclo de facturación. |
+| **Invoice** | Documento que registra los detalles de facturación, montos y el estado de los pagos recurrentes generados por una suscripción. |
+| **Vehicle** | Representa un automóvil disponible en el catálogo, detallando sus características físicas, estado, año de fabricación y precio de mercado. |
+| **VehiclePage** | Objeto que agrupa una lista paginada de vehículos para optimizar las consultas y búsquedas del catálogo en el frontend. |
+| **FinancialEntity** | Representa a un banco, caja o institución financiera aliada que provee las tasas y condiciones para los créditos vehiculares. |
+| **RateBenchmark** | Encapsula las tasas referenciales (TEA, TCEA) y condiciones macroeconómicas dictadas por una entidad financiera en un periodo de tiempo. |
+| **Simulation** | Representa un escenario de crédito vehicular generado por el usuario, consolidando el vehículo, la entidad financiera elegida, plazos y montos totales. |
+| **SimulationPaymentPeriod** | Modela el detalle individual de cada cuota dentro del cronograma de pagos de una simulación (desglose de interés, amortización de capital, seguros y saldos). |
+| **CreditScore** | Evaluación de riesgo financiero calculada para un perfil específico, indicando métricas clave como el ratio deuda-ingreso (DTI) para determinar viabilidad. |
+| **DepreciationProjection** | Análisis predictivo de la pérdida de valor de un vehículo en el tiempo, utilizado para aconsejar al usuario sobre la rentabilidad de su inversión a mediano y largo plazo. |
 
 ## 4.10 Database Design
 
