@@ -1,0 +1,556 @@
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+skinparam nodesep 50
+skinparam ranksep 60
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+' ==========================================
+' IDENTITY & SECURITY
+' ==========================================
+class User {
+    - id: Long
+    - username: String
+    - email: String
+    - passwordHash: String
+    - accountLocked: boolean
+    - failedLoginAttempts: Integer
+    - lockoutUntil: Date
+    + signIn(command: SignInCommand): boolean
+    + signUp(command: SignUpCommand): void
+    + resetPassword(newPass: String): void
+    + lockAccount(): void
+}
+
+class Role {
+    - id: Long
+    - name: String
+    + assignToUser(user: User): void
+    + revokeFromUser(user: User): void
+    + hasPermission(resource: String): boolean
+}
+
+class RevokedToken {
+    - id: Long
+    - tokenIdentifier: String
+    - expirationTime: Date
+    - revokedAt: Date
+    + revoke(): void
+    + isRevoked(): boolean
+}
+
+' ==========================================
+' PROFILE
+' ==========================================
+class Profile {
+    - id: UUID
+    - userId: Long
+    - email: String
+    - fullLegalName: String
+    - nationalId: String
+    - mobilePhone: String
+    - dateOfBirth: Date
+    - employmentStatus: String
+    - monthlyIncomeAmount: BigDecimal
+    - monthlyIncomeCurrency: String
+    + updateDetails(command: UpdateProfileCommand): void
+    + calculateDebtCapacity(): BigDecimal
+    + displayData(): void
+}
+
+class SunatRuc {
+    - rucNumber: String
+    - businessName: String
+    - status: String
+    + validateStatus(): boolean
+    + getTaxData(): void
+}
+
+' ==========================================
+' SUBSCRIPTIONS & BILLING
+' ==========================================
+class Plan {
+    - id: Long
+    - name: String
+    - description: String
+    - price: BigDecimal
+    - currency: String
+    - billingCycle: String
+    - maxSimulationsPerMonth: Integer
+    - maxVehicleListings: Integer
+    - active: boolean
+    + displayPlanDetails(): void
+}
+
+class Subscription {
+    - id: Long
+    - userId: Long
+    - planId: Long
+    - startDate: Date
+    - endDate: Date
+    - status: String
+    - autoRenew: boolean
+    - stripeSubscriptionId: String
+    + activate(): void
+    + cancel(): void
+    + renewSubscription(): void
+}
+
+class Invoice {
+    - id: Long
+    - subscriptionId: Long
+    - userId: Long
+    - amount: BigDecimal
+    - currency: String
+    - issuedAt: Date
+    - dueDate: Date
+    - paidAt: Date
+    - status: String
+    + markAsPaid(): void
+    + generatePdf(): void
+}
+
+' ==========================================
+' VEHICLE CATALOG
+' ==========================================
+class Vehicle {
+    - id: UUID
+    - userId: Long
+    - financialEntityId: UUID
+    - brand: String
+    - model: String
+    - manufactureYear: Integer
+    - price: BigDecimal
+    - currency: String
+    - condition: String
+    - imagePath: String
+    + getDetails(): Vehicle
+    + updatePrice(newPrice: BigDecimal): void
+    + displayData(): void
+}
+
+' ==========================================
+' FINANCIAL CONFIGURATION
+' ==========================================
+class FinancialEntity {
+    - id: UUID
+    - name: String
+    - isActive: boolean
+    + addBenchmark(benchmark: RateBenchmark): void
+    + getActiveRates(): List<RateBenchmark>
+    + displayData(): void
+}
+
+class RateBenchmark {
+    - id: UUID
+    - financialEntityId: UUID
+    - rateType: String
+    - annualRate: BigDecimal
+    - currency: String
+    - effectiveFrom: Date
+    - sourceLabel: String
+    + isApplicable(): boolean
+    + displayData(): void
+}
+
+' ==========================================
+' SIMULATION & PLANNING
+' ==========================================
+class Simulation {
+    - id: UUID
+    - userId: Long
+    - vehicleId: UUID
+    - financialEntityId: UUID
+    - vehiclePriceAmount: BigDecimal
+    - downPaymentAmount: BigDecimal
+    - downPaymentPercentage: BigDecimal
+    - financedAmount: BigDecimal
+    - initialFeesAmount: BigDecimal
+    - loanTermMonths: Integer
+    - gracePeriodMonths: Integer
+    - gracePeriodType: String
+    - annualEffectiveRate: BigDecimal
+    - tcea: BigDecimal
+    - monthlyCreditLifeInsuranceRate: BigDecimal
+    - vehicleInsuranceFeeAmount: BigDecimal
+    - van: BigDecimal
+    - tir: BigDecimal
+    - totalAmount: BigDecimal
+    - totalInterest: BigDecimal
+    + calculateSchedule(): void
+    + recalculateRates(): void
+    + exportToPdf(): void
+}
+
+class SimulationPaymentPeriod {
+    - id: UUID
+    - simulationId: UUID
+    - periodNumber: Integer
+    - daysInPeriod: Integer
+    - dueDate: Date
+    - initialBalanceAmount: BigDecimal
+    - principalAmortizationAmount: BigDecimal
+    - interestPaymentAmount: BigDecimal
+    - creditLifeInsuranceAmount: BigDecimal
+    - vehicleInsuranceAmount: BigDecimal
+    - totalInstallmentAmount: BigDecimal
+    - finalBalanceAmount: BigDecimal
+    - graceType: String
+    + processPeriodCalculation(): void
+    + displayData(): void
+}
+
+class CreditScore {
+    - id: UUID
+    - profileId: UUID
+    - simulationId: UUID
+    - monthlyIncomeAmount: BigDecimal
+    - projectedMonthlyInstallment: BigDecimal
+    - dtiRatio: BigDecimal
+    - riskTier: String
+    - rateAdjustment: BigDecimal
+    - status: String
+    - assessmentNotes: String
+    + assessRisk(): void
+    + generateReport(): void
+}
+
+class DepreciationProjection {
+    - id: UUID
+    - vehicleId: UUID
+    - simulationId: UUID
+    - initialVehiclePrice: BigDecimal
+    - annualDepreciationRate: BigDecimal
+    - projectedValue2Years: BigDecimal
+    - projectedValue3Years: BigDecimal
+    - recommendedAction: String
+    + calculateDepreciation(): void
+    + evaluateReplacementTiming(): void
+}
+
+' ==========================================
+' RELACIONES (ASOCIACIONES, COMPOSICIONES Y DEPENDENCIAS)
+' ==========================================
+
+' Relaciones de Usuario e Identidad
+User "1" *-- "1..*" Role : has assigned
+User "1" --> "0..*" RevokedToken : invalidates sessions
+
+' Perfil
+User "1" *-- "1" Profile : owns
+Profile "1" --> "0..1" SunatRuc : verifies business data
+
+' Suscripciones y Facturación
+User "1" --> "0..*" Subscription : manages
+Plan "1" o-- "0..*" Subscription : defines
+Subscription "1" *-- "0..*" Invoice : generates
+
+' Vehículos
+User "1" --> "0..*" Vehicle : lists / saves
+FinancialEntity "1" <-- "0..*" Vehicle : financed by
+
+' Entidades Financieras
+FinancialEntity "1" *-- "1..*" RateBenchmark : publishes
+
+' Simulaciones
+User "1" --> "0..*" Simulation : creates
+Vehicle "1" <-- "0..*" Simulation : targets
+FinancialEntity "1" <-- "0..*" Simulation : uses rates of
+Simulation "1" *-- "1..*" SimulationPaymentPeriod : calculates schedule
+
+' Planning y Análisis
+Simulation "1" *-- "0..1" CreditScore : triggers evaluation
+Profile "1" <-- "0..*" CreditScore : evaluated in
+
+Simulation "1" *-- "0..1" DepreciationProjection : triggers projection
+Vehicle "1" <-- "0..*" DepreciationProjection : analyzes value of
+
+@enduml
+
+
+
+-----------------------------------------------------------------
+
+Identity & Security
+
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class User {
+    - id: Long
+    - username: String
+    - email: String
+    - passwordHash: String
+    - accountLocked: boolean
+    - failedLoginAttempts: Integer
+    - lockoutUntil: Date
+    + signIn(command: SignInCommand): boolean
+    + signUp(command: SignUpCommand): void
+    + resetPassword(newPass: String): void
+    + lockAccount(): void
+}
+
+class Role {
+    - id: Long
+    - name: String
+    + assignToUser(user: User): void
+    + revokeFromUser(user: User): void
+    + hasPermission(resource: String): boolean
+}
+
+class RevokedToken {
+    - id: Long
+    - tokenIdentifier: String
+    - expirationTime: Date
+    - revokedAt: Date
+    + revoke(): void
+    + isRevoked(): boolean
+}
+
+User "1" *-- "1..*" Role : has assigned
+User "1" --> "0..*" RevokedToken : invalidates sessions
+@enduml
+
+
+-----------------------------------------------------------------
+Profile 
+
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class Profile {
+    - id: UUID
+    - userId: Long
+    - email: String
+    - fullLegalName: String
+    - nationalId: String
+    - mobilePhone: String
+    - dateOfBirth: Date
+    - employmentStatus: String
+    - monthlyIncomeAmount: BigDecimal
+    - monthlyIncomeCurrency: String
+    + updateDetails(command: UpdateProfileCommand): void
+    + calculateDebtCapacity(): BigDecimal
+    + displayData(): void
+}
+
+class SunatRuc {
+    - rucNumber: String
+    - businessName: String
+    - status: String
+    + validateStatus(): boolean
+    + getTaxData(): void
+}
+
+Profile "1" --> "0..1" SunatRuc : verifies business data
+@enduml
+
+
+-----------------------------------------------------------------
+Subscriptions & Billing
+
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class Plan {
+    - id: Long
+    - name: String
+    - description: String
+    - price: BigDecimal
+    - currency: String
+    - billingCycle: String
+    - maxSimulationsPerMonth: Integer
+    - maxVehicleListings: Integer
+    - active: boolean
+    + displayPlanDetails(): void
+}
+
+class Subscription {
+    - id: Long
+    - userId: Long
+    - planId: Long
+    - startDate: Date
+    - endDate: Date
+    - status: String
+    - autoRenew: boolean
+    - stripeSubscriptionId: String
+    + activate(): void
+    + cancel(): void
+    + renewSubscription(): void
+}
+
+class Invoice {
+    - id: Long
+    - subscriptionId: Long
+    - userId: Long
+    - amount: BigDecimal
+    - currency: String
+    - issuedAt: Date
+    - dueDate: Date
+    - paidAt: Date
+    - status: String
+    + markAsPaid(): void
+    + generatePdf(): void
+}
+
+Plan "1" o-- "0..*" Subscription : defines
+Subscription "1" *-- "0..*" Invoice : generates
+@enduml
+
+-----------------------------------------------------------------
+Vehicle Catalog
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class Vehicle {
+    - id: UUID
+    - userId: Long
+    - financialEntityId: UUID
+    - brand: String
+    - model: String
+    - manufactureYear: Integer
+    - price: BigDecimal
+    - currency: String
+    - condition: String
+    - imagePath: String
+    + getDetails(): Vehicle
+    + updatePrice(newPrice: BigDecimal): void
+    + displayData(): void
+}
+@enduml
+
+
+-----------------------------------------------------------------
+Financial Configuration
+
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class FinancialEntity {
+    - id: UUID
+    - name: String
+    - isActive: boolean
+    + addBenchmark(benchmark: RateBenchmark): void
+    + getActiveRates(): List<RateBenchmark>
+    + displayData(): void
+}
+
+class RateBenchmark {
+    - id: UUID
+    - financialEntityId: UUID
+    - rateType: String
+    - annualRate: BigDecimal
+    - currency: String
+    - effectiveFrom: Date
+    - sourceLabel: String
+    + isApplicable(): boolean
+    + displayData(): void
+}
+
+FinancialEntity "1" *-- "1..*" RateBenchmark : publishes
+@enduml
+
+----------------------------------------------------------------
+Simulation
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class Simulation {
+    - id: UUID
+    - userId: Long
+    - vehicleId: UUID
+    - financialEntityId: UUID
+    - vehiclePriceAmount: BigDecimal
+    - downPaymentAmount: BigDecimal
+    - downPaymentPercentage: BigDecimal
+    - financedAmount: BigDecimal
+    - initialFeesAmount: BigDecimal
+    - loanTermMonths: Integer
+    - gracePeriodMonths: Integer
+    - gracePeriodType: String
+    - annualEffectiveRate: BigDecimal
+    - tcea: BigDecimal
+    - monthlyCreditLifeInsuranceRate: BigDecimal
+    - vehicleInsuranceFeeAmount: BigDecimal
+    - van: BigDecimal
+    - tir: BigDecimal
+    - totalAmount: BigDecimal
+    - totalInterest: BigDecimal
+    + calculateSchedule(): void
+    + recalculateRates(): void
+    + exportToPdf(): void
+}
+
+class SimulationPaymentPeriod {
+    - id: UUID
+    - simulationId: UUID
+    - periodNumber: Integer
+    - daysInPeriod: Integer
+    - dueDate: Date
+    - initialBalanceAmount: BigDecimal
+    - principalAmortizationAmount: BigDecimal
+    - interestPaymentAmount: BigDecimal
+    - creditLifeInsuranceAmount: BigDecimal
+    - vehicleInsuranceAmount: BigDecimal
+    - totalInstallmentAmount: BigDecimal
+    - finalBalanceAmount: BigDecimal
+    - graceType: String
+    + processPeriodCalculation(): void
+    + displayData(): void
+}
+
+Simulation "1" *-- "1..*" SimulationPaymentPeriod : calculates schedule
+@enduml
+
+-----------------------------------------------------------------
+Planning
+
+
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+
+class CreditScore {
+    - id: UUID
+    - profileId: UUID
+    - simulationId: UUID
+    - monthlyIncomeAmount: BigDecimal
+    - projectedMonthlyInstallment: BigDecimal
+    - dtiRatio: BigDecimal
+    - riskTier: String
+    - rateAdjustment: BigDecimal
+    - status: String
+    - assessmentNotes: String
+    + assessRisk(): void
+    + generateReport(): void
+}
+
+class DepreciationProjection {
+    - id: UUID
+    - vehicleId: UUID
+    - simulationId: UUID
+    - initialVehiclePrice: BigDecimal
+    - annualDepreciationRate: BigDecimal
+    - projectedValue2Years: BigDecimal
+    - projectedValue3Years: BigDecimal
+    - recommendedAction: String
+    + calculateDepreciation(): void
+    + evaluateReplacementTiming(): void
+}
+@enduml

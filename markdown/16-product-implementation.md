@@ -6,7 +6,7 @@
 
 En esta sección se presentan las principales herramientas utilizadas durante el desarrollo de **SmartFinance Drive**, organizadas según las actividades de UX/UI Design, arquitectura, modelado, gestión del producto y desarrollo de software.
 
-#### Product UX/UI Design
+**Product UX/UI Design**
 
 Esta área comprende las actividades relacionadas con el análisis de usuarios, definición de experiencias, diseño de interfaces y validación de los flujos de interacción de SmartFinance Drive.
 
@@ -27,7 +27,7 @@ Esta área comprende las actividades relacionadas con el análisis de usuarios, 
 
 - **Overflow:** herramienta utilizada para desarrollar **Wireflows y User Flows**, permitiendo representar las rutas de navegación y las interacciones principales que puede realizar un usuario dentro de la plataforma.
 
-#### Software Architecture & Modeling
+**Software Architecture & Modeling**
 
 Esta área comprende las herramientas utilizadas para definir y documentar la arquitectura y estructura interna de SmartFinance Drive.
 
@@ -41,11 +41,11 @@ Esta área comprende las herramientas utilizadas para definir y documentar la ar
   - Class Dictionary.
   - Relational/Non-Relational Database Diagram.
 
-#### Product Management
+**Product Management**
 
 - **Trello:** herramienta utilizada para administrar el **Product Backlog**, organizar las historias de usuario y realizar el seguimiento de las actividades planificadas para los diferentes Sprints del proyecto.
 
-#### Software Development
+**Software Development**
 
 El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Page, Frontend Web Application y Backend**, utilizando tecnologías específicas para cada componente.
 
@@ -70,7 +70,7 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
   - **Server Actions:** utilizadas para ejecutar operaciones directamente en el servidor mediante las capacidades de Next.js.
   - **Route Handlers:** utilizados para implementar endpoints HTTP tradicionales, principalmente para integraciones y funcionalidades que requieren comunicación mediante API.
 
-#### Database & Authentication
+**Database & Authentication**
 
 - **PostgreSQL:** sistema de gestión de bases de datos relacional utilizado para la persistencia de la información de SmartFinance Drive.
 
@@ -78,7 +78,7 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
 
 - **Supabase:** plataforma utilizada principalmente para la autenticación y gestión de sesiones de los usuarios. También se utiliza para almacenar información relacionada con los perfiles de usuario.
 
-#### Development Environment
+**Development Environment**
 
 - **Git:** utilizado para el control de versiones del código fuente y el seguimiento de los cambios realizados durante el desarrollo.
 
@@ -104,7 +104,7 @@ Para gestionar el código fuente de **SmartFinance Drive**, el equipo utiliza **
 * **Native Mobile Application:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
 * **Project Report & Documentación:** [https://github.com/tux-squad/smartfinance-drive-project-report](https://github.com/tux-squad/smartfinance-drive-project-report)
 
-#### GitFlow Workflow
+**GitFlow Workflow**
 
 El proyecto utiliza **GitFlow** para organizar el desarrollo mediante diferentes tipos de ramas:
 
@@ -122,7 +122,7 @@ Las ramas de funcionalidades siguen la estructura:
 feature/nombre-de-la-funcionalidad
 ```
 
-#### Conventional Commits
+**Conventional Commits**
 
 Los commits siguen **Conventional Commits** para mantener un historial organizado:
 
@@ -320,9 +320,9 @@ Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrol
 
 En esta sección se documenta la gestión del tiempo, tareas y recursos mediante la metodología Scrum para el desarrollo del ecosistema SmartFinance Drive.
 
-#### 5.2.1.1. Sprint 1
+**Sprint 1**
 
-##### 5.2.1.1.1. Sprint Planning 1
+**Sprint Planning 1**
 
 En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
 
@@ -339,7 +339,7 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
 
-##### 5.2.1.1.2. Aspects Leader Collaboration
+**Aspects Leader Collaboration**
 
 Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
 
@@ -351,7 +351,7 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 | Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 
-##### 5.2.1.1.3. Sprint Backlog 1
+**Sprint Backlog 1**
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
@@ -372,7 +372,7 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 
 El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
 
-##### 5.2.1.1.4. Development Evidence for Sprint Review
+**Development Evidence for Sprint Review**
 
 La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page y el Backend:
 
@@ -395,37 +395,37 @@ La landing page funciona como el punto de entrada principal, presentando la iden
 
 A continuación, se presentan las capturas de pantalla del producto real en funcionamiento:
 
-#### 1. Home / Hero Section
+**1. Home / Hero Section**
 
 La pantalla inicial presenta la propuesta de valor principal **"Tu próximo auto está más cerca"**, junto con botones de llamado a la acción claros (**"Explorar vehículos"** y **"Soy concesionaria"**) y una barra de navegación superior (*Sticky Navbar*) que incluye un selector de idioma.
 
 ![Landing Page 1](../assets/Chapter-5/LandingPage-1.png)
 
-#### 2. Sección del Problema (Acordeón Interactivo)
+**2. Sección del Problema (Acordeón Interactivo)**
 
 Se implementó un componente de acordeón interactivo en JavaScript que desglosa las fricciones del proceso actual de búsqueda y comercialización de vehículos, permitiendo al usuario desplegar preguntas como **"Qué problema existe"** o **"Cuándo ocurre"**.
 
 ![Landing Page 2](../assets/Chapter-5/LandingPage-2.png)
 
-#### 3. Perfiles y Segmentos Objetivo
+**3. Perfiles y Segmentos Objetivo**
 
 Se implementó un carrusel interactivo estructurado con botones de navegación que detalla los tres perfiles de la plataforma. En la imagen se aprecia la vista enfocada en la oferta B2B para **"Concesionarias de autos usados"**, detallando sus puntos de dolor y necesidades.
 
 ![Landing Page 3](../assets/Chapter-5/LandingPage-3.png)
 
-#### 4. Membresías B2B (Pricing)
+**4. Membresías B2B (Pricing)**
 
 Se desarrolló una grilla de planes estructurada con **CSS Grid** y metodología **BEM**. Esta sección muestra claramente el modelo de negocio para las concesionarias, resaltando visualmente en el centro la tarjeta del **"Panel de gestión B2B"**, aplicable a ambos planes de venta (**Nueva** y **Usada**).
 
 ![Landing Page 4](../assets/Chapter-5/LandingPage-4.png)
 
-#### 5. Equipo (Team Slider)
+**5. Equipo (Team Slider)**
 
 Se presenta a los miembros del equipo *tux-squad*. Se implementó un slider horizontal arrastrable (*draggable*) con JavaScript que permite visualizar las fotografías, nombres, códigos universitarios y roles de los estudiantes de Ingeniería de Software involucrados en el desarrollo.
 
 ![Landing Page 5](../assets/Chapter-5/LandingPage-5.png)
 
-#### URL de Despliegue en Producción
+**URL de Despliegue en Producción**
 
 La Landing Page se encuentra desplegada y disponible en producción mediante **Vercel**:
 
