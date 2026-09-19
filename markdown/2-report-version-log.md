@@ -6,3 +6,4 @@
 | 0.2.0 | 13/9/26 | Sofia Alessandra Cotrina Siclla | feature/lean-ux-target-segments |
 | 0.3.0 | 17/9/26 | Sofia Alessandra Cotrina Siclla | feature/ch2-requirements |
 | 0.4.0 | 17/9/26 | Sofia Alessandra Cotrina Siclla | feature/ch3-requirements-specification |
+| 0.5.0 | 17/9/26 | Sofia Alessandra Cotrina Siclla | feature/ch4-product-desing |
