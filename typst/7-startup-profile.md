@@ -27,7 +27,7 @@ Ofrecemos soluciones digitales orientadas a reducir la complejidad del proceso d
 
 La plataforma adapta la experiencia de acuerdo con el nivel de decisión del comprador: ofrece orientación a quienes aún no han definido qué vehículo necesitan y un canal virtual directo para quienes ya tienen definido el vehículo que desean adquirir.
 
-#### Características principales
+**Características principales**
 
 * **Marketplace automotriz:** Conecta compradores con vehículos nuevos y usados disponibles en diferentes concesionarias.
 * **Recomendaciones inteligentes:** Analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
