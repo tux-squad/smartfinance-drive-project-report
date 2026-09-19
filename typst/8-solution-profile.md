@@ -141,3 +141,5 @@ Sabremos que tuvimos éxito cuando observemos que:
 #### 1.2.2.4. Lean UX Canvas
 
 ![LeanUxCanvas](assets/Chapter-1/LeanUXCanvas-Smartfinance-drive.png)
+
+* **Enlace interactivo del Lean UX Canvas:** [https://canva.link/g1n16bn2clawb90](https://canva.link/g1n16bn2clawb90)
