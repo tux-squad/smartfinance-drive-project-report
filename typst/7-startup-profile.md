@@ -54,6 +54,22 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
     radius: 6pt,
     inset: 12pt,
     [
+      #text(size: 12pt, weight: "bold", fill: rgb("#1e3a8a"))[Acosta Elera, Abraam Bernabe]
+      #h(1fr)
+      #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U202219199 (\@AbraamAcostae)] \
+      #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[Data Engineer / Data Analyst] \
+      #v(4pt)
+      #text(size: 9pt)[Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos.]
+    ]
+  ),
+
+  rect(
+    width: 100%,
+    fill: rgb("#f8fafc"),
+    stroke: 0.6pt + rgb("#cbd5e1"),
+    radius: 6pt,
+    inset: 12pt,
+    [
       #text(size: 12pt, weight: "bold", fill: rgb("#1e3a8a"))[Castillo Yataco, Mauricio Sebastian]
       #h(1fr)
       #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U202113229 (\@M4uricioCastillo)] \
@@ -108,22 +124,6 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
       #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[Full Stack Developer / Software Architect] \
       #v(4pt)
       #text(size: 9pt)[Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles.]
-    ]
-  ),
-
-  rect(
-    width: 100%,
-    fill: rgb("#f8fafc"),
-    stroke: 0.6pt + rgb("#cbd5e1"),
-    radius: 6pt,
-    inset: 12pt,
-    [
-      #text(size: 12pt, weight: "bold", fill: rgb("#1e3a8a"))[Paucar Zenteno, Jesús Fernando]
-      #h(1fr)
-      #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U202316687 (\@AbraamAcostae)] \
-      #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[Data Engineer / Data Analyst] \
-      #v(4pt)
-      #text(size: 9pt)[Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos.]
     ]
   )
 )

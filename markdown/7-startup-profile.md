@@ -43,9 +43,9 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 
 | Foto | Integrante | Descripción |
 | :---: | :---: | :---: |
+| ![Abraam Photo](../assets/Chapter-1/abraam-photo.png) | **Acosta Elera, Abraam Bernabe**<br/>*(U202219199)* | Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos. |
 | ![Mauricio Photo](../assets/Chapter-1/mauricio-photo.png) | **Castillo Yataco, Mauricio Sebastian**<br/>*(U202113229)* | Estudiante de Ingeniería de Software enfocado en desarrollo Backend y lógica de negocios. Responsable del diseño de servicios RESTful y arquitectura de la plataforma. |
 | ![Sofia Photo](../assets/Chapter-1/sofia-photo.png) | **Cotrina Siclla, Sofia Alessandra**<br/>*(U20231B120)* | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
 | ![Oliver Photo](../assets/Chapter-1/oliver-photo.png) | **Jonseck Choque, Oliver**<br/>*(U202312912)* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
 | ![Aldo Photo](../assets/Chapter-1/aldo-photo.png) | **Machacca Soto, Aldo Jeanfranco**<br/>*(U202419485)* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |
-| ![Jesus Photo](../assets/Chapter-1/jesus-photo.png) | **Paucar Zenteno, Jesús Fernando**<br/>*(U202316687)* | Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos. |
 
