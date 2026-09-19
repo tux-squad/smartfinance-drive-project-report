@@ -240,6 +240,8 @@ En esta sección se traducen la arquitectura de la información y las decisiones
 
 ![mobile-wireframe-26](assets/Chapter-4/mobile-wireframe-26.png){width=45%}
 
+* **Enlace interactivo de Wireframes Móviles en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
 Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada diagrama refleja un User Goal específico para los distintos User Personas, mostrando cómo la interacción en la pantalla táctil genera representaciones de nuevos estados en el flujo de la aplicación.
@@ -273,6 +275,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 - **User Goal:** Administrar el catálogo de seminuevos desde el patio de ventas, actualizar estados y registrar nuevas certificaciones de inspección.
 
 - **Explicación del Flujo y Estados UI:** El flujo inicia en el módulo de "Gestión de Seminuevos", que muestra indicadores de rotación y calidad de inventario. El usuario navega hacia el "Inventario Activo", visualizando la lista completa de unidades publicadas. Al seleccionar una unidad para certificar, la aplicación transita al formulario de "Nueva Certificación", permitiendo registrar los detalles de la inspección mecánica y legal. Finalmente, tras confirmar la certificación, el sistema avanza a la pantalla de "Datos del Vehículo" para completar la publicación, alterando el estado de la unidad en la base de datos a "Certificado".
+
+* **Enlace interactivo de Wireflows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
 ### 4.4.3. Mobile Applications Mock-ups
 
@@ -328,6 +332,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 
 ![mobile-mockups-26](assets/Chapter-4/mobile-mockups-26.png){width=45%}
 
+* **Enlace interactivo de Mockups Móviles en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
 Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz de la aplicación móvil, garantizando coherencia lógica con la versión web pero optimizados para interacciones táctiles y pantallas reducidas.
@@ -374,15 +380,17 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 
 - **Descripción del Unhappy Path 2 (Interacción fallida):** Si en el segundo rombo el cliente no da respuesta en el chat, el flujo termina en un nodo pendiente inferior, a la espera de seguimiento.
 
+* **Enlace interactivo de User Flows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
+
 ## 4.5. Mobile Applications Prototyping
 
 ### 4.5.1. Android Mobile Applications Prototyping
 
-*(Enlace/Captura del prototipo interactivo en Figma simulando la interacción en un dispositivo Android).*
+[https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20Android%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ea167f36b%2D6ab9%2D4b43%2Dac6d%2D5be3407131c0](https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20Android%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ea167f36b%2D6ab9%2D4b43%2Dac6d%2D5be3407131c0)
 
 ### 4.5.2. iOS Mobile Applications Prototyping
 
-*(Enlace/Captura del prototipo interactivo simulando un entorno iOS).*
+[https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20Iphone%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ee04382ee%2D4fe6%2D4860%2Daf80%2Dda7f7f9cfd64](https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20Iphone%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ee04382ee%2D4fe6%2D4860%2Daf80%2Dda7f7f9cfd64)
 
 ## 4.6. Web Applications UX/UI Design
 
@@ -440,6 +448,8 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 
 ![webapp-wireframe-26](assets/Chapter-4/webapp-wireframe-26.png)
 
+* **Enlace interactivo de Wireframes Web en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.6.2. Web Applications Wireflow Diagrams
 
 Esta sección presenta los Wireflows propuestos para la aplicación web. Los flujos ilustran cómo la interacción del usuario genera cambios de estado en la interfaz para cumplir sus objetivos principales.
@@ -483,6 +493,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 - **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos asesores y reasignar prospectos para optimizar la tasa de cierre.
 
 - **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Asesor" donde se pueden modificar roles o reasignar carteras de leads. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
+
+* **Enlace interactivo de Wireflows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
 ### 4.6.3. Web Applications Mock-ups
 
@@ -538,6 +550,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 
 ![webapp-mockups-26](assets/Chapter-4/webapp-mockups-26.png)
 
+* **Enlace interactivo de Mockups Web en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.6.4. Web Applications User Flow Diagrams
 
 Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha considerado un User Flow para cada objetivo principal, incluyendo los mock-ups de las pantallas, la ruta esperada (Happy Path) y las rutas alternativas de error (Unhappy Paths) dictadas por los nodos de decisión del sistema.
@@ -584,25 +598,139 @@ Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha
 
 - **Descripción del Unhappy Path 2 (Sin respuesta):** Si el cliente no confirma la cita en el segundo rombo, el flujo se pausa derivando a un estado alternativo pendiente.
 
+* **Enlace interactivo de User Flows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
+
 ## 4.7. Web Applications Prototyping
 
-*(Enlace al video/prototipo navegable del panel web de SmartFinance Drive).*
+[https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20WebApp%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ede73efa3%2Deae7%2D4cf7%2D8c90%2Dc09d17c6b910](https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20WebApp%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ede73efa3%2Deae7%2D4cf7%2D8c90%2Dc09d17c6b910)
 
 ## 4.8. Domain-Driven Software Architecture
 
-El diseño de la arquitectura de software de SmartFinance Drive sigue los principios de Domain-Driven Design (DDD), garantizando que el modelo técnico refleje fielmente el contexto del negocio automotriz y financiero.
+A continuación se presenta la documentación detallada de la arquitectura de software basada en el modelo C4 y en los principios de Domain-Driven Design (DDD).
+
+* **Código DSL de la Arquitectura C4 en el repositorio:** [https://github.com/tux-squad/smartfinance-drive-project-report/blob/main/assets/software_architecture_diagrams.dls](https://github.com/tux-squad/smartfinance-drive-project-report/blob/main/assets/software_architecture_diagrams.dls)
 
 ### 4.8.1. Software Architecture Context Diagram
 
-*(Aquí se incluirá el diagrama C4 de Nivel 1 - Contexto. Mostrará a los actores (Compradores, Concesionarias) interactuando con el sistema SmartFinance Drive, y a este interactuando con sistemas externos (Entidades Financieras externas para la pre-evaluación crediticia)).*
+El diagrama de contexto (Nivel 1) ilustra la plataforma SmartFinance Drive como el sistema central que conecta la oferta y la demanda del sector automotriz. En este nivel se identifican las interacciones principales con los actores y sistemas externos:
+
+![Context Diagram](assets/Chapter-4/ContextDiagram.png)
+
+- **Comprador Interesado**: Usuario final que busca vehículos, recibe recomendaciones de inteligencia artificial y solicita pre-evaluaciones crediticias.
+
+- **Concesionaria**: Cliente corporativo que publica su inventario de vehículos nuevos o usados, atiende a los prospectos (leads) y gestiona el pago de sus membresías B2B.
+
+- **Super Administrador**: Actor encargado de gestionar la configuración global de la plataforma, administrar usuarios, entidades financieras y definir los planes de negocio.
+
+- **Servicios SUNAT (Externo)**: Sistema gubernamental utilizado para la validación de números de RUC, estado y condición de las empresas.
+
+- **Entidades Financieras (Externo)**: Bancos aliados que proveen las tasas de referencia (TEA/TCEA) y ejecutan la validación externa de las pre-aprobaciones crediticias.
+
+- **Stripe (Externo)**: Pasarela de pagos encargada de procesar los cobros de las suscripciones B2B y la facturación de las concesionarias.
+
+---
 
 ### 4.8.2. Software Architecture Container Diagrams
 
-*(Aquí se incluirá el diagrama C4 de Nivel 2 - Contenedores. Desglosará SmartFinance Drive en sus aplicaciones (Web App, Mobile App, Landing Page), el Gateway de API, los microservicios backend y las bases de datos).*
+El diagrama de contenedores (Nivel 2) desglosa el sistema SmartFinance Drive en sus aplicaciones principales y componentes de almacenamiento de datos. El sistema se estructura de la siguiente manera:
+
+![Container Diagram](assets/Chapter-4/ContainerDiagram.png)
+
+- **Landing Page**: Aplicación web estática (HTML/CSS/JS) orientada a la presentación del producto y conversión de visitantes.
+
+- **Web Application**: Frontend tipo SPA desarrollado en Vue.js, que proporciona las interfaces para el catálogo de compradores, el panel B2B de concesionarias y el backoffice administrativo.
+
+- **Mobile App**: Aplicación móvil nativa para iOS y Android, enfocada en la búsqueda ágil de autos para el comprador y la gestión en patio para el vendedor.
+
+- **Backend API**: Implementado como un monolito modular basado en Java Spring Boot y Next.js. Este contenedor centraliza toda la lógica de negocio estructurada en 8 Bounded Contexts independientes.
+
+- **Base de Datos**: Sistema de gestión de bases de datos relacional PostgreSQL, encargado de almacenar de forma persistente la información de usuarios, simulaciones, inventario y facturación de todos los contextos.
+
+---
 
 ### 4.8.3. Software Architecture Components Diagrams
 
-*(Aquí se incluirá el diagrama C4 de Nivel 3 - Componentes. Detallará la estructura interna de los contenedores más críticos, como el módulo de inventario o el simulador de inteligencia artificial).*
+En el Nivel 3, se realiza un acercamiento a la estructura interna del Backend API. Al seguir los principios de Clean Architecture, cada Bounded Context se desglosa en cuatro capas principales: Interfaces (Controladores REST), Application (Casos de Uso), Domain (Reglas de negocio y Agregados) e Infrastructure (Adaptadores de persistencia y clientes externos).
+
+#### Component Diagram: IAM Context
+
+El contexto de Identidad y Gestión de Accesos (IAM) aísla completamente la seguridad de los datos operativos.
+
+![Component Diagram IAM](assets/Chapter-4/ComponentDiagram_IAM.png)
+
+- **Responsabilidad**: Gestiona la autenticación de usuarios, registro, manejo de sesiones y emisión de tokens de seguridad JWT.
+
+- **Componentes clave**: Implementa el agregado principal `User`, expone controladores para login y recuperación de contraseñas, y maneja la persistencia de credenciales y tokens revocados en la base de datos.
+
+#### Component Diagram: Profiles Context
+
+El contexto Profiles separa los datos demográficos de las credenciales de acceso.
+
+![Component Diagram Profiles](assets/Chapter-4/ComponentDiagram_Profiles.png)
+
+- **Responsabilidad**: Gestión de la información personal, laboral y socioeconómica del cliente (nombres, teléfono, DNI y nivel de ingresos mensuales).
+
+- **Componentes clave**: Orquesta la actualización de los perfiles mediante el agregado `Profile` y los adapta para su persistencia, sirviendo de base para la evaluación de riesgo crediticio.
+
+#### Component Diagram: Catalog Context
+
+El contexto Catalog administra de manera aislada la oferta de vehículos.
+
+![Component Diagram Catalog](assets/Chapter-4/ComponentDiagram_Catalog.png)
+
+- **Responsabilidad**: Gestión del catálogo unificado de vehículos disponibles, incluyendo características técnicas, precios, estado (nuevo/usado) e integración de imágenes.
+
+- **Componentes clave**: Utiliza el agregado `Vehicle` para centralizar la información que luego será consumida por el motor de simulaciones para evitar alteraciones de precio desde el frontend.
+
+#### Component Diagram: Partners Context
+
+El contexto Partners administra las variables macroeconómicas y los aliados de la plataforma.
+
+![Component Diagram Partners](assets/Chapter-4/ComponentDiagram_Partners.png)
+
+- **Responsabilidad**: Administración de entidades bancarias asociadas, sus rangos de tasas (TEA/TCEA), comisiones de seguros y la integración con servicios gubernamentales.
+
+- **Componentes clave**: Administra los agregados `FinancialEntity` y `RateBenchmark`, y utiliza la capa de infraestructura para realizar llamadas HTTP externas a la API de SUNAT.
+
+#### Component Diagram: Financing Context
+
+El contexto Financing representa el Core Domain de la plataforma.
+
+![Component Diagram Financing](assets/Chapter-4/ComponentDiagram_Financing.png)
+
+- **Responsabilidad**: Orquesta la creación de planes de financiamiento, genera cronogramas de cuotas aplicando el método francés y calcula indicadores como VAN, TIR y TCEA.
+
+- **Componentes clave**: El servicio de dominio `FinancingPlanBuilder` ejecuta los algoritmos matemáticos, y el agregado `Simulation` encapsula los periodos de pago generados para su persistencia en la base de datos.
+
+#### Component Diagram: Scoring Context
+
+El contexto Scoring se encarga del análisis de viabilidad crediticia.
+
+![Component Diagram Scoring](assets/Chapter-4/ComponentDiagram_Scoring.png)
+
+- **Responsabilidad**: Evalúa la capacidad de endeudamiento cruzando la cuota proyectada con los ingresos del usuario para calcular el Ratio de Cobertura de Deuda (DTI).
+
+- **Componentes clave**: Asigna un nivel de riesgo crediticio (Risk Tier) que se comunica directamente con el contexto de financiamiento para ajustar automáticamente la tasa de interés ofrecida.
+
+#### Component Diagram: Projections Context
+
+El contexto Projections añade la capa de innovación para las decisiones inteligentes.
+
+![Component Diagram Projections](assets/Chapter-4/ComponentDiagram_Projections.png)
+
+- **Responsabilidad**: Estima la depreciación técnica y comercial del vehículo a lo largo del tiempo (2, 3 o 5 años).
+
+- **Componentes clave**: A través del agregado `DepreciationProjection`, contrasta la curva de valor del vehículo contra la cuota balón del crédito para aconsejar al usuario sobre la rentabilidad de su compra.
+
+#### Component Diagram: Billing Context
+
+El contexto Billing gestiona la monetización y modelo de negocio de SmartFinance Drive.
+
+![Component Diagram Billing](assets/Chapter-4/ComponentDiagram_Billing.png)
+
+- **Responsabilidad**: Control de los planes de suscripción B2B (SaaS), facturación, y cobro de membresías a las concesionarias.
+
+- **Componentes clave**: Maneja los agregados `Subscription`, `Plan` e `Invoice`. Su capa de infraestructura integra el SDK de Stripe para la generación de checkouts de pago y la escucha asíncrona de webhooks.
 
 ## 4.9 Software Object-Oriented Design
 

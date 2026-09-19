@@ -43,11 +43,11 @@
     columns: (110pt, 1fr),
     align: (center, left),
     table.header([Código], [Apellidos y Nombres]),
+    [U202219199], [Acosta Elera, Abraam Bernabe],
     [U202113229], [Castillo Yataco, Mauricio Sebastian],
     [U20231B120], [Cotrina Siclla, Sofia Alessandra],
     [U202312912], [Jonseck Choque, Oliver],
     [U202419485], [Machacca Soto, Aldo Jeanfranco],
-    [U202316687], [Paucar Zenteno, Jesús Fernando],
   )
 
   #v(1.5cm)

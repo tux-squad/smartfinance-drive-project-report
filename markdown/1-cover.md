@@ -23,12 +23,11 @@
 
 | Código | Apellidos y Nombres | Usuario GitHub |
 | :---: | :--- | :---: |
+| U202219199 | Acosta Elera, Abraam Bernabe | [@AbraamAcostae](https://github.com/AbraamAcostae) |
 | U202113229 | Castillo Yataco, Mauricio Sebastian | [@M4uricioCastillo](https://github.com/M4uricioCastillo) |
 | U20231B120 | Cotrina Siclla, Sofia Alessandra | [@IamAndreek](https://github.com/IamAndreek) |
 | U202312912 | Jonseck Choque, Oliver | [@Olizzy-upc](https://github.com/Olizzy-upc) |
 | U202419485 | Machacca Soto, Aldo Jeanfranco | [@MarkOne-dev](https://github.com/MarkOne-dev) |
-| U202219199 | Acosta Elera, Abraam Bernabe | [@AbraamAcostae](https://github.com/AbraamAcostae) |
-| U202316687 | Paucar Zenteno, Jesús Fernando | [@AbraamAcostae](https://github.com/AbraamAcostae) |
 
 <br>
 
