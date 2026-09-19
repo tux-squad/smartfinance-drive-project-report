@@ -1,0 +1,545 @@
+General
+
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+skinparam nodesep 50
+skinparam ranksep 70
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+package "Bounded Context: Identity & Security" {
+    entity "users" as users {
+        * id : bigint (IDENTITY) <<PK>>
+        --
+        account_locked : boolean
+        failed_login_attempts : integer
+        lockout_until : timestamp with time zone
+        password : character varying(255)
+        username : character varying(100)
+    }
+
+    entity "roles" as roles {
+        * id : bigint (IDENTITY) <<PK>>
+        --
+        name : character varying(50)
+    }
+
+    entity "user_roles" as user_roles {
+        * user_id : bigint <<FK>>
+        * role : character varying(255) <<FK>>
+    }
+
+    entity "revoked_tokens" as revoked_tokens {
+        * id : bigint (IDENTITY) <<PK>>
+        --
+        expiration_time : timestamp with time zone
+        revoked_at : timestamp with time zone
+        token_identifier : character varying(512)
+    }
+}
+
+package "Bounded Context: Profile" {
+    entity "profiles" as profiles {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        date_of_birth : date
+        email : character varying(255)
+        employment_status : character varying(50)
+        full_legal_name : character varying(255)
+        mobile_phone : character varying(50)
+        monthly_income_amount : numeric(12,2)
+        monthly_income_currency : character varying(3)
+        national_id : character varying(50)
+        phone_country_code : character varying(10)
+        user_id : character varying(255) <<FK>>
+    }
+}
+
+package "Bounded Context: Subscriptions & Billing" {
+    entity "plans" as plans {
+        * id : bigint (IDENTITY) <<PK>>
+        --
+        active : boolean
+        billing_cycle : character varying(20)
+        currency : character varying(3)
+        description : text
+        max_simulations_per_month : integer
+        max_vehicle_listings : integer
+        name : character varying(255)
+        price : numeric(10,2)
+        stripe_price_id : character varying(255)
+    }
+
+    entity "subscriptions" as subscriptions {
+        * id : bigint (IDENTITY) <<PK>>
+        --
+        auto_renew : boolean
+        end_date : timestamp without time zone
+        start_date : timestamp without time zone
+        status : character varying(50)
+        stripe_customer_id : character varying(255)
+        stripe_subscription_id : character varying(255)
+        user_id : character varying(255) <<FK>>
+        plan_id : bigint <<FK>>
+    }
+
+    entity "invoices" as invoices {
+        * id : bigint (IDENTITY) <<PK>>
+        --
+        amount : numeric(10,2)
+        currency : character varying(3)
+        due_date : timestamp without time zone
+        issued_at : timestamp without time zone
+        paid_at : timestamp without time zone
+        status : character varying(50)
+        stripe_payment_intent_id : character varying(255)
+        subscription_id : bigint <<FK>>
+        user_id : character varying(255) <<FK>>
+    }
+}
+
+package "Bounded Context: Vehicle Catalog" {
+    entity "vehicles" as vehicles {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        brand : character varying(255)
+        condition : character varying(20)
+        currency : character varying(3)
+        financial_entity_id : uuid <<FK>>
+        image_path : character varying(255)
+        manufacture_year : integer
+        model : character varying(255)
+        price : numeric(12,2)
+        user_id : character varying(255) <<FK>>
+    }
+}
+
+package "Bounded Context: Financial Configuration" {
+    entity "financial_entities" as financial_entities {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        name : character varying(255)
+    }
+
+    entity "financial_entity_rate_benchmarks" as benchmarks {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        annual_rate : numeric(7,4)
+        currency : character varying(3)
+        effective_from : date
+        rate_type : character varying(50)
+        source_label : character varying(255)
+        source_url : character varying(2000)
+        financial_entity_id : uuid <<FK>>
+    }
+}
+
+package "Bounded Context: Simulation" {
+    entity "simulations" as simulations {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        annual_effective_rate : numeric(7,4)
+        balloon_payment_amount : numeric(12,2)
+        balloon_payment_percentage : numeric(7,4)
+        currency : character varying(3)
+        discount_rate : numeric(7,4)
+        down_payment_amount : numeric(12,2)
+        down_payment_percentage : numeric(7,4)
+        financed_amount : numeric(12,2)
+        financial_entity_id : character varying(255) <<FK>>
+        grace_period_months : integer
+        grace_period_type : character varying(50)
+        initial_fees_amount : numeric(12,2)
+        loan_term_months : integer
+        monthly_credit_life_insurance_rate : numeric(7,4)
+        start_date : date
+        tcea : numeric(7,4)
+        tir : numeric(7,4)
+        title : character varying(255)
+        total_amount : numeric(12,2)
+        total_interest : numeric(12,2)
+        user_id : character varying(255) <<FK>>
+        van : numeric(12,2)
+        vehicle_id : character varying(255) <<FK>>
+        vehicle_insurance_fee_amount : numeric(12,2)
+        vehicle_insurance_type : character varying(50)
+        vehicle_price_amount : numeric(12,2)
+    }
+
+    entity "simulation_payment_periods" as sim_periods {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        credit_life_insurance_amount : numeric(12,2)
+        currency : character varying(3)
+        days_in_period : integer
+        due_date : date
+        final_balance_amount : numeric(12,2)
+        grace_type : character varying(20)
+        initial_balance_amount : numeric(12,2)
+        interest_payment_amount : numeric(12,2)
+        period_number : integer
+        principal_amortization_amount : numeric(12,2)
+        total_installment_amount : numeric(12,2)
+        vehicle_insurance_amount : numeric(12,2)
+        simulation_id : uuid <<FK>>
+    }
+}
+
+package "Bounded Context: Planning" {
+    entity "credit_scores" as credit_scores {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        assessment_notes : character varying(1000)
+        currency : character varying(3)
+        dti_ratio : numeric(5,4)
+        monthly_income_amount : numeric(12,2)
+        profile_id : character varying(255) <<FK>>
+        projected_monthly_installment_amount : numeric(12,2)
+        rate_adjustment : numeric(5,4)
+        risk_tier : character varying(20)
+        simulation_id : character varying(255) <<FK>>
+        status : character varying(50)
+    }
+
+    entity "depreciation_projections" as depreciation {
+        * id : uuid <<PK>>
+        --
+        created_at : timestamp with time zone
+        updated_at : timestamp with time zone
+        arbitrary_notes : character varying(1000)
+        annual_depreciation_rate : numeric(5,4)
+        balloon_payment_amount : numeric(12,2)
+        currency : character varying(3)
+        initial_vehicle_price_amount : numeric(12,2)
+        manufacture_year : integer
+        motorization_type : character varying(50)
+        projected_value_2_years_amount : numeric(12,2)
+        projected_value_3_years_amount : numeric(12,2)
+        recommended_action : character varying(255)
+        simulation_id : character varying(255) <<FK>>
+        vehicle_id : character varying(255) <<FK>>
+    }
+}
+
+' Relaciones Identity
+users "1" -- "0..*" user_roles
+roles "1" -- "0..*" user_roles
+
+' Eje Central user_id
+profiles "1" -up- "1" users : "user_id"
+subscriptions "0..*" -up- "1" users : "user_id"
+invoices "0..*" -up- "1" users : "user_id"
+vehicles "0..*" -up- "1" users : "user_id"
+simulations "0..*" -up- "1" users : "user_id"
+
+' Subscriptions
+plans "1" -- "0..*" subscriptions : "plan_id"
+subscriptions "1" -- "0..*" invoices : "subscription_id"
+
+' Financial Config
+financial_entities "1" -- "0..*" benchmarks : "financial_entity_id"
+financial_entities "1" -- "0..*" vehicles : "financial_entity_id"
+financial_entities "1" -- "0..*" simulations : "financial_entity_id"
+
+' Simulation
+vehicles "1" -- "0..*" simulations : "vehicle_id"
+simulations "1" -- "1..*" sim_periods : "simulation_id"
+
+' Planning
+simulations "1" -- "0..*" credit_scores : "simulation_id"
+profiles "1" -- "0..*" credit_scores : "profile_id"
+simulations "1" -- "0..*" depreciation : "simulation_id"
+vehicles "1" -- "0..*" depreciation : "vehicle_id"
+
+@enduml
+
+
+-----------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "users" as users {
+  * id : bigint (IDENTITY) <<PK>>
+  --
+  account_locked : boolean
+  failed_login_attempts : integer
+  lockout_until : timestamp with time zone
+  password : character varying(255)
+  username : character varying(100)
+}
+
+entity "roles" as roles {
+  * id : bigint (IDENTITY) <<PK>>
+  --
+  name : character varying(50)
+}
+
+entity "user_roles" as user_roles {
+  * user_id : bigint <<FK>>
+  * role : character varying(255) <<FK>>
+}
+
+entity "revoked_tokens" as revoked_tokens {
+  * id : bigint (IDENTITY) <<PK>>
+  --
+  expiration_time : timestamp with time zone
+  revoked_at : timestamp with time zone
+  token_identifier : character varying(512)
+}
+
+users ||--o{ user_roles
+roles ||--o{ user_roles
+@enduml
+
+-----------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "profiles" as profiles {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  date_of_birth : date
+  email : character varying(255)
+  employment_status : character varying(50)
+  full_legal_name : character varying(255)
+  mobile_phone : character varying(50)
+  monthly_income_amount : numeric(12,2)
+  monthly_income_currency : character varying(3)
+  national_id : character varying(50)
+  phone_country_code : character varying(10)
+  user_id : character varying(255) <<FK>>
+}
+@enduml
+-----------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "plans" as plans {
+  * id : bigint (IDENTITY) <<PK>>
+  --
+  active : boolean
+  billing_cycle : character varying(20)
+  currency : character varying(3)
+  description : text
+  max_simulations_per_month : integer
+  max_vehicle_listings : integer
+  name : character varying(255)
+  price : numeric(10,2)
+  stripe_price_id : character varying(255)
+}
+
+entity "subscriptions" as subscriptions {
+  * id : bigint (IDENTITY) <<PK>>
+  --
+  auto_renew : boolean
+  end_date : timestamp without time zone
+  start_date : timestamp without time zone
+  status : character varying(50)
+  stripe_customer_id : character varying(255)
+  stripe_subscription_id : character varying(255)
+  user_id : character varying(255) <<FK>>
+  plan_id : bigint <<FK>>
+}
+
+entity "invoices" as invoices {
+  * id : bigint (IDENTITY) <<PK>>
+  --
+  amount : numeric(10,2)
+  currency : character varying(3)
+  due_date : timestamp without time zone
+  issued_at : timestamp without time zone
+  paid_at : timestamp without time zone
+  status : character varying(50)
+  stripe_payment_intent_id : character varying(255)
+  subscription_id : bigint <<FK>>
+  user_id : character varying(255) <<FK>>
+}
+
+plans ||--o{ subscriptions
+subscriptions ||--o{ invoices
+@enduml
+-----------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "vehicles" as vehicles {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  brand : character varying(255)
+  condition : character varying(20)
+  currency : character varying(3)
+  financial_entity_id : uuid <<FK>>
+  image_path : character varying(255)
+  manufacture_year : integer
+  model : character varying(255)
+  price : numeric(12,2)
+  user_id : character varying(255) <<FK>>
+}
+@enduml
+
+-----------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "financial_entities" as financial_entities {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  name : character varying(255)
+}
+
+entity "financial_entity_rate_benchmarks" as benchmarks {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  annual_rate : numeric(7,4)
+  currency : character varying(3)
+  effective_from : date
+  rate_type : character varying(50)
+  source_label : character varying(255)
+  source_url : character varying(2000)
+  financial_entity_id : uuid <<FK>>
+}
+
+financial_entities ||--o{ benchmarks
+@enduml
+
+----------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "simulations" as simulations {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  annual_effective_rate : numeric(7,4)
+  balloon_payment_amount : numeric(12,2)
+  balloon_payment_percentage : numeric(7,4)
+  currency : character varying(3)
+  discount_rate : numeric(7,4)
+  down_payment_amount : numeric(12,2)
+  down_payment_percentage : numeric(7,4)
+  financed_amount : numeric(12,2)
+  financial_entity_id : character varying(255) <<FK>>
+  grace_period_months : integer
+  grace_period_type : character varying(50)
+  initial_fees_amount : numeric(12,2)
+  loan_term_months : integer
+  monthly_credit_life_insurance_rate : numeric(7,4)
+  start_date : date
+  tcea : numeric(7,4)
+  tir : numeric(7,4)
+  title : character varying(255)
+  total_amount : numeric(12,2)
+  total_interest : numeric(12,2)
+  user_id : character varying(255) <<FK>>
+  van : numeric(12,2)
+  vehicle_id : character varying(255) <<FK>>
+  vehicle_insurance_fee_amount : numeric(12,2)
+  vehicle_insurance_type : character varying(50)
+  vehicle_price_amount : numeric(12,2)
+}
+
+entity "simulation_payment_periods" as sim_periods {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  credit_life_insurance_amount : numeric(12,2)
+  currency : character varying(3)
+  days_in_period : integer
+  due_date : date
+  final_balance_amount : numeric(12,2)
+  grace_type : character varying(20)
+  initial_balance_amount : numeric(12,2)
+  interest_payment_amount : numeric(12,2)
+  period_number : integer
+  principal_amortization_amount : numeric(12,2)
+  total_installment_amount : numeric(12,2)
+  vehicle_insurance_amount : numeric(12,2)
+  simulation_id : uuid <<FK>>
+}
+
+simulations ||--o{ sim_periods
+@enduml
+
+--------------------------------------------------------------
+@startuml
+!theme plain
+hide circle
+skinparam linetype ortho
+
+entity "credit_scores" as credit_scores {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  assessment_notes : character varying(1000)
+  currency : character varying(3)
+  dti_ratio : numeric(5,4)
+  monthly_income_amount : numeric(12,2)
+  profile_id : character varying(255) <<FK>>
+  projected_monthly_installment_amount : numeric(12,2)
+  rate_adjustment : numeric(5,4)
+  risk_tier : character varying(20)
+  simulation_id : character varying(255) <<FK>>
+  status : character varying(50)
+}
+
+entity "depreciation_projections" as depreciation {
+  * id : uuid <<PK>>
+  --
+  created_at : timestamp with time zone
+  updated_at : timestamp with time zone
+  arbitrary_notes : character varying(1000)
+  annual_depreciation_rate : numeric(5,4)
+  balloon_payment_amount : numeric(12,2)
+  currency : character varying(3)
+  initial_vehicle_price_amount : numeric(12,2)
+  manufacture_year : integer
+  motorization_type : character varying(50)
+  projected_value_2_years_amount : numeric(12,2)
+  projected_value_3_years_amount : numeric(12,2)
+  recommended_action : character varying(255)
+  simulation_id : character varying(255) <<FK>>
+  vehicle_id : character varying(255) <<FK>>
+}
+@enduml

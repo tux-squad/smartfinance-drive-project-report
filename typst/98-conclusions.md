@@ -26,6 +26,3 @@ Considerando el estado actual del desarrollo, enfocado en las interfaces base y 
 
 * **Optimización del Despliegue Frontend:** Se recomienda mantener la separación de entornos. La Landing Page debe permanecer desplegada de forma estática (ej. Vercel) para garantizar tiempos de carga inmediatos, mientras que el portal transaccional (B2C/B2B) debe optimizar el manejo de tokens (JWT) y el estado global (ej. Pinia) para proteger las rutas privadas.
 
-## Videos del Proyecto
-* **Video App Validation:** [Enlace a video]
-* **Video About-the-Team:** [Enlace a video]

@@ -88,7 +88,7 @@ Esta sección incluye la relación de preguntas principales y complementarias di
 
 ### 2.2.2. Registro de entrevistas
 
-#### Segmento 1: Compradores interesados
+**Segmento 1: Compradores interesados**
 
 **Entrevista 1: Andrea Arango**
 
@@ -138,7 +138,7 @@ Esta sección incluye la relación de preguntas principales y complementarias di
 
 <br>
 
-#### Segmento 2: Concesionarias de vehículos nuevos
+**Segmento 2: Concesionarias de vehículos nuevos**
 
 **Entrevista 1: Angel Pariona**
 
@@ -188,7 +188,7 @@ Esta sección incluye la relación de preguntas principales y complementarias di
 
 <br>
 
-#### Segmento 3: Concesionarias de vehículos usados
+**Segmento 3: Concesionarias de vehículos usados**
 
 **Entrevista 1: Yarkin Quispe**
 
@@ -242,7 +242,7 @@ Esta sección incluye la relación de preguntas principales y complementarias di
 
 El análisis de las entrevistas permitió identificar las características objetivas y subjetivas más frecuentes de cada segmento objetivo. Los porcentajes se calcularon considerando únicamente las entrevistas realizadas dentro de cada segmento y relacionando las características identificadas con los perfiles, comportamientos, necesidades, frustraciones y canales mencionados por los entrevistados.
 
-#### Segmento 1: Compradores interesados
+**Segmento 1: Compradores interesados**
 
 El segmento está conformado por 3 entrevistados: Andrea Arango, Alan Mamani Vilca y Jefrey Moscol. Las entrevistas evidencian patrones relacionados principalmente con la dificultad para comparar alternativas, la búsqueda de información confiable, el interés por opciones de financiamiento y la utilización de canales digitales durante el proceso de compra.
 
@@ -272,7 +272,7 @@ Por lo tanto, el arquetipo del segmento puede caracterizarse como un comprador q
 
 <br>
 
-#### Segmento 2: Concesionarias de vehículos nuevos
+**Segmento 2: Concesionarias de vehículos nuevos**
 
 El segmento está conformado por 3 entrevistados: Angel Pariona, Esther Abigail Goñe Araccata y Fabian Sandoval Cueto.
 
@@ -299,7 +299,7 @@ En consecuencia, el arquetipo del segmento corresponde a un asesor comercial que
 
 <br>
 
-#### Segmento 3: Concesionarias de vehículos usados
+**Segmento 3: Concesionarias de vehículos usados**
 
 El segmento está conformado por 3 entrevistados: Yarkin Quispe, Fernando Garayar y Lupe De la Cruz.
 
@@ -327,7 +327,7 @@ Por lo tanto, el arquetipo del segmento puede caracterizarse como un vendedor de
 
 <br>
 
-#### Conclusión general del análisis
+**Conclusión general del análisis**
 
 El análisis de los **9 entrevistados** permite identificar patrones comunes y diferencias entre los tres segmentos objetivos. En el segmento de compradores, predomina la necesidad de reducir la complejidad y la incertidumbre durante la búsqueda de un vehículo. En los segmentos B2B, tanto de vehículos nuevos como usados, predomina la necesidad de filtrar y precalificar prospectos para optimizar el tiempo comercial.
 
