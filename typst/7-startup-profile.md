@@ -57,9 +57,9 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
       #text(size: 12pt, weight: "bold", fill: rgb("#1e3a8a"))[Acosta Elera, Abraam Bernabe]
       #h(1fr)
       #text(size: 9.5pt, fill: rgb("#b91c1c"), weight: "bold")[U202219199 (\@AbraamAcostae)] \
-      #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[Data Engineer / Data Analyst] \
+      #text(size: 9pt, style: "italic", fill: rgb("#64748b"))[Full Stack Developer / Solutions Architect] \
       #v(4pt)
-      #text(size: 9pt)[Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos.]
+      #text(size: 9pt)[Estudiante de Ingeniería de Software con experiencia en desarrollo Full Stack, integración de servicios REST y soporte en la arquitectura modular de la plataforma.]
     ]
   ),
 
