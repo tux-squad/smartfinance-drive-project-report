@@ -154,13 +154,19 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ## 4.3. Landing Page UI Design
 
+En esta sección se traducen la arquitectura de la información y las decisiones de diseño en interfaces visuales para la página de aterrizaje (Landing Page) de SmartFinance Drive. Para permitir una inspección detallada sin pérdidas de resolución ni saltos de página con títulos aislados, los diseños estructurales y de alta fidelidad se presentan divididos en dos partes correlativas.
+
 ### 4.3.1. Landing Page Wireframe
 
-![smartfinance-drive-landing-wireframe](../assets/Chapter-4/smartfinance-drive-landing-wireframe.png)
+![smartfinance-drive-landing-wireframe-part1](../assets/Chapter-4/smartfinance-drive-landing-wireframe-part1.png){width=65%}
+
+![smartfinance-drive-landing-wireframe-part2](../assets/Chapter-4/smartfinance-drive-landing-wireframe-part2.png){width=65%}
 
 ### 4.3.2. Landing Page Mock-up
 
-![smartfinance-drive-landing-mockup](../assets/Chapter-4/smartfinance-drive-landing-mockup.png)
+![smartfinance-drive-landing-mockup-part1](../assets/Chapter-4/smartfinance-drive-landing-mockup-part1.png){width=65%}
+
+![smartfinance-drive-landing-mockup-part2](../assets/Chapter-4/smartfinance-drive-landing-mockup-part2.png){width=65%}
 
 ## 4.4. Mobile Applications UX/UI Design
 
@@ -220,7 +226,37 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-![mobile-wireflow-X](../assets/Chapter-4/mobile-wireflow-X.png)
+Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada diagrama refleja un User Goal específico para los distintos User Personas, mostrando cómo la interacción en la pantalla táctil genera representaciones de nuevos estados en el flujo de la aplicación.
+
+### Wireflow 1: Descubrimiento y Pre-evaluación Crediticia Móvil
+
+![mobile-wireflow-1](../assets/Chapter-4/mobile-wireflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Descubrir vehículos a través de recomendaciones personalizadas, comparar opciones y solicitar la pre-evaluación financiera desde su smartphone.
+
+- **Explicación del Flujo y Estados UI:** El flujo inicia en la pantalla de "Bienvenida" del comprador, la cual exhibe recomendaciones iniciales basadas en el perfil. El usuario puede transitar hacia el "Asistente Inteligente", donde ingresa su presupuesto interactuando con la interfaz conversacional. A partir de las sugerencias, navega hacia la vista de "Detalle del Vehículo". Si desea contrastar opciones, activa el estado de "Comparar Vehículos", dividiendo la pantalla para evaluar dos unidades simultáneamente. Finalmente, al decidirse, avanza al formulario de "Pre-evaluación Crediticia", cambiando el estado de la aplicación para procesar sus datos de identidad y financieros.
+
+### Wireflow 2: Monitoreo de Rendimiento y Creación de Campañas (B2B)
+
+![mobile-wireflow-2](../assets/Chapter-4/mobile-wireflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Revisar las métricas de captación de leads en tiempo real y aplicar bonos de descuento inmediatos a su inventario para acelerar ventas.
+
+- **Explicación del Flujo y Estados UI:** El flujo comienza en el "Resumen Mensual" del panel de administración (Drive Admin), donde la concesionaria visualiza métricas clave como Prospectos IA e Interacciones Diarias. Desde allí, el usuario transita a la pantalla "Bono de Descuento" para configurar una campaña especial, ingresando el nombre y el monto del descuento. Al presionar "Crear y Aplicar Bono", el sistema genera un estado de vista previa en tarjeta. El flujo concluye actualizando la vista de "Inventario Activo", donde el vehículo seleccionado refleja el nuevo precio ajustado y la etiqueta de disponibilidad.
+
+### Wireflow 3: Gestión de Inventario y Certificación de Seminuevos (B2B)
+
+![mobile-wireflow-3](../assets/Chapter-4/mobile-wireflow-3.png)
+
+- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+
+- **User Goal:** Administrar el catálogo de seminuevos desde el patio de ventas, actualizar estados y registrar nuevas certificaciones de inspección.
+
+- **Explicación del Flujo y Estados UI:** El flujo inicia en el módulo de "Gestión de Seminuevos", que muestra indicadores de rotación y calidad de inventario. El usuario navega hacia el "Inventario Activo", visualizando la lista completa de unidades publicadas. Al seleccionar una unidad para certificar, la aplicación transita al formulario de "Nueva Certificación", permitiendo registrar los detalles de la inspección mecánica y legal. Finalmente, tras confirmar la certificación, el sistema avanza a la pantalla de "Datos del Vehículo" para completar la publicación, alterando el estado de la unidad en la base de datos a "Certificado".
 
 ### 4.4.3. Mobile Applications Mock-ups
 
@@ -278,7 +314,49 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
-![mobile-userflow-X](../assets/Chapter-4/mobile-userflow-X.png)
+Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz de la aplicación móvil, garantizando coherencia lógica con la versión web pero optimizados para interacciones táctiles y pantallas reducidas.
+
+### Mobile User Flow 1: Pre-evaluación Crediticia Móvil
+
+![mobile-userflow-1](../assets/Chapter-4/mobile-userflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Enviar la solicitud de crédito vehicular desde su dispositivo móvil.
+
+- **Descripción del Happy Path:** El flujo inicia (nodo azul) en la vista móvil del detalle de la "Toyota RAV4 2024". El usuario abre el formulario táctil de solicitud e ingresa sus datos. El sistema procesa el primer nodo de decisión (rombo rojo) para validar campos obligatorios. Luego, el segundo nodo de decisión evalúa la respuesta de la entidad financiera. Al recibir la aprobación, la app móvil transita a una pantalla de confirmación exitosa con la credencial del perfil aprobado.
+
+- **Descripción del Unhappy Path 1 (Error de formulario):** El primer rombo desvía el flujo si los datos están incompletos, recargando el formulario con alertas visuales requeridas.
+
+- **Descripción del Unhappy Path 2 (Crédito denegado):** El segundo rombo desvía la experiencia hacia una vista móvil de error si la financiera rechaza la solicitud.
+
+### Mobile User Flow 2: Gestión Móvil de Bonos y Campañas
+
+![mobile-userflow-2](../assets/Chapter-4/mobile-userflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Configurar rápidamente una campaña de descuento desde la app administrativa.
+
+- **Descripción del Happy Path:** Desde el menú móvil, el administrador ingresa a la vista de "Campañas y Bonos". Tras completar los datos, el sistema procesa el primer rombo de decisión para validar el descuento. Acto seguido, un segundo rombo de decisión confirma la disponibilidad del auto en la base de datos. Al tener éxito, la app navega a la pantalla "Gestión de Inventario", confirmando la actualización del stock.
+
+- **Descripción del Unhappy Path 1 (Monto excedido):** Si el primer rombo detecta un monto inválido, muestra un mensaje de alerta rojo en la misma vista móvil del formulario.
+
+- **Descripción del Unhappy Path 2 (Error de stock):** Si el vehículo ya no está disponible en el segundo rombo, la app transita a la vista de inventario con un indicador de error destacado.
+
+### Mobile User Flow 3: Atención de Prospectos Móvil
+
+![mobile-userflow-3](../assets/Chapter-4/mobile-userflow-3.png)
+
+- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+
+- **User Goal:** Revisar notificaciones de leads y responder consultas en tiempo real.
+
+- **Descripción del Happy Path:** El asesor inicia el flujo en la tarjeta móvil del prospecto "Carlos Mendoza". El primer rombo de decisión representa la evaluación de viabilidad del lead por parte del asesor. Al considerarlo apto, transita a la interfaz de "Bandeja de Entrada" de la app. En el chat, el segundo rombo de decisión espera la confirmación de la cita por parte del cliente. Con el acuerdo logrado, el flujo llega al nodo de éxito final.
+
+- **Descripción del Unhappy Path 1 (Rechazo de Lead):** Si el asesor determina en el primer rombo que el prospecto no es apto, finaliza el flujo anticipadamente, archivando el registro.
+
+- **Descripción del Unhappy Path 2 (Interacción fallida):** Si en el segundo rombo el cliente no da respuesta en el chat, el flujo termina en un nodo pendiente inferior, a la espera de seguimiento.
 
 ## 4.5. Mobile Applications Prototyping
 
@@ -348,7 +426,47 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-![webapp-wireflow-X](../assets/Chapter-4/webapp-wireflow-X.png)
+Esta sección presenta los Wireflows propuestos para la aplicación web. Los flujos ilustran cómo la interacción del usuario genera cambios de estado en la interfaz para cumplir sus objetivos principales.
+
+### Wireflow 1: Búsqueda Multicanal y Solicitud de Pre-evaluación
+
+![webapp-wireflow-1](../assets/Chapter-4/webapp-wireflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Encontrar un vehículo financiable explorando diferentes rutas de descubrimiento (IA, Catálogo o Concesionaria directa) y completar el formulario de pre-evaluación crediticia.
+
+- **Explicación del Flujo y Estados UI:**
+
+  El flujo centraliza las tres vías principales que tiene el comprador para llegar a la ficha de un vehículo. Partiendo de la vista de inicio del Panel de Comprador (extremo izquierdo), el usuario puede tomar tres rutas de navegación:
+
+  * **Vía IA (Arriba):** Ingresa a la interfaz de "Consulta IA", interactúa en el chat ingresando su presupuesto y recibe una recomendación directa que transita a la ficha del vehículo.
+
+  * **Vía Catálogo General (Centro):** Ingresa a "Vehículos a buscar", utiliza los filtros estructurados (Condición, Rango de Precio) y selecciona una unidad específica del catálogo unificado.
+
+  * **Vía Concesionaria Aliada (Abajo):** Ingresa al directorio de agencias, transita al portal privado de una concesionaria específica (ej. EuroMotors) y selecciona un vehículo de su inventario particular.
+
+  Independientemente de la ruta elegida, todas convergen en un estado común: la vista de **Detalle del Vehículo** (la pantalla central más grande). Aquí el usuario revisa las fotos, el precio y el simulador de cuotas. Finalmente, al hacer clic en la acción principal, el estado de la interfaz cambia superponiendo el **Modal de Solicitud de Pre-evaluación Crediticia** (extremo derecho), donde el flujo culmina con el ingreso de datos para enviar a la entidad bancaria.
+
+### Wireflow 2: Panel de Rendimiento y Gestión de Bonos B2B
+
+![webapp-wireflow-2](../assets/Chapter-4/webapp-wireflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Analizar el rendimiento comercial en pantalla grande y aplicar estrategias de precios (campañas) sobre unidades específicas.
+
+- **Explicación del Flujo y Estados UI:** El flujo arranca en el "Resumen de Rendimiento" del Dashboard B2B, mostrando gráficas de interacciones y prospectos en un periodo determinado. El gerente navega hacia el "Inventario Activo", donde se listan los vehículos disponibles en formato de tabla de datos. Desde esta vista, selecciona una unidad y transita al módulo de "Campañas y Bonos", donde un formulario le permite configurar un descuento. Al guardar los cambios, la interfaz cambia de estado mostrando un modal o pantalla de confirmación de publicación exitosa, actualizando el precio público del vehículo.
+
+### Wireflow 3: Administración de Equipo de Ventas y Asignaciones
+
+![webapp-wireflow-3](../assets/Chapter-4/webapp-wireflow-3.png)
+
+- **User Persona:** Administrador de Concesionaria / Gerente Comercial
+
+- **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos asesores y reasignar prospectos para optimizar la tasa de cierre.
+
+- **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Asesor" donde se pueden modificar roles o reasignar carteras de leads. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
 
 ### 4.6.3. Web Applications Mock-ups
 
@@ -406,7 +524,49 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
-![webapp-userflow-X](../assets/Chapter-4/webapp-userflow-X.png)
+Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha considerado un User Flow para cada objetivo principal, incluyendo los mock-ups de las pantallas, la ruta esperada (Happy Path) y las rutas alternativas de error (Unhappy Paths) dictadas por los nodos de decisión del sistema.
+
+### Web User Flow 1: Solicitud de Pre-evaluación Crediticia
+
+![webapp-userflow-1](../assets/Chapter-4/webapp-userflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Solicitar la pre-evaluación financiera para un vehículo específico.
+
+- **Descripción del Happy Path:** El flujo inicia (nodo azul) en la vista de detalle del vehículo. El usuario ingresa al formulario de pre-evaluación crediticia y llena sus datos financieros. El sistema valida la información en el primer nodo de decisión (rombo rojo). Tras pasar esta validación local, el flujo avanza a un segundo nodo de decisión (rombo rojo) donde se evalúa la aprobación de la entidad bancaria externa. Al ser aprobado, el flujo transita a una pantalla de éxito, culminando la ruta ideal en el nodo azul final.
+
+- **Descripción del Unhappy Path 1 (Error de datos):** En el primer rombo de decisión, si el usuario ingresa datos inválidos o falta información, el sistema interrumpe la ruta principal y despliega un error visual en el mismo formulario.
+
+- **Descripción del Unhappy Path 2 (Rechazo crediticio):** Si el banco deniega el perfil en el segundo rombo de decisión, el sistema desvía al usuario hacia una vista alternativa que informa el rechazo del crédito.
+
+### Web User Flow 2: Aplicación de Campañas y Bonos
+
+![webapp-userflow-2](../assets/Chapter-4/webapp-userflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Crear un bono de descuento y aplicarlo a un vehículo disponible.
+
+- **Descripción del Happy Path:** El usuario parte del nodo azul inicial e ingresa a la pantalla de "Campañas y Bonos". Completa el formulario del bono y el sistema entra al primer rombo de decisión para validar si el monto ingresado es permitido por las reglas de negocio. Al validarlo, pasa a un segundo rombo de decisión para verificar si el vehículo objetivo sigue en estado disponible. Con ambas validaciones superadas, el flujo llega a la vista de "Gestión de Inventario", mostrando la tabla actualizada con éxito.
+
+- **Descripción del Unhappy Path 1 (Monto inválido):** Si el monto del bono falla la validación en el primer rombo, el sistema despliega un mensaje de error rojo sobre el mismo formulario de campañas.
+
+- **Descripción del Unhappy Path 2 (Vehículo no disponible):** Si la validación de inventario en el segundo rombo falla, la interfaz muestra una pantalla de error indicando que la unidad ya no admite modificaciones.
+
+### Web User Flow 3: Gestión y Atención de Prospectos
+
+![webapp-userflow-3](../assets/Chapter-4/webapp-userflow-3.png)
+
+- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+
+- **User Goal:** Evaluar la viabilidad de un prospecto y contactarlo para agendar una cita.
+
+- **Descripción del Happy Path:** El gerente comercial inicia en el detalle del prospecto "Carlos Mendoza". En el primer rombo de decisión, el gerente evalúa si el perfil del comprador es viable. Al determinar que sí, transita a la "Bandeja de Entrada" (Mensajes) para contactar al cliente. Durante la conversación, un segundo rombo de decisión evalúa si el cliente confirma la disponibilidad para la cita. Al recibir respuesta afirmativa, el flujo termina exitosamente en la confirmación.
+
+- **Descripción del Unhappy Path 1 (Lead descartado):** Si en el primer rombo el perfil financiero del prospecto no es apto, el flujo se desvía hacia el final, descartando el contacto.
+
+- **Descripción del Unhappy Path 2 (Sin respuesta):** Si el cliente no confirma la cita en el segundo rombo, el flujo se pausa derivando a un estado alternativo pendiente.
 
 ## 4.7. Web Applications Prototyping
 

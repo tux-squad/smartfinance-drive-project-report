@@ -170,13 +170,19 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ## 4.3. Landing Page UI Design
 
+En esta sección se traducen la arquitectura de la información y las decisiones de diseño en interfaces visuales para la página de aterrizaje (Landing Page) de SmartFinance Drive. Para permitir una inspección detallada sin pérdidas de resolución ni saltos de página con títulos aislados, los diseños estructurales y de alta fidelidad se presentan divididos en dos partes correlativas.
+
 ### 4.3.1. Landing Page Wireframe
 
-![smartfinance-drive-landing-wireframe](assets/Chapter-4/smartfinance-drive-landing-wireframe.png)
+![smartfinance-drive-landing-wireframe-part1](assets/Chapter-4/smartfinance-drive-landing-wireframe-part1.png){width=65%}
+
+![smartfinance-drive-landing-wireframe-part2](assets/Chapter-4/smartfinance-drive-landing-wireframe-part2.png){width=65%}
 
 ### 4.3.2. Landing Page Mock-up
 
-![smartfinance-drive-landing-mockup](assets/Chapter-4/smartfinance-drive-landing-mockup.png)
+![smartfinance-drive-landing-mockup-part1](assets/Chapter-4/smartfinance-drive-landing-mockup-part1.png){width=65%}
+
+![smartfinance-drive-landing-mockup-part2](assets/Chapter-4/smartfinance-drive-landing-mockup-part2.png){width=65%}
 
 ## 4.4. Mobile Applications UX/UI Design
 
@@ -236,7 +242,37 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-![mobile-wireflow-X](assets/Chapter-4/mobile-wireflow-X.png)
+Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada diagrama refleja un User Goal específico para los distintos User Personas, mostrando cómo la interacción en la pantalla táctil genera representaciones de nuevos estados en el flujo de la aplicación.
+
+### Wireflow 1: Descubrimiento y Pre-evaluación Crediticia Móvil
+
+![mobile-wireflow-1](assets/Chapter-4/mobile-wireflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Descubrir vehículos a través de recomendaciones personalizadas, comparar opciones y solicitar la pre-evaluación financiera desde su smartphone.
+
+- **Explicación del Flujo y Estados UI:** El flujo inicia en la pantalla de "Bienvenida" del comprador, la cual exhibe recomendaciones iniciales basadas en el perfil. El usuario puede transitar hacia el "Asistente Inteligente", donde ingresa su presupuesto interactuando con la interfaz conversacional. A partir de las sugerencias, navega hacia la vista de "Detalle del Vehículo". Si desea contrastar opciones, activa el estado de "Comparar Vehículos", dividiendo la pantalla para evaluar dos unidades simultáneamente. Finalmente, al decidirse, avanza al formulario de "Pre-evaluación Crediticia", cambiando el estado de la aplicación para procesar sus datos de identidad y financieros.
+
+### Wireflow 2: Monitoreo de Rendimiento y Creación de Campañas (B2B)
+
+![mobile-wireflow-2](assets/Chapter-4/mobile-wireflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Revisar las métricas de captación de leads en tiempo real y aplicar bonos de descuento inmediatos a su inventario para acelerar ventas.
+
+- **Explicación del Flujo y Estados UI:** El flujo comienza en el "Resumen Mensual" del panel de administración (Drive Admin), donde la concesionaria visualiza métricas clave como Prospectos IA e Interacciones Diarias. Desde allí, el usuario transita a la pantalla "Bono de Descuento" para configurar una campaña especial, ingresando el nombre y el monto del descuento. Al presionar "Crear y Aplicar Bono", el sistema genera un estado de vista previa en tarjeta. El flujo concluye actualizando la vista de "Inventario Activo", donde el vehículo seleccionado refleja el nuevo precio ajustado y la etiqueta de disponibilidad.
+
+### Wireflow 3: Gestión de Inventario y Certificación de Seminuevos (B2B)
+
+![mobile-wireflow-3](assets/Chapter-4/mobile-wireflow-3.png)
+
+- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+
+- **User Goal:** Administrar el catálogo de seminuevos desde el patio de ventas, actualizar estados y registrar nuevas certificaciones de inspección.
+
+- **Explicación del Flujo y Estados UI:** El flujo inicia en el módulo de "Gestión de Seminuevos", que muestra indicadores de rotación y calidad de inventario. El usuario navega hacia el "Inventario Activo", visualizando la lista completa de unidades publicadas. Al seleccionar una unidad para certificar, la aplicación transita al formulario de "Nueva Certificación", permitiendo registrar los detalles de la inspección mecánica y legal. Finalmente, tras confirmar la certificación, el sistema avanza a la pantalla de "Datos del Vehículo" para completar la publicación, alterando el estado de la unidad en la base de datos a "Certificado".
 
 ### 4.4.3. Mobile Applications Mock-ups
 
@@ -294,7 +330,49 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
-![mobile-userflow-X](assets/Chapter-4/mobile-userflow-X.png)
+Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz de la aplicación móvil, garantizando coherencia lógica con la versión web pero optimizados para interacciones táctiles y pantallas reducidas.
+
+### Mobile User Flow 1: Pre-evaluación Crediticia Móvil
+
+![mobile-userflow-1](assets/Chapter-4/mobile-userflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Enviar la solicitud de crédito vehicular desde su dispositivo móvil.
+
+- **Descripción del Happy Path:** El flujo inicia (nodo azul) en la vista móvil del detalle de la "Toyota RAV4 2024". El usuario abre el formulario táctil de solicitud e ingresa sus datos. El sistema procesa el primer nodo de decisión (rombo rojo) para validar campos obligatorios. Luego, el segundo nodo de decisión evalúa la respuesta de la entidad financiera. Al recibir la aprobación, la app móvil transita a una pantalla de confirmación exitosa con la credencial del perfil aprobado.
+
+- **Descripción del Unhappy Path 1 (Error de formulario):** El primer rombo desvía el flujo si los datos están incompletos, recargando el formulario con alertas visuales requeridas.
+
+- **Descripción del Unhappy Path 2 (Crédito denegado):** El segundo rombo desvía la experiencia hacia una vista móvil de error si la financiera rechaza la solicitud.
+
+### Mobile User Flow 2: Gestión Móvil de Bonos y Campañas
+
+![mobile-userflow-2](assets/Chapter-4/mobile-userflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Configurar rápidamente una campaña de descuento desde la app administrativa.
+
+- **Descripción del Happy Path:** Desde el menú móvil, el administrador ingresa a la vista de "Campañas y Bonos". Tras completar los datos, el sistema procesa el primer rombo de decisión para validar el descuento. Acto seguido, un segundo rombo de decisión confirma la disponibilidad del auto en la base de datos. Al tener éxito, la app navega a la pantalla "Gestión de Inventario", confirmando la actualización del stock.
+
+- **Descripción del Unhappy Path 1 (Monto excedido):** Si el primer rombo detecta un monto inválido, muestra un mensaje de alerta rojo en la misma vista móvil del formulario.
+
+- **Descripción del Unhappy Path 2 (Error de stock):** Si el vehículo ya no está disponible en el segundo rombo, la app transita a la vista de inventario con un indicador de error destacado.
+
+### Mobile User Flow 3: Atención de Prospectos Móvil
+
+![mobile-userflow-3](assets/Chapter-4/mobile-userflow-3.png)
+
+- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+
+- **User Goal:** Revisar notificaciones de leads y responder consultas en tiempo real.
+
+- **Descripción del Happy Path:** El asesor inicia el flujo en la tarjeta móvil del prospecto "Carlos Mendoza". El primer rombo de decisión representa la evaluación de viabilidad del lead por parte del asesor. Al considerarlo apto, transita a la interfaz de "Bandeja de Entrada" de la app. En el chat, el segundo rombo de decisión espera la confirmación de la cita por parte del cliente. Con el acuerdo logrado, el flujo llega al nodo de éxito final.
+
+- **Descripción del Unhappy Path 1 (Rechazo de Lead):** Si el asesor determina en el primer rombo que el prospecto no es apto, finaliza el flujo anticipadamente, archivando el registro.
+
+- **Descripción del Unhappy Path 2 (Interacción fallida):** Si en el segundo rombo el cliente no da respuesta en el chat, el flujo termina en un nodo pendiente inferior, a la espera de seguimiento.
 
 ## 4.5. Mobile Applications Prototyping
 
@@ -364,7 +442,47 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
-![webapp-wireflow-X](assets/Chapter-4/webapp-wireflow-X.png)
+Esta sección presenta los Wireflows propuestos para la aplicación web. Los flujos ilustran cómo la interacción del usuario genera cambios de estado en la interfaz para cumplir sus objetivos principales.
+
+### Wireflow 1: Búsqueda Multicanal y Solicitud de Pre-evaluación
+
+![webapp-wireflow-1](assets/Chapter-4/webapp-wireflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Encontrar un vehículo financiable explorando diferentes rutas de descubrimiento (IA, Catálogo o Concesionaria directa) y completar el formulario de pre-evaluación crediticia.
+
+- **Explicación del Flujo y Estados UI:**
+
+  El flujo centraliza las tres vías principales que tiene el comprador para llegar a la ficha de un vehículo. Partiendo de la vista de inicio del Panel de Comprador (extremo izquierdo), el usuario puede tomar tres rutas de navegación:
+
+  * **Vía IA (Arriba):** Ingresa a la interfaz de "Consulta IA", interactúa en el chat ingresando su presupuesto y recibe una recomendación directa que transita a la ficha del vehículo.
+
+  * **Vía Catálogo General (Centro):** Ingresa a "Vehículos a buscar", utiliza los filtros estructurados (Condición, Rango de Precio) y selecciona una unidad específica del catálogo unificado.
+
+  * **Vía Concesionaria Aliada (Abajo):** Ingresa al directorio de agencias, transita al portal privado de una concesionaria específica (ej. EuroMotors) y selecciona un vehículo de su inventario particular.
+
+  Independientemente de la ruta elegida, todas convergen en un estado común: la vista de **Detalle del Vehículo** (la pantalla central más grande). Aquí el usuario revisa las fotos, el precio y el simulador de cuotas. Finalmente, al hacer clic en la acción principal, el estado de la interfaz cambia superponiendo el **Modal de Solicitud de Pre-evaluación Crediticia** (extremo derecho), donde el flujo culmina con el ingreso de datos para enviar a la entidad bancaria.
+
+### Wireflow 2: Panel de Rendimiento y Gestión de Bonos B2B
+
+![webapp-wireflow-2](assets/Chapter-4/webapp-wireflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Analizar el rendimiento comercial en pantalla grande y aplicar estrategias de precios (campañas) sobre unidades específicas.
+
+- **Explicación del Flujo y Estados UI:** El flujo arranca en el "Resumen de Rendimiento" del Dashboard B2B, mostrando gráficas de interacciones y prospectos en un periodo determinado. El gerente navega hacia el "Inventario Activo", donde se listan los vehículos disponibles en formato de tabla de datos. Desde esta vista, selecciona una unidad y transita al módulo de "Campañas y Bonos", donde un formulario le permite configurar un descuento. Al guardar los cambios, la interfaz cambia de estado mostrando un modal o pantalla de confirmación de publicación exitosa, actualizando el precio público del vehículo.
+
+### Wireflow 3: Administración de Equipo de Ventas y Asignaciones
+
+![webapp-wireflow-3](assets/Chapter-4/webapp-wireflow-3.png)
+
+- **User Persona:** Administrador de Concesionaria / Gerente Comercial
+
+- **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos asesores y reasignar prospectos para optimizar la tasa de cierre.
+
+- **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Asesor" donde se pueden modificar roles o reasignar carteras de leads. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
 
 ### 4.6.3. Web Applications Mock-ups
 
@@ -422,7 +540,49 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
-![webapp-userflow-X](assets/Chapter-4/webapp-userflow-X.png)
+Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha considerado un User Flow para cada objetivo principal, incluyendo los mock-ups de las pantallas, la ruta esperada (Happy Path) y las rutas alternativas de error (Unhappy Paths) dictadas por los nodos de decisión del sistema.
+
+### Web User Flow 1: Solicitud de Pre-evaluación Crediticia
+
+![webapp-userflow-1](assets/Chapter-4/webapp-userflow-1.png)
+
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
+
+- **User Goal:** Solicitar la pre-evaluación financiera para un vehículo específico.
+
+- **Descripción del Happy Path:** El flujo inicia (nodo azul) en la vista de detalle del vehículo. El usuario ingresa al formulario de pre-evaluación crediticia y llena sus datos financieros. El sistema valida la información en el primer nodo de decisión (rombo rojo). Tras pasar esta validación local, el flujo avanza a un segundo nodo de decisión (rombo rojo) donde se evalúa la aprobación de la entidad bancaria externa. Al ser aprobado, el flujo transita a una pantalla de éxito, culminando la ruta ideal en el nodo azul final.
+
+- **Descripción del Unhappy Path 1 (Error de datos):** En el primer rombo de decisión, si el usuario ingresa datos inválidos o falta información, el sistema interrumpe la ruta principal y despliega un error visual en el mismo formulario.
+
+- **Descripción del Unhappy Path 2 (Rechazo crediticio):** Si el banco deniega el perfil en el segundo rombo de decisión, el sistema desvía al usuario hacia una vista alternativa que informa el rechazo del crédito.
+
+### Web User Flow 2: Aplicación de Campañas y Bonos
+
+![webapp-userflow-2](assets/Chapter-4/webapp-userflow-2.png)
+
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+
+- **User Goal:** Crear un bono de descuento y aplicarlo a un vehículo disponible.
+
+- **Descripción del Happy Path:** El usuario parte del nodo azul inicial e ingresa a la pantalla de "Campañas y Bonos". Completa el formulario del bono y el sistema entra al primer rombo de decisión para validar si el monto ingresado es permitido por las reglas de negocio. Al validarlo, pasa a un segundo rombo de decisión para verificar si el vehículo objetivo sigue en estado disponible. Con ambas validaciones superadas, el flujo llega a la vista de "Gestión de Inventario", mostrando la tabla actualizada con éxito.
+
+- **Descripción del Unhappy Path 1 (Monto inválido):** Si el monto del bono falla la validación en el primer rombo, el sistema despliega un mensaje de error rojo sobre el mismo formulario de campañas.
+
+- **Descripción del Unhappy Path 2 (Vehículo no disponible):** Si la validación de inventario en el segundo rombo falla, la interfaz muestra una pantalla de error indicando que la unidad ya no admite modificaciones.
+
+### Web User Flow 3: Gestión y Atención de Prospectos
+
+![webapp-userflow-3](assets/Chapter-4/webapp-userflow-3.png)
+
+- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+
+- **User Goal:** Evaluar la viabilidad de un prospecto y contactarlo para agendar una cita.
+
+- **Descripción del Happy Path:** El gerente comercial inicia en el detalle del prospecto "Carlos Mendoza". En el primer rombo de decisión, el gerente evalúa si el perfil del comprador es viable. Al determinar que sí, transita a la "Bandeja de Entrada" (Mensajes) para contactar al cliente. Durante la conversación, un segundo rombo de decisión evalúa si el cliente confirma la disponibilidad para la cita. Al recibir respuesta afirmativa, el flujo termina exitosamente en la confirmación.
+
+- **Descripción del Unhappy Path 1 (Lead descartado):** Si en el primer rombo el perfil financiero del prospecto no es apto, el flujo se desvía hacia el final, descartando el contacto.
+
+- **Descripción del Unhappy Path 2 (Sin respuesta):** Si el cliente no confirma la cita en el segundo rombo, el flujo se pausa derivando a un estado alternativo pendiente.
 
 ## 4.7. Web Applications Prototyping
 
@@ -444,18 +604,121 @@ El diseño de la arquitectura de software de SmartFinance Drive sigue los princi
 
 *(Aquí se incluirá el diagrama C4 de Nivel 3 - Componentes. Detallará la estructura interna de los contenedores más críticos, como el módulo de inventario o el simulador de inteligencia artificial).*
 
-## 4.9. Software Object-Oriented Design
+## 4.9 Software Object-Oriented Design
 
-### 4.9.1. Class Diagrams
+### 4.9.1 Class Diagram
 
-*(Aquí se documentarán los diagramas de clases UML para los principales Bounded Contexts identificados, detallando entidades, value objects y agregados).*
+El siguiente diagrama de clases general representa la estructura orientada a objetos de toda la plataforma SmartFinance. Se modelan las entidades principales del dominio y sus interacciones, promoviendo una separación clara de responsabilidades bajo el enfoque de Domain-Driven Design (DDD).
 
-### 4.9.2. Class Dictionary
+![General Class Diagram](assets/Chapter-4/oopgeneral.png "Diagrama de Clases General")
 
-*(Tabla descriptiva de las clases principales representadas en los diagramas UML, definiendo sus atributos, métodos y responsabilidades dentro del dominio).*
+#### Bounded Context: Identity & Security
 
-## 4.10. Database Design
+Este diagrama representa el contexto de Identity & Security, el cual centraliza la autenticación, autorización y administración de usuarios del sistema. En este contexto, el Aggregate Root es `User`, el cual contiene la información de acceso y sus vínculos directos con los roles del sistema (`Role`). Además, se gestionan los tokens revocados (`RevokedToken`) para garantizar la integridad y seguridad de las sesiones activas. El diseño separa claramente las responsabilidades de identidad de la información personal del usuario.
 
-### 4.10.1. Relational/Non-Relational Database Diagram
+![Class diagram identity](assets/Chapter-4/oop1.png "Identity & Security")
 
-*(Aquí se insertará el Modelo Entidad-Relación (ERD) o el esquema NoSQL que soportará el catálogo unificado).*
+#### Bounded Context: Profile
+
+El contexto Profile encapsula todo lo relacionado con la representación y datos demográficos de los usuarios en el sistema. El Aggregate Root es `Profile`, que contiene la información no sensible y de contacto (nombres, teléfono, país), así como datos críticos para el negocio como ingresos mensuales y estado laboral. Este diseño permite a los usuarios gestionar su identidad financiera y es el punto de integración principal con los módulos de evaluación crediticia.
+
+![Class diagram profile](assets/Chapter-4/oop2.png "Profile")
+
+#### Bounded Context: Subscriptions & Billing
+
+El diagrama de clases presentado pertenece al contexto de Subscriptions & Billing, el cual representa el núcleo de las funcionalidades relacionadas con la gestión de planes SaaS y facturación. El Aggregate Root principal es `Subscription`, que vincula a un usuario con un `Plan` específico. La entidad `Invoice` encapsula los datos relacionados con el cobro, montos y fechas de pago. Este diseño refleja un enfoque modular preparado para integraciones con gateways de pago externos (como Stripe) mediante capas de infraestructura.
+
+![Class diagram subscriptions](assets/Chapter-4/oop3.png "Subscriptions & Billing")
+
+#### Bounded Context: Vehicle Catalog
+
+Este esquema representa la lógica del contexto de Vehicle Catalog. La clase principal es `Vehicle`, que almacena los detalles técnicos, de marca, modelo, año de fabricación y precio de los automóviles disponibles para financiamiento. Su diseño flexible permite gestionar de manera eficiente el catálogo que los usuarios explorarán antes de realizar una cotización.
+
+![Class diagram vehicle catalog](assets/Chapter-4/oop4.png "Vehicle Catalog")
+
+#### Bounded Context: Financial Configuration
+
+Este diagrama enfoca su diseño en la parametrización del mercado a través del contexto Financial Configuration. El Aggregate Root es `FinancialEntity`, representando a los bancos, cajas o instituciones de crédito. Se relaciona con `RateBenchmark`, que modela las tasas de referencia (TEA, TCEA), tipos de interés y reglas de negocio vigentes que dictan las condiciones de financiamiento en la plataforma.
+
+![Class diagram financial config](assets/Chapter-4/oop5.png "Financial Configuration")
+
+#### Bounded Context: Simulation
+
+Este esquema representa el contexto Simulation, el motor matemático y central del sistema. El Aggregate Root es `Simulation`, que encapsula todas las variables ingresadas por el usuario (cuota inicial, plazo, tasa seleccionada, monto financiado). Se compone de múltiples instancias de `SimulationPaymentPeriod`, las cuales modelan el detalle individual de cada cuota del cronograma de pagos (amortización, interés, seguros y saldos).
+
+![Class diagram simulation](assets/Chapter-4/oop6.png "Simulation")
+
+#### Bounded Context: Planning
+
+El contexto de Planning aborda la proyección y viabilidad de las decisiones del usuario. Modela clases analíticas como `CreditScore`, que evalúa la capacidad de endeudamiento, ratio DTI (Debt-to-Income) y el nivel de riesgo del perfil frente a una simulación; y `DepreciationProjection`, que encapsula el comportamiento del valor del vehículo a lo largo del tiempo, permitiendo generar recomendaciones estratégicas al usuario.
+
+![Class diagram planning](assets/Chapter-4/oop7.png "Planning")
+
+### 4.9.2 Class Dictionary
+
+| Entidad | Descripción |
+| :--- | :--- |
+| **User** | Entidad raíz de seguridad que representa a cualquier persona que interactúa con la plataforma, almacenando sus credenciales de acceso y estado de cuenta. |
+| **Role** | Define los permisos y el nivel de acceso asignado a un usuario dentro del sistema (ej. Cliente, Administrador). |
+| **RevokedToken** | Entidad de seguridad utilizada para llevar el registro de tokens de sesión que han sido invalidados o han expirado. |
+| **Profile** | Contiene la información personal, laboral y financiera detallada del usuario, fundamental para la evaluación de perfiles crediticios. |
+| **SunatRuc** | Entidad de apoyo (o Value Object) utilizada para consultar y verificar información tributaria y empresarial conectada al usuario. |
+| **Plan** | Define los paquetes de suscripción disponibles en la plataforma, estableciendo límites operativos (ej. simulaciones máximas) y precios. |
+| **Subscription** | Representa el contrato activo o inactivo de un usuario con un plan específico, gestionando su ciclo de facturación. |
+| **Invoice** | Documento que registra los detalles de facturación, montos y el estado de los pagos recurrentes generados por una suscripción. |
+| **Vehicle** | Representa un automóvil disponible en el catálogo, detallando sus características físicas, estado, año de fabricación y precio de mercado. |
+| **VehiclePage** | Objeto que agrupa una lista paginada de vehículos para optimizar las consultas y búsquedas del catálogo en el frontend. |
+| **FinancialEntity** | Representa a un banco, caja o institución financiera aliada que provee las tasas y condiciones para los créditos vehiculares. |
+| **RateBenchmark** | Encapsula las tasas referenciales (TEA, TCEA) y condiciones macroeconómicas dictadas por una entidad financiera en un periodo de tiempo. |
+| **Simulation** | Representa un escenario de crédito vehicular generado por el usuario, consolidando el vehículo, la entidad financiera elegida, plazos y montos totales. |
+| **SimulationPaymentPeriod** | Modela el detalle individual de cada cuota dentro del cronograma de pagos de una simulación (desglose de interés, amortización de capital, seguros y saldos). |
+| **CreditScore** | Evaluación de riesgo financiero calculada para un perfil específico, indicando métricas clave como el ratio deuda-ingreso (DTI) para determinar viabilidad. |
+| **DepreciationProjection** | Análisis predictivo de la pérdida de valor de un vehículo en el tiempo, utilizado para aconsejar al usuario sobre la rentabilidad de su inversión a mediano y largo plazo. |
+
+## 4.10 Database Design
+
+### 4.10.1 Database Diagram
+
+![Database diagram general](assets/Chapter-4/dbgeneral.png "Diagrama de base de datos general")
+
+#### Bounded Context: Identity & Security
+
+Este esquema representa la lógica del contexto de identidad y seguridad de SmartFinance. La tabla `users` almacena las credenciales de acceso y controles de bloqueo de los usuarios. Se apoya en las tablas `roles` y `user_roles` para la gestión de permisos, mientras que `revoked_tokens` maneja la invalidación de sesiones por seguridad.
+
+![Database diagram identity](assets/Chapter-4/db1.png "Identity & Security")
+
+#### Bounded Context: Profile
+
+Este esquema representa el contexto de gestión de clientes. La tabla `profiles` concentra toda la información personal, financiera (ingresos mensuales) y laboral del usuario, la cual es indispensable para perfilar al cliente antes de una evaluación crediticia.
+
+![Database diagram profile](assets/Chapter-4/db2.png "Profile")
+
+#### Bounded Context: Subscriptions & Billing
+
+Este esquema controla el modelo de negocio SaaS de la plataforma. La tabla `plans` define los límites de simulaciones y vehículos por paquete. La tabla `subscriptions` vincula al usuario con un plan activo usando los identificadores de Stripe, y la tabla `invoices` registra el historial de facturación y cobros.
+
+![Database diagram subscriptions](assets/Chapter-4/db3.png "Subscriptions & Billing")
+
+#### Bounded Context: Vehicle Catalog
+
+Este esquema aísla la gestión del inventario automotriz. La tabla `vehicles` centraliza los datos técnicos, año de fabricación, marca, condición y precio del vehículo a financiar, estableciendo además su vínculo con una entidad financiera.
+
+![Database diagram vehicle catalog](assets/Chapter-4/db4.png "Vehicle Catalog")
+
+#### Bounded Context: Financial Configuration
+
+Este esquema administra los parámetros macroeconómicos del sistema. La tabla `financial_entities` registra los bancos o financieras disponibles, mientras que `financial_entity_rate_benchmarks` almacena el historial de tasas referenciales aplicables a los créditos.
+
+![Database diagram financial config](assets/Chapter-4/db5.png "Financial Configuration")
+
+#### Bounded Context: Simulation
+
+Este esquema define el núcleo de cálculo del sistema. La tabla `simulations` concentra todas las variables del crédito (TEA, TCEA, cuota inicial, seguros y montos a financiar). La tabla `simulation_payment_periods` desglosa el cronograma mes a mes, separando el capital, interés y los seguros aplicados en cada cuota.
+
+![Database diagram simulation](assets/Chapter-4/db6.png "Simulation")
+
+#### Bounded Context: Planning
+
+Este esquema se enfoca en el análisis predictivo y la viabilidad del crédito. La tabla `credit_scores` evalúa el riesgo financiero del perfil asociado a una simulación particular, determinando ratios de deuda e ingresos. La tabla `depreciation_projections` planifica el valor futuro del vehículo, calculando la depreciación anual para ofrecer acciones recomendadas al cliente.
+
+![Database diagram planning](assets/Chapter-4/db7.png "Planning")
