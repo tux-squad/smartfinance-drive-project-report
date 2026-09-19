@@ -48,4 +48,6 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 | ![Oliver Photo](../assets/Chapter-1/oliver-photo.png) | **Jonseck Choque, Oliver**<br/>*(U202312912)* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
 | ![Aldo Photo](../assets/Chapter-1/aldo-photo.png) | **Machacca Soto, Aldo Jeanfranco**<br/>*(U202419485)* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |
 | ![Jesus Photo](../assets/Chapter-1/jesus-photo.png) | **Paucar Zenteno, Jesús Fernando**<br/>*(U202316687)* | Estudiante de Ingeniería de Software especializado en análisis de datos e ingeniería financiera. Encargado del diseño de modelos de recomendación e inteligencia de datos. |
+| ![abraam Photo](../assets/Chapter-1/abraam-photo.png) | **Acosta Elera, Abraam Bernabe**<br/>*(U202219199)* | Estudiante con experiencia en participación en desarrollo full stack, integración de servicios REST y soporte en la arquitectura modular de la plataforma |
+
 
