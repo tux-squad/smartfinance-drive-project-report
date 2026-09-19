@@ -1,0 +1,271 @@
+workspace "SmartFinance Drive" "Arquitectura C4 para la plataforma SmartFinance Drive" {
+
+    model {
+        # --- Personas (Actores) ---
+        comprador = person "Comprador Interesado" "Usuario que busca vehículos y solicita pre-evaluaciones crediticias." "User"
+        concesionaria = person "Concesionaria" "Empresa que publica inventario, gestiona prospectos y paga membresías B2B." "User"
+        admin = person "Super Administrador" "Administra la configuración global, gestiona usuarios, entidades financieras y planes de negocio." "User"
+
+        # --- Sistemas Externos ---
+        sunat = softwareSystem "Servicios SUNAT" "Validación tributaria de RUC." "External"
+        bancos = softwareSystem "Entidades Financieras" "Bancos aliados que proveen tasas y validan pre-aprobaciones." "External"
+        stripe = softwareSystem "Stripe" "Pasarela de pagos para el cobro de membresías y facturación B2B." "External"
+
+        # --- Sistema Principal ---
+        sfd = softwareSystem "SmartFinance Drive Platform" "Marketplace automotriz y motor de simulación financiera." {
+            
+            # Fronteras visuales (Frontend)
+            landing = container "Landing Page" "Página de presentación y conversión estática." "HTML/CSS/JS" "Web Browser"
+            webapp = container "Web Application" "Frontend SPA para compradores (catálogo), concesionarias (panel B2B) y Super Administradores (Backoffice)." "Vue.js" "Web Browser"
+            mobileapp = container "Mobile App" "Aplicación nativa para búsqueda de autos y gestión de inventario." "iOS / Android" "Mobile App"
+            
+            db = container "Base de Datos" "Almacena información transaccional de todos los contextos." "PostgreSQL" "Database"
+            
+            # Bounded Contexts representados como Contenedores (Nivel 2)
+            # --- 1. IAM Context ---
+            iam = container "IAM Context" "Autenticación, roles y gestión de credenciales." "Java Spring Boot" {
+                iam_interfaces = component "Auth REST Controllers" "Expone endpoints de login, signup, recuperación y gestión de usuarios." "Spring MVC"
+                iam_application = component "Auth Application Service" "Orquesta los casos de uso de seguridad y DTOs." "Java"
+                iam_domain = component "User Domain Model" "Agregado User, Value Objects de identidad y Roles." "Java"
+                iam_infrastructure = component "Auth Repository Adapters" "Persistencia de usuarios, tokens y seguridad." "Spring Data JPA"
+            }
+
+            # --- 2. Profiles Context ---
+            profiles = container "Profiles Context" "Gestión de datos demográficos y socioeconómicos." "Java Spring Boot" {
+                prof_interfaces = component "Profiles REST Controllers" "Expone endpoints de gestión de perfiles de clientes." "Spring MVC"
+                prof_application = component "Profiles Application Service" "Orquesta actualización y consulta de perfiles." "Java"
+                prof_domain = component "Profiles Domain Model" "Agregado Profile, ingresos, documentos." "Java"
+                prof_infrastructure = component "Profiles Repository Adapters" "Persistencia de perfiles en la base de datos." "Spring Data JPA"
+            }
+
+            # --- 3. Catalog Context ---
+            catalog = container "Catalog Context" "Catálogo unificado de vehículos e inventario." "Java Spring Boot" {
+                cat_interfaces = component "Catalog REST Controllers" "Expone endpoints para búsqueda y publicación de vehículos." "Spring MVC"
+                cat_application = component "Catalog Application Service" "Orquesta búsqueda inteligente, paginación y filtros." "Java"
+                cat_domain = component "Vehicle Domain Model" "Agregado Vehicle, características y precios." "Java"
+                cat_infrastructure = component "Catalog Repository Adapters" "Persistencia e integración con Cloudinary (imágenes)." "Spring Data JPA"
+            }
+
+            # --- 4. Partners Context ---
+            partners = container "Partners Context" "Bancos aliados, validación SUNAT y tasas base." "Java Spring Boot" {
+                part_interfaces = component "Partners REST Controllers" "Expone endpoints de entidades financieras y validaciones." "Spring MVC"
+                part_application = component "Partners Application Service" "Orquesta la gestión de tasas y consultas a SUNAT." "Java"
+                part_domain = component "Partners Domain Model" "Agregados FinancialEntity y RateBenchmark." "Java"
+                part_infrastructure = component "Partners Repository & Clients" "Persistencia y clientes HTTP externos (SUNAT)." "Spring Data JPA / WebClient"
+            }
+            
+            # --- 5. Financing Context ---
+            financing = container "Financing Context" "Motor de simulación de crédito y cronogramas." "Java Spring Boot" {
+                fin_interfaces = component "Financing REST Controllers" "Endpoints para la creación y lectura de simulaciones." "Spring MVC"
+                fin_application = component "Financing Application Service" "Orquesta planes de financiamiento y variables." "Java"
+                fin_domain = component "Financing Domain Model" "FinancingPlanBuilder, Aggregate Simulation y algoritmos." "Java"
+                fin_infrastructure = component "Simulation Repository Adapters" "Persistencia de cronogramas y simulaciones." "Spring Data JPA"
+            }
+
+            # --- 6. Scoring Context ---
+            scoring = container "Scoring Context" "Evaluación de riesgo crediticio (DTI) y ajuste de tasas." "Java Spring Boot" {
+                sco_interfaces = component "Scoring REST Controllers" "Expone endpoints de evaluación y scores de riesgo." "Spring MVC"
+                sco_application = component "Scoring Application Service" "Orquesta la evaluación de capacidad de pago." "Java"
+                sco_domain = component "Scoring Domain Model" "Agregados Score, RiskTier y reglas de DTI." "Java"
+                sco_infrastructure = component "Scoring Repository Adapters" "Persistencia de historiales crediticios." "Spring Data JPA"
+            }
+
+            # --- 7. Projections Context ---
+            projections = container "Projections Context" "Depreciación vehicular para Compra Inteligente." "Java Spring Boot" {
+                proj_interfaces = component "Projections REST Controllers" "Expone endpoints de proyecciones y depreciación." "Spring MVC"
+                proj_application = component "Projections Application Service" "Orquesta el cálculo de pérdida de valor a futuro." "Java"
+                proj_domain = component "Projections Domain Model" "Agregado DepreciationProjection y curvas de valor." "Java"
+                proj_infrastructure = component "Projections Repository Adapters" "Persistencia de proyecciones a 2, 3 y 5 años." "Spring Data JPA"
+            }
+
+            # --- 8. Billing Context ---
+            billing = container "Billing Context" "Gestión de planes SaaS, suscripciones y facturación." "Java Spring Boot" {
+                bill_interfaces = component "Billing REST Controllers & Webhooks" "Endpoints de facturas, planes de negocio y webhooks de Stripe." "Spring MVC"
+                bill_application = component "Billing Application Service" "Orquesta creación de checkouts, conciliación y parametrización de planes." "Java"
+                bill_domain = component "Billing Domain Model" "Agregados Subscription, Plan, Invoice." "Java"
+                bill_infrastructure = component "Billing Repository & Clients" "Persistencia y cliente API de Stripe." "Spring Data JPA / Stripe SDK"
+            }
+        }
+
+        # Relaciones - Nivel Contexto
+        comprador -> sfd "Busca autos, recibe recomendaciones IA y simula créditos en"
+        concesionaria -> sfd "Publica stock, atiende leads y gestiona su suscripción en"
+        admin -> sfd "Gestiona la configuración global, supervisa usuarios, entidades y planes en"
+        
+        sfd -> sunat "Valida RUCs de concesionarias y bancos mediante"
+        sfd -> bancos "Obtiene tasas e integra pre-evaluaciones con"
+        sfd -> stripe "Procesa pagos de suscripciones B2B utilizando"
+
+        # Relaciones - Personas a Frontend
+        comprador -> landing "Visita"
+        comprador -> webapp "Interactúa con"
+        comprador -> mobileapp "Interactúa con"
+        concesionaria -> webapp "Gestiona panel B2B en"
+        concesionaria -> mobileapp "Actualiza stock en"
+        admin -> webapp "Administra el sistema a través del panel backoffice en"
+
+        # Relaciones - Frontend a Bounded Contexts
+        landing -> iam "Consume endpoints públicos de"
+        
+        webapp -> iam "Administra roles y autenticación en"
+        webapp -> catalog "Busca y administra vehículos en"
+        webapp -> financing "Genera simulaciones en"
+        webapp -> billing "Crea planes y gestiona suscripciones en"
+        webapp -> partners "Configura bancos y tasas en"
+        
+        mobileapp -> iam "Obtiene JWT de"
+        mobileapp -> catalog "Busca vehículos en"
+        mobileapp -> financing "Genera simulaciones en"
+        mobileapp -> billing "Gestiona suscripciones en"
+
+        # Relaciones entre Bounded Contexts (Choreography)
+        iam -> profiles "Vincula identidad de sesión con"
+        profiles -> scoring "Provee nivel de ingresos a"
+        catalog -> financing "Provee precio y características a"
+        partners -> financing "Provee tasas de mercado a"
+        scoring -> financing "Ajusta interés por nivel de riesgo en"
+        financing -> projections "Compara cuota balón contra valor futuro en"
+
+        # Relaciones de Infraestructura a Base de Datos
+        iam_infrastructure -> db "Lee/Escribe datos de acceso y roles en"
+        prof_infrastructure -> db "Lee/Escribe perfiles en"
+        cat_infrastructure -> db "Lee/Escribe vehículos en"
+        part_infrastructure -> db "Lee/Escribe entidades y tasas en"
+        fin_infrastructure -> db "Lee/Escribe simulaciones en"
+        sco_infrastructure -> db "Lee/Escribe riesgos en"
+        proj_infrastructure -> db "Lee/Escribe depreciaciones en"
+        bill_infrastructure -> db "Lee/Escribe planes y facturas en"
+
+        # Relaciones de Infraestructura a Sistemas Externos
+        part_infrastructure -> sunat "Valida RUC vía API REST"
+        part_infrastructure -> bancos "Consulta tasas vía API"
+        bill_infrastructure -> stripe "Emite cobros e invoca Webhooks vía API REST"
+
+        # --- Relaciones Internas de Componentes (Clean Architecture) ---
+
+        # 1. IAM
+        iam_interfaces -> iam_application "Delega peticiones HTTP a"
+        iam_application -> iam_domain "Ejecuta reglas de negocio en"
+        iam_application -> iam_infrastructure "Invoca persistencia a través de"
+        
+        # 2. Profiles
+        prof_interfaces -> prof_application "Delega peticiones HTTP a"
+        prof_application -> prof_domain "Ejecuta reglas de negocio en"
+        prof_application -> prof_infrastructure "Invoca persistencia a través de"
+
+        # 3. Catalog
+        cat_interfaces -> cat_application "Delega peticiones HTTP a"
+        cat_application -> cat_domain "Ejecuta reglas de negocio en"
+        cat_application -> cat_infrastructure "Invoca persistencia a través de"
+
+        # 4. Partners
+        part_interfaces -> part_application "Delega peticiones HTTP a"
+        part_application -> part_domain "Ejecuta reglas de negocio en"
+        part_application -> part_infrastructure "Invoca integraciones y persistencia a través de"
+
+        # 5. Financing
+        fin_interfaces -> fin_application "Delega peticiones HTTP a"
+        fin_application -> fin_domain "Ejecuta cálculos en (FinancingPlanBuilder)"
+        fin_application -> catalog "Consulta detalles del auto a"
+        fin_application -> partners "Consulta tasas vigentes a"
+        fin_application -> fin_infrastructure "Invoca persistencia a través de"
+
+        # 6. Scoring
+        sco_interfaces -> sco_application "Delega peticiones HTTP a"
+        sco_application -> sco_domain "Ejecuta reglas de negocio en"
+        sco_application -> sco_infrastructure "Invoca persistencia a través de"
+
+        # 7. Projections
+        proj_interfaces -> proj_application "Delega peticiones HTTP a"
+        proj_application -> proj_domain "Ejecuta reglas de negocio en"
+        proj_application -> proj_infrastructure "Invoca persistencia a través de"
+
+        # 8. Billing
+        bill_interfaces -> bill_application "Delega peticiones HTTP a"
+        bill_application -> bill_domain "Ejecuta reglas de negocio en"
+        bill_application -> bill_infrastructure "Invoca persistencia a través de"
+    }
+
+    views {
+        systemContext sfd "ContextDiagram" {
+            include *
+            autoLayout
+        }
+
+        container sfd "ContainerDiagram" {
+            include *
+            autoLayout
+        }
+
+        # --- Vistas de Componentes (1 por cada Bounded Context) ---
+
+        component iam "ComponentDiagram_IAM" {
+            include *
+            autoLayout
+        }
+
+        component profiles "ComponentDiagram_Profiles" {
+            include *
+            autoLayout
+        }
+
+        component catalog "ComponentDiagram_Catalog" {
+            include *
+            autoLayout
+        }
+
+        component partners "ComponentDiagram_Partners" {
+            include *
+            autoLayout
+        }
+
+        component financing "ComponentDiagram_Financing" {
+            include *
+            autoLayout
+        }
+
+        component scoring "ComponentDiagram_Scoring" {
+            include *
+            autoLayout
+        }
+
+        component projections "ComponentDiagram_Projections" {
+            include *
+            autoLayout
+        }
+
+        component billing "ComponentDiagram_Billing" {
+            include *
+            autoLayout
+        }
+
+        styles {
+            element "Person" {
+                background #08427b
+                color #ffffff
+                shape Person
+            }
+            element "Software System" {
+                background #1168bd
+                color #ffffff
+            }
+            element "External" {
+                background #999999
+                color #ffffff
+            }
+            element "Container" {
+                background #438dd5
+                color #ffffff
+            }
+            element "Database" {
+                shape Cylinder
+                background #008000
+                color #ffffff
+            }
+            element "Component" {
+                background #85bbf0
+                color #000000
+            }
+        }
+    }
+}

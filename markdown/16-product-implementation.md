@@ -98,10 +98,11 @@ Para gestionar el código fuente de **SmartFinance Drive**, el equipo utiliza **
 
 **Repositorios GitHub:**
 
-* **Project Report:** [https://github.com/tux-squad/smartfinance-drive-project-report](https://github.com/tux-squad/smartfinance-drive-project-report)
-* **Landing Page:** [https://github.com/tux-squad/smartfinance-drive-landing-page](https://github.com/tux-squad/smartfinance-drive-landing-page)
-* **FrontEnd:** [https://github.com/tux-squad/smartfinance-drive-frontend](https://github.com/tux-squad/smartfinance-drive-frontend)
-* **BackEnd:** [https://github.com/tux-squad/smartfinance-drive-backend](https://github.com/tux-squad/smartfinance-drive-backend)
+* **Backend Services (Spring Boot):** [https://github.com/tux-squad/smartfinance-drive-platform](https://github.com/tux-squad/smartfinance-drive-platform)
+* **Web Application (Vue.js):** [https://github.com/tux-squad/smartfinance-drive-webapp](https://github.com/tux-squad/smartfinance-drive-webapp)
+* **Landing Page:** [https://github.com/tux-squad/smartfinance-drive-landingpage](https://github.com/tux-squad/smartfinance-drive-landingpage)
+* **Native Mobile Application:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
+* **Project Report & Documentación:** [https://github.com/tux-squad/smartfinance-drive-project-report](https://github.com/tux-squad/smartfinance-drive-project-report)
 
 #### GitFlow Workflow
 
@@ -369,7 +370,7 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | TS-01 | Lógica de internacionalización | TS1-13 | Desarrollar script `i18n.js` para parseo de JSON local | 4 | Machacca Soto, Aldo | Done |
 | US-03 | Cambiar el idioma interfaz | TS1-14 | Asignar atributos `data-i18n` en el HTML de la Landing Page | 3 | Castillo Yataco, Mauricio | Done |
 
-El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: `https://trello.com/b/smartfinance-drive-board/sprint1`
+El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
 
 ##### 5.2.1.1.4. Development Evidence for Sprint Review
 

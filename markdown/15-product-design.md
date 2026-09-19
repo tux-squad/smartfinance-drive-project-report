@@ -224,6 +224,8 @@ En esta sección se traducen la arquitectura de la información y las decisiones
 
 ![mobile-wireframe-26](../assets/Chapter-4/mobile-wireframe-26.png){width=45%}
 
+* **Enlace interactivo de Wireframes Móviles en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
 Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada diagrama refleja un User Goal específico para los distintos User Personas, mostrando cómo la interacción en la pantalla táctil genera representaciones de nuevos estados en el flujo de la aplicación.
@@ -257,6 +259,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 - **User Goal:** Administrar el catálogo de seminuevos desde el patio de ventas, actualizar estados y registrar nuevas certificaciones de inspección.
 
 - **Explicación del Flujo y Estados UI:** El flujo inicia en el módulo de "Gestión de Seminuevos", que muestra indicadores de rotación y calidad de inventario. El usuario navega hacia el "Inventario Activo", visualizando la lista completa de unidades publicadas. Al seleccionar una unidad para certificar, la aplicación transita al formulario de "Nueva Certificación", permitiendo registrar los detalles de la inspección mecánica y legal. Finalmente, tras confirmar la certificación, el sistema avanza a la pantalla de "Datos del Vehículo" para completar la publicación, alterando el estado de la unidad en la base de datos a "Certificado".
+
+* **Enlace interactivo de Wireflows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
 ### 4.4.3. Mobile Applications Mock-ups
 
@@ -312,6 +316,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 
 ![mobile-mockups-26](../assets/Chapter-4/mobile-mockups-26.png){width=45%}
 
+* **Enlace interactivo de Mockups Móviles en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
 Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz de la aplicación móvil, garantizando coherencia lógica con la versión web pero optimizados para interacciones táctiles y pantallas reducidas.
@@ -357,6 +363,8 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 - **Descripción del Unhappy Path 1 (Rechazo de Lead):** Si el asesor determina en el primer rombo que el prospecto no es apto, finaliza el flujo anticipadamente, archivando el registro.
 
 - **Descripción del Unhappy Path 2 (Interacción fallida):** Si en el segundo rombo el cliente no da respuesta en el chat, el flujo termina en un nodo pendiente inferior, a la espera de seguimiento.
+
+* **Enlace interactivo de User Flows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
 ## 4.5. Mobile Applications Prototyping
 
@@ -424,6 +432,8 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 
 ![webapp-wireframe-26](../assets/Chapter-4/webapp-wireframe-26.png)
 
+* **Enlace interactivo de Wireframes Web en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.6.2. Web Applications Wireflow Diagrams
 
 Esta sección presenta los Wireflows propuestos para la aplicación web. Los flujos ilustran cómo la interacción del usuario genera cambios de estado en la interfaz para cumplir sus objetivos principales.
@@ -467,6 +477,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 - **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos asesores y reasignar prospectos para optimizar la tasa de cierre.
 
 - **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Asesor" donde se pueden modificar roles o reasignar carteras de leads. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
+
+* **Enlace interactivo de Wireflows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
 ### 4.6.3. Web Applications Mock-ups
 
@@ -522,6 +534,8 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 
 ![webapp-mockups-26](../assets/Chapter-4/webapp-mockups-26.png)
 
+* **Enlace interactivo de Mockups Web en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+
 ### 4.6.4. Web Applications User Flow Diagrams
 
 Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha considerado un User Flow para cada objetivo principal, incluyendo los mock-ups de las pantallas, la ruta esperada (Happy Path) y las rutas alternativas de error (Unhappy Paths) dictadas por los nodos de decisión del sistema.
@@ -568,6 +582,8 @@ Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha
 
 - **Descripción del Unhappy Path 2 (Sin respuesta):** Si el cliente no confirma la cita en el segundo rombo, el flujo se pausa derivando a un estado alternativo pendiente.
 
+* **Enlace interactivo de User Flows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
+
 ## 4.7. Web Applications Prototyping
 
 [https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20WebApp%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ede73efa3%2Deae7%2D4cf7%2D8c90%2Dc09d17c6b910](https://upcedupe-my.sharepoint.com/personal/u20231b120_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu20231b120%5Fupc%5Fedu%5Fpe%2FDocuments%2FVideos%5FDise%C3%B1odeExperimentos%2FPrototipo%20WebApp%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Ede73efa3%2Deae7%2D4cf7%2D8c90%2Dc09d17c6b910)
@@ -575,6 +591,8 @@ Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha
 ## 4.8. Domain-Driven Software Architecture
 
 A continuación se presenta la documentación detallada de la arquitectura de software basada en el modelo C4 y en los principios de Domain-Driven Design (DDD).
+
+* **Código DSL de la Arquitectura C4 en el repositorio:** [https://github.com/tux-squad/smartfinance-drive-project-report/blob/main/assets/software_architecture_diagrams.dls](https://github.com/tux-squad/smartfinance-drive-project-report/blob/main/assets/software_architecture_diagrams.dls)
 
 ### 4.8.1. Software Architecture Context Diagram
 

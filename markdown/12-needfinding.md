@@ -82,3 +82,5 @@ La principal diferencia entre las concesionarias radica en la actualización de 
 
 ![as-is-scenario-mapping-segmento-3](../assets/Chapter-2/as-is-scenario-mapping-segmento-3.png)
 
+* **Enlace interactivo del tablero en Miro:** [https://miro.com/app/board/uXjVHpkhWe4=/?share_link_id=221895309503](https://miro.com/app/board/uXjVHpkhWe4=/?share_link_id=221895309503)
+
