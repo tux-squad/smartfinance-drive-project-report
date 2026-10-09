@@ -43,8 +43,6 @@ El repositorio contiene 90 clases de prueba en `src/test/java` con 405 métodos 
 | Consultations | 2 | 3 |
 | Aplicación (`SmartfinanceDrivePlatformApplicationTests`) | 1 | 1 |
 
-> Los conteos corresponden a los métodos de prueba del código fuente del repositorio. Al ejecutarse, cada invocación de los `@ParameterizedTest` cuenta como una prueba, por lo que el total ejecutado es de 416 casos (415 exitosos y 1 omitido). A estas clases se suman 6 de la suite BDD (`CucumberSuiteTest` y 5 clases de *steps*), que ejecutan 19 escenarios. Los resultados de ejecución de las pruebas core se presentan en las secciones 6.1.1, 6.1.2 y 6.1.3.
-
 ## 6.1. Testing Suites & Validation
 
 ### 6.1.1. Core Entities Unit Tests
