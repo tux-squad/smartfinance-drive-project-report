@@ -966,15 +966,3 @@ Nota: los roles `ROLE_DEALER` y `ROLE_FINANCIAL_INSTITUTION` de los casos ST-08,
 
 
 #### Evidencia de ejecución
-
-![Figura 6.4](../assets/Chapter-6/figura-6-4.png)
-
-*Figura 6.4: ST-01 a ST-07, cuentas, sesión y roles.*
-
-![Figura 6.5](../assets/Chapter-6/figura-6-5.png)
-
-*Figura 6.5: ST-08 a ST-12, inventario y catálogo de vehículos.*
-
-![Figura 6.6](../assets/Chapter-6/figura-6-6.png)
-
-*Figura 6.6: ST-13 a ST-18, scoring, simulaciones, solicitudes de crédito y estadísticas.*
