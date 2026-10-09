@@ -202,8 +202,6 @@ Para ejecutar solo las pruebas unitarias de los contextos core:
 
 ![Figura 6.1](../assets/Chapter-6/figura-6-1.png)
 
-*Figura 6.1: salida de `./mvnw test` para las pruebas unitarias de entidades (62 pruebas ejecutadas, 0 fallidas).*
-
 ### 6.1.2. Core Integration Tests
 
 Las pruebas de integración verifican que los controladores REST interactúen correctamente con la capa de aplicación, con la seguridad de Spring Security y con el manejo de errores, devolviendo los códigos de estado HTTP esperados. Se aplican dos niveles:
@@ -318,8 +316,6 @@ void lookupRequiresAuthentication() throws Exception {
 
 ![Figura 6.2](../assets/Chapter-6/figura-6-2.png)
 
-*Figura 6.2: salida de `./mvnw test` para las pruebas de integración (51 pruebas ejecutadas, 0 fallidas).*
-
 ### 6.1.3. Core Behavior-Driven Development
 
 Con BDD se describe el comportamiento esperado del sistema en lenguaje natural con la sintaxis **Gherkin** (*Given / When / Then*), de modo que el negocio y el equipo técnico compartan la misma especificación. Cada escenario se vincula con código ejecutable mediante *step definitions* en Java, usando **Cucumber** sobre la plataforma JUnit.
@@ -398,8 +394,6 @@ class CucumberSuiteTest {
 | Generación del plan de financiamiento | `financing-plan.feature` | 3 | Financing | US-29 Crear simulación de crédito vehicular; US-30 Ver cronograma detallado de pagos |
 | Evaluación de riesgo crediticio | `credit-scoring.feature` | 4 | Scoring | US-28 Pre-evaluación de riesgo crediticio |
 | Ciclo de vida de la solicitud de crédito | `credit-application.feature` | 5 | Financing | US-36 Evaluación oficial de solicitud de crédito |
-
-Las User Stories de mensajería y notificaciones push (US-39 a US-45) y la consulta de solicitudes desde el móvil (US-38) pertenecen a la aplicación móvil nativa; su verificación corresponde a las pruebas de esa aplicación y no a esta suite del backend.
 
 #### Feature 1: Generación del plan de financiamiento
 
@@ -921,8 +915,6 @@ public class CreditApplicationSteps {
 
 ![Figura 6.3](../assets/Chapter-6/figura-6-3.png)
 
-*Figura 6.3: salida de Cucumber para los escenarios BDD (19 escenarios y 78 pasos exitosos).*
-
 ### 6.1.4. Core System Tests
 
 Las pruebas de sistema validan la aplicación **completa y en ejecución** (API REST, Spring Security, JWT y base de datos PostgreSQL), recorriendo los flujos de usuario de extremo a extremo a través de la API documentada con OpenAPI/Swagger. A diferencia de las pruebas anteriores, aquí no se simula ningún componente interno.
@@ -961,8 +953,5 @@ Las pruebas de sistema validan la aplicación **completa y en ejecución** (API 
 | ST-18 | US-21 | Consultar las estadísticas propias | `GET /api/v1/analytics/dealer` con un usuario `ROLE_DEALER` | `200 OK` con las métricas de la concesionaria | Pendiente de ejecutar |
 
 Las historias de la aplicación móvil (US-38 a US-45) y las de interfaz exclusivamente visual se validan en sus propios clientes. Los códigos esperados se derivaron de las reglas de seguridad y de los controladores del backend; si al ejecutar un caso el código obtenido difiere, debe registrarse el obtenido y analizarse la causa.
-
-Nota: los roles `ROLE_DEALER` y `ROLE_FINANCIAL_INSTITUTION` de los casos ST-08, ST-12, ST-17 y ST-18 se obtienen mediante la verificación corporativa (RUC activo, habido y con CIIU correspondiente) o los asigna un administrador (ST-06).
-
 
 #### Evidencia de ejecución
