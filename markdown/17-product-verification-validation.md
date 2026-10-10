@@ -953,3 +953,7 @@ Las pruebas de sistema validan la aplicación **completa y en ejecución** (API 
 Las historias de la aplicación móvil (US-38 a US-45) y las de interfaz exclusivamente visual se validan en sus propios clientes. Los códigos esperados se derivaron de las reglas de seguridad y de los controladores del backend; si al ejecutar un caso el código obtenido difiere, debe registrarse el obtenido y analizarse la causa.
 
 #### Evidencia de ejecución
+
+![Core System Tests 1](../assets/Chapter-6/Core System Tests-1.jpeg)
+
+![Core System Tests 2](../assets/Chapter-6/Core System Tests-2.jpeg)
