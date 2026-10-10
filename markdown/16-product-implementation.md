@@ -43,7 +43,7 @@ Esta área comprende las herramientas utilizadas para definir y documentar la ar
 
 **Product Management**
 
-- **Trello:** herramienta utilizada para administrar el **Product Backlog**, organizar las historias de usuario y realizar el seguimiento de las actividades planificadas para los diferentes Sprints del proyecto.
+- **Jira:** herramienta utilizada para administrar el **Product Backlog**, organizar las historias de usuario y realizar el seguimiento de las actividades planificadas para los diferentes Sprints del proyecto.
 
 **Software Development**
 
@@ -327,13 +327,11 @@ Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrol
 
 ## 5.2. Product Implementation & Deployment
 
-### 5.2.1. Sprint Backlogs
-
 En esta sección se documenta la gestión del tiempo, tareas y recursos mediante la metodología Scrum para el desarrollo del ecosistema SmartFinance Drive.
 
-#### 5.2.1.1. Sprint 1
+#### 5.2.1. Sprint 1
 
-##### 5.2.1.1.1. Sprint Planning 1
+##### 5.2.1.1. Sprint Planning 1
 
 En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
 
@@ -350,7 +348,7 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
 
-##### 5.2.1.1.2. Aspects Leader Collaboration
+##### 5.2.1.2. Aspects Leader Collaboration
 
 Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
 
@@ -362,34 +360,34 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 | Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 
-##### 5.2.1.1.3. Sprint Backlog 1
+##### 5.2.1.3. Sprint Backlog 1
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
-| US-01 | Visualizar módulos funcionales | TS1-01 | Maquetar estructura HTML5/CSS3 del Hero y sección Solución de la Landing Page | 4 | Castillo Yataco, Mauricio | Done |
-| US-02 | Consultar membresías B2B | TS1-02 | Construir componente de Pricing Cards con metodología BEM | 3 | Castillo Yataco, Mauricio | Done |
-| US-04 | Navegación fluida | TS1-03 | Implementar script Vanilla JS para Sticky Navbar y Smooth Scroll | 3 | Castillo Yataco, Mauricio | Done |
-| US-08 | Explorar catálogo unificado | TS1-04 | Desarrollar página `/vehicles` en Next.js (Grid UI) | 5 | Machacca Soto, Aldo | Done |
-| US-08 | Explorar catálogo unificado | TS1-05 | Implementar Server Action `getVehicles` consultando a Supabase | 4 | Machacca Soto, Aldo | Done |
-| US-10 | Ficha detallada del vehículo | TS1-06 | Maquetar ruta dinámica `/vehicles/[id]` en Next.js | 4 | Machacca Soto, Aldo | Done |
-| US-10 | Ficha detallada del vehículo | TS1-07 | Crear `createSimulationAction` (simulador base de 30 días, sin gastos iniciales) | 6 | Machacca Soto, Aldo | Done |
-| US-09 | Dashboard métricas comerciales | TS1-08 | Configurar Sidebar y Layout base del Dashboard B2B en App Router | 4 | Castillo Yataco, Mauricio | To Do |
-| US-05 | Registro de nueva cuenta | TS1-09 | Maquetar formulario de Sign Up B2C | 3 | Machacca Soto, Aldo | Done |
-| US-05 | Registro de nueva cuenta | TS1-10 | Integrar `signupAction` con Supabase Auth | 4 | Machacca Soto, Aldo | Done |
-| US-06 | Inicio de sesión compradores | TS1-11 | Crear vista de Login e integrar `loginAction` para manejo de cookies | 4 | Machacca Soto, Aldo | Done |
-| US-07 | Inicio de sesión concesionarias | TS1-12 | Reutilizar `loginAction` y añadir redirección a `/dashboard` por rol | 2 | Machacca Soto, Aldo | Done |
-| TS-01 | Lógica de internacionalización | TS1-13 | Desarrollar script `i18n.js` para parseo de JSON local | 4 | Machacca Soto, Aldo | Done |
-| US-03 | Cambiar el idioma interfaz | TS1-14 | Asignar atributos `data-i18n` en el HTML de la Landing Page | 3 | Castillo Yataco, Mauricio | Done |
-| US-15 | Configuración inicial del proyecto móvil | TS1-15 | Inicializar proyecto Android/Kotlin con Jetpack Compose y estructura modular | 4 | Acosta Elera, Abraam Bernabe | Done |
-| US-16 | Autenticación de usuarios | TS1-16 | Implementar flujo de Login y Register IAM en la aplicación móvil | 6 | Acosta Elera, Abraam Bernabe | Done |
-| US-17 | Explorar catálogo vehicular | TS1-17 | Desarrollar catálogo de vehículos con filtros y presentación visual | 5 | Acosta Elera, Abraam Bernabe | Done |
-| US-18 | Ficha detallada del vehículo | TS1-18 | Crear detalle del vehículo con información de oferta y simulación | 5 | Acosta Elera, Abraam Bernabe | Done |
-| US-19 | Pre-evaluación crediticia | TS1-19 | Implementar flujo de pre-evaluación crediticia dentro de la app móvil | 6 | Acosta Elera, Abraam Bernabe | Done |
-| US-20 | Perfil, configuración y mensajería | TS1-20 | Desarrollar perfil del usuario, configuración y módulo de mensajes | 4 | Acosta Elera, Abraam Bernabe | Done |
+| US-01 | Visualizar información de la plataforma | TS1-01 | Maquetar estructura HTML5/CSS3 del Hero y sección Solución de la Landing Page | 4 | Castillo Yataco, Mauricio | Done |
+| US-02 | Conocer beneficios de la plataforma | TS1-02 | Construir componente interactivo de acordeón de problemas y beneficios | 3 | Castillo Yataco, Mauricio | Done |
+| US-03 | Conocer beneficios de los planes para concesionarias | TS1-03 | Construir componente de Pricing Cards con metodología BEM para planes B2B | 3 | Castillo Yataco, Mauricio | Done |
+| US-04 | Acceder al registro | TS1-04 | Implementar script Vanilla JS para Sticky Navbar, Smooth Scroll y acceso al registro | 3 | Castillo Yataco, Mauricio | Done |
+| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-05 | Desarrollar catálogo base de vehículos con filtros iniciales en la Web App (Vue) | 5 | Machacca Soto, Aldo | Done |
+| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-06 | Implementar servicio de consulta y filtrado de catálogo en el backend (Spring Boot) | 4 | Machacca Soto, Aldo | Done |
+| US-18 | Ver detalle de vehículo | TS1-07 | Maquetar ruta dinámica y vista de ficha detallada del vehículo en la Web App | 4 | Machacca Soto, Aldo | Done |
+| US-18 | Ver detalle de vehículo | TS1-08 | Diseñar endpoint y servicio de detalle de vehículo en el backend | 4 | Machacca Soto, Aldo | Done |
+| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-09 | Investigar fórmulas financieras de mercado y documentar algoritmo del método francés | 6 | Machacca Soto, Aldo | Done |
+| US-19 | Crear simulación de crédito vehicular | TS1-10 | Implementar simulador base de cuotas en la Web App y servicio de cálculo | 6 | Machacca Soto, Aldo | Done |
+| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-11 | Configurar cliente HTTP y mapeo de datos con la API de Factiliza para verificación de DNI | 5 | Cotrina Siclla, Sofia | Done |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-12 | Implementar integración de Brevo para envío de notificaciones y verificación por correo | 4 | Cotrina Siclla, Sofia | Done |
+| US-05 | Registrar cuenta y perfil personal | TS1-13 | Maquetar formulario de Sign Up B2C e integración con servicio de autenticación | 4 | Machacca Soto, Aldo | Done |
+| US-05 | Registrar cuenta y perfil personal | TS1-14 | Inicializar proyecto Android con Jetpack Compose y flujo de registro móvil | 5 | Acosta Elera, Abraam | Done |
+| US-07 | Iniciar sesión | TS1-15 | Implementar pantalla de Login y manejo de tokens en la aplicación móvil | 5 | Acosta Elera, Abraam | Done |
 
-El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
+**Evidencia del Sprint Backlog 1 en Jira:**
 
-##### 5.2.1.1.4. Development Evidence for Sprint Review
+![Sprint Backlog 1](../assets/Chapter-5/Sprint1-jira.png)
+
+El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Jira: [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
+
+
+##### 5.2.1.4. Development Evidence for Sprint Review
 
 La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page, Backend y aplicación móvil nativa:
 
@@ -406,7 +404,7 @@ La implementación en los repositorios oficiales del proyecto se rigió por el m
 | tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
 | tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
 
-### 5.2.2. Implemented Landing Page Evidence
+### 5.2.1.5. Implemented Landing Page Evidence
 
 Durante el Sprint 1, se implementó exitosamente la **Landing Page de SmartFinance Drive** utilizando **HTML5, CSS3 y JavaScript (Vanilla)**, cumpliendo estrictamente con el diseño previamente definido y los requerimientos del proyecto. Este sitio web representa la cara pública del proyecto, desplegado eficientemente a través de **Vercel** para garantizar una alta disponibilidad y tiempos de carga rápidos.
 
@@ -450,14 +448,11 @@ La Landing Page se encuentra desplegada y disponible en producción mediante **V
 
 * **Enlace web activo:** [https://smartfinance-drive-landingpage.vercel.app/](https://smartfinance-drive-landingpage.vercel.app/)
 
-### 5.2.3. Implemented Frontend-Web Application Evidence
+### 5.2.1.6. Implemented Frontend-Web Application Evidence
 
-La aplicación web principal de **SmartFinance Drive** (desarrollada con **Vue.js**, **TypeScript** y **Vite**) se encuentra desplegada y disponible en producción mediante **Vercel**:
+> **Pendiente:** Evidencia del frontend desplegado de la aplicación web.
 
-* **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
-* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-webapp](https://github.com/tux-squad/smartfinance-drive-webapp)
-
-### 5.2.4. Acuerdo de Servicio - SaaS
+### 5.2.1.7. Acuerdo de Servicio - SaaS
 
 Este acuerdo establece los términos de uso de la plataforma **SmartFinance Drive** para las concesionarias aliadas (**SaaS Agreement**).
 
@@ -466,7 +461,7 @@ Este acuerdo establece los términos de uso de la plataforma **SmartFinance Driv
 * **Seguridad y Resguardo de Datos:** Garantizamos la protección de las credenciales, historiales crediticios de los compradores y datos de inventario mediante protocolos JWT y encriptación.
 * **Uso Aceptable:** SmartFinance Drive se reserva el derecho de dar de baja publicaciones de vehículos fraudulentos, con información engañosa o que incumplan las normativas de financiamiento vigentes.
 
-### 5.2.5. Implemented Native-Mobile Application Evidence
+### 5.2.1.8. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración, mensajería y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
 
@@ -491,7 +486,7 @@ La aplicación móvil fue desarrollada como una solución nativa para Android, p
 ![Mobile App 1](../assets/Chapter-5/mobile4.jpeg)
 
 
-### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.1.9. Implemented RESTful API and/or Serverless Backend Evidence
 
 El backend de SmartFinance Drive está desarrollado utilizando el framework Spring Boot (Java), estructurado bajo un diseño de Bounded Contexts (IAM, Catalog, Partners, Financing, Billing) y desplegado de manera continua en la plataforma de alojamiento en la nube Render.
 
@@ -500,11 +495,9 @@ El backend de SmartFinance Drive está desarrollado utilizando el framework Spri
 * **Integraciones y Lógica de Negocio:** El servidor cuenta con un motor de búsqueda difusa híbrida (Levenshtein + Trigram) para el catálogo, y se conecta síncronamente con servicios de terceros como la SUNAT para la validación de RUCs (con estrategias de *caching* y *rate limiting*) y Stripe Checkout para la facturación recurrente B2B.
 * **Enlace base de la API en Producción:** [https://smartfinance-drive-platform.onrender.com](https://smartfinance-drive-platform.onrender.com)
 
-### 5.2.7. RESTful API documentation
+### 5.2.1.10. RESTful API documentation
 
 Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
-
-* **Documentación interactiva (Swagger UI):** [https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html](https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html)
 
 ![Swager 1](../assets/Chapter-5/Swager-1.png)
 
@@ -524,7 +517,7 @@ Aquí se presenta el backend del proyecto completamente desplegado y documentado
 
 ![Swager 9](../assets/Chapter-5/Swager-9.png)
 
-### 5.2.8. Team Collaboration Insights
+### 5.2.1.10. Team Collaboration Insights
 
 * **Landing Page**
 
@@ -541,6 +534,114 @@ Aquí se presenta el backend del proyecto completamente desplegado y documentado
 ![Team Collaboration Insights 1 - Frontend](../assets/Chapter-5/TeamCollaborationInsightsFrontend-1.png)
 
 ![Team Collaboration Insights 2 - Frontend](../assets/Chapter-5/TeamCollaborationInsightsFrontend-2.png)
+
+
+#### 5.2.2. Sprint 2
+
+##### 5.2.2.1. Sprint Planning 1
+
+En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
+
+| Sprint # | Sprint 2 |
+| :--- | :--- |
+| **Date** | 2026-09-27 |
+| **Time** | 04:00 PM |
+| **Location** | Reunión Virtual - Discord |
+| **Prepared By** | Machacca Soto, Aldo Jeanfranco |
+| **Attendees** | Castillo Yataco, Mauricio Sebastian / Cotrina Siclla, Sofia Alessandra / Jonseck Choque, Oliver / Machacca Soto, Aldo Jeanfranco / Acosta Elera, Abraam Bernabe |
+| **Sprint 1 Review Summary** | . |
+| **Sprint 1 Retrospective Summary** | . |
+| **Sprint 2 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients (dealers and buyers). This will be confirmed when a user successfully views the unified catalog structure. |
+| **Sprint 1 Velocity** | 29 Story Points |
+| **Sum of Story Points** | 29 Story Points |
+
+##### 5.2.2.2. Aspects Leader Collaboration
+
+Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
+
+| **Team Member** | **GitHub Username** | **Backend Services** | **Frontend** | **Native Mobile Application** | **Software Documentation & Reporting** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Machacca Soto, Aldo Jeanfranco | **\@MarkOne-dev** | Leader (L) | Leader (L) | Collaborator (C) | Collaborator (C) |
+| Acosta Elera, Abraam Bernabe | **\@AbraamAcostae** | Collaborator (C) | Collaborator (C) | Leader (L) | Collaborator (C) |
+| Cotrina Siclla, Sofia Alessandra | **\@IamAndreek** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Leader (L) |
+| Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
+| Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
+
+##### 5.2.2.3. Sprint Backlog 2
+
+Durante el Sprint 2, el equipo se enfocó en implementar los módulos de gestión de perfiles, inventario de vehículos, publicación, consulta y eliminación de simulaciones, evaluación de solicitudes de crédito e integraciones externas.
+
+| **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| :--- | :--- | :--- | :--- | ---: | :--- | :--- |
+| US-06 | Verificar correo electrónico | TS2-01 | Diseñar y maquetar pantalla de verificación de código/OTP en la App Web (Vue) | 3 | Machacca Soto, Aldo | Done |
+| US-06 | Verificar correo electrónico | TS2-02 | Implementar lógica de reenvío de código y expiración de tokens en el backend | 4 | Machacca Soto, Aldo | Done |
+| US-09 | Visualizar perfil | TS2-03 | Maquetar vista de perfil de usuario en la App Web | 3 | Jonseck Choque, Oliver | Done |
+| US-09 | Visualizar perfil | TS2-04 | Crear endpoint para consultar datos de cuenta y roles desde base de datos | 4 | Machacca Soto, Aldo | Done |
+| US-10 | Editar perfil | TS2-05 | Desarrollar formularios reactivos de edición de datos personales con validación en Vue | 4 | Jonseck Choque, Oliver | Done |
+| US-10 | Editar perfil | TS2-06 | Implementar servicio en backend para actualizar campos e informar errores de data | 4 | Machacca Soto, Aldo | Done |
+| US-11 | Listar inventario de vehículos | TS2-07 | Diseñar interfaz de inventario de vehículos para concesionarias en la Web App | 4 | Jonseck Choque, Oliver | Done |
+| US-11 | Listar inventario de vehículos | TS2-08 | Implementar consulta de inventario por concesionaria en el backend | 4 | Machacca Soto, Aldo | Done |
+| US-12 | Registrar vehículo | TS2-09 | Maquetar formulario de registro de nueva unidad en el panel de concesionarias | 5 | Jonseck Choque, Oliver | Done |
+| US-12 | Registrar vehículo | TS2-10 | Desarrollar endpoint de registro de vehículo con validación de datos en el backend | 5 | Machacca Soto, Aldo | Done |
+| US-13 | Publicar vehículo | TS2-11 | Implementar acción de publicación y cambio de visibilidad en el catálogo | 3 | Jonseck Choque, Oliver | Done |
+| US-13 | Publicar vehículo | TS2-12 | Desarrollar lógica de publicación y estado de vehículos en el backend | 4 | Machacca Soto, Aldo | Done |
+| US-14 | Editar vehículo publicado | TS2-13 | Desarrollar vista de edición de campos comerciales y técnicos del vehículo | 4 | Jonseck Choque, Oliver | Done |
+| US-14 | Editar vehículo publicado | TS2-14 | Integrar servicio en backend para actualización de datos del vehículo | 4 | Machacca Soto, Aldo | Done |
+| US-15 | Eliminar vehículo | TS2-15 | Crear modal de confirmación de eliminación de unidades en el inventario B2B | 3 | Jonseck Choque, Oliver | Done |
+| US-15 | Eliminar vehículo | TS2-16 | Implementar lógica de borrado lógico y verificación de procesos activos | 4 | Machacca Soto, Aldo | Done |
+| US-17 | Ordenar resultados de búsqueda | TS2-17 | Agregar selectores de ordenamiento (precio, año, marca) en la UI del catálogo | 3 | Jonseck Choque, Oliver | Done |
+| US-17 | Ordenar resultados de búsqueda | TS2-18 | Implementar lógica de ordenamiento en backend y ordenamiento en cliente | 3 | Machacca Soto, Aldo | Done |
+| US-20 | Consultar simulaciones guardadas | TS2-19 | Diseñar sección de historial y listado de simulaciones crediticias previas del cliente | 4 | Machacca Soto, Aldo | Done |
+| US-20 | Consultar simulaciones guardadas | TS2-20 | Implementar servicio para recuperar colecciones de simulaciones guardadas por usuario | 4 | Machacca Soto, Aldo | Done |
+| US-21 | Eliminar simulación guardada | TS2-21 | Añadir botón de remoción y flujo de confirmación en la lista de simulaciones | 3 | Machacca Soto, Aldo | Done |
+| US-21 | Eliminar simulación guardada | TS2-22 | Crear endpoint en backend para eliminar registros específicos de simulaciones | 3 | Machacca Soto, Aldo | Done |
+| US-22 | Evaluar solicitud de crédito | TS2-23 | Diseñar bandeja de trabajo para Entidades Financieras con listado de expedientes | 5 | Castillo Yataco, Mauricio | Done |
+| US-22 | Evaluar solicitud de crédito | TS2-24 | Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales | 6 | Castillo Yataco, Mauricio | Done |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-25 | Configurar la integración con los endpoints de Chequea.pe y validación de RUC | 5 | Cotrina Siclla, Sofia | Done |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-26 | Desarrollar lógica de auto-llenado de datos empresariales tras validación de SUNAT | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-27 | Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-28 | Construir prototipo funcional de envío de correos transaccionales automatizados | 5 | Cotrina Siclla, Sofia | Done |
+
+**Evidencia del Sprint Backlog 2 en Jira:**
+
+![Sprint Backlog 2](../assets/Chapter-5/Sprint2-jira.png)
+
+El tablero de control del Sprint 2 se encuentra disponible de manera pública en el siguiente enlace de Jira: [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
+
+
+##### 5.2.2.4. Development Evidence for Sprint Review
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| tux-squad/smartfinance-drive-landingpage | main | `9532c56` | feat: initial landing page commit | - | 2026-09-16 |
+| tux-squad/smartfinance-drive-platform | main | `ed259bc` | feat(catalog): add hybrid fuzzy search (Levenshtein + Trigram) and Fallback Ampliado to vehicles catalog | - | 2026-09-14 |
+| tux-squad/smartfinance-drive-platform | main | `a79803f` | feat(openapi): configure OpenAPI documentation bean with JWT Bearer SecurityScheme for Swagger UI | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `d957e21` | feat(db): add Flyway migration dependency and V1 billing schema migration script | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `eeb7283` | feat(billing): add Stripe Checkout Session endpoint and document manual invoice payment shortcut | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `a0a1f17` | feat(iam): add request financial institution role endpoint with SUNAT CIIU verification | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `a6c67d1` | feat(partners): add timeouts, caching and structured error handling to sunat ruc verifier service | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `191992e` | feat(shared): enable spring caching and add rate limiting to sunat ruc lookup endpoints | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
+| tux-squad/smartfinance-drive-platform | develop | `14bd809` | feat(sunat): add Factiliza API fallback for SUNAT RUC verification when Chequea fails | - | 2026-10-09 |
+| tux-squad/smartfinance-drive-platform | develop | `85676be` | fix(cache): fix SpEL expression in `@Cacheable` annotation for DNI and RUC verification services | - | 2026-10-09 |
+| tux-squad/smartfinance-drive-platform | develop | `c7d574c` | test(iam): add comprehensive unit and integration tests for email verification flow | - | 2026-10-03 |
+| tux-squad/smartfinance-drive-platform | develop | `a961526` | feat(iam): expose public email verification send and verify endpoints | - | 2026-10-03 |
+| tux-squad/smartfinance-drive-platform | develop | `227f28c` | feat(iam): implement email verification domain aggregate, session repository, and command service | - | 2026-10-03 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `6103244` | fix: resolve merge conflicts and restore debug build | - | 2026-10-10 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `9aef325` | feat: delete mds | - | 2026-10-10 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `dc3a778` | feat: code refactoring, addition of real endpoints | - | 2026-10-10 |
+
+### 5.2.2.5. Implemented Frontend-Web Application Evidence
+
+Log In View
+![FrontEnd_1](../assets/Chapter-5/FrontEnd-1.png)
+
+Account creation view
+![FrontEnd_2](../assets/Chapter-5/FrontEnd-2.png)
+
+Catalogue view
+![FrontEnd_3](../assets/Chapter-5/FrontEnd-3.png)
 
 ## 5.3. Video About-the-Product
 Enlace y presentación del video demostrativo del producto.
