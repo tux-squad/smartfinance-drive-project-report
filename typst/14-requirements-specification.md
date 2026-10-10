@@ -20,7 +20,7 @@
 
 En esta sección se definen los requisitos funcionales, no funcionales y técnicos de SmartFinance Drive mediante un conjunto estructurado de Epics y User Stories. La redacción contempla los tres segmentos objetivo (Compradores, Concesionarias de nuevos y Concesionarias de usados), así como las historias técnicas necesarias para la viabilidad de la plataforma.
 
-### US-01 — Visualizar información de la plataforma
+**US-01 — Visualizar información de la plataforma**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -48,7 +48,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-02 — Conocer beneficios de la plataforma
+**US-02 — Conocer beneficios de la plataforma**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -77,7 +77,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-03 — Conocer beneficios de los planes para concesionarias
+**US-03 — Conocer beneficios de los planes para concesionarias**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -105,7 +105,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-04 — Acceder al registro
+**US-04 — Acceder al registro**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -132,7 +132,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-05 — Registrar cuenta y perfil personal
+**US-05 — Registrar cuenta y perfil personal**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -161,7 +161,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-06 — Verificar correo electrónico
+**US-06 — Verificar correo electrónico**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -189,7 +189,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-07 — Iniciar sesión
+**US-07 — Iniciar sesión**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -218,7 +218,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-08 — Cerrar sesión
+**US-08 — Cerrar sesión**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -246,7 +246,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-09 — Visualizar perfil
+**US-09 — Visualizar perfil**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -273,7 +273,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-10 — Editar perfil
+**US-10 — Editar perfil**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -301,7 +301,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-11 — Listar inventario de vehículos
+**US-11 — Listar inventario de vehículos**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -328,7 +328,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-12 — Registrar vehículo
+**US-12 — Registrar vehículo**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -356,7 +356,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-13 — Publicar vehículo
+**US-13 — Publicar vehículo**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -385,7 +385,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-14 — Editar vehículo publicado
+**US-14 — Editar vehículo publicado**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -413,7 +413,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-15 — Eliminar vehículo
+**US-15 — Eliminar vehículo**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -440,7 +440,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-16 — Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca
+**US-16 — Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -473,7 +473,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-17 — Ordenar resultados de búsqueda
+**US-17 — Ordenar resultados de búsqueda**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -501,7 +501,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-18 — Ver detalle de vehículo
+**US-18 — Ver detalle de vehículo**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -530,7 +530,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-19 — Crear simulación de crédito vehicular
+**US-19 — Crear simulación de crédito vehicular**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -561,7 +561,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-20 — Consultar simulaciones guardadas
+**US-20 — Consultar simulaciones guardadas**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -589,7 +589,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-21 — Eliminar simulación guardada
+**US-21 — Eliminar simulación guardada**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -616,7 +616,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### US-22 — Evaluar solicitud de crédito
+**US-22 — Evaluar solicitud de crédito**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -646,7 +646,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### SP-01 — Investigar el cálculo de simulaciones de crédito vehicular
+**SP-01 — Investigar el cálculo de simulaciones de crédito vehicular**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -680,7 +680,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### SP-02 — Investigar servicios de notificaciones por correo y push
+**SP-02 — Investigar servicios de notificaciones por correo y push**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -712,7 +712,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### TS-01 — Integrar API de Factiliza para verificar DNI
+**TS-01 — Integrar API de Factiliza para verificar DNI**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -746,7 +746,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### TS-02 — Integrar API de Chequea.pe para verificar RUC
+**TS-02 — Integrar API de Chequea.pe para verificar RUC**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |
@@ -780,7 +780,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 
 <br>
 
-### TS-03 — Integrar API de Brevo para correos transaccionales y verificación de correo
+**TS-03 — Integrar API de Brevo para correos transaccionales y verificación de correo**
 
 +---------------------------+--------------------------------------------------------------------------------------+
 | Campo                     | Detalle                                                                              |

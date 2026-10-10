@@ -48,7 +48,7 @@ La elaboración del documento estuvo liderada principalmente por **Cotrina Sicll
 
 - **Cotrina Siclla, Sofia Alessandra:** Responsable de actualizar el Capítulo III: Requirements Specification y desarrollar el Capítulo VII: DevOps Practices, además de la consolidación del Project Report.
 
-- **Jonseck Choque, Oliver:** Sin definir.
+- **Jonseck Choque, Oliver:** Responsable de apoyar en la implementación del producto y en la documentación de las evidencias correspondientes al Capítulo V: Product Implementation.
 
 La colaboración realizada durante el TB1 se evidencia mediante los commits y los analíticos de colaboración registrados en el repositorio de GitHub del Project Report.
 

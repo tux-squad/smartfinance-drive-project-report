@@ -40,7 +40,7 @@ El desarrollo de este informe y proyecto contribuye al logro de los siguientes *
     #v(0.6em)
     *Jonseck Choque, Oliver* \
     • *AV1:* Aporte creando la idea original y proveyendo de una base de la cual inspirarnos. Además de desarrollar el frontend, tomando en cuenta Domain Driven Design. \
-    • *TB1:* Sin definir.
+    • *TB1:* Apoyé en el desarrollo y documentación del Capítulo V: Product Implementation, participando en la implementación de componentes de la plataforma y en la recolección de evidencias técnicas correspondientes a la entrega.
   ],
   [
     *AV1:* Como equipo, concluimos que la responsabilidad ética constituye un aspecto fundamental en el desarrollo de SmartFinance Drive debido a que la plataforma trabaja con información personal y financiera de sus usuarios. Por ello, las decisiones de diseño y desarrollo deben priorizar la seguridad, privacidad y transparencia de la información. La implementación de mecanismos de protección de datos, la comunicación clara de las funcionalidades y la documentación de las decisiones técnicas permiten desarrollar una solución que considere tanto las necesidades de los usuarios como las responsabilidades profesionales del equipo de ingeniería de software.
@@ -75,7 +75,7 @@ El desarrollo de este informe y proyecto contribuye al logro de los siguientes *
     #v(0.6em)
     *Jonseck Choque, Oliver* \
     • *AV1:* Contribui principalmente a las diversas ideas para el proyecto, considerando la viabilidad y los diferentes aspectos de este cómo ganancias monetarias, usuarios clave, entre otros. \
-    • *TB1:* Sin definir.
+    • *TB1:* Colaboré en la implementación del producto (Capítulo V) considerando el impacto de las funcionalidades en la experiencia de usuario y en la integración de los servicios de la plataforma.
   ],
   [
     *AV1:* Como equipo, concluimos que SmartFinance Drive puede generar impactos económicos y sociales al facilitar la conexión entre compradores y concesionarias, centralizar información relevante y agilizar procesos relacionados con la búsqueda y evaluación de vehículos. Asimismo, la digitalización de parte del proceso puede reducir la necesidad de realizar determinados trámites y consultas de manera presencial. Por ello, consideramos que las decisiones de ingeniería deben tomar en cuenta no solo el funcionamiento técnico de la plataforma, sino también sus posibles efectos en los usuarios, las empresas y el entorno en el que será utilizada.
