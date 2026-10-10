@@ -41,10 +41,10 @@ Yandex. (2026). *BEM — Block element modifier methodology*. [https://en.bem.in
 **Anexo C: Product Management & UX/UI Design**
 
 - **Lean UX Canvas (Canva):** [https://canva.link/g1n16bn2clawb90](https://canva.link/g1n16bn2clawb90)
-- **Product Backlog (Trello):** [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
+- **Product Backlog (Jira):** [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
 - **As-Is & To-Be Scenario Mapping (Miro):** [https://miro.com/app/board/uXjVHpkhWe4=/?share_link_id=221895309503](https://miro.com/app/board/uXjVHpkhWe4=/?share_link_id=221895309503)
-- **Wireframes (Figma):** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
-- **Mockups (Figma):** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+- **Wireframes (Figma):** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
+- **Mockups (Figma):** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 - **Wireflows & User Flows (Overflow):** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
 **Anexo D: Arquitectura & Modelado**
