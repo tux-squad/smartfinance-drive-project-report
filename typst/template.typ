@@ -81,6 +81,8 @@
 #show table.cell.where(y: 0): set text(fill: white, weight: "bold", size: 9pt)
 
 // Diseño de Figuras e Imágenes
+#set image(width: 70%)
+
 #show figure.where(kind: image): it => [
   #align(center)[
     #block(

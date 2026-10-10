@@ -306,13 +306,15 @@ En esta sección presentamos los pasos que seguimos para desplegar los proyectos
 Para el despliegue de la landing page, escogimos **Vercel**, un servicio de hosting en la nube especializado en experiencias frontend que permite publicar sitios web estáticos directamente desde repositorios de GitHub. Esta alternativa nos permitió centralizar el código fuente (HTML, CSS, JS) en un mismo entorno, facilitando el control de versiones y asegurando que cada actualización realizada en el repositorio se refleje automáticamente en el sitio publicado con tiempos de carga óptimos gracias a su CDN (Content Delivery Network).
 
 **Base de Datos:**
-Para el despliegue de la base de datos relacional de la plataforma, optamos por **Supabase** como plataforma. Esta herramienta simplifica considerablemente el proceso de aprovisionamiento, ya que permite crear instancias de bases de datos PostgreSQL en pocos pasos desde su panel de administración. Además, Supabase genera de forma automática las credenciales de acceso y gestiona políticas de seguridad a nivel de fila (RLS), lo que reduce la complejidad de la configuración manual. Asimismo, incorpora funcionalidades como copias de seguridad automáticas y monitoreo integrado, facilitando la protección del inventario vehicular y los perfiles de los usuarios.
+Para el despliegue de la base de datos relacional de la plataforma, optamos por **Aiven PostgreSQL** como servicio administrado. Esta solución simplifica el aprovisionamiento, permitiendo crear instancias de PostgreSQL en la nube con alta disponibilidad, copias de seguridad automáticas y monitoreo integrado, facilitando la protección del inventario vehicular y los datos transaccionales del sistema.
 
 **Backend:**
-El backend fue desplegado en **Render**, aprovechando la facilidad que ofrece esta plataforma para alojar APIs y Web Services dentro de un entorno escalable y de alta disponibilidad. Para ello, conectamos el repositorio del backend a los Web Services de Render, el cual detecta automáticamente el código, instala las dependencias necesarias y realiza el despliegue correspondiente bajo el dominio `smartfinance-drive-platform.onrender.com`. De este modo, pudimos definir las variables de entorno (como tokens bancarios y cadenas de conexión a Supabase) directamente desde el panel de la plataforma, beneficiándonos de certificados SSL integrados, despliegues continuos (CI/CD) y monitoreo en tiempo real.
+El backend fue desplegado en **Render** mediante contenedores Docker, aprovechando la facilidad que ofrece esta plataforma para alojar APIs y Web Services dentro de un entorno escalable y de alta disponibilidad. Para ello, conectamos el repositorio del backend a los Web Services de Render, el cual detecta automáticamente el código, ejecuta el `Dockerfile` y realiza el despliegue correspondiente bajo el dominio `smartfinance-drive-platform.onrender.com`. De este modo, pudimos definir las variables de entorno (como parámetros de JWT y cadenas de conexión a Aiven PostgreSQL) directamente desde el panel de la plataforma, beneficiándonos de certificados SSL integrados, despliegues continuos (CI/CD) y monitoreo en tiempo real.
 
 **Frontend (Vue.js Web Application):**
 Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrollado en **Vue.js**), también elegimos **Vercel**, aprovechando su excelente integración nativa con frameworks de Single Page Applications (SPA). Esta plataforma automatiza el proceso de compilación (`npm run build`) mediante herramientas como Vite, de manera que cada *Pull Request* genera una vista previa, y cada *merge* a la rama principal genera una nueva versión estable de la aplicación en producción. Además, Vercel gestiona automáticamente el enrutamiento del lado del cliente (Vue Router) mediante configuraciones de reescritura (`rewrites`) para asegurar que la navegación entre las vistas (ej. inventario, panel de prospectos) funcione correctamente sin devolver errores 404.
+
+* **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
 
 ## 5.2. Product Implementation & Deployment
 
@@ -369,12 +371,18 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | US-07 | Inicio de sesión concesionarias | TS1-12 | Reutilizar `loginAction` y añadir redirección a `/dashboard` por rol | 2 | Machacca Soto, Aldo | Done |
 | TS-01 | Lógica de internacionalización | TS1-13 | Desarrollar script `i18n.js` para parseo de JSON local | 4 | Machacca Soto, Aldo | Done |
 | US-03 | Cambiar el idioma interfaz | TS1-14 | Asignar atributos `data-i18n` en el HTML de la Landing Page | 3 | Castillo Yataco, Mauricio | Done |
+| US-15 | Configuración inicial del proyecto móvil | TS1-15 | Inicializar proyecto Android/Kotlin con Jetpack Compose y estructura modular | 4 | Acosta Elera, Abraam Bernabe | Done |
+| US-16 | Autenticación de usuarios | TS1-16 | Implementar flujo de Login y Register IAM en la aplicación móvil | 6 | Acosta Elera, Abraam Bernabe | Done |
+| US-17 | Explorar catálogo vehicular | TS1-17 | Desarrollar catálogo de vehículos con filtros y presentación visual | 5 | Acosta Elera, Abraam Bernabe | Done |
+| US-18 | Ficha detallada del vehículo | TS1-18 | Crear detalle del vehículo con información de oferta y simulación | 5 | Acosta Elera, Abraam Bernabe | Done |
+| US-19 | Pre-evaluación crediticia | TS1-19 | Implementar flujo de pre-evaluación crediticia dentro de la app móvil | 6 | Acosta Elera, Abraam Bernabe | Done |
+| US-20 | Perfil, configuración y mensajería | TS1-20 | Desarrollar perfil del usuario, configuración y módulo de mensajes | 4 | Acosta Elera, Abraam Bernabe | Done |
 
 El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
 
 **Development Evidence for Sprint Review**
 
-La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page y el Backend:
+La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page, Backend y aplicación móvil nativa:
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -386,6 +394,8 @@ La implementación en los repositorios oficiales del proyecto se rigió por el m
 | tux-squad/smartfinance-drive-platform | main | `a0a1f17` | feat(iam): add request financial institution role endpoint with SUNAT CIIU verification | - | 2026-09-12 |
 | tux-squad/smartfinance-drive-platform | main | `a6c67d1` | feat(partners): add timeouts, caching and structured error handling to sunat ruc verifier service | - | 2026-09-12 |
 | tux-squad/smartfinance-drive-platform | main | `191992e` | feat(shared): enable spring caching and add rate limiting to sunat ruc lookup endpoints | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
 
 ### 5.2.2. Implemented Landing Page Evidence
 
@@ -433,7 +443,10 @@ La Landing Page se encuentra desplegada y disponible en producción mediante **V
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-> **Pendiente:** Evidencia del frontend desplegado de la aplicación web.
+La aplicación web principal de **SmartFinance Drive** (desarrollada con **Vue.js**, **TypeScript** y **Vite**) se encuentra desplegada y disponible en producción mediante **Vercel**:
+
+* **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
+* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-webapp](https://github.com/tux-squad/smartfinance-drive-webapp)
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -446,7 +459,30 @@ Este acuerdo establece los términos de uso de la plataforma **SmartFinance Driv
 
 ### 5.2.5. Implemented Native-Mobile Application Evidence
 
-> **Pendiente:** Evidencia de la aplicación móvil nativa desplegada.
+Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración, mensajería y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
+
+* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
+* **Stack tecnológico:** Kotlin, Jetpack Compose, Material 3, Retrofit, OkHttp, Gradle, Android Studio.
+* **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Messaging, Shared, Core.
+* **Evidencia de funcionalidades:**
+  - Pantalla de Login y Registro de usuarios.
+  - Catálogo de vehículos con vista de listado y filtros.
+  - Detalle del vehículo con información relevante y acceso a simulación.
+  - Pre-evaluación crediticia para clientes.
+  - Perfil de usuario, configuración y navegación principal.
+  - Módulo de mensajería y gestión de información de concesionarias.
+
+La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
+
+**Evidencia visual de la aplicación móvil**
+
+![Mobile App 1 - Inicio de Sesión y Registro](assets/Chapter-5/mobile1.jpeg)
+
+![Mobile App 2 - Catálogo y Filtros de Vehículos](assets/Chapter-5/mobile2.jpeg)
+
+![Mobile App 3 - Detalle del Vehículo y Simulación](assets/Chapter-5/mobile3.jpeg)
+
+![Mobile App 4 - Pre-evaluación Crediticia y Perfil](assets/Chapter-5/mobile4.jpeg)
 
 ### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
 
@@ -460,6 +496,8 @@ El backend de SmartFinance Drive está desarrollado utilizando el framework Spri
 ### 5.2.7. RESTful API documentation
 
 Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
+
+* **Documentación interactiva (Swagger UI):** [https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html](https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html)
 
 ![Swager 1](assets/Chapter-5/Swager-1.png)
 
