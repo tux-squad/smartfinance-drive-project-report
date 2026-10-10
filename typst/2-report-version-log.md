@@ -11,6 +11,8 @@
 | 0.7.0 | 19/09/2026 | Cotrina Siclla, Sofia Alessandra | Incorporación de Project Report Collaboration Insights (sección 3) y Student Outcome ABET EAC 4 con criterios y conclusiones (sección 4). |
 | 0.8.0 | 09/10/2026 | Cotrina Siclla, Sofia Alessandra | Correcciones hechas en el Capítulo 3: especificación de requerimientos, historias de usuario, spikes técnicos y product backlog. |
 | 0.9.0 | 10/10/2026 | Cotrina Siclla, Sofia Alessandra | Implementación del Capítulo VII: DevOps Practices (Continuous Integration, Continuous Delivery y Continuous Deployment) y actualización de entornos de producción. |
+| 0.10.0 | 10/10/2026 | Cotrina Siclla, Sofia Alessandra | Correcciones generales en la estructura del informe, enlaces de evidencias (Figma, Jira) y formato de tablas y anexos. |
+| 0.11.0 | 10/10/2026 | Castillo Yataco, Mauricio Sebastian | Desarrollo del Capítulo VI: Product Verification & Validation (pruebas unitarias, de integración, BDD y de sistema). |
 
 ```{=typst}
 #pagebreak()
