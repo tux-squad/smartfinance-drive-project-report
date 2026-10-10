@@ -624,7 +624,7 @@ Durante este sprint, nos enfocamos en arreglar las funcionalidades ya existentes
 | tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
 | tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
 | tux-squad/smartfinance-drive-platform | develop | `14bd809` | feat(sunat): add Factiliza API fallback for SUNAT RUC verification when Chequea fails | - | 2026-10-09 |
-| tux-squad/smartfinance-drive-platform | develop | `85676be` | fix(cache): fix SpEL expression in @Cacheable annotation for DNI and RUC verification services | - | 2026-10-09 |
+| tux-squad/smartfinance-drive-platform | develop | `85676be` | fix(cache): fix SpEL expression in `@Cacheable` annotation for DNI and RUC verification services | - | 2026-10-09 |
 | tux-squad/smartfinance-drive-platform | develop | `c7d574c` | test(iam): add comprehensive unit and integration tests for email verification flow | - | 2026-10-03 |
 | tux-squad/smartfinance-drive-platform | develop | `a961526` | feat(iam): expose public email verification send and verify endpoints | - | 2026-10-03 |
 | tux-squad/smartfinance-drive-platform | develop | `227f28c` | feat(iam): implement email verification domain aggregate, session repository, and command service | - | 2026-10-03 |

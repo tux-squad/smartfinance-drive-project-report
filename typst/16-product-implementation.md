@@ -13,15 +13,15 @@ Esta área comprende las actividades relacionadas con el análisis de usuarios, 
 - **Canvas:** herramienta utilizada para desarrollar el **Lean UX Canvas**, permitiendo organizar el problema, los usuarios objetivo, las soluciones propuestas y las hipótesis que orientan el desarrollo del producto.
 
 - **UxPressia:** plataforma utilizada para representar y analizar la experiencia de los usuarios. Se empleó para elaborar:
-  - User Personas.
-  - User Task Matrix.
-  - User Journey Mapping.
-  - Empathy Mapping.
-  - Impact Mapping.
+    - User Personas.
+    - User Task Matrix.
+    - User Journey Mapping.
+    - Empathy Mapping.
+    - Impact Mapping.
 
 - **Miro:** herramienta colaborativa utilizada para representar visualmente los escenarios del producto. Se empleó principalmente para:
-  - As-is Scenario Mapping.
-  - To-Be Scenario Mapping.
+    - As-is Scenario Mapping.
+    - To-Be Scenario Mapping.
 
 - **Figma:** herramienta de diseño colaborativo utilizada para la elaboración de **Wireframes, Mock-ups y Prototypes**. Permitió representar las interfaces de SmartFinance Drive antes de su implementación y validar la estructura visual de las diferentes pantallas.
 
@@ -32,14 +32,14 @@ Esta área comprende las actividades relacionadas con el análisis de usuarios, 
 Esta área comprende las herramientas utilizadas para definir y documentar la arquitectura y estructura interna de SmartFinance Drive.
 
 - **DLS Editor / Structurizr:** herramientas utilizadas para la elaboración de los diagramas de arquitectura de software, incluyendo:
-  - Software Architecture Context Diagram.
-  - Software Architecture Container Diagrams.
-  - Software Architecture Components Diagrams.
+    - Software Architecture Context Diagram.
+    - Software Architecture Container Diagrams.
+    - Software Architecture Components Diagrams.
 
 - **UML:** utilizado para representar los elementos relacionados con el diseño orientado a objetos y el diseño de la base de datos. Entre los principales artefactos desarrollados se encuentran:
-  - Class Diagrams.
-  - Class Dictionary.
-  - Relational/Non-Relational Database Diagram.
+    - Class Diagrams.
+    - Class Dictionary.
+    - Relational/Non-Relational Database Diagram.
 
 **Product Management**
 
@@ -47,28 +47,37 @@ Esta área comprende las herramientas utilizadas para definir y documentar la ar
 
 **Software Development**
 
-El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Page, Frontend Web Application y Backend**, utilizando tecnologías específicas para cada componente.
+El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Page, Frontend Web Application, Backend y Native Mobile Application**, utilizando tecnologías específicas para cada componente.
 
 - **Landing Page:**
-  - **HTML5:** utilizado para estructurar el contenido de la página.
-  - **CSS3:** utilizado para definir los estilos y presentación visual.
-  - **JavaScript:** utilizado para implementar la interacción y comportamiento dinámico.
-  - **Material Design:** utilizado como referencia para los principios visuales y de diseño de la interfaz.
+    - **HTML5:** utilizado para estructurar el contenido de la página.
+    - **CSS3:** utilizado para definir los estilos y presentación visual.
+    - **JavaScript:** utilizado para implementar la interacción y comportamiento dinámico.
+    - **Material Design:** utilizado como referencia para los principios visuales y de diseño de la interfaz.
 
 - **Frontend Web Application:**
-  - **Vue Framework:** utilizado como framework principal para el desarrollo de la aplicación web.
-  - **HTML5:** utilizado para la estructura de las interfaces.
-  - **CSS3:** utilizado para los estilos y diseño visual.
-  - **JavaScript:** utilizado para implementar la lógica e interactividad del frontend.
-  - **PrimeVue:** utilizado como biblioteca de componentes de interfaz de usuario.
-  - **Material Design:** utilizado como referencia para mantener una interfaz consistente y orientada a la usabilidad.
+    - **Vue Framework:** utilizado como framework principal para el desarrollo de la aplicación web.
+    - **HTML5:** utilizado para la estructura de las interfaces.
+    - **CSS3:** utilizado para los estilos y diseño visual.
+    - **JavaScript:** utilizado para implementar la lógica e interactividad del frontend.
+    - **PrimeVue:** utilizado como biblioteca de componentes de interfaz de usuario.
+    - **Material Design:** utilizado como referencia para mantener una interfaz consistente y orientada a la usabilidad.
 
 - **Backend:**
-  - **Next.js (App Router):** utilizado como framework principal para la implementación de los servicios y lógica del lado servidor.
-  - **TypeScript:** utilizado como lenguaje principal para el desarrollo del backend, proporcionando tipado estático y mayor seguridad durante la implementación.
-  - **Clean Architecture:** utilizada como patrón arquitectónico para separar responsabilidades y organizar la lógica del sistema.
-  - **Server Actions:** utilizadas para ejecutar operaciones directamente en el servidor mediante las capacidades de Next.js.
-  - **Route Handlers:** utilizados para implementar endpoints HTTP tradicionales, principalmente para integraciones y funcionalidades que requieren comunicación mediante API.
+    - **Next.js (App Router):** utilizado como framework principal para la implementación de los servicios y lógica del lado servidor.
+    - **TypeScript:** utilizado como lenguaje principal para el desarrollo del backend, proporcionando tipado estático y mayor seguridad durante la implementación.
+    - **Clean Architecture:** utilizada como patrón arquitectónico para separar responsabilidades y organizar la lógica del sistema.
+    - **Server Actions:** utilizadas para ejecutar operaciones directamente en el servidor mediante las capacidades de Next.js.
+    - **Route Handlers:** utilizados para implementar endpoints HTTP tradicionales, principalmente para integraciones y funcionalidades que requieren comunicación mediante API.
+
+- **Native Mobile Application:**
+    - **Android / Kotlin:** utilizado para el desarrollo de la aplicación móvil nativa para dispositivos Android.
+    - **Jetpack Compose:** utilizado para la construcción de interfaces declarativas y reactivas.
+    - **Material 3:** aplicado como sistema visual para mantener consistencia, accesibilidad y diseño moderno en la UI.
+    - **Retrofit + OkHttp:** utilizados para la comunicación con la API REST del backend y la gestión de llamadas HTTP.
+    - **Gradle / Android Studio:** utilizados para la configuración del proyecto, dependencias y ejecución del entorno de desarrollo móvil.
+    - **MVVM / Clean Architecture Style:** utilizado como enfoque estructural para separar la lógica de negocio, los casos de uso y la capa de presentación.
+    - **Auth + Catalog + Financing + Profiles + Settings + Messaging:** módulos implementados para cubrir la autenticación de usuarios, catálogo de vehículos, preevaluación crediticia, perfiles, configuración y mensajería interna.
 
 **Database & Authentication**
 
@@ -318,13 +327,11 @@ Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrol
 
 ## 5.2. Product Implementation & Deployment
 
-### 5.2.1. Sprint Backlogs
-
 En esta sección se documenta la gestión del tiempo, tareas y recursos mediante la metodología Scrum para el desarrollo del ecosistema SmartFinance Drive.
 
-**Sprint 1**
+#### 5.2.1. Sprint 1
 
-**Sprint Planning 1**
+##### 5.2.1.1. Sprint Planning 1
 
 En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
 
@@ -341,7 +348,7 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
 
-**Aspects Leader Collaboration**
+##### 5.2.1.2. Aspects Leader Collaboration
 
 Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
 
@@ -353,7 +360,7 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 | Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 
-**Sprint Backlog 1**
+##### 5.2.1.3. Sprint Backlog 1
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
@@ -380,7 +387,7 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 
 El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
 
-**Development Evidence for Sprint Review**
+##### 5.2.1.4. Development Evidence for Sprint Review
 
 La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page, Backend y aplicación móvil nativa:
 
@@ -397,7 +404,7 @@ La implementación en los repositorios oficiales del proyecto se rigió por el m
 | tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
 | tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
 
-### 5.2.2. Implemented Landing Page Evidence
+### 5.2.1.5. Implemented Landing Page Evidence
 
 Durante el Sprint 1, se implementó exitosamente la **Landing Page de SmartFinance Drive** utilizando **HTML5, CSS3 y JavaScript (Vanilla)**, cumpliendo estrictamente con el diseño previamente definido y los requerimientos del proyecto. Este sitio web representa la cara pública del proyecto, desplegado eficientemente a través de **Vercel** para garantizar una alta disponibilidad y tiempos de carga rápidos.
 
@@ -405,31 +412,31 @@ La landing page funciona como el punto de entrada principal, presentando la iden
 
 A continuación, se presentan las capturas de pantalla del producto real en funcionamiento:
 
-**1. Home / Hero Section**
+#### 1. Home / Hero Section
 
 La pantalla inicial presenta la propuesta de valor principal **"Tu próximo auto está más cerca"**, junto con botones de llamado a la acción claros (**"Explorar vehículos"** y **"Soy concesionaria"**) y una barra de navegación superior (*Sticky Navbar*) que incluye un selector de idioma.
 
 ![Landing Page 1](assets/Chapter-5/LandingPage-1.png)
 
-**2. Sección del Problema (Acordeón Interactivo)**
+#### 2. Sección del Problema (Acordeón Interactivo)
 
 Se implementó un componente de acordeón interactivo en JavaScript que desglosa las fricciones del proceso actual de búsqueda y comercialización de vehículos, permitiendo al usuario desplegar preguntas como **"Qué problema existe"** o **"Cuándo ocurre"**.
 
 ![Landing Page 2](assets/Chapter-5/LandingPage-2.png)
 
-**3. Perfiles y Segmentos Objetivo**
+#### 3. Perfiles y Segmentos Objetivo
 
 Se implementó un carrusel interactivo estructurado con botones de navegación que detalla los tres perfiles de la plataforma. En la imagen se aprecia la vista enfocada en la oferta B2B para **"Concesionarias de autos usados"**, detallando sus puntos de dolor y necesidades.
 
 ![Landing Page 3](assets/Chapter-5/LandingPage-3.png)
 
-**4. Membresías B2B (Pricing)**
+#### 4. Membresías B2B (Pricing)
 
 Se desarrolló una grilla de planes estructurada con **CSS Grid** y metodología **BEM**. Esta sección muestra claramente el modelo de negocio para las concesionarias, resaltando visualmente en el centro la tarjeta del **"Panel de gestión B2B"**, aplicable a ambos planes de venta (**Nueva** y **Usada**).
 
 ![Landing Page 4](assets/Chapter-5/LandingPage-4.png)
 
-**5. Equipo (Team Slider)**
+#### 5. Equipo (Team Slider)
 
 Se presenta a los miembros del equipo *tux-squad*. Se implementó un slider horizontal arrastrable (*draggable*) con JavaScript que permite visualizar las fotografías, nombres, códigos universitarios y roles de los estudiantes de Ingeniería de Software involucrados en el desarrollo.
 
@@ -441,14 +448,11 @@ La Landing Page se encuentra desplegada y disponible en producción mediante **V
 
 * **Enlace web activo:** [https://smartfinance-drive-landingpage.vercel.app/](https://smartfinance-drive-landingpage.vercel.app/)
 
-### 5.2.3. Implemented Frontend-Web Application Evidence
+### 5.2.1.6. Implemented Frontend-Web Application Evidence
 
-La aplicación web principal de **SmartFinance Drive** (desarrollada con **Vue.js**, **TypeScript** y **Vite**) se encuentra desplegada y disponible en producción mediante **Vercel**:
+> **Pendiente:** Evidencia del frontend desplegado de la aplicación web.
 
-* **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
-* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-webapp](https://github.com/tux-squad/smartfinance-drive-webapp)
-
-### 5.2.4. Acuerdo de Servicio - SaaS
+### 5.2.1.7. Acuerdo de Servicio - SaaS
 
 Este acuerdo establece los términos de uso de la plataforma **SmartFinance Drive** para las concesionarias aliadas (**SaaS Agreement**).
 
@@ -457,7 +461,7 @@ Este acuerdo establece los términos de uso de la plataforma **SmartFinance Driv
 * **Seguridad y Resguardo de Datos:** Garantizamos la protección de las credenciales, historiales crediticios de los compradores y datos de inventario mediante protocolos JWT y encriptación.
 * **Uso Aceptable:** SmartFinance Drive se reserva el derecho de dar de baja publicaciones de vehículos fraudulentos, con información engañosa o que incumplan las normativas de financiamiento vigentes.
 
-### 5.2.5. Implemented Native-Mobile Application Evidence
+### 5.2.1.8. Implemented Native-Mobile Application Evidence
 
 Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración, mensajería y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
 
@@ -465,26 +469,24 @@ Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicaci
 * **Stack tecnológico:** Kotlin, Jetpack Compose, Material 3, Retrofit, OkHttp, Gradle, Android Studio.
 * **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Messaging, Shared, Core.
 * **Evidencia de funcionalidades:**
-  - Pantalla de Login y Registro de usuarios.
-  - Catálogo de vehículos con vista de listado y filtros.
-  - Detalle del vehículo con información relevante y acceso a simulación.
-  - Pre-evaluación crediticia para clientes.
-  - Perfil de usuario, configuración y navegación principal.
-  - Módulo de mensajería y gestión de información de concesionarias.
+    - Pantalla de Login y Registro de usuarios.
+    - Catálogo de vehículos con vista de listado y filtros.
+    - Detalle del vehículo con información relevante y acceso a simulación.
+    - Pre-evaluación crediticia para clientes.
+    - Perfil de usuario, configuración y navegación principal.
+    - Módulo de mensajería y gestión de información de concesionarias.
 
 La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
 
 **Evidencia visual de la aplicación móvil**
 
-![Mobile App 1 - Inicio de Sesión y Registro](assets/Chapter-5/mobile1.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile1.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile2.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile3.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile4.jpeg)
 
-![Mobile App 2 - Catálogo y Filtros de Vehículos](assets/Chapter-5/mobile2.jpeg)
 
-![Mobile App 3 - Detalle del Vehículo y Simulación](assets/Chapter-5/mobile3.jpeg)
-
-![Mobile App 4 - Pre-evaluación Crediticia y Perfil](assets/Chapter-5/mobile4.jpeg)
-
-### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+### 5.2.1.9. Implemented RESTful API and/or Serverless Backend Evidence
 
 El backend de SmartFinance Drive está desarrollado utilizando el framework Spring Boot (Java), estructurado bajo un diseño de Bounded Contexts (IAM, Catalog, Partners, Financing, Billing) y desplegado de manera continua en la plataforma de alojamiento en la nube Render.
 
@@ -493,11 +495,9 @@ El backend de SmartFinance Drive está desarrollado utilizando el framework Spri
 * **Integraciones y Lógica de Negocio:** El servidor cuenta con un motor de búsqueda difusa híbrida (Levenshtein + Trigram) para el catálogo, y se conecta síncronamente con servicios de terceros como la SUNAT para la validación de RUCs (con estrategias de *caching* y *rate limiting*) y Stripe Checkout para la facturación recurrente B2B.
 * **Enlace base de la API en Producción:** [https://smartfinance-drive-platform.onrender.com](https://smartfinance-drive-platform.onrender.com)
 
-### 5.2.7. RESTful API documentation
+### 5.2.1.10. RESTful API documentation
 
 Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
-
-* **Documentación interactiva (Swagger UI):** [https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html](https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html)
 
 ![Swager 1](assets/Chapter-5/Swager-1.png)
 
@@ -517,7 +517,7 @@ Aquí se presenta el backend del proyecto completamente desplegado y documentado
 
 ![Swager 9](assets/Chapter-5/Swager-9.png)
 
-### 5.2.8. Team Collaboration Insights
+### 5.2.1.10. Team Collaboration Insights
 
 * **Landing Page**
 
@@ -534,6 +534,114 @@ Aquí se presenta el backend del proyecto completamente desplegado y documentado
 ![Team Collaboration Insights 1 - Frontend](assets/Chapter-5/TeamCollaborationInsightsFrontend-1.png)
 
 ![Team Collaboration Insights 2 - Frontend](assets/Chapter-5/TeamCollaborationInsightsFrontend-2.png)
+
+
+#### 5.2.2. Sprint 2
+
+##### 5.2.2.1. Sprint Planning 1
+
+En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
+
+| Sprint # | Sprint 2 |
+| :--- | :--- |
+| **Date** | 2026-09-27 |
+| **Time** | 04:00 PM |
+| **Location** | Reunión Virtual - Discord |
+| **Prepared By** | Machacca Soto, Aldo Jeanfranco |
+| **Attendees** | Castillo Yataco, Mauricio Sebastian / Cotrina Siclla, Sofia Alessandra / Jonseck Choque, Oliver / Machacca Soto, Aldo Jeanfranco / Acosta Elera, Abraam Bernabe |
+| **Sprint 1 Review Summary** | . |
+| **Sprint 1 Retrospective Summary** | . |
+| **Sprint 2 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients (dealers and buyers). This will be confirmed when a user successfully views the unified catalog structure. |
+| **Sprint 1 Velocity** | 29 Story Points |
+| **Sum of Story Points** | 29 Story Points |
+
+##### 5.2.2.2. Aspects Leader Collaboration
+
+Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
+
+| **Team Member** | **GitHub Username** | **Backend Services** | **Frontend** | **Native Mobile Application** | **Software Documentation & Reporting** |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Machacca Soto, Aldo Jeanfranco | **\@MarkOne-dev** | Leader (L) | Leader (L) | Collaborator (C) | Collaborator (C) |
+| Acosta Elera, Abraam Bernabe | **\@AbraamAcostae** | Collaborator (C) | Collaborator (C) | Leader (L) | Collaborator (C) |
+| Cotrina Siclla, Sofia Alessandra | **\@IamAndreek** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Leader (L) |
+| Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
+| Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
+
+##### 5.2.2.3. Sprint Backlog 2
+
+Durante este sprint, nos enfocamos en arreglar las funcionalidades ya existentes e implementar nuevas funcionalidades.
+
+
+| **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
+| :--- | :--- | :--- | :--- | ---: | :--- | :--- |
+| US-06 | Verificar correo electrónico | TS1-21 | Diseñar y maquetar pantalla de verificación de código/OTP en la App Web (Vue) | 3 | | To Do |
+| US-06 | Verificar correo electrónico | TS1-22 | Implementar lógica de reenvío de código y expiración de tokens en Server Actions | 4 | | To Do |
+| US-09 | Visualizar perfil | TS1-23 | Maquetar vista de perfil de usuario con componentes de PrimeVue | 3 | | To Do |
+| US-09 | Visualizar perfil | TS1-24 | Crear endpoint/Server Action para consultar datos de cuenta y roles desde base de datos | 4 | | To Do |
+| US-10 | Editar perfil | TS1-25 | Desarrollar formularios reactivos de edición de datos personales con validación en Vue | 4 | | To Do |
+| US-10 | Editar perfil | TS1-26 | Implementar acción del servidor para actualizar campos e informar errores de data inválida | 4 | | To Do |
+| US-14 | Editar vehículo publicado | TS1-27 | Desarrollar vista de edición de campos comerciales y técnicos del vehículo en panel B2B | 4 | | To Do |
+| US-14 | Editar vehículo publicado | TS1-28 | Integrar Server Action para actualización de datos y re-validación de rangos permitidos | 4 | | To Do |
+| US-15 | Eliminar vehículo | TS1-29 | Crear modal de confirmación de eliminación de unidades en el inventario B2B | 3 | | To Do |
+| US-15 | Eliminar vehículo | TS1-30 | Implementar lógica de borrado lógico/físico y verificación de procesos activos del vehículo | 4 | | To Do |
+| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-31 | Maquetar barra lateral de filtros avanzados y componentes reactivos de búsqueda | 5 | | To Do |
+| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-32 | Desarrollar query dinámica parametrizada para Supabase/Base de datos según filtros seleccionados | 5 | | To Do |
+| US-17 | Ordenar resultados de búsqueda | TS1-33 | Agregar selectores de ordenamiento (precio, año, kilometraje) en la UI del catálogo | 3 | | To Do |
+| US-17 | Ordenar resultados de búsqueda | TS1-34 | Implementar lógica de reordenamiento de arreglos en el frontend y ordenamiento desde backend | 3 | | To Do |
+| US-18 | Ver detalle de vehículo | TS1-35 | Maquetar sección detallada con carrusel de imágenes y especificaciones técnicas completas | 4 | | To Do |
+| US-18 | Ver detalle de vehículo | TS1-36 | Desarrollar middleware de verificación para alertar si el vehículo dejó de estar disponible | 3 | | To Do |
+| US-19 | Crear simulación de crédito vehicular | TS1-37 | Construir formulario dinámico con sliders para cuota inicial, plazos y cálculo de interés | 5 | | To Do |
+| US-19 | Crear simulación de crédito vehicular | TS1-38 | Programar algoritmo financiero para proyección de cuota estimada y costo total del crédito | 5 | | To Do |
+| US-20 | Consultar simulaciones guardadas | TS1-39 | Diseñar sección de historial y listado de simulaciones crediticias previas del cliente | 4 | | To Do |
+| US-20 | Consultar simulaciones guardadas | TS1-40 | Implementar Server Action para recuperar colecciones de simulaciones guardadas por usuario | 4 | | To Do |
+| US-21 | Eliminar simulación guardada | TS1-41 | Añadir botón de remoción y flujo de confirmación en la lista de simulaciones | 3 | | To Do |
+| US-21 | Eliminar simulación guardada | TS1-42 | Crear backend handler para eliminar registros específicos de simulaciones en base de datos | 3 | | To Do |
+| US-22 | Evaluar solicitud de crédito | TS1-43 | Diseñar bandeja de trabajo para Entidades Financieras con listado de expedientes asignados | 5 | | To Do |
+| US-22 | Evaluar solicitud de crédito | TS1-44 | Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales y actualización de estado | 6 | | To Do |
+| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-45 | Investigar fórmulas financieras de mercado y redactar el documento técnico de reglas de cálculo | 6 | | To Do |
+| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-46 | Desarrollar prototipo en script aislado (test) para validación matemática del algoritmo | 4 | | To Do |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS1-47 | Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | | To Do |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS1-48 | Construir prototipo funcional mínimo de envío de correos transaccionales automatizados | 5 | | To Do |
+| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-49 | Configurar cliente HTTP, tokens de autenticación y mapeo de datos con la API de Factiliza | 5 | | To Do |
+| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-50 | Desarrollar control de excepciones para caídas del servicio externo e integración en el registro | 4 | | To Do |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS1-51 | Configurar la integración con los endpoints de Chequea.pe y validación sintáctica de RUC | 5 | | To Do |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS1-52 | Desarrollar lógica de auto-llenado de datos empresariales tras la validación exitosa de SUNAT | 4 | | To Do |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-53 | Implementar SDK o Webhooks de Brevo y plantillas HTML para correos transaccionales | 5 | | To Do |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-54 | Conectar los eventos de cambio de estado de créditos con el trigger de notificaciones Brevo | 4 | | To Do |
+
+##### 5.2.2.4. Development Evidence for Sprint Review
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| tux-squad/smartfinance-drive-landingpage | main | `9532c56` | feat: initial landing page commit | - | 2026-09-16 |
+| tux-squad/smartfinance-drive-platform | main | `ed259bc` | feat(catalog): add hybrid fuzzy search (Levenshtein + Trigram) and Fallback Ampliado to vehicles catalog | - | 2026-09-14 |
+| tux-squad/smartfinance-drive-platform | main | `a79803f` | feat(openapi): configure OpenAPI documentation bean with JWT Bearer SecurityScheme for Swagger UI | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `d957e21` | feat(db): add Flyway migration dependency and V1 billing schema migration script | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `eeb7283` | feat(billing): add Stripe Checkout Session endpoint and document manual invoice payment shortcut | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `a0a1f17` | feat(iam): add request financial institution role endpoint with SUNAT CIIU verification | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `a6c67d1` | feat(partners): add timeouts, caching and structured error handling to sunat ruc verifier service | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-platform | main | `191992e` | feat(shared): enable spring caching and add rate limiting to sunat ruc lookup endpoints | - | 2026-09-12 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
+| tux-squad/smartfinance-drive-platform | develop | `14bd809` | feat(sunat): add Factiliza API fallback for SUNAT RUC verification when Chequea fails | - | 2026-10-09 |
+| tux-squad/smartfinance-drive-platform | develop | `85676be` | fix(cache): fix SpEL expression in `@Cacheable` annotation for DNI and RUC verification services | - | 2026-10-09 |
+| tux-squad/smartfinance-drive-platform | develop | `c7d574c` | test(iam): add comprehensive unit and integration tests for email verification flow | - | 2026-10-03 |
+| tux-squad/smartfinance-drive-platform | develop | `a961526` | feat(iam): expose public email verification send and verify endpoints | - | 2026-10-03 |
+| tux-squad/smartfinance-drive-platform | develop | `227f28c` | feat(iam): implement email verification domain aggregate, session repository, and command service | - | 2026-10-03 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `6103244` | fix: resolve merge conflicts and restore debug build | - | 2026-10-10 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `9aef325` | feat: delete mds | - | 2026-10-10 |
+| tux-squad/smartfinance-drive-mobile-app | develop | `dc3a778` | feat: code refactoring, addition of real endpoints | - | 2026-10-10 |
+
+### 5.2.2.5. Implemented Frontend-Web Application Evidence
+
+Log In View
+![FrontEnd_1](assets/Chapter-5/FrontEnd-1.png)
+
+Account creation view
+![FrontEnd_2](assets/Chapter-5/FrontEnd-2.png)
+
+Catalogue view
+![FrontEnd_3](assets/Chapter-5/FrontEnd-3.png)
 
 ## 5.3. Video About-the-Product
 Enlace y presentación del video demostrativo del producto.
