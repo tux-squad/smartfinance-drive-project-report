@@ -632,6 +632,16 @@ Durante este sprint, nos enfocamos en arreglar las funcionalidades ya existentes
 | tux-squad/smartfinance-drive-mobile-app | develop | `9aef325` | feat: delete mds | - | 2026-10-10 |
 | tux-squad/smartfinance-drive-mobile-app | develop | `dc3a778` | feat: code refactoring, addition of real endpoints | - | 2026-10-10 |
 
+### 5.2.2.5. Implemented Frontend-Web Application Evidence
+
+Log In View
+![FrontEnd_1](../assets/Chapter-5/FrontEnd-1.png)
+
+Account creation view
+![FrontEnd_2](../assets/Chapter-5/FrontEnd-2.png)
+
+Catalogue view
+![FrontEnd_3](../assets/Chapter-5/FrontEnd-3.png)
 
 ## 5.3. Video About-the-Product
 Enlace y presentación del video demostrativo del producto.
