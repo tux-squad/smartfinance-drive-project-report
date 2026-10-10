@@ -116,7 +116,7 @@ La entrega continua (*Continuous Delivery*, CD) mantiene el software en un estad
 - **Docker y `render.yaml`:** describen la construcción y la configuración del servicio backend en Render.
 - **Flyway:** registra las migraciones del esquema de PostgreSQL para mantener la evolución de la base de datos bajo control de versiones.
 - **Aiven:** proporciona PostgreSQL como servicio administrado para el backend.
-- **Trello:** permite organizar las tareas del Sprint y registrar su estado.
+- **Jira:** permite organizar las tareas del Sprint y registrar su estado.
 
 **Prácticas de entrega**
 

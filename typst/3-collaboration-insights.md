@@ -20,7 +20,7 @@ La elaboración del documento estuvo liderada principalmente por **Cotrina Sicll
 
 - **Castillo Yataco, Mauricio Sebastian:** Contribuyó al informe mediante la realización de **dos entrevistas** y la elaboración del **Database Diagram**, proporcionando información y evidencias para complementar la documentación del proyecto.
 
-- **Jonseck Choque, Oliver:** Sin definir.
+- **Jonseck Choque, Oliver:** Contribuyó con la idea original y la base conceptual del proyecto, además de participar en el desarrollo del frontend considerando Domain-Driven Design y la viabilidad del modelo de negocio.
 
 La colaboración realizada durante el AV1 se evidencia mediante los commits y los analíticos de colaboración registrados en el repositorio de GitHub del Project Report.
 

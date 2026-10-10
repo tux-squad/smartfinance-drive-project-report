@@ -43,7 +43,7 @@ Esta área comprende las herramientas utilizadas para definir y documentar la ar
 
 **Product Management**
 
-- **Trello:** herramienta utilizada para administrar el **Product Backlog**, organizar las historias de usuario y realizar el seguimiento de las actividades planificadas para los diferentes Sprints del proyecto.
+- **Jira:** herramienta utilizada para administrar el **Product Backlog**, organizar las historias de usuario y realizar el seguimiento de las actividades planificadas para los diferentes Sprints del proyecto.
 
 **Software Development**
 
