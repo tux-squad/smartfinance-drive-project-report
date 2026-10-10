@@ -364,28 +364,28 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
-| US-01 | Visualizar módulos funcionales | TS1-01 | Maquetar estructura HTML5/CSS3 del Hero y sección Solución de la Landing Page | 4 | Castillo Yataco, Mauricio | Done |
-| US-02 | Consultar membresías B2B | TS1-02 | Construir componente de Pricing Cards con metodología BEM | 3 | Castillo Yataco, Mauricio | Done |
-| US-04 | Navegación fluida | TS1-03 | Implementar script Vanilla JS para Sticky Navbar y Smooth Scroll | 3 | Castillo Yataco, Mauricio | Done |
-| US-08 | Explorar catálogo unificado | TS1-04 | Desarrollar página `/vehicles` en Next.js (Grid UI) | 5 | Machacca Soto, Aldo | Done |
-| US-08 | Explorar catálogo unificado | TS1-05 | Implementar Server Action `getVehicles` consultando a Supabase | 4 | Machacca Soto, Aldo | Done |
-| US-10 | Ficha detallada del vehículo | TS1-06 | Maquetar ruta dinámica `/vehicles/[id]` en Next.js | 4 | Machacca Soto, Aldo | Done |
-| US-10 | Ficha detallada del vehículo | TS1-07 | Crear `createSimulationAction` (simulador base de 30 días, sin gastos iniciales) | 6 | Machacca Soto, Aldo | Done |
-| US-09 | Dashboard métricas comerciales | TS1-08 | Configurar Sidebar y Layout base del Dashboard B2B en App Router | 4 | Castillo Yataco, Mauricio | To Do |
-| US-05 | Registro de nueva cuenta | TS1-09 | Maquetar formulario de Sign Up B2C | 3 | Machacca Soto, Aldo | Done |
-| US-05 | Registro de nueva cuenta | TS1-10 | Integrar `signupAction` con Supabase Auth | 4 | Machacca Soto, Aldo | Done |
-| US-06 | Inicio de sesión compradores | TS1-11 | Crear vista de Login e integrar `loginAction` para manejo de cookies | 4 | Machacca Soto, Aldo | Done |
-| US-07 | Inicio de sesión concesionarias | TS1-12 | Reutilizar `loginAction` y añadir redirección a `/dashboard` por rol | 2 | Machacca Soto, Aldo | Done |
-| TS-01 | Lógica de internacionalización | TS1-13 | Desarrollar script `i18n.js` para parseo de JSON local | 4 | Machacca Soto, Aldo | Done |
-| US-03 | Cambiar el idioma interfaz | TS1-14 | Asignar atributos `data-i18n` en el HTML de la Landing Page | 3 | Castillo Yataco, Mauricio | Done |
-| US-15 | Configuración inicial del proyecto móvil | TS1-15 | Inicializar proyecto Android/Kotlin con Jetpack Compose y estructura modular | 4 | Acosta Elera, Abraam Bernabe | Done |
-| US-16 | Autenticación de usuarios | TS1-16 | Implementar flujo de Login y Register IAM en la aplicación móvil | 6 | Acosta Elera, Abraam Bernabe | Done |
-| US-17 | Explorar catálogo vehicular | TS1-17 | Desarrollar catálogo de vehículos con filtros y presentación visual | 5 | Acosta Elera, Abraam Bernabe | Done |
-| US-18 | Ficha detallada del vehículo | TS1-18 | Crear detalle del vehículo con información de oferta y simulación | 5 | Acosta Elera, Abraam Bernabe | Done |
-| US-19 | Pre-evaluación crediticia | TS1-19 | Implementar flujo de pre-evaluación crediticia dentro de la app móvil | 6 | Acosta Elera, Abraam Bernabe | Done |
-| US-20 | Perfil, configuración y mensajería | TS1-20 | Desarrollar perfil del usuario, configuración y módulo de mensajes | 4 | Acosta Elera, Abraam Bernabe | Done |
+| US-01 | Visualizar información de la plataforma | TS1-01 | Maquetar estructura HTML5/CSS3 del Hero y sección Solución de la Landing Page | 4 | Castillo Yataco, Mauricio | Done |
+| US-02 | Conocer beneficios de la plataforma | TS1-02 | Construir componente interactivo de acordeón de problemas y beneficios | 3 | Castillo Yataco, Mauricio | Done |
+| US-03 | Conocer beneficios de los planes para concesionarias | TS1-03 | Construir componente de Pricing Cards con metodología BEM para planes B2B | 3 | Castillo Yataco, Mauricio | Done |
+| US-04 | Acceder al registro | TS1-04 | Implementar script Vanilla JS para Sticky Navbar, Smooth Scroll y acceso al registro | 3 | Castillo Yataco, Mauricio | Done |
+| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-05 | Desarrollar catálogo base de vehículos con filtros iniciales en la Web App (Vue) | 5 | Machacca Soto, Aldo | Done |
+| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-06 | Implementar servicio de consulta y filtrado de catálogo en el backend (Spring Boot) | 4 | Machacca Soto, Aldo | Done |
+| US-18 | Ver detalle de vehículo | TS1-07 | Maquetar ruta dinámica y vista de ficha detallada del vehículo en la Web App | 4 | Machacca Soto, Aldo | Done |
+| US-18 | Ver detalle de vehículo | TS1-08 | Diseñar endpoint y servicio de detalle de vehículo en el backend | 4 | Machacca Soto, Aldo | Done |
+| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-09 | Investigar fórmulas financieras de mercado y documentar algoritmo del método francés | 6 | Machacca Soto, Aldo | Done |
+| US-19 | Crear simulación de crédito vehicular | TS1-10 | Implementar simulador base de cuotas en la Web App y servicio de cálculo | 6 | Machacca Soto, Aldo | Done |
+| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-11 | Configurar cliente HTTP y mapeo de datos con la API de Factiliza para verificación de DNI | 5 | Cotrina Siclla, Sofia | Done |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-12 | Implementar integración de Brevo para envío de notificaciones y verificación por correo | 4 | Cotrina Siclla, Sofia | Done |
+| US-05 | Registrar cuenta y perfil personal | TS1-13 | Maquetar formulario de Sign Up B2C e integración con servicio de autenticación | 4 | Machacca Soto, Aldo | Done |
+| US-05 | Registrar cuenta y perfil personal | TS1-14 | Inicializar proyecto Android con Jetpack Compose y flujo de registro móvil | 5 | Acosta Elera, Abraam | Done |
+| US-07 | Iniciar sesión | TS1-15 | Implementar pantalla de Login y manejo de tokens en la aplicación móvil | 5 | Acosta Elera, Abraam | Done |
 
-El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Trello: [https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive](https://trello.com/invite/b/68cef3b9540a3e849e12d1e2/ATTI55e37783ca94033bfa115ee21378ce0d092EEDDF/smartfinance-drive)
+**Evidencia del Sprint Backlog 1 en Jira:**
+
+![Sprint Backlog 1](../assets/Chapter-5/Sprint1-jira.png)
+
+El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Jira: [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
+
 
 ##### 5.2.1.4. Development Evidence for Sprint Review
 
@@ -569,45 +569,45 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 
 ##### 5.2.2.3. Sprint Backlog 2
 
-Durante este sprint, nos enfocamos en arreglar las funcionalidades ya existentes e implementar nuevas funcionalidades.
-
+Durante el Sprint 2, el equipo se enfocó en implementar los módulos de gestión de perfiles, inventario de vehículos, publicación, consulta y eliminación de simulaciones, evaluación de solicitudes de crédito e integraciones externas.
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
-| US-06 | Verificar correo electrónico | TS1-21 | Diseñar y maquetar pantalla de verificación de código/OTP en la App Web (Vue) | 3 | | To Do |
-| US-06 | Verificar correo electrónico | TS1-22 | Implementar lógica de reenvío de código y expiración de tokens en Server Actions | 4 | | To Do |
-| US-09 | Visualizar perfil | TS1-23 | Maquetar vista de perfil de usuario con componentes de PrimeVue | 3 | | To Do |
-| US-09 | Visualizar perfil | TS1-24 | Crear endpoint/Server Action para consultar datos de cuenta y roles desde base de datos | 4 | | To Do |
-| US-10 | Editar perfil | TS1-25 | Desarrollar formularios reactivos de edición de datos personales con validación en Vue | 4 | | To Do |
-| US-10 | Editar perfil | TS1-26 | Implementar acción del servidor para actualizar campos e informar errores de data inválida | 4 | | To Do |
-| US-14 | Editar vehículo publicado | TS1-27 | Desarrollar vista de edición de campos comerciales y técnicos del vehículo en panel B2B | 4 | | To Do |
-| US-14 | Editar vehículo publicado | TS1-28 | Integrar Server Action para actualización de datos y re-validación de rangos permitidos | 4 | | To Do |
-| US-15 | Eliminar vehículo | TS1-29 | Crear modal de confirmación de eliminación de unidades en el inventario B2B | 3 | | To Do |
-| US-15 | Eliminar vehículo | TS1-30 | Implementar lógica de borrado lógico/físico y verificación de procesos activos del vehículo | 4 | | To Do |
-| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-31 | Maquetar barra lateral de filtros avanzados y componentes reactivos de búsqueda | 5 | | To Do |
-| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-32 | Desarrollar query dinámica parametrizada para Supabase/Base de datos según filtros seleccionados | 5 | | To Do |
-| US-17 | Ordenar resultados de búsqueda | TS1-33 | Agregar selectores de ordenamiento (precio, año, kilometraje) en la UI del catálogo | 3 | | To Do |
-| US-17 | Ordenar resultados de búsqueda | TS1-34 | Implementar lógica de reordenamiento de arreglos en el frontend y ordenamiento desde backend | 3 | | To Do |
-| US-18 | Ver detalle de vehículo | TS1-35 | Maquetar sección detallada con carrusel de imágenes y especificaciones técnicas completas | 4 | | To Do |
-| US-18 | Ver detalle de vehículo | TS1-36 | Desarrollar middleware de verificación para alertar si el vehículo dejó de estar disponible | 3 | | To Do |
-| US-19 | Crear simulación de crédito vehicular | TS1-37 | Construir formulario dinámico con sliders para cuota inicial, plazos y cálculo de interés | 5 | | To Do |
-| US-19 | Crear simulación de crédito vehicular | TS1-38 | Programar algoritmo financiero para proyección de cuota estimada y costo total del crédito | 5 | | To Do |
-| US-20 | Consultar simulaciones guardadas | TS1-39 | Diseñar sección de historial y listado de simulaciones crediticias previas del cliente | 4 | | To Do |
-| US-20 | Consultar simulaciones guardadas | TS1-40 | Implementar Server Action para recuperar colecciones de simulaciones guardadas por usuario | 4 | | To Do |
-| US-21 | Eliminar simulación guardada | TS1-41 | Añadir botón de remoción y flujo de confirmación en la lista de simulaciones | 3 | | To Do |
-| US-21 | Eliminar simulación guardada | TS1-42 | Crear backend handler para eliminar registros específicos de simulaciones en base de datos | 3 | | To Do |
-| US-22 | Evaluar solicitud de crédito | TS1-43 | Diseñar bandeja de trabajo para Entidades Financieras con listado de expedientes asignados | 5 | | To Do |
-| US-22 | Evaluar solicitud de crédito | TS1-44 | Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales y actualización de estado | 6 | | To Do |
-| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-45 | Investigar fórmulas financieras de mercado y redactar el documento técnico de reglas de cálculo | 6 | | To Do |
-| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-46 | Desarrollar prototipo en script aislado (test) para validación matemática del algoritmo | 4 | | To Do |
-| SP-02 | Investigar servicios de notificaciones por correo y push | TS1-47 | Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | | To Do |
-| SP-02 | Investigar servicios de notificaciones por correo y push | TS1-48 | Construir prototipo funcional mínimo de envío de correos transaccionales automatizados | 5 | | To Do |
-| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-49 | Configurar cliente HTTP, tokens de autenticación y mapeo de datos con la API de Factiliza | 5 | | To Do |
-| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-50 | Desarrollar control de excepciones para caídas del servicio externo e integración en el registro | 4 | | To Do |
-| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS1-51 | Configurar la integración con los endpoints de Chequea.pe y validación sintáctica de RUC | 5 | | To Do |
-| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS1-52 | Desarrollar lógica de auto-llenado de datos empresariales tras la validación exitosa de SUNAT | 4 | | To Do |
-| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-53 | Implementar SDK o Webhooks de Brevo y plantillas HTML para correos transaccionales | 5 | | To Do |
-| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-54 | Conectar los eventos de cambio de estado de créditos con el trigger de notificaciones Brevo | 4 | | To Do |
+| US-06 | Verificar correo electrónico | TS2-01 | Diseñar y maquetar pantalla de verificación de código/OTP en la App Web (Vue) | 3 | Machacca Soto, Aldo | Done |
+| US-06 | Verificar correo electrónico | TS2-02 | Implementar lógica de reenvío de código y expiración de tokens en el backend | 4 | Machacca Soto, Aldo | Done |
+| US-09 | Visualizar perfil | TS2-03 | Maquetar vista de perfil de usuario en la App Web | 3 | Jonseck Choque, Oliver | Done |
+| US-09 | Visualizar perfil | TS2-04 | Crear endpoint para consultar datos de cuenta y roles desde base de datos | 4 | Machacca Soto, Aldo | Done |
+| US-10 | Editar perfil | TS2-05 | Desarrollar formularios reactivos de edición de datos personales con validación en Vue | 4 | Jonseck Choque, Oliver | Done |
+| US-10 | Editar perfil | TS2-06 | Implementar servicio en backend para actualizar campos e informar errores de data | 4 | Machacca Soto, Aldo | Done |
+| US-11 | Listar inventario de vehículos | TS2-07 | Diseñar interfaz de inventario de vehículos para concesionarias en la Web App | 4 | Jonseck Choque, Oliver | Done |
+| US-11 | Listar inventario de vehículos | TS2-08 | Implementar consulta de inventario por concesionaria en el backend | 4 | Machacca Soto, Aldo | Done |
+| US-12 | Registrar vehículo | TS2-09 | Maquetar formulario de registro de nueva unidad en el panel de concesionarias | 5 | Jonseck Choque, Oliver | Done |
+| US-12 | Registrar vehículo | TS2-10 | Desarrollar endpoint de registro de vehículo con validación de datos en el backend | 5 | Machacca Soto, Aldo | Done |
+| US-13 | Publicar vehículo | TS2-11 | Implementar acción de publicación y cambio de visibilidad en el catálogo | 3 | Jonseck Choque, Oliver | Done |
+| US-13 | Publicar vehículo | TS2-12 | Desarrollar lógica de publicación y estado de vehículos en el backend | 4 | Machacca Soto, Aldo | Done |
+| US-14 | Editar vehículo publicado | TS2-13 | Desarrollar vista de edición de campos comerciales y técnicos del vehículo | 4 | Jonseck Choque, Oliver | Done |
+| US-14 | Editar vehículo publicado | TS2-14 | Integrar servicio en backend para actualización de datos del vehículo | 4 | Machacca Soto, Aldo | Done |
+| US-15 | Eliminar vehículo | TS2-15 | Crear modal de confirmación de eliminación de unidades en el inventario B2B | 3 | Jonseck Choque, Oliver | Done |
+| US-15 | Eliminar vehículo | TS2-16 | Implementar lógica de borrado lógico y verificación de procesos activos | 4 | Machacca Soto, Aldo | Done |
+| US-17 | Ordenar resultados de búsqueda | TS2-17 | Agregar selectores de ordenamiento (precio, año, marca) en la UI del catálogo | 3 | Jonseck Choque, Oliver | Done |
+| US-17 | Ordenar resultados de búsqueda | TS2-18 | Implementar lógica de ordenamiento en backend y ordenamiento en cliente | 3 | Machacca Soto, Aldo | Done |
+| US-20 | Consultar simulaciones guardadas | TS2-19 | Diseñar sección de historial y listado de simulaciones crediticias previas del cliente | 4 | Machacca Soto, Aldo | Done |
+| US-20 | Consultar simulaciones guardadas | TS2-20 | Implementar servicio para recuperar colecciones de simulaciones guardadas por usuario | 4 | Machacca Soto, Aldo | Done |
+| US-21 | Eliminar simulación guardada | TS2-21 | Añadir botón de remoción y flujo de confirmación en la lista de simulaciones | 3 | Machacca Soto, Aldo | Done |
+| US-21 | Eliminar simulación guardada | TS2-22 | Crear endpoint en backend para eliminar registros específicos de simulaciones | 3 | Machacca Soto, Aldo | Done |
+| US-22 | Evaluar solicitud de crédito | TS2-23 | Diseñar bandeja de trabajo para Entidades Financieras con listado de expedientes | 5 | Castillo Yataco, Mauricio | Done |
+| US-22 | Evaluar solicitud de crédito | TS2-24 | Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales | 6 | Castillo Yataco, Mauricio | Done |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-25 | Configurar la integración con los endpoints de Chequea.pe y validación de RUC | 5 | Cotrina Siclla, Sofia | Done |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-26 | Desarrollar lógica de auto-llenado de datos empresariales tras validación de SUNAT | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-27 | Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-28 | Construir prototipo funcional de envío de correos transaccionales automatizados | 5 | Cotrina Siclla, Sofia | Done |
+
+**Evidencia del Sprint Backlog 2 en Jira:**
+
+![Sprint Backlog 2](../assets/Chapter-5/Sprint2-jira.png)
+
+El tablero de control del Sprint 2 se encuentra disponible de manera pública en el siguiente enlace de Jira: [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
+
 
 ##### 5.2.2.4. Development Evidence for Sprint Review
 

@@ -13,6 +13,7 @@
 | 0.9.0 | 10/10/2026 | Cotrina Siclla, Sofia Alessandra | Implementación del Capítulo VII: DevOps Practices (Continuous Integration, Continuous Delivery y Continuous Deployment) y actualización de entornos de producción. |
 | 0.10.0 | 10/10/2026 | Cotrina Siclla, Sofia Alessandra | Correcciones generales en la estructura del informe, enlaces de evidencias (Figma, Jira) y formato de tablas y anexos. |
 | 0.11.0 | 10/10/2026 | Castillo Yataco, Mauricio Sebastian | Desarrollo del Capítulo VI: Product Verification & Validation (pruebas unitarias, de integración, BDD y de sistema). |
+| 0.12.0 | 10/10/2026 | Jonseck Choque, Oliver | Actualización del Capítulo V: Product Implementation (Sprint 2 backlog, evidencias de frontend web) y video About-the-Product. |
 
 ```{=typst}
 #pagebreak()
