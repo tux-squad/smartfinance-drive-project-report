@@ -49,7 +49,7 @@ El repositorio contiene 90 clases de prueba en `src/test/java` con 405 métodos 
 
 Las pruebas unitarias de entidades verifican que los agregados, los *value objects* y los servicios de dominio cumplan sus reglas de negocio **en aislamiento**, sin base de datos ni contexto de Spring. Cada prueba construye el objeto directamente y valida el estado resultante o la excepción de dominio (`DomainValidationException`) cuando se viola una invariante.
 
-#### Pruebas por contexto
+**Pruebas por contexto**
 
 **IAM**
 
@@ -88,7 +88,7 @@ Las pruebas unitarias de entidades verifican que los agregados, los *value objec
 | `Money` | `MoneyTest` | 10 | Creación válida y con moneda por defecto; rechazo de importes inválidos; suma y resta; rechazo de operaciones entre monedas distintas; multiplicación por entero y por decimal; comparaciones. |
 | `Percent` | `PercentTest` | 6 | Creación válida e inválida, fábricas `of` y `fromDecimal`, conversión a decimal y formato de texto. |
 
-#### Ejemplos de pruebas
+**Ejemplos de pruebas**
 
 **`UserTest` — gestión de roles del agregado `User`**
 
@@ -169,7 +169,7 @@ void shouldPreventChangingTerminalDisbursedState() {
 }
 ```
 
-#### Ejecución de las pruebas
+**Ejecución de las pruebas**
 
 Las pruebas se ejecutan con Maven desde la raíz del repositorio `smartfinance-drive-platform` (requiere JDK 26, según `pom.xml`):
 
@@ -207,7 +207,7 @@ Las pruebas de integración verifican que los controladores REST interactúen co
 1. **Pruebas de controladores con servicios simulados.** Cada controlador se instancia con sus servicios de aplicación simulados con Mockito y se invoca como lo haría Spring MVC. Validan el mapeo recurso ↔ comando/consulta y el código de estado (`201 Created`, `200 OK`, `204 No Content`).
 2. **Pruebas de integración de la capa HTTP con `@WebMvcTest` y `MockMvc`.** Levantan el contexto web de Spring con la cadena de seguridad y envían peticiones HTTP reales contra los controladores. Validan autenticación (`401`), autorización por rol y propiedad (`403`), validación de entrada (`400`) y respuestas exitosas (`200`).
 
-#### Pruebas de controladores core
+**Pruebas de controladores core**
 
 | Controlador | Clase de prueba | Pruebas | Escenarios verificados |
 | --- | --- | ---: | --- |
@@ -257,7 +257,7 @@ void shouldEvaluateCreditScore() {
 }
 ```
 
-#### Pruebas de integración HTTP con MockMvc
+**Pruebas de integración HTTP con MockMvc**
 
 | Clase de prueba | Contexto | Pruebas | Escenarios verificados |
 | --- | --- | ---: | --- |
@@ -290,7 +290,7 @@ void lookupRequiresAuthentication() throws Exception {
 }
 ```
 
-#### Ejecución de las pruebas de integración
+**Ejecución de las pruebas de integración**
 
 ```bash
 ./mvnw test -Dtest="AuthenticationControllerTest,VehiclesControllerTest,SimulationsControllerTest,CreditApplicationsControllerTest,CreditScoresControllerTest,CorporateVerificationWebMvcSecurityTest,PhoneVerificationWebMvcTest,FinancialEntitiesWebMvcSecurityTest,AnalyticsWebMvcSecurityTest"
@@ -320,7 +320,7 @@ Con BDD se describe el comportamiento esperado del sistema en lenguaje natural c
 
 Los escenarios se ejecutan contra las reglas de dominio reales (`FinancingPlanBuilder`, `CreditScoringEngine`, `User`, `Vehicle`, `CreditApplication`), por lo que no necesitan base de datos ni servicios externos.
 
-#### Configuración
+**Configuración**
 
 Dependencias de prueba que se agregan a `pom.xml`:
 
@@ -383,7 +383,7 @@ class CucumberSuiteTest {
 }
 ```
 
-#### Relación entre features y User Stories
+**Relación entre features y User Stories**
 
 | Feature | Archivo | Escenarios | Bounded context | User Story |
 | --- | --- | ---: | --- | --- |
@@ -393,7 +393,7 @@ class CucumberSuiteTest {
 | Evaluación de riesgo crediticio | `credit-scoring.feature` | 4 | Scoring | US-28 Pre-evaluación de riesgo crediticio |
 | Ciclo de vida de la solicitud de crédito | `credit-application.feature` | 5 | Financing | US-36 Evaluación oficial de solicitud de crédito |
 
-#### Feature 1: Generación del plan de financiamiento
+**Feature 1: Generación del plan de financiamiento**
 
 `src/test/resources/features/financing-plan.feature`
 
@@ -530,7 +530,7 @@ public class FinancingPlanSteps {
 }
 ```
 
-#### Feature 2: Evaluación de riesgo crediticio
+**Feature 2: Evaluación de riesgo crediticio**
 
 `src/test/resources/features/credit-scoring.feature`
 
@@ -624,7 +624,7 @@ public class CreditScoringSteps {
 }
 ```
 
-#### Feature 3: Registro de usuario
+**Feature 3: Registro de usuario**
 
 `src/test/resources/features/user-registration.feature`
 
@@ -704,7 +704,7 @@ public class UserRegistrationSteps {
 }
 ```
 
-#### Feature 4: Publicación de vehículos en el catálogo
+**Feature 4: Publicación de vehículos en el catálogo**
 
 `src/test/resources/features/vehicle-listing.feature`
 
@@ -798,7 +798,7 @@ public class VehicleListingSteps {
 }
 ```
 
-#### Feature 5: Ciclo de vida de la solicitud de crédito
+**Feature 5: Ciclo de vida de la solicitud de crédito**
 
 `src/test/resources/features/credit-application.feature`
 
@@ -901,7 +901,7 @@ public class CreditApplicationSteps {
 }
 ```
 
-#### Ejecución de los escenarios BDD
+**Ejecución de los escenarios BDD**
 
 ```bash
 ./mvnw test -Dtest=CucumberSuiteTest
@@ -917,7 +917,7 @@ public class CreditApplicationSteps {
 
 Las pruebas de sistema validan la aplicación **completa y en ejecución** (API REST, Spring Security, JWT y base de datos PostgreSQL), recorriendo los flujos de usuario de extremo a extremo a través de la API documentada con OpenAPI/Swagger. A diferencia de las pruebas anteriores, aquí no se simula ningún componente interno.
 
-#### Entorno de ejecución
+**Entorno de ejecución**
 
 | Elemento | Valor |
 | --- | --- |
@@ -927,7 +927,7 @@ Las pruebas de sistema validan la aplicación **completa y en ejecución** (API 
 | Herramienta cliente | Swagger UI (`/swagger-ui/index.html`) o Postman |
 | Autenticación | `Authorization: Bearer <token>` obtenido en `POST /api/v1/auth/sessions` |
 
-#### Casos de prueba de sistema
+**Casos de prueba de sistema**
 
 | ID | User Story | Caso de prueba | Petición | Resultado esperado | Resultado obtenido |
 | --- | --- | --- | --- | --- | --- |
@@ -952,7 +952,7 @@ Las pruebas de sistema validan la aplicación **completa y en ejecución** (API 
 
 Las historias de la aplicación móvil (US-38 a US-45) y las de interfaz exclusivamente visual se validan en sus propios clientes. Los códigos esperados se derivaron de las reglas de seguridad y de los controladores del backend; si al ejecutar un caso el código obtenido difiere, debe registrarse el obtenido y analizarse la causa.
 
-#### Evidencia de ejecución
+**Evidencia de ejecución**
 
 ![Core System Tests 1](assets/Chapter-6/Core System Tests-1.jpeg)
 

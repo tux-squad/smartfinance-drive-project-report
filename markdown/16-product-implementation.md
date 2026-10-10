@@ -6,7 +6,7 @@
 
 En esta sección se presentan las principales herramientas utilizadas durante el desarrollo de **SmartFinance Drive**, organizadas según las actividades de UX/UI Design, arquitectura, modelado, gestión del producto y desarrollo de software.
 
-#### Product UX/UI Design
+**Product UX/UI Design**
 
 Esta área comprende las actividades relacionadas con el análisis de usuarios, definición de experiencias, diseño de interfaces y validación de los flujos de interacción de SmartFinance Drive.
 
@@ -27,7 +27,7 @@ Esta área comprende las actividades relacionadas con el análisis de usuarios, 
 
 - **Overflow:** herramienta utilizada para desarrollar **Wireflows y User Flows**, permitiendo representar las rutas de navegación y las interacciones principales que puede realizar un usuario dentro de la plataforma.
 
-#### Software Architecture & Modeling
+**Software Architecture & Modeling**
 
 Esta área comprende las herramientas utilizadas para definir y documentar la arquitectura y estructura interna de SmartFinance Drive.
 
@@ -41,11 +41,11 @@ Esta área comprende las herramientas utilizadas para definir y documentar la ar
     - Class Dictionary.
     - Relational/Non-Relational Database Diagram.
 
-#### Product Management
+**Product Management**
 
 - **Trello:** herramienta utilizada para administrar el **Product Backlog**, organizar las historias de usuario y realizar el seguimiento de las actividades planificadas para los diferentes Sprints del proyecto.
 
-#### Software Development
+**Software Development**
 
 El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Page, Frontend Web Application, Backend y Native Mobile Application**, utilizando tecnologías específicas para cada componente.
 
@@ -79,7 +79,7 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
     - **MVVM / Clean Architecture Style:** utilizado como enfoque estructural para separar la lógica de negocio, los casos de uso y la capa de presentación.
     - **Auth + Catalog + Financing + Profiles + Settings + Messaging:** módulos implementados para cubrir la autenticación de usuarios, catálogo de vehículos, preevaluación crediticia, perfiles, configuración y mensajería interna.
 
-#### Database & Authentication
+**Database & Authentication**
 
 - **PostgreSQL:** sistema de gestión de bases de datos relacional utilizado para la persistencia de la información de SmartFinance Drive.
 
@@ -87,7 +87,7 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
 
 - **Supabase:** plataforma utilizada principalmente para la autenticación y gestión de sesiones de los usuarios. También se utiliza para almacenar información relacionada con los perfiles de usuario.
 
-#### Development Environment
+**Development Environment**
 
 - **Git:** utilizado para el control de versiones del código fuente y el seguimiento de los cambios realizados durante el desarrollo.
 
@@ -113,7 +113,7 @@ Para gestionar el código fuente de **SmartFinance Drive**, el equipo utiliza **
 * **Native Mobile Application:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
 * **Project Report & Documentación:** [https://github.com/tux-squad/smartfinance-drive-project-report](https://github.com/tux-squad/smartfinance-drive-project-report)
 
-#### GitFlow Workflow
+**GitFlow Workflow**
 
 El proyecto utiliza **GitFlow** para organizar el desarrollo mediante diferentes tipos de ramas:
 
@@ -131,7 +131,7 @@ Las ramas de funcionalidades siguen la estructura:
 feature/nombre-de-la-funcionalidad
 ```
 
-#### Conventional Commits
+**Conventional Commits**
 
 Los commits siguen **Conventional Commits** para mantener un historial organizado:
 
@@ -444,7 +444,7 @@ Se presenta a los miembros del equipo *tux-squad*. Se implementó un slider hori
 
 ![Landing Page 5](../assets/Chapter-5/LandingPage-5.png)
 
-#### URL de Despliegue en Producción
+**URL de Despliegue en Producción**
 
 La Landing Page se encuentra desplegada y disponible en producción mediante **Vercel**:
 
@@ -483,7 +483,7 @@ Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicaci
 
 La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
 
-#### Evidencia visual de la aplicación móvil
+**Evidencia visual de la aplicación móvil**
 
 ![Mobile App 1](../assets/Chapter-5/mobile1.jpeg)
 ![Mobile App 1](../assets/Chapter-5/mobile2.jpeg)
