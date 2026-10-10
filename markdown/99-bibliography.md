@@ -32,8 +32,8 @@ Yandex. (2026). *BEM — Block element modifier methodology*. [https://en.bem.in
 
 **Anexo B: Entornos de Producción Desplegados**
 
-- **Landing Page (Vercel):** [https://smartfinance-drive.vercel.app/](https://smartfinance-drive.vercel.app/)
-- **Web Application (Vercel):** [https://app.smartfinance-drive.vercel.app/](https://app.smartfinance-drive.vercel.app/)
+- **Landing Page (Vercel):** [https://smartfinance-drive-landingpage.vercel.app/](https://smartfinance-drive-landingpage.vercel.app/)
+- **Web Application (Vercel):** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
 - **RESTful API / Backend (Render):** [https://smartfinance-drive-platform.onrender.com](https://smartfinance-drive-platform.onrender.com)
 - **API Documentation (Swagger UI):** [https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html](https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html)
 - **Reporte del Proyecto (Web Version):** [https://report.smartfinance-drive.vercel.app/](https://report.smartfinance-drive.vercel.app/)

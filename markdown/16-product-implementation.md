@@ -315,13 +315,15 @@ En esta sección presentamos los pasos que seguimos para desplegar los proyectos
 Para el despliegue de la landing page, escogimos **Vercel**, un servicio de hosting en la nube especializado en experiencias frontend que permite publicar sitios web estáticos directamente desde repositorios de GitHub. Esta alternativa nos permitió centralizar el código fuente (HTML, CSS, JS) en un mismo entorno, facilitando el control de versiones y asegurando que cada actualización realizada en el repositorio se refleje automáticamente en el sitio publicado con tiempos de carga óptimos gracias a su CDN (Content Delivery Network).
 
 **Base de Datos:**
-Para el despliegue de la base de datos relacional de la plataforma, optamos por **Supabase** como plataforma. Esta herramienta simplifica considerablemente el proceso de aprovisionamiento, ya que permite crear instancias de bases de datos PostgreSQL en pocos pasos desde su panel de administración. Además, Supabase genera de forma automática las credenciales de acceso y gestiona políticas de seguridad a nivel de fila (RLS), lo que reduce la complejidad de la configuración manual. Asimismo, incorpora funcionalidades como copias de seguridad automáticas y monitoreo integrado, facilitando la protección del inventario vehicular y los perfiles de los usuarios.
+Para el despliegue de la base de datos relacional de la plataforma, optamos por **Aiven PostgreSQL** como servicio administrado. Esta solución simplifica el aprovisionamiento, permitiendo crear instancias de PostgreSQL en la nube con alta disponibilidad, copias de seguridad automáticas y monitoreo integrado, facilitando la protección del inventario vehicular y los datos transaccionales del sistema.
 
 **Backend:**
-El backend fue desplegado en **Render**, aprovechando la facilidad que ofrece esta plataforma para alojar APIs y Web Services dentro de un entorno escalable y de alta disponibilidad. Para ello, conectamos el repositorio del backend a los Web Services de Render, el cual detecta automáticamente el código, instala las dependencias necesarias y realiza el despliegue correspondiente bajo el dominio `smartfinance-drive-platform.onrender.com`. De este modo, pudimos definir las variables de entorno (como tokens bancarios y cadenas de conexión a Supabase) directamente desde el panel de la plataforma, beneficiándonos de certificados SSL integrados, despliegues continuos (CI/CD) y monitoreo en tiempo real.
+El backend fue desplegado en **Render** mediante contenedores Docker, aprovechando la facilidad que ofrece esta plataforma para alojar APIs y Web Services dentro de un entorno escalable y de alta disponibilidad. Para ello, conectamos el repositorio del backend a los Web Services de Render, el cual detecta automáticamente el código, ejecuta el `Dockerfile` y realiza el despliegue correspondiente bajo el dominio `smartfinance-drive-platform.onrender.com`. De este modo, pudimos definir las variables de entorno (como parámetros de JWT y cadenas de conexión a Aiven PostgreSQL) directamente desde el panel de la plataforma, beneficiándonos de certificados SSL integrados, despliegues continuos (CI/CD) y monitoreo en tiempo real.
 
 **Frontend (Vue.js Web Application):**
 Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrollado en **Vue.js**), también elegimos **Vercel**, aprovechando su excelente integración nativa con frameworks de Single Page Applications (SPA). Esta plataforma automatiza el proceso de compilación (`npm run build`) mediante herramientas como Vite, de manera que cada *Pull Request* genera una vista previa, y cada *merge* a la rama principal genera una nueva versión estable de la aplicación en producción. Además, Vercel gestiona automáticamente el enrutamiento del lado del cliente (Vue Router) mediante configuraciones de reescritura (`rewrites`) para asegurar que la navegación entre las vistas (ej. inventario, panel de prospectos) funcione correctamente sin devolver errores 404.
+
+* **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
 
 ## 5.2. Product Implementation & Deployment
 
@@ -450,7 +452,10 @@ La Landing Page se encuentra desplegada y disponible en producción mediante **V
 
 ### 5.2.3. Implemented Frontend-Web Application Evidence
 
-> **Pendiente:** Evidencia del frontend desplegado de la aplicación web.
+La aplicación web principal de **SmartFinance Drive** (desarrollada con **Vue.js**, **TypeScript** y **Vite**) se encuentra desplegada y disponible en producción mediante **Vercel**:
+
+* **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
+* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-webapp](https://github.com/tux-squad/smartfinance-drive-webapp)
 
 ### 5.2.4. Acuerdo de Servicio - SaaS
 
@@ -498,6 +503,8 @@ El backend de SmartFinance Drive está desarrollado utilizando el framework Spri
 ### 5.2.7. RESTful API documentation
 
 Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
+
+* **Documentación interactiva (Swagger UI):** [https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html](https://smartfinance-drive-platform.onrender.com/swagger-ui/index.html)
 
 ![Swager 1](../assets/Chapter-5/Swager-1.png)
 
