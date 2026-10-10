@@ -34,4 +34,32 @@ La colaboración realizada durante el AV1 se evidencia mediante los commits y lo
 
 Las evidencias presentadas permiten visualizar la actividad registrada en el repositorio durante la elaboración del **Avance 1 (AV1)** y su relación con las modificaciones realizadas en el Project Report.
 
+**Trabajo Parcial (TB1)**
+
+Durante el **Trabajo Parcial (TB1)** se desarrolló y consolidó el Project Report, incorporando las diferentes secciones, evidencias y artefactos correspondientes al avance del proyecto.
+
+La elaboración del documento estuvo liderada principalmente por **Cotrina Siclla, Sofia Alessandra**, quien se encargó de gran parte de la redacción, organización y consolidación del informe. Los demás integrantes contribuyeron con evidencias y contenidos relacionados con las actividades que desarrollaron durante el proyecto.
+
+- **Acosta Elera, Abraam Bernabe:** Responsable del desarrollo de la aplicación móvil y de la actualización de las evidencias correspondientes a su implementación.
+
+- **Machacca Soto, Aldo Jeanfranco:** Responsable del desarrollo del frontend web y backend, así como de las evidencias de implementación correspondientes.
+
+- **Castillo Yataco, Mauricio Sebastian:** Responsable de actualizar el Capítulo III: Requirements Specification y desarrollar el Capítulo VI: Product Verification & Validation.
+
+- **Cotrina Siclla, Sofia Alessandra:** Responsable de actualizar el Capítulo III: Requirements Specification y desarrollar el Capítulo VII: DevOps Practices, además de la consolidación del Project Report.
+
+- **Jonseck Choque, Oliver:** Sin definir.
+
+La colaboración realizada durante el TB1 se evidencia mediante los commits y los analíticos de colaboración registrados en el repositorio de GitHub del Project Report.
+
+**GitHub Collaboration Insights**
+
+![Team Collaboration Insights - TB1](../assets/Chapter-1/Team-Collaboration-Insights-TB1.png)
+
+**GitHub Commits**
+
+![GitHub Commits - TB1](../assets/Chapter-1/GitHub-Commits-TB1.png)
+
+Las evidencias presentadas permiten visualizar la actividad registrada en el repositorio durante la elaboración del **Trabajo Parcial (TB1)** y su relación con las modificaciones realizadas en el Project Report.
+
 La información presentada mantiene coherencia con el **Registro de Versiones del Informe**, permitiendo identificar la evolución del documento y las contribuciones realizadas por los integrantes durante esta entrega.

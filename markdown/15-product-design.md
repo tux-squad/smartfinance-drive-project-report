@@ -224,7 +224,7 @@ En esta sección se traducen la arquitectura de la información y las decisiones
 
 ![mobile-wireframe-26](../assets/Chapter-4/mobile-wireframe-26.png){width=45%}
 
-* **Enlace interactivo de Wireframes Móviles en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
+* **Enlace interactivo de Wireframes Móviles en Figma:** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
@@ -316,7 +316,7 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 
 ![mobile-mockups-26](../assets/Chapter-4/mobile-mockups-26.png){width=45%}
 
-* **Enlace interactivo de Mockups Móviles en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+* **Enlace interactivo de Mockups Móviles en Figma:** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
@@ -428,7 +428,7 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 
 ![webapp-wireframe-26](../assets/Chapter-4/webapp-wireframe-26.png)
 
-* **Enlace interactivo de Wireframes Web en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=58-4662&t=ErLvGWZO6OhYc7Gn-1)
+* **Enlace interactivo de Wireframes Web en Figma:** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 
 ### 4.6.2. Web Applications Wireflow Diagrams
 
@@ -520,7 +520,7 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 
 ![webapp-mockups-26](../assets/Chapter-4/webapp-mockups-26.png)
 
-* **Enlace interactivo de Mockups Web en Figma:** [https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1](https://www.figma.com/design/Y1OlsMPRg1honobI0XvqpJ/SmartFinance-Drive?node-id=0-1&t=ErLvGWZO6OhYc7Gn-1)
+* **Enlace interactivo de Mockups Web en Figma:** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 
 ### 4.6.4. Web Applications User Flow Diagrams
 
