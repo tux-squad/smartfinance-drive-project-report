@@ -20,453 +20,515 @@
 
 En esta sección se definen los requisitos funcionales, no funcionales y técnicos de SmartFinance Drive mediante un conjunto estructurado de Epics y User Stories. La redacción contempla los tres segmentos objetivo (Compradores, Concesionarias de nuevos y Concesionarias de usados), así como las historias técnicas necesarias para la viabilidad de la plataforma.
 
-| **US-01** | **Registro de cuenta y perfil personal** |
+| **US-01** | **Visualizar información de la plataforma** |
+| :--- | :--- |
+| **User** | Visitante |
+| **Priority** | Alta |
+| **Epic** | Landing Page y captación |
+| **Description** | Como Visitante, quiero visualizar información general de la plataforma, para conocer su propósito, funcionamiento y propuesta de valor antes de registrarme. |
+| **Acceptance Criteria** | **Escenario 1 — Visualización de información**<br>**Dado** que el visitante accede a la plataforma,<br>**Cuando** consulta la información general del servicio,<br>**Entonces** puede visualizar información general sobre la plataforma y sus principales funcionalidades.<br><br>**Escenario 2 — Navegación de información**<br>**Dado** que el visitante consulta la información de la plataforma,<br>**Cuando** explora sus diferentes contenidos y servicios,<br>**Entonces** puede acceder a la información presentada de manera clara y organizada. |
+
+<br>
+
+| **US-02** | **Conocer beneficios de la plataforma** |
+| :--- | :--- |
+| **User** | Visitante |
+| **Priority** | Alta |
+| **Epic** | Landing Page y captación |
+| **Description** | Como Visitante, quiero conocer los beneficios de utilizar la plataforma, para comprender cómo puede facilitar la búsqueda y gestión de opciones de financiamiento vehicular. |
+| **Acceptance Criteria** | **Escenario 1 — Visualización de beneficios**<br>**Dado** que el visitante accede a la plataforma,<br>**Cuando** consulta los beneficios de la solución,<br>**Entonces** puede visualizar los principales beneficios ofrecidos por la plataforma.<br><br>**Escenario 2 — Información comprensible**<br>**Dado** que el visitante revisa los beneficios,<br>**Cuando** analiza cada propuesta de valor,<br>**Entonces** la información se presenta de forma clara y comprensible. |
+
+<br>
+
+| **US-03** | **Conocer beneficios de los planes** |
+| :--- | :--- |
+| **User** | Visitante |
+| **Priority** | Alta |
+| **Epic** | Landing Page y captación |
+| **Description** | Como Visitante, quiero conocer los beneficios de los planes disponibles, para identificar qué opción se adapta a las necesidades de una concesionaria. |
+| **Acceptance Criteria** | **Escenario 1 — Visualización de planes**<br>**Dado** que el visitante requiere evaluar las opciones de suscripción,<br>**Cuando** consulta los planes comerciales disponibles,<br>**Entonces** puede visualizar los planes ofrecidos y sus principales características.<br><br>**Escenario 2 — Comparación de beneficios**<br>**Dado** que existen diferentes planes de membresía,<br>**Cuando** el visitante compara sus características y coberturas,<br>**Entonces** puede identificar las diferencias entre sus beneficios. |
+
+<br>
+
+| **US-04** | **Acceder al registro desde la Landing Page** |
+| :--- | :--- |
+| **User** | Visitante |
+| **Priority** | Alta |
+| **Epic** | Landing Page y captación |
+| **Description** | Como Visitante, quiero acceder al registro desde la plataforma, para crear una cuenta y utilizar sus funcionalidades. |
+| **Acceptance Criteria** | **Escenario 1 — Acceso al registro**<br>**Dado** que el visitante no cuenta con una cuenta registrada,<br>**Cuando** solicita registrarse en la plataforma,<br>**Entonces** la plataforma inicia el proceso de registro de cuenta.<br><br>**Escenario 2 — Inicio del registro**<br>**Dado** que el visitante inicia el proceso de registro,<br>**Cuando** proporciona los datos requeridos para la creación de cuenta,<br>**Entonces** puede ingresar la información necesaria para registrarse. |
+
+<br>
+
+| **US-05** | **Registro de cuenta y perfil personal** |
 | :--- | :--- |
 | **User** | Visitante |
 | **Priority** | Alta |
 | **Epic** | Gestión de acceso y cuenta |
-| **Description** | Como Visitante, quiero crear una cuenta ingresando mi correo, contraseña y datos personales básicos desde la aplicación web, para acceder a la plataforma como Cliente y contar con un perfil inicial. |
-| **Acceptance Criteria** | **Escenario 1 — Registro exitoso**<br>**Dado** que el visitante se encuentra en el formulario de registro,<br>**Cuando** ingresa un correo válido, una contraseña y los datos personales obligatorios y confirma el registro,<br>**Entonces** la plataforma crea su cuenta y muestra una confirmación.<br><br>**Escenario 2 — Registro con datos inválidos o duplicados**<br>**Dado** que el visitante intenta registrarse con datos obligatorios incompletos o un correo ya registrado,<br>**Cuando** envía el formulario,<br>**Entonces** la plataforma impide el registro e informa qué dato debe corregir. |
+| **Description** | Como Visitante, quiero registrar una cuenta y completar mi perfil personal, para acceder a las funcionalidades disponibles para usuarios registrados. |
+| **Acceptance Criteria** | **Escenario 1 — Registro exitoso**<br>**Dado** que el visitante inicia su registro en la plataforma,<br>**Cuando** completa correctamente los campos obligatorios y confirma su solicitud,<br>**Entonces** la plataforma crea su cuenta y solicita la verificación del correo electrónico.<br><br>**Escenario 2 — Datos incompletos**<br>**Dado** que el visitante intenta registrarse,<br>**Cuando** omite información obligatoria o proporciona datos inválidos,<br>**Entonces** la plataforma informa los campos que deben corregirse y no procesa el registro. |
 
 <br>
 
-| **US-02** | **Inicio de sesión** |
+| **US-06** | **Verificar correo electrónico** |
 | :--- | :--- |
 | **User** | Usuario Registrado |
 | **Priority** | Alta |
 | **Epic** | Gestión de acceso y cuenta |
-| **Description** | Como Usuario Registrado, quiero iniciar sesión con mis credenciales, para acceder a las funcionalidades correspondientes a mi rol. |
-| **Acceptance Criteria** | **Escenario 1 — Inicio de sesión exitoso**<br>**Dado** que el usuario registrado tiene credenciales válidas,<br>**Cuando** ingresa su correo y contraseña y selecciona iniciar sesión,<br>**Entonces** accede a la plataforma con los permisos correspondientes a su rol.<br><br>**Escenario 2 — Inicio de sesión con credenciales inválidas**<br>**Dado** que el usuario ingresa credenciales incorrectas o incompletas,<br>**Cuando** intenta iniciar sesión,<br>**Entonces** el acceso es rechazado y se muestra un mensaje de error sin revelar información sensible. |
+| **Description** | Como Usuario Registrado, quiero verificar mi correo electrónico, para confirmar la propiedad de mi cuenta y habilitar su uso. |
+| **Acceptance Criteria** | **Escenario 1 — Verificación exitosa**<br>**Dado** que el usuario se registró y recibió un código o enlace de verificación,<br>**Cuando** utiliza un mecanismo de verificación válido,<br>**Entonces** la plataforma verifica su correo electrónico y actualiza el estado de la cuenta a activa.<br><br>**Escenario 2 — Enlace inválido o vencido**<br>**Dado** que el usuario intenta verificar su correo,<br>**Cuando** utiliza un código o enlace inválido o vencido,<br>**Entonces** la plataforma informa que debe solicitar una nueva verificación. |
 
 <br>
 
-| **US-03** | **Cierre de sesión** |
+| **US-07** | **Inicio de sesión** |
+| :--- | :--- |
+| **User** | Usuario Registrado |
+| **Priority** | Alta |
+| **Epic** | Gestión de acceso y cuenta |
+| **Description** | Como Usuario Registrado, quiero iniciar sesión, para acceder de forma segura a las funcionalidades correspondientes a mi cuenta. |
+| **Acceptance Criteria** | **Escenario 1 — Inicio de sesión exitoso**<br>**Dado** que el usuario posee una cuenta activa y verificada,<br>**Cuando** proporciona credenciales válidas para autenticarse,<br>**Entonces** la plataforma inicia su sesión y habilita los permisos correspondientes a su rol.<br><br>**Escenario 2 — Credenciales incorrectas**<br>**Dado** que el usuario intenta autenticarse,<br>**Cuando** proporciona credenciales incorrectas,<br>**Entonces** la plataforma rechaza el acceso e informa que las credenciales no son válidas. |
+
+<br>
+
+| **US-08** | **Recuperar contraseña** |
+| :--- | :--- |
+| **User** | Usuario Registrado |
+| **Priority** | Alta |
+| **Epic** | Gestión de acceso y cuenta |
+| **Description** | Como Usuario Registrado, quiero recuperar mi contraseña, para volver a acceder a mi cuenta cuando no recuerde mis credenciales. |
+| **Acceptance Criteria** | **Escenario 1 — Solicitud de recuperación**<br>**Dado** que el usuario no recuerda su contraseña,<br>**Cuando** solicita recuperar el acceso mediante su correo registrado,<br>**Entonces** la plataforma envía las instrucciones para restablecer la contraseña.<br><br>**Escenario 2 — Nueva contraseña**<br>**Dado** que el usuario cuenta con una solicitud de recuperación válida,<br>**Cuando** establece una nueva contraseña que cumple las reglas de seguridad,<br>**Entonces** la plataforma actualiza su contraseña y permite su uso para futuras autenticaciones. |
+
+<br>
+
+| **US-09** | **Cierre de sesión** |
 | :--- | :--- |
 | **User** | Usuario Autenticado |
 | **Priority** | Alta |
 | **Epic** | Gestión de acceso y cuenta |
-| **Description** | Como Usuario Autenticado, quiero cerrar sesión desde cualquier pantalla, para proteger mi cuenta y finalizar mi acceso a la plataforma. |
-| **Acceptance Criteria** | **Escenario 1 — Cierre de sesión exitoso**<br>**Dado** que el usuario tiene una sesión activa,<br>**Cuando** selecciona cerrar sesión desde cualquier pantalla web o móvil,<br>**Entonces** la sesión finaliza y se le redirige a la pantalla de acceso.<br><br>**Escenario 2 — Acceso después del cierre de sesión**<br>**Dado** que el usuario cerró sesión,<br>**Cuando** intenta acceder a una funcionalidad protegida usando la sesión anterior,<br>**Entonces** la plataforma solicita autenticarse nuevamente. |
+| **Description** | Como Usuario Autenticado, quiero cerrar mi sesión, para finalizar de forma segura mi acceso a la plataforma. |
+| **Acceptance Criteria** | **Escenario 1 — Cierre exitoso**<br>**Dado** que el usuario tiene una sesión activa,<br>**Cuando** solicita cerrar su sesión activa,<br>**Entonces** la plataforma finaliza la sesión activa y revoca el acceso a recursos protegidos.<br><br>**Escenario 2 — Acceso posterior**<br>**Dado** que el usuario cerró su sesión activa,<br>**Cuando** intenta acceder a una funcionalidad protegida,<br>**Entonces** la plataforma solicita autenticarse nuevamente. |
 
 <br>
 
-| **US-04** | **Cambiar contraseña** |
+| **US-10** | **Cambiar contraseña** |
 | :--- | :--- |
-| **User** | Usuario Registrado |
-| **Priority** | Alta |
+| **User** | Usuario Autenticado |
+| **Priority** | Media |
 | **Epic** | Gestión de acceso y cuenta |
-| **Description** | Como Usuario Registrado, quiero cambiar mi contraseña desde la configuración de mi cuenta, para mantener protegido mi acceso. |
-| **Acceptance Criteria** | **Escenario 1 — Cambio de contraseña exitoso**<br>**Dado** que el usuario está autenticado y accede a la configuración de su cuenta,<br>**Cuando** ingresa su contraseña actual y una nueva contraseña válida y confirma el cambio,<br>**Entonces** la plataforma actualiza sus credenciales y confirma la operación.<br><br>**Escenario 2 — Cambio de contraseña rechazado**<br>**Dado** que la contraseña actual es incorrecta o la nueva contraseña no cumple las reglas establecidas,<br>**Cuando** intenta guardar el cambio,<br>**Entonces** la plataforma conserva la contraseña anterior e informa el error. |
+| **Description** | Como Usuario Autenticado, quiero cambiar mi contraseña, para mantener segura mi cuenta y actualizar mis credenciales cuando lo considere necesario. |
+| **Acceptance Criteria** | **Escenario 1 — Cambio exitoso**<br>**Dado** que el usuario está autenticado en la plataforma,<br>**Cuando** ingresa su contraseña actual y una nueva contraseña válida,<br>**Entonces** la plataforma actualiza la contraseña de la cuenta.<br><br>**Escenario 2 — Contraseña actual incorrecta**<br>**Dado** que el usuario intenta cambiar su contraseña,<br>**Cuando** proporciona una contraseña actual que no coincide con la registrada,<br>**Entonces** la plataforma rechaza el cambio e informa el error. |
 
 <br>
 
-| **US-05** | **Edición y completitud de perfil** |
+| **US-11** | **Visualizar perfil** |
+| :--- | :--- |
+| **User** | Usuario Autenticado |
+| **Priority** | Media |
+| **Epic** | Gestión de perfil y roles |
+| **Description** | Como Usuario Autenticado, quiero visualizar mi perfil, para consultar la información asociada a mi cuenta. |
+| **Acceptance Criteria** | **Escenario 1 — Visualización del perfil**<br>**Dado** que el usuario está autenticado,<br>**Cuando** consulta la información de su perfil,<br>**Entonces** la plataforma presenta sus datos registrados y roles asociados.<br><br>**Escenario 2 — Información actualizada**<br>**Dado** que el usuario posee información personal registrada,<br>**Cuando** consulta los datos de su perfil,<br>**Entonces** visualiza la información almacenada actualmente. |
+
+<br>
+
+| **US-12** | **Editar perfil** |
+| :--- | :--- |
+| **User** | Usuario Autenticado |
+| **Priority** | Media |
+| **Epic** | Gestión de perfil y roles |
+| **Description** | Como Usuario Autenticado, quiero editar mis datos personales, para mantener mi perfil actualizado. |
+| **Acceptance Criteria** | **Escenario 1 — Edición exitosa**<br>**Dado** que el usuario tiene una sesión activa y puede modificar sus datos personales,<br>**Cuando** modifica datos permitidos y confirma los cambios,<br>**Entonces** la plataforma actualiza la información de su perfil.<br><br>**Escenario 2 — Información inválida**<br>**Dado** que el usuario modifica su información personal,<br>**Cuando** proporciona datos que no cumplen las validaciones requeridas,<br>**Entonces** la plataforma informa los errores y no guarda los datos inválidos. |
+
+<br>
+
+| **US-13** | **Actualizar foto de perfil** |
+| :--- | :--- |
+| **User** | Usuario Autenticado |
+| **Priority** | Baja |
+| **Epic** | Gestión de perfil y roles |
+| **Description** | Como Usuario Autenticado, quiero actualizar mi foto de perfil, para personalizar la identificación visual de mi cuenta. |
+| **Acceptance Criteria** | **Escenario 1 — Foto actualizada**<br>**Dado** que el usuario está autenticado en la plataforma,<br>**Cuando** proporciona un archivo de imagen válido y confirma la actualización,<br>**Entonces** la plataforma actualiza su foto de perfil.<br><br>**Escenario 2 — Archivo no válido**<br>**Dado** que el usuario intenta actualizar su foto de perfil,<br>**Cuando** proporciona un archivo que no cumple con el formato o tamaño requerido,<br>**Entonces** la plataforma rechaza el archivo e informa el motivo. |
+
+<br>
+
+| **US-14** | **Eliminar cuenta** |
+| :--- | :--- |
+| **User** | Usuario Autenticado |
+| **Priority** | Media |
+| **Epic** | Gestión de perfil y roles |
+| **Description** | Como Usuario Autenticado, quiero eliminar mi cuenta, para dejar de utilizar la plataforma cuando ya no necesite sus servicios. |
+| **Acceptance Criteria** | **Escenario 1 — Eliminación confirmada**<br>**Dado** que el usuario solicita eliminar su cuenta,<br>**Cuando** confirma la operación de baja,<br>**Entonces** la plataforma procesa la eliminación de acuerdo con las reglas del negocio y finaliza su acceso.<br><br>**Escenario 2 — Eliminación cancelada**<br>**Dado** que el usuario inició la solicitud de eliminación de cuenta,<br>**Cuando** desiste de la operación antes de confirmarla,<br>**Entonces** la cuenta permanece activa sin modificaciones. |
+
+<br>
+
+| **US-15** | **Solicitar rol de Concesionaria** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Gestión de perfil y roles |
+| **Description** | Como Cliente, quiero solicitar el rol de Concesionaria, para poder acceder a las funcionalidades destinadas a gestionar un negocio de venta de vehículos. |
+| **Acceptance Criteria** | **Escenario 1 — Solicitud de rol**<br>**Dado** que el cliente está autenticado y no posee el rol de Concesionaria,<br>**Cuando** solicita el rol de Concesionaria y proporciona los datos empresariales requeridos,<br>**Entonces** la plataforma registra la solicitud para su respectiva evaluación.<br><br>**Escenario 2 — Solicitud existente**<br>**Dado** que el cliente ya cuenta con una solicitud de rol en estado pendiente,<br>**Cuando** intenta registrar una nueva solicitud,<br>**Entonces** la plataforma informa que ya existe una solicitud en proceso. |
+
+<br>
+
+| **US-16** | **Solicitar rol de Entidad Financiera** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Gestión de perfil y roles |
+| **Description** | Como Cliente, quiero solicitar el rol de Entidad Financiera, para acceder a las funcionalidades destinadas a gestionar solicitudes de crédito. |
+| **Acceptance Criteria** | **Escenario 1 — Solicitud de rol**<br>**Dado** que el cliente está autenticado y no posee el rol de Entidad Financiera,<br>**Cuando** solicita el rol de Entidad Financiera y proporciona la información requerida,<br>**Entonces** la plataforma registra la solicitud para su evaluación.<br><br>**Escenario 2 — Solicitud pendiente**<br>**Dado** que el cliente ya tiene una solicitud pendiente de aprobación,<br>**Cuando** intenta enviar otra solicitud para el mismo rol,<br>**Entonces** la plataforma informa que existe una solicitud en proceso. |
+
+<br>
+
+| **US-17** | **Consultar resumen financiero del cliente** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Cliente, quiero consultar mi resumen financiero, para conocer la información relevante utilizada en la evaluación de mis solicitudes de crédito. |
+| **Acceptance Criteria** | **Escenario 1 — Consulta del resumen**<br>**Dado** que el cliente está autenticado en la plataforma,<br>**Cuando** solicita consultar su resumen financiero,<br>**Entonces** la plataforma presenta la información crediticia y financiera registrada para su cuenta.<br><br>**Escenario 2 — Sin información disponible**<br>**Dado** que el cliente no posee información financiera registrada,<br>**Cuando** consulta su resumen,<br>**Entonces** la plataforma informa que no existe información disponible para mostrar. |
+
+<br>
+
+| **US-18** | **Seleccionar plan de membresía** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Alta |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Concesionaria, quiero seleccionar un plan de membresía, para acceder a las funcionalidades y beneficios correspondientes. |
+| **Acceptance Criteria** | **Escenario 1 — Selección de plan**<br>**Dado** que la concesionaria está habilitada para contratar una membresía,<br>**Cuando** elige un plan disponible y confirma la suscripción,<br>**Entonces** la plataforma registra el plan seleccionado y actualiza el estado de la membresía.<br><br>**Escenario 2 — Plan no disponible**<br>**Dado** que un plan no se encuentra habilitado para contratación,<br>**Cuando** la concesionaria intenta contratarlo,<br>**Entonces** la plataforma impide la contratación e informa su indisponibilidad. |
+
+<br>
+
+| **US-19** | **Registrar condiciones crediticias de la Entidad Financiera** |
+| :--- | :--- |
+| **User** | Entidad Financiera |
+| **Priority** | Alta |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Entidad Financiera, quiero registrar mis condiciones crediticias, para definir los parámetros utilizados en las opciones de financiamiento ofrecidas. |
+| **Acceptance Criteria** | **Escenario 1 — Registro exitoso**<br>**Dado** que la entidad financiera está autenticada y habilitada,<br>**Cuando** registra parámetros crediticios válidos,<br>**Entonces** la plataforma guarda las condiciones financieras asociadas a la entidad.<br><br>**Escenario 2 — Datos inválidos**<br>**Dado** que la entidad financiera intenta registrar condiciones crediticias,<br>**Cuando** proporciona valores incompletos o fuera de los rangos permitidos,<br>**Entonces** la plataforma informa los campos que deben corregirse y no guarda los cambios. |
+
+<br>
+
+| **US-20** | **Consultar plan de membresía** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Concesionaria, quiero consultar mi plan de membresía actual, para conocer sus características, beneficios y estado. |
+| **Acceptance Criteria** | **Escenario 1 — Consulta del plan**<br>**Dado** que la concesionaria cuenta con un plan contratado,<br>**Cuando** solicita información sobre su membresía,<br>**Entonces** la plataforma presenta las condiciones, beneficios y vigencia del plan activo.<br><br>**Escenario 2 — Sin plan activo**<br>**Dado** que la concesionaria no tiene un plan activo,<br>**Cuando** consulta el estado de su membresía,<br>**Entonces** la plataforma informa que no posee una membresía activa. |
+
+<br>
+
+| **US-21** | **Cambiar plan de membresía** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Concesionaria, quiero cambiar mi plan de membresía, para adaptar los beneficios de la plataforma a mis necesidades. |
+| **Acceptance Criteria** | **Escenario 1 — Cambio de plan**<br>**Dado** que la concesionaria tiene un plan activo,<br>**Cuando** solicita cambiar a otro plan disponible y confirma la operación,<br>**Entonces** la plataforma registra el nuevo plan conforme a las condiciones acordadas.<br><br>**Escenario 2 — Cambio cancelado**<br>**Dado** que la concesionaria inició el proceso de cambio de plan,<br>**Cuando** cancela la operación antes de confirmarla,<br>**Entonces** la plataforma mantiene el plan actual sin modificaciones. |
+
+<br>
+
+| **US-22** | **Renovar membresía** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Concesionaria, quiero renovar mi membresía, para mantener activos los beneficios y funcionalidades de mi plan. |
+| **Acceptance Criteria** | **Escenario 1 — Renovación exitosa**<br>**Dado** que la membresía de la concesionaria se encuentra próxima a vencer o vencida,<br>**Cuando** confirma la renovación y completa el proceso correspondiente,<br>**Entonces** la plataforma actualiza la vigencia de la membresía.<br><br>**Escenario 2 — Renovación no completada**<br>**Dado** que la concesionaria inicia la renovación de su membresía,<br>**Cuando** no culmina el proceso requerido,<br>**Entonces** la membresía conserva su estado anterior. |
+
+<br>
+
+| **US-23** | **Consultar historial de pagos** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Dashboard y configuración B2B |
+| **Description** | Como Concesionaria, quiero consultar mi historial de pagos, para revisar las transacciones realizadas relacionadas con mi membresía. |
+| **Acceptance Criteria** | **Escenario 1 — Historial disponible**<br>**Dado** que la concesionaria registra pagos de membresía previos,<br>**Cuando** solicita consultar su historial de pagos,<br>**Entonces** la plataforma presenta el registro detallado de las transacciones efectuadas.<br><br>**Escenario 2 — Sin pagos**<br>**Dado** que no existen transacciones de pago registradas,<br>**Cuando** la concesionaria consulta su historial,<br>**Entonces** la plataforma informa que no existen pagos registrados. |
+
+<br>
+
+| **US-24** | **Listar inventario de vehículos** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Alta |
+| **Epic** | Gestión de inventario de vehículos |
+| **Description** | Como Concesionaria, quiero visualizar mi inventario de vehículos, para administrar las unidades disponibles en la plataforma. |
+| **Acceptance Criteria** | **Escenario 1 — Inventario disponible**<br>**Dado** que la concesionaria posee vehículos registrados,<br>**Cuando** consulta su inventario de unidades,<br>**Entonces** la plataforma presenta la relación de vehículos asociados a su cuenta.<br><br>**Escenario 2 — Inventario vacío**<br>**Dado** que la concesionaria no tiene vehículos registrados en su inventario,<br>**Cuando** realiza la consulta,<br>**Entonces** la plataforma informa que no cuenta con vehículos en inventario. |
+
+<br>
+
+| **US-25** | **Registrar vehículo** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Alta |
+| **Epic** | Gestión de inventario de vehículos |
+| **Description** | Como Concesionaria, quiero registrar un vehículo, para incorporarlo a mi inventario y posteriormente publicarlo en la plataforma. |
+| **Acceptance Criteria** | **Escenario 1 — Registro exitoso**<br>**Dado** que la concesionaria cuenta con la información técnica y comercial de un vehículo,<br>**Cuando** ingresa todos los datos obligatorios válidos y confirma el registro,<br>**Entonces** la plataforma almacena el vehículo en su inventario.<br><br>**Escenario 2 — Datos incompletos**<br>**Dado** que la concesionaria intenta registrar un vehículo,<br>**Cuando** omite datos obligatorios o proporciona información inválida,<br>**Entonces** la plataforma impide el registro e indica la información faltante. |
+
+<br>
+
+| **US-26** | **Publicar vehículo** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Alta |
+| **Epic** | Gestión de inventario de vehículos |
+| **Description** | Como Concesionaria, quiero publicar un vehículo registrado, para permitir que los clientes puedan visualizarlo y considerarlo para una compra. |
+| **Acceptance Criteria** | **Escenario 1 — Publicación exitosa**<br>**Dado** que la concesionaria tiene un vehículo en inventario con información completa,<br>**Cuando** solicita publicar el vehículo,<br>**Entonces** el vehículo cambia a estado publicado y queda disponible para los compradores.<br><br>**Escenario 2 — Información incompleta**<br>**Dado** que un vehículo no cumple con los requisitos mínimos de publicación,<br>**Cuando** la concesionaria intenta publicarlo,<br>**Entonces** la plataforma impide la publicación e indica los requisitos pendientes. |
+
+<br>
+
+| **US-27** | **Editar vehículo publicado** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Gestión de inventario de vehículos |
+| **Description** | Como Concesionaria, quiero editar la información de un vehículo publicado, para mantener actualizados sus datos. |
+| **Acceptance Criteria** | **Escenario 1 — Edición exitosa**<br>**Dado** que existe un vehículo publicado perteneciente a la concesionaria,<br>**Cuando** modifica campos permitidos con información válida y guarda los cambios,<br>**Entonces** la plataforma actualiza los datos del vehículo.<br><br>**Escenario 2 — Datos inválidos**<br>**Dado** que la concesionaria modifica la información de un vehículo,<br>**Cuando** ingresa valores fuera de rango o datos no permitidos,<br>**Entonces** la plataforma rechaza los cambios e informa los errores correspondientes. |
+
+<br>
+
+| **US-28** | **Cambiar estado del vehículo** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Gestión de inventario de vehículos |
+| **Description** | Como Concesionaria, quiero cambiar el estado de un vehículo, para indicar si se encuentra disponible, reservado, vendido u otro estado permitido. |
+| **Acceptance Criteria** | **Escenario 1 — Cambio de estado**<br>**Dado** que la concesionaria tiene un vehículo registrado,<br>**Cuando** asigna un estado válido (disponible, reservado, vendido) y confirma la acción,<br>**Entonces** la plataforma actualiza el estado operativo del vehículo.<br><br>**Escenario 2 — Estado no permitido**<br>**Dado** que la concesionaria intenta asignar una transición de estado no permitida,<br>**Cuando** confirma la operación,<br>**Entonces** la plataforma rechaza la actualización y mantiene el estado anterior. |
+
+<br>
+
+| **US-29** | **Eliminar vehículo** |
+| :--- | :--- |
+| **User** | Concesionaria |
+| **Priority** | Media |
+| **Epic** | Gestión de inventario de vehículos |
+| **Description** | Como Concesionaria, quiero eliminar un vehículo de mi inventario, para retirar unidades que ya no debo gestionar. |
+| **Acceptance Criteria** | **Escenario 1 — Eliminación exitosa**<br>**Dado** que existe un vehículo en el inventario que no tiene procesos activos,<br>**Cuando** la concesionaria confirma su eliminación,<br>**Entonces** la plataforma retira el vehículo del inventario y confirma la baja.<br><br>**Escenario 2 — Eliminación cancelada**<br>**Dado** que la concesionaria inició la eliminación de un vehículo,<br>**Cuando** cancela la operación antes de confirmarla,<br>**Entonces** el vehículo permanece en el inventario sin modificaciones. |
+
+<br>
+
+| **US-30** | **Buscar y filtrar vehículos** |
 | :--- | :--- |
 | **User** | Cliente |
 | **Priority** | Alta |
-| **Epic** | Gestión de perfil y roles |
-| **Description** | Como Cliente, quiero actualizar mis datos de contacto y completar información adicional como mis ingresos desde la aplicación web, para mantener mi perfil actualizado. |
-| **Acceptance Criteria** | **Escenario 1 — Actualización de perfil exitosa**<br>**Dado** que el cliente inició sesión y abrió la edición de perfil,<br>**Cuando** actualiza sus datos de contacto o ingresos con información válida y guarda los cambios,<br>**Entonces** el perfil muestra la información actualizada.<br><br>**Escenario 2 — Actualización con información inválida**<br>**Dado** que el cliente ingresa información inválida en un campo editable,<br>**Cuando** intenta guardar el perfil,<br>**Entonces** la plataforma señala los campos que debe corregir y no guarda los datos inválidos. |
+| **Epic** | Exploración y búsqueda de vehículos |
+| **Description** | Como Cliente, quiero buscar y filtrar vehículos, para encontrar opciones que se ajusten a mis necesidades y preferencias. |
+| **Acceptance Criteria** | **Escenario 1 — Búsqueda de vehículos**<br>**Dado** que existen vehículos publicados en la plataforma,<br>**Cuando** el cliente busca utilizando términos o palabras clave válidas,<br>**Entonces** la plataforma presenta los vehículos que coinciden con los criterios de búsqueda.<br><br>**Escenario 2 — Aplicación de filtros**<br>**Dado** que existen vehículos disponibles en la oferta general,<br>**Cuando** el cliente aplica uno o más filtros específicos (precio, marca, año, condición),<br>**Entonces** la plataforma actualiza los resultados mostrando únicamente las unidades que cumplen los filtros. |
 
 <br>
 
-| **US-06** | **Solicitud de rol Concesionaria** |
+| **US-31** | **Ordenar resultados de búsqueda** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Baja |
+| **Epic** | Exploración y búsqueda de vehículos |
+| **Description** | Como Cliente, quiero ordenar los resultados de búsqueda, para visualizar primero los vehículos según el criterio que me resulte más conveniente. |
+| **Acceptance Criteria** | **Escenario 1 — Ordenamiento exitoso**<br>**Dado** que existen resultados de vehículos para una consulta,<br>**Cuando** el cliente define un criterio de ordenamiento (precio, año o kilometraje),<br>**Entonces** la plataforma reorganiza los vehículos según el criterio solicitado.<br><br>**Escenario 2 — Cambio de orden**<br>**Dado** que los resultados se encuentran ordenados por un criterio previo,<br>**Cuando** el cliente indica un criterio diferente,<br>**Entonces** la plataforma actualiza la secuencia de los resultados conforme a la nueva regla. |
+
+<br>
+
+| **US-32** | **Filtrar catálogo por concesionaria** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Exploración y búsqueda de vehículos |
+| **Description** | Como Cliente, quiero filtrar el catálogo por concesionaria, para consultar vehículos ofrecidos por una empresa específica. |
+| **Acceptance Criteria** | **Escenario 1 — Filtro por concesionaria**<br>**Dado** que existen vehículos publicados por distintas concesionarias,<br>**Cuando** el cliente filtra por una concesionaria determinada,<br>**Entonces** la plataforma muestra exclusivamente los vehículos comercializados por dicha empresa.<br><br>**Escenario 2 — Sin coincidencias**<br>**Dado** que una concesionaria no dispone de vehículos activos publicados,<br>**Cuando** el cliente consulta la oferta de dicha empresa,<br>**Entonces** la plataforma informa que no existen vehículos disponibles para esa concesionaria. |
+
+<br>
+
+| **US-33** | **Ver detalle de vehículo** |
 | :--- | :--- |
 | **User** | Cliente |
 | **Priority** | Alta |
-| **Epic** | Gestión de perfil y roles |
-| **Description** | Como Cliente, quiero solicitar el rol de Concesionaria ingresando mi RUC desde la aplicación web, para que la plataforma valide mi información y habilite las funciones correspondientes. |
-| **Acceptance Criteria** | **Escenario 1 — Solicitud de rol registrada**<br>**Dado** que el cliente accede a la solicitud de rol Concesionaria,<br>**Cuando** ingresa su RUC y envía la solicitud,<br>**Entonces** la plataforma registra la solicitud y presenta su estado de validación.<br><br>**Escenario 2 — Solicitud de rol con RUC inválido**<br>**Dado** que el RUC ingresado no cumple el formato requerido o no supera la validación,<br>**Cuando** se envía la solicitud,<br>**Entonces** la plataforma informa el problema y no habilita las funciones de Concesionaria. |
+| **Epic** | Exploración y búsqueda de vehículos |
+| **Description** | Como Cliente, quiero visualizar el detalle de un vehículo, para conocer sus características antes de decidir si deseo solicitar financiamiento o contactar a la concesionaria. |
+| **Acceptance Criteria** | **Escenario 1 — Visualización del detalle**<br>**Dado** que existe un vehículo publicado en la plataforma,<br>**Cuando** el cliente consulta la información detallada de la unidad,<br>**Entonces** la plataforma presenta sus especificaciones técnicas, precio, imágenes y condiciones comerciales.<br><br>**Escenario 2 — Vehículo no disponible**<br>**Dado** que un vehículo ha dejado de estar publicado o fue dado de baja,<br>**Cuando** el cliente intenta consultar su información,<br>**Entonces** la plataforma informa que el vehículo ya no se encuentra disponible. |
 
 <br>
 
-| **US-07** | **Solicitud de rol Entidad Financiera** |
+| **US-34** | **Ver datos de contacto de la concesionaria** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Exploración y búsqueda de vehículos |
+| **Description** | Como Cliente, quiero visualizar los datos de contacto de la concesionaria, para poder comunicarme directamente con ella respecto al vehículo de mi interés. |
+| **Acceptance Criteria** | **Escenario 1 — Datos de contacto disponibles**<br>**Dado** que el cliente consulta información sobre un vehículo publicado,<br>**Cuando** requiere los datos comerciales de la concesionaria vendedora,<br>**Entonces** la plataforma presenta los canales de atención y contacto habilitados.<br><br>**Escenario 2 — Contacto no disponible**<br>**Dado** que una concesionaria no tiene canales de atención activos,<br>**Cuando** el cliente solicita sus datos de contacto,<br>**Entonces** la plataforma informa que no existen canales de contacto disponibles temporalmente. |
+
+<br>
+
+| **US-35** | **Crear simulación de crédito vehicular** |
 | :--- | :--- |
 | **User** | Cliente |
 | **Priority** | Alta |
-| **Epic** | Gestión de perfil y roles |
-| **Description** | Como Cliente, quiero solicitar el rol de Entidad Financiera ingresando mi RUC desde la aplicación web, para que la plataforma valide mi información y habilite las funciones financieras. |
-| **Acceptance Criteria** | **Escenario 1 — Solicitud de rol financiero registrada**<br>**Dado** que el cliente accede a la solicitud de rol Entidad Financiera,<br>**Cuando** ingresa su RUC y envía la solicitud,<br>**Entonces** la plataforma registra la solicitud y presenta su estado de validación.<br><br>**Escenario 2 — Solicitud de rol financiero con RUC inválido**<br>**Dado** que el RUC ingresado no cumple el formato requerido o no supera la validación,<br>**Cuando** se envía la solicitud,<br>**Entonces** la plataforma informa el problema y no habilita las funciones financieras. |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero crear una simulación de crédito vehicular, para conocer las condiciones aproximadas de financiamiento de un vehículo. |
+| **Acceptance Criteria** | **Escenario 1 — Simulación exitosa**<br>**Dado** que el cliente vincula un vehículo y define monto inicial, plazo y tasa de interés,<br>**Cuando** solicita el cálculo de la simulación,<br>**Entonces** la plataforma calcula y presenta la cuota estimada, intereses proyectados y costo total del crédito.<br><br>**Escenario 2 — Datos insuficientes**<br>**Dado** que el cliente intenta realizar una simulación,<br>**Cuando** omite parámetros financieros obligatorios o introduce valores inconsistentes,<br>**Entonces** la plataforma solicita completar y corregir la información antes de procesar el cálculo. |
 
 <br>
 
-| **US-08** | **Modificar roles de usuario** |
+| **US-36** | **Consultar cronograma detallado de pagos** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero consultar el cronograma detallado de pagos de una simulación, para conocer cómo se distribuirían las cuotas durante el periodo de financiamiento. |
+| **Acceptance Criteria** | **Escenario 1 — Cronograma disponible**<br>**Dado** que el cliente cuenta con una simulación calculada,<br>**Cuando** solicita el cronograma de pagos,<br>**Entonces** la plataforma presenta el desglose periódico de amortización, intereses y saldos deudores.<br><br>**Escenario 2 — Simulación inexistente**<br>**Dado** que no se dispone de una simulación previa válida,<br>**Cuando** el cliente intenta consultar un cronograma,<br>**Entonces** la plataforma informa que no existe información disponible para generar el cronograma. |
+
+<br>
+
+| **US-37** | **Consultar simulaciones guardadas** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero consultar mis simulaciones guardadas, para revisar nuevamente las opciones de financiamiento que evalué anteriormente. |
+| **Acceptance Criteria** | **Escenario 1 — Simulaciones disponibles**<br>**Dado** que el cliente posee simulaciones previamente almacenadas en su cuenta,<br>**Cuando** consulta su registro de simulaciones,<br>**Entonces** la plataforma presenta el listado de simulaciones guardadas con sus condiciones estimadas.<br><br>**Escenario 2 — Sin simulaciones**<br>**Dado** que el cliente no cuenta con simulaciones guardadas,<br>**Cuando** solicita la consulta de su historial,<br>**Entonces** la plataforma informa que no existen simulaciones registradas. |
+
+<br>
+
+| **US-38** | **Eliminar simulación guardada** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Baja |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero eliminar una simulación guardada, para mantener organizada mi lista y retirar simulaciones que ya no necesito consultar. |
+| **Acceptance Criteria** | **Escenario 1 — Eliminación exitosa**<br>**Dado** que el cliente tiene una simulación almacenada en su cuenta,<br>**Cuando** confirma la eliminación de dicha simulación,<br>**Entonces** la plataforma retira el registro de su cuenta y confirma la operación.<br><br>**Escenario 2 — Eliminación cancelada**<br>**Dado** que el cliente inició la eliminación de una simulación guardada,<br>**Cuando** cancela la operación antes de confirmarla,<br>**Entonces** la simulación permanece almacenada sin alteraciones. |
+
+<br>
+
+| **US-39** | **Cancelar solicitud de crédito** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero cancelar una solicitud de crédito que aún se encuentre en un estado que permita su cancelación, para detener su evaluación cuando ya no deseo continuar con el trámite. |
+| **Acceptance Criteria** | **Escenario 1 — Cancelación permitida**<br>**Dado** que el cliente posee una solicitud de crédito en estado cancelable,<br>**Cuando** confirma la cancelación del trámite,<br>**Entonces** la plataforma actualiza el estado de la solicitud a cancelada y notifica a las partes involucradas.<br><br>**Escenario 2 — Cancelación no permitida**<br>**Dado** que la solicitud alcanzó un estado definitivo (aprobada o rechazada),<br>**Cuando** el cliente intenta cancelarla,<br>**Entonces** la plataforma impide la operación e informa que el trámite no puede cancelarse en su estado actual. |
+
+<br>
+
+| **US-40** | **Consultar estado de solicitudes desde la aplicación móvil** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Alta |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero consultar el estado de mis solicitudes de crédito desde la aplicación móvil, para realizar seguimiento al proceso sin necesidad de ingresar desde otro dispositivo. |
+| **Acceptance Criteria** | **Escenario 1 — Consulta de solicitudes**<br>**Dado** que el cliente tiene solicitudes de crédito registradas,<br>**Cuando** consulta el estado de sus trámites mediante el canal móvil,<br>**Entonces** la plataforma presenta la relación de solicitudes y el estado de avance de cada una.<br><br>**Escenario 2 — Sin solicitudes**<br>**Dado** que el cliente no cuenta con solicitudes crediticias registradas,<br>**Cuando** solicita la consulta de trámites,<br>**Entonces** la plataforma informa que no existen solicitudes activas o históricas. |
+
+<br>
+
+| **US-41** | **Gestionar notificaciones** |
+| :--- | :--- |
+| **User** | Usuario Autenticado |
+| **Priority** | Media |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Usuario Autenticado, quiero gestionar mis preferencias de notificaciones, para controlar qué tipos de avisos deseo recibir de la plataforma. |
+| **Acceptance Criteria** | **Escenario 1 — Configuración de preferencias**<br>**Dado** que el usuario está autenticado en la plataforma,<br>**Cuando** consulta sus ajustes de notificación,<br>**Entonces** la plataforma presenta los canales y tipos de avisos configurables.<br><br>**Escenario 2 — Guardado de preferencias**<br>**Dado** que el usuario actualiza sus preferencias de comunicación,<br>**Cuando** confirma las nuevas configuraciones,<br>**Entonces** la plataforma guarda las preferencias y las aplica a futuros eventos del sistema. |
+
+<br>
+
+| **US-42** | **Recibir notificaciones push** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Media |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Cliente, quiero recibir notificaciones push relacionadas con mis solicitudes, para conocer cambios importantes en su estado. |
+| **Acceptance Criteria** | **Escenario 1 — Notificación enviada**<br>**Dado** que el cliente tiene activas las notificaciones para su cuenta,<br>**Cuando** se produce un cambio de estado en una de sus solicitudes,<br>**Entonces** la plataforma emite una notificación push informando el evento.<br><br>**Escenario 2 — Notificaciones deshabilitadas**<br>**Dado** que el cliente desactivó las notificaciones automáticas,<br>**Cuando** se genera un evento en una solicitud,<br>**Entonces** la plataforma no emite notificaciones push y conserva el registro en el historial interno. |
+
+<br>
+
+| **US-43** | **Ver lista de solicitudes asignadas** |
+| :--- | :--- |
+| **User** | Entidad Financiera |
+| **Priority** | Alta |
+| **Epic** | Evaluación y gestión de solicitudes de crédito |
+| **Description** | Como Entidad Financiera, quiero visualizar la lista de solicitudes de crédito asignadas, para identificar los expedientes que debo evaluar. |
+| **Acceptance Criteria** | **Escenario 1 — Solicitudes disponibles**<br>**Dado** que existen solicitudes de crédito asignadas a la entidad financiera,<br>**Cuando** consulta la bandeja de expedientes asignados,<br>**Entonces** la plataforma presenta las solicitudes pendientes de atención con sus datos principales.<br><br>**Escenario 2 — Sin solicitudes asignadas**<br>**Dado** que no existen solicitudes asignadas a la entidad financiera,<br>**Cuando** consulta su bandeja de trabajo,<br>**Entonces** la plataforma informa que no cuenta con expedientes pendientes de evaluación. |
+
+<br>
+
+| **US-44** | **Ver detalle del expediente del cliente** |
+| :--- | :--- |
+| **User** | Entidad Financiera |
+| **Priority** | Alta |
+| **Epic** | Evaluación y gestión de solicitudes de crédito |
+| **Description** | Como Entidad Financiera, quiero consultar el expediente de un cliente, para revisar la información necesaria antes de evaluar su solicitud de crédito. |
+| **Acceptance Criteria** | **Escenario 1 — Consulta del expediente**<br>**Dado** que la entidad financiera tiene asignada una solicitud de crédito,<br>**Cuando** solicita el expediente del cliente,<br>**Entonces** la plataforma presenta los antecedentes personales, financieros y del vehículo requeridos para la evaluación.<br><br>**Escenario 2 — Acceso no autorizado**<br>**Dado** que una solicitud de crédito corresponde a otra entidad financiera,<br>**Cuando** se intenta acceder a dicho expediente,<br>**Entonces** la plataforma restringe el acceso por políticas de confidencialidad y permisos. |
+
+<br>
+
+| **US-45** | **Evaluar solicitud de crédito** |
+| :--- | :--- |
+| **User** | Entidad Financiera |
+| **Priority** | Alta |
+| **Epic** | Evaluación y gestión de solicitudes de crédito |
+| **Description** | Como Entidad Financiera, quiero evaluar una solicitud de crédito, para determinar su resultado de acuerdo con las condiciones y criterios definidos. |
+| **Acceptance Criteria** | **Escenario 1 — Evaluación aprobada**<br>**Dado** que la entidad financiera cuenta con un expediente asignado y la documentación conforme,<br>**Cuando** registra el dictamen favorable de la solicitud,<br>**Entonces** la plataforma actualiza el estado del crédito a aprobado y asocia las condiciones acordadas.<br><br>**Escenario 2 — Evaluación rechazada**<br>**Dado** que un expediente no cumple con los requisitos crediticios de la entidad,<br>**Cuando** se registra el dictamen desfavorable justificando el motivo,<br>**Entonces** la plataforma actualiza el estado a rechazado y registra las causales correspondientes. |
+
+<br>
+
+| **US-46** | **Notificar resultado de evaluación** |
+| :--- | :--- |
+| **User** | Cliente |
+| **Priority** | Alta |
+| **Epic** | Evaluación y gestión de solicitudes de crédito |
+| **Description** | Como Cliente, quiero recibir el resultado de la evaluación de mi solicitud de crédito, para conocer si mi solicitud fue aprobada o rechazada y continuar con el proceso correspondiente. |
+| **Acceptance Criteria** | **Escenario 1 — Resultado disponible**<br>**Dado** que la entidad financiera finalizó la evaluación de una solicitud,<br>**Cuando** se emite el dictamen formal,<br>**Entonces** la plataforma comunica el resultado al cliente a través de los canales de contacto configurados.<br><br>**Escenario 2 — Resultado no disponible**<br>**Dado** que una solicitud de crédito continúa en proceso de evaluación,<br>**Cuando** el cliente consulta el dictamen,<br>**Entonces** la plataforma informa que la solicitud aún se encuentra en revisión. |
+
+<br>
+
+| **US-47** | **Consultar usuarios registrados** |
 | :--- | :--- |
 | **User** | Administrador |
 | **Priority** | Alta |
+| **Epic** | Administración de usuarios y roles |
+| **Description** | Como Administrador, quiero consultar la lista de usuarios registrados, para administrar y supervisar las cuentas existentes en la plataforma. |
+| **Acceptance Criteria** | **Escenario 1 — Lista de usuarios**<br>**Dado** que existen cuentas de usuarios creadas en la plataforma,<br>**Cuando** el administrador solicita la consulta de usuarios registrados,<br>**Entonces** la plataforma presenta el listado de cuentas con su información administrativa y estado.<br><br>**Escenario 2 — Sin usuarios**<br>**Dado** que no existen cuentas que coincidan con un criterio de búsqueda,<br>**Cuando** el administrador realiza la consulta,<br>**Entonces** la plataforma informa que no se encontraron usuarios disponibles. |
+
+<br>
+
+| **US-48** | **Modificar roles de usuario** |
+| :--- | :--- |
+| **User** | Administrador |
+| **Priority** | Alta |
+| **Epic** | Administración de usuarios y roles |
+| **Description** | Como Administrador, quiero modificar los roles de un usuario, para controlar los permisos y funcionalidades a los que puede acceder dentro de la plataforma. |
+| **Acceptance Criteria** | **Escenario 1 — Modificación de rol**<br>**Dado** que el administrador cuenta con permisos de gestión de usuarios,<br>**Cuando** asigna un rol permitido a una cuenta y confirma la operación,<br>**Entonces** la plataforma actualiza el rol del usuario y aplica los privilegios correspondientes.<br><br>**Escenario 2 — Rol no permitido**<br>**Dado** que el administrador intenta asignar un rol no compatible o restringido,<br>**Cuando** solicita la confirmación del cambio,<br>**Entonces** la plataforma rechaza la asignación e informa que el rol no puede ser asignado. |
+
+<br>
+
+| **SP-01** | **Investigar el cálculo de simulaciones de crédito vehicular** |
+| :--- | :--- |
+| **User** | Developer |
+| **Priority** | Alta |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Developer, quiero investigar las variables y fórmulas financieras para el cálculo de cuotas de crédito vehicular, **con el objetivo de** determinar la viabilidad técnica y definir el algoritmo que produzca resultados exactos según las tasas del mercado. |
+| **Acceptance Criteria** | **Escenario 1 — Análisis y documentación de reglas de cálculo**<br>**Dado** que se requiere exactitud financiera en la simulación de créditos vehiculares,<br>**Cuando** se investigan y validan las variables, fórmulas y tasas de interés aplicables,<br>**Entonces** se presenta un documento técnico que detalla el algoritmo de cálculo, los datos de entrada requeridos y los casos de uso esperados.<br><br>**Escenario 2 — Prototipo funcional de prueba**<br>**Dado** que se cuenta con el algoritmo de cálculo documentado,<br>**Cuando** se ejecuta una prueba de concepto aislada con datos reales de simulación,<br>**Entonces** se entrega un prototipo funcional mínimo (script o test) que valide los resultados obtenidos frente a los valores esperados, adjuntando las conclusiones técnicas. |
+
+<br>
+
+| **SP-02** | **Investigar servicios de notificaciones por correo y push** |
+| :--- | :--- |
+| **User** | Developer |
+| **Priority** | Media |
+| **Epic** | Simulación y seguimiento crediticio |
+| **Description** | Como Developer, quiero investigar pasarelas y servicios de mensajería (email y push), **con el objetivo de** seleccionar la herramienta más eficiente y compatible con nuestro backend para automatizar las notificaciones de cambio de estado en los créditos. |
+| **Acceptance Criteria** | **Escenario 1 — Matriz comparativa de servicios de notificación**<br>**Dado** que el sistema necesita comunicar eventos en tiempo real a los clientes,<br>**Cuando** se investigan proveedores de notificaciones (ej. SendGrid, Firebase, etc.),<br>**Entonces** se documenta una matriz de evaluación que incluya compatibilidad, cuotas gratuitas, latencia y facilidad de integración con Spring Boot.<br><br>**Escenario 2 — Prueba funcional de envío**<br>**Dado** que se ha elegido un proveedor de notificaciones,<br>**Cuando** se configura la credencial de prueba y se simula un evento de solicitud aprobada,<br>**Entonces** se entrega un prototipo funcional mínimo que envía exitosamente un correo o notificación push de prueba, registrando las conclusiones técnicas. |
+
+<br>
+
+| **TS-01** | **Integrar validación de RUC con SUNAT** |
+| :--- | :--- |
+| **User** | Developer |
+| **Priority** | Alta |
 | **Epic** | Gestión de perfil y roles |
-| **Description** | Como Administrador, quiero asignar o modificar los roles de las cuentas registradas desde el backoffice de la aplicación web, para gestionar los permisos de los usuarios. |
-| **Acceptance Criteria** | **Escenario 1 — Modificación de rol exitosa**<br>**Dado** que el administrador accede al backoffice y selecciona una cuenta registrada,<br>**Cuando** asigna o modifica su rol y confirma la operación,<br>**Entonces** la plataforma guarda el cambio de permisos.<br><br>**Escenario 2 — Modificación de rol no autorizada**<br>**Dado** que un usuario sin privilegios de administrador intenta modificar roles,<br>**Cuando** solicita la operación,<br>**Entonces** la plataforma deniega el acceso y mantiene los roles existentes. |
+| **Description** | Como Developer, quiero integrar el servicio de consulta de RUC de SUNAT, para validar la información de las empresas ingresadas durante el registro o solicitud del rol de Concesionaria. |
+| **Acceptance Criteria** | **Escenario 1 — RUC válido**<br>**Dado** que el sistema recibe un número de RUC válido,<br>**Cuando** consulta el servicio de SUNAT,<br>**Entonces** obtiene la información asociada al RUC y confirma que se encuentra registrado.<br><br>**Escenario 2 — RUC no encontrado**<br>**Dado** que el sistema recibe un número de RUC que no se encuentra registrado en SUNAT,<br>**Cuando** realiza la consulta,<br>**Entonces** informa que el RUC no pudo ser validado.<br><br>**Escenario 3 — Error en el servicio de SUNAT**<br>**Dado** que el servicio de SUNAT no se encuentra disponible,<br>**Cuando** el sistema intenta validar el RUC,<br>**Entonces** registra el error de la consulta e informa que no fue posible realizar la validación,<br>**Y** no considera el RUC como validado. |
 
 <br>
-
-| **US-09** | **Resumen financiero del cliente** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Dashboard y configuración B2B |
-| **Description** | Como Cliente, quiero visualizar un resumen de mi score crediticio, simulaciones y proyecciones desde la aplicación web, para consultar mi información financiera desde un solo lugar. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización del resumen financiero**<br>**Dado** que el cliente inició sesión y cuenta con información financiera disponible,<br>**Cuando** abre su dashboard,<br>**Entonces** visualiza en un solo lugar su score crediticio, simulaciones y proyecciones disponibles.<br><br>**Escenario 2 — Información financiera no disponible**<br>**Dado** que alguno de los datos financieros aún no está disponible,<br>**Cuando** el cliente consulta el dashboard,<br>**Entonces** la plataforma indica que no hay información para ese apartado sin mostrar datos incorrectos. |
-
-<br>
-
-| **US-10** | **Selección obligatoria de membresía B2B** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Dashboard y configuración B2B |
-| **Description** | Como Concesionaria recién validada, quiero seleccionar un plan de membresía desde la aplicación web antes de utilizar las funciones B2B, para habilitar la gestión de mi inventario. |
-| **Acceptance Criteria** | **Escenario 1 — Selección de membresía obligatoria**<br>**Dado** que una concesionaria fue validada y aún no tiene membresía,<br>**Cuando** intenta utilizar las funciones B2B,<br>**Entonces** la plataforma solicita seleccionar un plan antes de habilitar la gestión de inventario.<br><br>**Escenario 2 — Activación de funciones B2B**<br>**Dado** que la concesionaria selecciona un plan disponible y completa la confirmación requerida,<br>**Cuando** se registra la membresía,<br>**Entonces** la plataforma habilita las funciones B2B correspondientes al plan. |
-
-<br>
-
-| **US-11** | **Registrar entidad financiera** |
-| :--- | :--- |
-| **User** | Entidad Financiera |
-| **Priority** | Alta |
-| **Epic** | Dashboard y configuración B2B |
-| **Description** | Como Entidad Financiera, quiero registrar mis tasas, comisiones y condiciones crediticias desde la aplicación web, para ofrecer opciones de financiamiento a los compradores. |
-| **Acceptance Criteria** | **Escenario 1 — Registro de condiciones crediticias exitoso**<br>**Dado** que la entidad financiera inició sesión y abrió el registro de condiciones crediticias,<br>**Cuando** ingresa tasas, comisiones y condiciones válidas y guarda,<br>**Entonces** la plataforma registra la información para ofrecer opciones de financiamiento.<br><br>**Escenario 2 — Registro con información inválida**<br>**Dado** que la entidad financiera omite un dato obligatorio o ingresa valores no válidos,<br>**Cuando** intenta guardar las condiciones,<br>**Entonces** la plataforma señala los errores y no registra información incompleta. |
-
-<br>
-
-| **US-12** | **Consultar plan de membresía** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Media |
-| **Epic** | Dashboard y configuración B2B |
-| **Description** | Como Concesionaria, quiero consultar la información de mi plan de membresía desde la aplicación web, para conocer sus características, beneficios y vigencia. |
-| **Acceptance Criteria** | **Escenario 1 — Consulta de membresía activa**<br>**Dado** que la concesionaria tiene una membresía registrada,<br>**Cuando** accede a la sección de su plan,<br>**Entonces** visualiza sus características, beneficios y vigencia.<br><br>**Escenario 2 — Consulta sin membresía activa**<br>**Dado** que la concesionaria no tiene una membresía activa,<br>**Cuando** consulta la sección de plan,<br>**Entonces** la plataforma informa que no existe un plan activo y muestra las opciones disponibles si corresponde. |
-
-<br>
-
-| **US-13** | **Cambiar plan de membresía** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Media |
-| **Epic** | Dashboard y configuración B2B |
-| **Description** | Como Concesionaria, quiero cambiar mi plan de membresía desde la aplicación web, para adaptar mi suscripción a las necesidades de mi negocio. |
-| **Acceptance Criteria** | **Escenario 1 — Cambio de plan exitoso**<br>**Dado** que la concesionaria tiene una membresía vigente,<br>**Cuando** selecciona otro plan disponible y confirma el cambio,<br>**Entonces** la plataforma registra la solicitud o actualización y muestra el plan resultante.<br><br>**Escenario 2 — Cambio de plan no disponible**<br>**Dado** que la concesionaria intenta cambiar a un plan no disponible o la operación no puede completarse,<br>**Cuando** confirma el cambio,<br>**Entonces** la plataforma informa el motivo y conserva la membresía vigente. |
-
-<br>
-
-| **US-14** | **Renovar membresía** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Dashboard y configuración B2B |
-| **Description** | Como Concesionaria, quiero renovar mi membresía desde la aplicación web, para mantener activas las funcionalidades de mi plan. |
-| **Acceptance Criteria** | **Escenario 1 — Renovación de membresía exitosa**<br>**Dado** que la concesionaria tiene una membresía próxima a vencer o vencida,<br>**Cuando** selecciona renovar y completa la confirmación requerida,<br>**Entonces** la plataforma registra la renovación y muestra la nueva vigencia.<br><br>**Escenario 2 — Renovación no completada**<br>**Dado** que la renovación no puede completarse,<br>**Cuando** la concesionaria intenta confirmarla,<br>**Entonces** la plataforma informa el resultado y no presenta la membresía como renovada. |
-
-<br>
-
-| **US-15** | **Listar inventario de vehículos** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero visualizar todos mis vehículos publicados desde la aplicación web, para consultar y controlar mi inventario. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización del inventario**<br>**Dado** que la concesionaria inició sesión y tiene vehículos registrados,<br>**Cuando** abre su inventario,<br>**Entonces** visualiza el listado de sus vehículos con la información disponible de cada uno.<br><br>**Escenario 2 — Inventario vacío**<br>**Dado** que la concesionaria aún no registra vehículos,<br>**Cuando** accede al inventario,<br>**Entonces** la plataforma muestra un estado vacío y la opción de registrar o publicar un vehículo. |
-
-<br>
-
-| **US-16** | **Publicar vehículo** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero publicar un vehículo con sus características y precio desde la aplicación web, para ofrecerlo en el catálogo. |
-| **Acceptance Criteria** | **Escenario 1 — Publicación de vehículo exitosa**<br>**Dado** que la concesionaria cuenta con permisos para gestionar inventario,<br>**Cuando** completa las características y el precio obligatorios de un vehículo y confirma la publicación,<br>**Entonces** el vehículo se registra y aparece en el catálogo.<br><br>**Escenario 2 — Publicación con datos inválidos**<br>**Dado** que faltan datos obligatorios o existen valores inválidos,<br>**Cuando** la concesionaria intenta publicar el vehículo,<br>**Entonces** la plataforma señala los errores y no publica el registro. |
-
-<br>
-
-| **US-17** | **Editar vehículo publicado** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero actualizar el precio, las características y el estado de stock de un vehículo publicado desde la aplicación web, para mantener actualizado mi inventario. |
-| **Acceptance Criteria** | **Escenario 1 — Edición de vehículo exitosa**<br>**Dado** que la concesionaria selecciona un vehículo de su inventario,<br>**Cuando** modifica su precio, características o stock con datos válidos y guarda,<br>**Entonces** el sistema actualiza la información publicada.<br><br>**Escenario 2 — Edición inválida o no autorizada**<br>**Dado** que la concesionaria intenta guardar cambios inválidos o sobre un vehículo que no le pertenece,<br>**Cuando** confirma la edición,<br>**Entonces** la plataforma rechaza la operación y conserva los datos existentes. |
-
-<br>
-
-| **US-18** | **Cambiar estado transaccional del vehículo** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero cambiar el estado comercial de un vehículo entre Disponible, Reservado y Vendido desde la aplicación web, para mantener actualizado su estado comercial. |
-| **Acceptance Criteria** | **Escenario 1 — Cambio de estado exitoso**<br>**Dado** que la concesionaria selecciona un vehículo de su inventario,<br>**Cuando** cambia su estado comercial a Disponible, Reservado o Vendido y confirma,<br>**Entonces** el nuevo estado queda reflejado en el inventario.<br><br>**Escenario 2 — Cambio de estado inválido o no autorizado**<br>**Dado** que la concesionaria intenta asignar un estado distinto de los permitidos o modificar un vehículo ajeno,<br>**Cuando** confirma la operación,<br>**Entonces** la plataforma rechaza el cambio. |
-
-<br>
-
-| **US-19** | **Eliminar vehículo** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Media |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero eliminar un vehículo de mi inventario desde la aplicación web, para retirarlo del catálogo. |
-| **Acceptance Criteria** | **Escenario 1 — Eliminación de vehículo confirmada**<br>**Dado** que la concesionaria selecciona un vehículo de su inventario,<br>**Cuando** confirma su eliminación,<br>**Entonces** el vehículo deja de aparecer en su inventario y en el catálogo publicado.<br><br>**Escenario 2 — Cancelación de eliminación**<br>**Dado** que la concesionaria cancela la confirmación de eliminación,<br>**Cuando** vuelve al inventario,<br>**Entonces** el vehículo permanece registrado sin cambios. |
-
-<br>
-
-| **US-20** | **Proyectar depreciación del vehículo** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Media |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero consultar la proyección de depreciación de un vehículo a 2, 3 y 5 años desde la aplicación web, para evaluar su valor a futuro. |
-| **Acceptance Criteria** | **Escenario 1 — Proyección de depreciación disponible**<br>**Dado** que la concesionaria consulta un vehículo con información suficiente,<br>**Cuando** solicita la proyección de depreciación,<br>**Entonces** la plataforma presenta los valores estimados para los horizontes de 2, 3 y 5 años.<br><br>**Escenario 2 — Información insuficiente para proyectar**<br>**Dado** que el vehículo no cuenta con información suficiente para calcular la proyección,<br>**Cuando** la concesionaria solicita el cálculo,<br>**Entonces** la plataforma informa qué información falta y no presenta estimaciones como definitivas. |
-
-<br>
-
-| **US-21** | **Panel de estadísticas del concesionario** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Media |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero consultar estadísticas de mis vehículos, como vistas y simulaciones, desde la aplicación web, para conocer el interés generado por mi inventario. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización de estadísticas**<br>**Dado** que la concesionaria tiene vehículos publicados con actividad registrada,<br>**Cuando** abre su panel de estadísticas,<br>**Entonces** visualiza las métricas disponibles de vistas y simulaciones de su inventario.<br><br>**Escenario 2 — Sin actividad registrada**<br>**Dado** que todavía no existe actividad registrada,<br>**Cuando** consulta las estadísticas,<br>**Entonces** la plataforma muestra valores vacíos o cero claramente identificados. |
-
-<br>
-
-| **US-22** | **Ver datos de contacto de prospectos** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Gestión de inventario de vehículos |
-| **Description** | Como Concesionaria, quiero consultar los datos de contacto de los clientes que realizaron simulaciones con mis vehículos desde la aplicación web, para poder contactarlos. |
-| **Acceptance Criteria** | **Escenario 1 — Consulta de prospectos autorizados**<br>**Dado** que un cliente realizó una simulación asociada a un vehículo de la concesionaria,<br>**Cuando** la concesionaria consulta los prospectos,<br>**Entonces** puede visualizar los datos de contacto permitidos para esos clientes.<br><br>**Escenario 2 — Consulta de prospectos no autorizada**<br>**Dado** que la concesionaria intenta consultar prospectos que no corresponden a su inventario o no tiene permisos,<br>**Cuando** solicita los datos,<br>**Entonces** la plataforma deniega el acceso. |
-
-<br>
-
-| **US-23** | **Búsqueda y filtrado de vehículos** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Exploración y comparación de vehículos |
-| **Description** | Como Cliente, quiero buscar vehículos utilizando filtros como marca, precio, año y condición desde la aplicación web, para encontrar opciones que se ajusten a mis necesidades. |
-| **Acceptance Criteria** | **Escenario 1 — Búsqueda con resultados**<br>**Dado** que el cliente abre el catálogo de vehículos,<br>**Cuando** introduce filtros de marca, precio, año o condición,<br>**Entonces** la plataforma muestra los vehículos que cumplen los criterios seleccionados.<br><br>**Escenario 2 — Búsqueda sin resultados**<br>**Dado** que ningún vehículo coincide con los filtros aplicados,<br>**Cuando** se ejecuta la búsqueda,<br>**Entonces** la plataforma informa que no hay resultados y permite modificar o limpiar los filtros. |
-
-<br>
-
-| **US-24** | **Filtrar catálogo por concesionaria** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Media |
-| **Epic** | Exploración y comparación de vehículos |
-| **Description** | Como Cliente, quiero filtrar los vehículos por concesionaria desde la aplicación web, para consultar únicamente el inventario de un distribuidor específico. |
-| **Acceptance Criteria** | **Escenario 1 — Filtrado por concesionaria exitoso**<br>**Dado** que el cliente consulta el catálogo,<br>**Cuando** selecciona una concesionaria como filtro,<br>**Entonces** la plataforma muestra únicamente los vehículos asociados a esa concesionaria.<br><br>**Escenario 2 — Concesionaria sin vehículos disponibles**<br>**Dado** que la concesionaria seleccionada no tiene vehículos publicados disponibles,<br>**Cuando** se aplica el filtro,<br>**Entonces** la plataforma muestra un resultado vacío informativo. |
-
-<br>
-
-| **US-25** | **Ver detalle de vehículo** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Exploración y comparación de vehículos |
-| **Description** | Como Cliente, quiero consultar la información detallada de un vehículo desde la aplicación web, para conocer sus características antes de iniciar una simulación. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización del detalle del vehículo**<br>**Dado** que el cliente selecciona un vehículo del catálogo,<br>**Cuando** abre su ficha,<br>**Entonces** visualiza la información detallada disponible para evaluar el vehículo antes de simular un crédito.<br><br>**Escenario 2 — Vehículo no disponible**<br>**Dado** que el vehículo ya no está disponible o su ficha no puede cargarse,<br>**Cuando** el cliente intenta consultarla,<br>**Entonces** la plataforma informa la situación y evita mostrar información desactualizada como vigente. |
-
-<br>
-
-| **US-26** | **Ver datos de contacto de la concesionaria** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Media |
-| **Epic** | Exploración y comparación de vehículos |
-| **Description** | Como Cliente, quiero consultar los datos de contacto de la concesionaria desde la ficha del vehículo en la aplicación web, para poder comunicarme con el vendedor. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización de datos de contacto**<br>**Dado** que el cliente se encuentra en la ficha de un vehículo publicado por una concesionaria,<br>**Cuando** consulta la sección de contacto,<br>**Entonces** visualiza los datos de contacto habilitados de dicha concesionaria.<br><br>**Escenario 2 — Datos de contacto no disponibles**<br>**Dado** que no existen datos de contacto disponibles para la concesionaria,<br>**Cuando** el cliente abre esa sección,<br>**Entonces** la plataforma informa que los datos no están disponibles. |
-
-<br>
-
-| **US-27** | **Comparar vehículos** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Media |
-| **Epic** | Exploración y comparación de vehículos |
-| **Description** | Como Cliente, quiero comparar hasta dos vehículos desde la aplicación web, para consultar sus principales características y costos de forma conjunta. |
-| **Acceptance Criteria** | **Escenario 1 — Comparación de dos vehículos**<br>**Dado** que el cliente selecciona dos vehículos para comparar,<br>**Cuando** abre la comparación,<br>**Entonces** la plataforma presenta conjuntamente sus principales características y costos.<br><br>**Escenario 2 — Límite de vehículos para comparación**<br>**Dado** que el cliente intenta agregar un tercer vehículo o seleccionar menos de dos vehículos,<br>**Cuando** solicita la comparación,<br>**Entonces** la plataforma mantiene el límite de dos y solicita completar la selección requerida. |
-
-<br>
-
-| **US-28** | **Pre-evaluación de riesgo crediticio** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero generar una pre-evaluación crediticia basada en mis ingresos y deudas desde la aplicación web, para conocer mi capacidad de endeudamiento antes de solicitar un crédito. |
-| **Acceptance Criteria** | **Escenario 1 — Pre-evaluación crediticia exitosa**<br>**Dado** que el cliente ingresa sus ingresos y deudas requeridos,<br>**Cuando** solicita la pre-evaluación crediticia,<br>**Entonces** la plataforma calcula y presenta el resultado estimado de su capacidad de endeudamiento.<br><br>**Escenario 2 — Pre-evaluación con datos incompletos o inválidos**<br>**Dado** que el cliente omite datos requeridos o ingresa valores inválidos,<br>**Cuando** solicita la pre-evaluación,<br>**Entonces** la plataforma señala los campos que debe corregir y no genera un resultado basado en datos incompletos. |
-
-<br>
-
-| **US-29** | **Crear simulación de crédito vehicular** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero simular un crédito indicando el vehículo, entidad financiera, cuota inicial y plazo desde la aplicación web, para conocer las condiciones estimadas de pago. |
-| **Acceptance Criteria** | **Escenario 1 — Simulación de crédito exitosa**<br>**Dado** que el cliente selecciona un vehículo y una entidad financiera e ingresa cuota inicial y plazo válidos,<br>**Cuando** ejecuta la simulación,<br>**Entonces** la plataforma presenta las condiciones estimadas de pago.<br><br>**Escenario 2 — Simulación con datos inválidos**<br>**Dado** que faltan datos requeridos o la cuota inicial o el plazo no son válidos,<br>**Cuando** el cliente intenta simular,<br>**Entonces** la plataforma informa los errores y no genera la simulación. |
-
-<br>
-
-| **US-30** | **Ver cronograma detallado de pagos** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero consultar el cronograma detallado de una simulación desde la aplicación web, para conocer la distribución de mis pagos durante el crédito. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización del cronograma**<br>**Dado** que el cliente tiene una simulación registrada,<br>**Cuando** consulta su cronograma,<br>**Entonces** visualiza el detalle de los pagos y su distribución durante el crédito.<br><br>**Escenario 2 — Cronograma no disponible**<br>**Dado** que la simulación no tiene un cronograma disponible,<br>**Cuando** el cliente intenta consultarlo,<br>**Entonces** la plataforma informa que no es posible mostrar el detalle. |
-
-<br>
-
-| **US-31** | **Descargar resumen de simulación en PDF** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Media |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero descargar mi simulación financiera en formato PDF desde la aplicación web, para conservarla como documento. |
-| **Acceptance Criteria** | **Escenario 1 — Descarga de simulación en PDF exitosa**<br>**Dado** que el cliente cuenta con una simulación disponible,<br>**Cuando** selecciona descargar el resumen en PDF,<br>**Entonces** la plataforma genera y entrega un documento legible con la información de esa simulación.<br><br>**Escenario 2 — Error al generar el PDF**<br>**Dado** que ocurre un error al generar el PDF,<br>**Cuando** el cliente solicita la descarga,<br>**Entonces** la plataforma informa que no pudo completarse y permite volver a intentarlo. |
-
-<br>
-
-| **US-32** | **Ver y eliminar simulaciones guardadas** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero consultar y eliminar mis simulaciones guardadas desde la aplicación web, para mantener organizado mi historial. |
-| **Acceptance Criteria** | **Escenario 1 — Consulta y eliminación de simulación**<br>**Dado** que el cliente tiene simulaciones guardadas,<br>**Cuando** abre su historial,<br>**Entonces** visualiza sus simulaciones y puede seleccionar una para eliminarla.<br><br>**Escenario 2 — Cancelación de eliminación**<br>**Dado** que el cliente confirma la eliminación de una simulación propia,<br>**Cuando** se completa la operación,<br>**Entonces** esta deja de aparecer en su historial; si cancela, permanece guardada. |
-
-<br>
-
-| **US-33** | **Filtrar simulaciones por estado** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Media |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero filtrar mis simulaciones por estado desde la aplicación web, para localizar rápidamente las que están pendientes, aprobadas o rechazadas. |
-| **Acceptance Criteria** | **Escenario 1 — Filtrado de simulaciones por estado**<br>**Dado** que el cliente tiene simulaciones con distintos estados,<br>**Cuando** selecciona un estado como filtro,<br>**Entonces** la plataforma muestra únicamente las simulaciones que coinciden.<br><br>**Escenario 2 — Filtro sin resultados**<br>**Dado** que ninguna simulación coincide con el estado seleccionado,<br>**Cuando** se aplica el filtro,<br>**Entonces** la plataforma muestra un mensaje de ausencia de resultados. |
-
-<br>
-
-| **US-34** | **Cancelar simulación guardada** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Media |
-| **Epic** | Simulación y evaluación crediticia |
-| **Description** | Como Cliente, quiero cancelar una simulación que esté pendiente de revisión desde la aplicación web, para detener el proceso de solicitud de crédito. |
-| **Acceptance Criteria** | **Escenario 1 — Cancelación de simulación exitosa**<br>**Dado** que el cliente tiene una simulación pendiente de revisión,<br>**Cuando** selecciona cancelarla y confirma la acción,<br>**Entonces** la plataforma actualiza su estado a cancelada.<br><br>**Escenario 2 — Cancelación no permitida o cancelada por el usuario**<br>**Dado** que la simulación no está pendiente o el cliente cancela la confirmación,<br>**Cuando** intenta cancelar,<br>**Entonces** la plataforma no modifica su estado. |
-
-<br>
-
-| **US-35** | **Ver solicitudes de crédito entrantes** |
-| :--- | :--- |
-| **User** | Entidad Financiera |
-| **Priority** | Alta |
-| **Epic** | Evaluación y gestión de solicitudes de crédito |
-| **Description** | Como Entidad Financiera, quiero consultar las solicitudes de crédito recibidas desde la aplicación web, para gestionar y priorizar su revisión. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización de solicitudes recibidas**<br>**Dado** que la entidad financiera inició sesión y tiene solicitudes recibidas,<br>**Cuando** abre la bandeja de solicitudes,<br>**Entonces** visualiza las solicitudes disponibles para su revisión.<br><br>**Escenario 2 — Bandeja de solicitudes vacía**<br>**Dado** que no existen solicitudes entrantes,<br>**Cuando** la entidad financiera consulta la bandeja,<br>**Entonces** la plataforma muestra un estado vacío informativo. |
-
-<br>
-
-| **US-36** | **Evaluación oficial de solicitud de crédito** |
-| :--- | :--- |
-| **User** | Entidad Financiera |
-| **Priority** | Alta |
-| **Epic** | Evaluación y gestión de solicitudes de crédito |
-| **Description** | Como Entidad Financiera, quiero revisar una solicitud de crédito y registrar su resultado como Aprobada o Rechazada desde la aplicación web, para formalizar la evaluación. |
-| **Acceptance Criteria** | **Escenario 1 — Evaluación oficial registrada**<br>**Dado** que la entidad financiera abre una solicitud que puede evaluar,<br>**Cuando** registra el resultado Aprobada o Rechazada y confirma,<br>**Entonces** la plataforma guarda la decisión y actualiza el estado de la solicitud.<br><br>**Escenario 2 — Evaluación no autorizada o inválida**<br>**Dado** que el usuario no pertenece a la entidad financiera autorizada o no selecciona un resultado válido,<br>**Cuando** intenta registrar la evaluación,<br>**Entonces** la plataforma rechaza la operación. |
-
-<br>
-
-| **US-37** | **Notificación del resultado de evaluación** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Evaluación y gestión de solicitudes de crédito |
-| **Description** | Como Cliente, quiero recibir automáticamente por correo el resultado de la evaluación crediticia en formato PDF, para conservar un registro de la decisión de la entidad financiera. |
-| **Acceptance Criteria** | **Escenario 1 — Notificación de evaluación enviada**<br>**Dado** que una entidad financiera registra el resultado de evaluación de una solicitud,<br>**Cuando** el proceso de notificación se ejecuta,<br>**Entonces** el cliente recibe un correo con el resultado y el PDF correspondiente.<br><br>**Escenario 2 — Fallo en la notificación**<br>**Dado** que el envío del correo o la generación del PDF falla,<br>**Cuando** se procesa la notificación,<br>**Entonces** el sistema registra o comunica el fallo para permitir su seguimiento y reintento. |
-
-<br>
-
-| **US-38** | **Ver estado de solicitudes desde la aplicación móvil** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Evaluación y gestión de solicitudes de crédito |
-| **Description** | Como Cliente, quiero consultar el estado de mis solicitudes de crédito desde la aplicación móvil nativa, para conocer si están pendientes, aprobadas o rechazadas. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización del estado de solicitudes**<br>**Dado** que el cliente inició sesión en la aplicación móvil,<br>**Cuando** abre sus solicitudes de crédito,<br>**Entonces** visualiza el estado de cada solicitud como pendiente, aprobada o rechazada.<br><br>**Escenario 2 — Cliente sin solicitudes registradas**<br>**Dado** que el cliente no tiene solicitudes registradas,<br>**Cuando** accede a esa sección móvil,<br>**Entonces** la aplicación muestra un estado vacío informativo. |
-
-<br>
-
-| **US-39** | **Bandeja de Inbox y conversaciones activas** |
-| :--- | :--- |
-| **User** | Usuario Autenticado |
-| **Priority** | Alta |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Usuario Autenticado, quiero consultar un Inbox con mis conversaciones activas desde la aplicación móvil nativa, para acceder rápidamente a mis chats pendientes. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización de conversaciones activas**<br>**Dado** que el usuario autenticado abre el Inbox en la aplicación móvil,<br>**Cuando** existen conversaciones activas,<br>**Entonces** visualiza la lista de conversaciones para acceder a ellas.<br><br>**Escenario 2 — Inbox sin conversaciones activas**<br>**Dado** que el usuario no tiene conversaciones activas,<br>**Cuando** abre el Inbox,<br>**Entonces** la aplicación muestra un estado vacío y una indicación para iniciar una conversación si corresponde. |
-
-<br>
-
-| **US-40** | **Indicadores de mensajes no leídos** |
-| :--- | :--- |
-| **User** | Usuario Autenticado |
-| **Priority** | Media |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Usuario Autenticado, quiero visualizar indicadores de mensajes no leídos en mi Inbox desde la aplicación móvil nativa, para identificar rápidamente las conversaciones con nueva actividad. |
-| **Acceptance Criteria** | **Escenario 1 — Visualización de mensajes no leídos**<br>**Dado** que una conversación contiene mensajes no leídos,<br>**Cuando** el usuario visualiza su Inbox,<br>**Entonces** la aplicación muestra un indicador asociado a esa conversación.<br><br>**Escenario 2 — Actualización del indicador al leer mensajes**<br>**Dado** que el usuario abre una conversación y sus mensajes quedan leídos,<br>**Cuando** vuelve al Inbox,<br>**Entonces** el indicador se actualiza para reflejar el estado leído. |
-
-<br>
-
-| **US-41** | **Iniciar chat directo con la concesionaria** |
-| :--- | :--- |
-| **User** | Cliente |
-| **Priority** | Alta |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Cliente, quiero iniciar un chat con la concesionaria desde la ficha de un vehículo en la aplicación móvil nativa, para realizar consultas sobre su disponibilidad. |
-| **Acceptance Criteria** | **Escenario 1 — Inicio de chat exitoso**<br>**Dado** que el cliente abre la ficha de un vehículo en la aplicación móvil,<br>**Cuando** selecciona iniciar chat con la concesionaria,<br>**Entonces** se crea o abre una conversación asociada al contacto.<br><br>**Escenario 2 — Inicio de chat no disponible**<br>**Dado** que el cliente no está autenticado o el vehículo no tiene una concesionaria contactable,<br>**Cuando** intenta iniciar el chat,<br>**Entonces** la aplicación solicita autenticación o informa que el contacto no está disponible. |
-
-<br>
-
-| **US-42** | **Cargar y ver historial de chat** |
-| :--- | :--- |
-| **User** | Usuario Autenticado |
-| **Priority** | Alta |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Usuario Autenticado, quiero visualizar el historial de una conversación al abrirla desde la aplicación móvil nativa, para conservar el contexto de la comunicación. |
-| **Acceptance Criteria** | **Escenario 1 — Carga del historial de conversación**<br>**Dado** que el usuario autenticado selecciona una conversación existente,<br>**Cuando** la abre en la aplicación móvil,<br>**Entonces** se carga y muestra el historial de mensajes disponible en orden cronológico.<br><br>**Escenario 2 — Historial vacío o no disponible**<br>**Dado** que la conversación no tiene mensajes anteriores o no se puede cargar el historial,<br>**Cuando** el usuario la abre,<br>**Entonces** la aplicación muestra un estado vacío o un aviso de error con opción de reintento. |
-
-<br>
-
-| **US-43** | **Enviar y recibir mensajes de texto en tiempo real** |
-| :--- | :--- |
-| **User** | Usuario Autenticado |
-| **Priority** | Alta |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Usuario Autenticado, quiero enviar y recibir mensajes en tiempo real desde la aplicación móvil nativa, para comunicarme con otros usuarios sin salir de la plataforma. |
-| **Acceptance Criteria** | **Escenario 1 — Envío de mensaje exitoso**<br>**Dado** que el usuario autenticado se encuentra en una conversación activa,<br>**Cuando** envía un mensaje de texto válido,<br>**Entonces** el mensaje se entrega a la conversación y aparece en el chat.<br><br>**Escenario 2 — Recepción de mensaje en tiempo real**<br>**Dado** que llega un mensaje nuevo a una conversación abierta,<br>**Cuando** la aplicación recibe la actualización,<br>**Entonces** lo muestra en el chat sin requerir que el usuario recargue manualmente. |
-
-<br>
-
-| **US-44** | **Atención rápida de prospectos por chat** |
-| :--- | :--- |
-| **User** | Concesionaria |
-| **Priority** | Alta |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Concesionaria, quiero responder consultas de los prospectos mediante el chat desde la aplicación móvil nativa, para brindar atención comercial y facilitar el contacto. |
-| **Acceptance Criteria** | **Escenario 1 — Respuesta a prospecto enviada**<br>**Dado** que la concesionaria abre una conversación con un prospecto en la aplicación móvil,<br>**Cuando** redacta y envía una respuesta,<br>**Entonces** el mensaje aparece en el historial de la conversación.<br><br>**Escenario 2 — Envío de mensaje inválido o fallido**<br>**Dado** que la concesionaria intenta enviar un mensaje vacío o se produce un error de envío,<br>**Cuando** confirma el envío,<br>**Entonces** la aplicación impide el mensaje vacío o informa el fallo para que pueda reintentarlo. |
-
-<br>
-
-| **US-45** | **Recibir notificaciones push** |
-| :--- | :--- |
-| **User** | Usuario Autenticado |
-| **Priority** | Alta |
-| **Epic** | Mensajería y comunicación |
-| **Description** | Como Usuario Autenticado, quiero recibir notificaciones push en la aplicación móvil nativa, para enterarme de nuevos mensajes, cambios en mis solicitudes y otras actividades importantes. |
-| **Acceptance Criteria** | **Escenario 1 — Recepción de notificación push**<br>**Dado** que el usuario autenticado habilitó las notificaciones y ocurre un nuevo mensaje o cambio relevante en una solicitud,<br>**Cuando** el dispositivo recibe el evento,<br>**Entonces** muestra una notificación push con información pertinente.<br><br>**Escenario 2 — Notificaciones deshabilitadas**<br>**Dado** que el usuario deshabilitó las notificaciones o el dispositivo no puede recibirlas,<br>**Cuando** ocurre un evento,<br>**Entonces** la aplicación respeta la configuración y mantiene disponible la información al consultar la plataforma. |
 
 ## 3.3. Product Backlog
 
@@ -474,8 +536,8 @@ En esta sección se presenta el Product Backlog priorizado del proyecto. Siguien
 
 A continuación, se detalla la tabla de estimación utilizando la escala de Story Points (1, 2, 3, 5, 8).
 
-| # Orden | User Story Id | Título | Descripción | Story Points |
-| :---: | :---: | :--- | :--- | :---: |
+| Orden | User Story Id | Título | Descripción | Story Points |
+| :---: | :---: | :---: | :---: | :---: |
 | 1 | US-01 | Visualizar módulos funcionales de la plataforma | Como visitante, deseo visualizar las funcionalidades principales del producto para entender cómo me ayudará a buscar o vender un vehículo. | 2 |
 | 2 | US-02 | Consultar planes de membresía B2B | Como visitante gerente comercial, deseo consultar los planes de suscripción para evaluar los beneficios de afiliar mi concesionaria a la plataforma. | 2 |
 | 3 | US-04 | Navegación fluida mediante menú interactivo | Como visitante, deseo utilizar un menú de navegación para saltar directamente a la sección de mi interés sin perder el contexto de la página. | 1 |
