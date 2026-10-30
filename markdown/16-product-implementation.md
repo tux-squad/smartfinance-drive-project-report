@@ -542,6 +542,8 @@ Aquí se presenta el backend del proyecto completamente desplegado y documentado
 
 En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
 
+
+
 | Sprint # | Sprint 2 |
 | :--- | :--- |
 | **Date** | 2026-09-27 |
@@ -549,11 +551,13 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Location** | Reunión Virtual - Discord |
 | **Prepared By** | Machacca Soto, Aldo Jeanfranco |
 | **Attendees** | Castillo Yataco, Mauricio Sebastian / Cotrina Siclla, Sofia Alessandra / Jonseck Choque, Oliver / Machacca Soto, Aldo Jeanfranco / Acosta Elera, Abraam Bernabe |
-| **Sprint 1 Review Summary** | . |
-| **Sprint 1 Retrospective Summary** | . |
-| **Sprint 2 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients (dealers and buyers). This will be confirmed when a user successfully views the unified catalog structure. |
+| **Sprint 1 Review Summary** | **Logros completados:** Se desplegó la arquitectura backend en Spring Boot en la plataforma Render y la base de datos con Flyway. En el frontend Web se completó la Landing Page interactiva, el catálogo base con filtros y la ficha técnica de vehículos. En la aplicación móvil se inicializó el proyecto Android con su arquitectura modular, completando las pantallas y lógica segura de Login y Registro. Adicionalmente, se integraron los servicios de Factiliza para validación de identidad y Brevo para notificaciones, junto con el simulador de cuotas vehiculares bajo el método francés. |
+| **Sprint 1 Retrospective Summary** | **Éxitos:** Excelente acoplamiento técnico entre backend, base de datos y clientes web y móvil. La investigación previa del algoritmo financiero mitigó riesgos, permitiendo entregar el simulador a tiempo sin dejar tareas pendientes.<br>**Desafíos:** La configuración inicial del proyecto Android desde cero y la implementación del almacenamiento seguro de tokens locales requirieron un esfuerzo de diseño mayor al previsto. Las pruebas de integración con APIs externas tomaron tiempo extra por el mapeo de datos.<br>**Acciones:** Desarrollar el motor de búsqueda difusa e implementar estrategias de almacenamiento en caché y límite de peticiones en el backend. Iniciar con pruebas automatizadas en los flujos principales móviles antes de integrar Stripe Checkout. |
+| **Sprint 2 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients. This will be confirmed when a user successfully views the unified catalog structure. |
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
+
+
 
 ##### 5.2.2.2. Aspects Leader Collaboration
 
