@@ -16,9 +16,9 @@
 
 ### 2.3.2. User Task Matrix
 
-En esta sección se presenta el User Task Matrix, que concentra las tareas que los User Persona (que representan a cada segmento) realizan para cumplir sus objetivos. Las tareas listadas a continuación son realizadas por los segmentos independientemente de la existencia de la solución de software (SmartFinance Drive). El análisis considera a Carlos Mendoza (Compradores), Valeria Rojas (Concesionaria Nuevos) y Roberto García (Concesionaria Usados).
+En esta sección se presenta el User Task Matrix, que concentra las tareas que los User Persona (que representan a cada segmento) realizan para cumplir sus objetivos. Las tareas listadas a continuación son realizadas por los segmentos independientemente de la existencia de la solución de software (SmartFinance Drive). El análisis considera a Carlos Mendoza (Compradores), Roberto García (Concesionaria Nuevos) y Valeria Rojas (Concesionaria Usados).
 
-| Tarea (Task) | Carlos Mendoza (Comprador) | | Valeria Rojas (Concesionaria Nuevos) | | Roberto García (Concesionaria Usados) | |
+| Tarea (Task) | Carlos Mendoza (Comprador) | | Roberto García (Concesionaria Nuevos) | | Valeria Rojas (Concesionaria Usados) | |
 | :--------------------------------------------------------------------------------- | :--------: | :---------: | :--------: | :---------: | :--------: | :---------: |
 | | **Frecuencia** | **Importancia** | **Frecuencia** | **Importancia** | **Frecuencia** | **Importancia** |
 | Definir límite de presupuesto mensual y capacidad de endeudamiento. | Alta | Alta | Baja | Baja | Baja | Baja |
@@ -38,7 +38,7 @@ Al analizar la matriz, resaltan diferencias y coincidencias críticas entre lo r
 
 Por otro lado, coinciden las tareas de mayor peso comercial para ambas concesionarias (Nuevos y Usados): la promoción publicitaria del inventario, la calificación estricta de prospectos para no invertir horas en clientes sin capacidad de compra, la negociación del precio final y el agendamiento de visitas físicas. 
 
-La principal diferencia entre las concesionarias radica en la actualización de precios y la gestión de la devaluación; para Roberto (Usados), rotar el inventario y ajustar precios rápidamente es de extrema urgencia e importancia debido a que un auto se devalúa casi 20% al segundo año. Esto también le obliga a evaluar mecánica y legalmente las unidades de manera constante, siendo un factor de presión ligeramente menor en la operatividad diaria para las unidades 0 km de Valeria (Nuevos).
+La principal diferencia entre las concesionarias radica en la actualización de precios y la gestión de la devaluación; para Valeria (Usados), rotar el inventario y ajustar precios rápidamente es de extrema urgencia e importancia debido a que un auto se devalúa casi 20% al segundo año. Esto también le obliga a evaluar mecánica y legalmente las unidades de manera constante, siendo un factor de presión ligeramente menor en la operatividad diaria para las unidades 0 km de Roberto (Nuevos).
 
 ### 2.3.3. User Journey Mapping
 
