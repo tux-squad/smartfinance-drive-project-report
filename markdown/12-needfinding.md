@@ -4,15 +4,15 @@
 
 **Segmento 1: Compradores interesados**
 
-![UserPersona-CarlosMendoza](../assets/Chapter-2/UserPersona-CarlosMendoza.png){width=65%}
+![UserPersona-CarlosMendoza](../assets/Chapter-2/UserPersona-CarlosMendoza.png)
 
 **Segmento 2: Concesionarias de vehículos nuevos**
 
-![UserPersona-RobertoGarcía](../assets/Chapter-2/UserPersona-RobertoGarcía.png){width=65%}
+![UserPersona-RobertoGarcía](../assets/Chapter-2/UserPersona-RobertoGarcía.png)
 
 **Segmento 3: Concesionarias de vehículos usados**
 
-![UserPersona-ValeriaRojas](../assets/Chapter-2/UserPersona-ValeriaRojas.png){width=65%}
+![UserPersona-ValeriaRojas](../assets/Chapter-2/UserPersona-ValeriaRojas.png)
 
 ### 2.3.2. User Task Matrix
 
