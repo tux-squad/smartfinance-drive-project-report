@@ -954,6 +954,6 @@ Las historias de la aplicación móvil (Mobile, US40 a US49) y las de interfaz e
 
 **Evidencia de ejecución**
 
-![Core System Tests 1](../assets/Chapter-6/Core System Tests-1.jpeg)
+![Core System Tests 1](../assets/Chapter-6/CoreSystemTests-1.jpeg)
 
 ![Core System Tests 2](../assets/Chapter-6/Core System Tests-2.jpeg)
