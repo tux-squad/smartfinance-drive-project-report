@@ -56,7 +56,7 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
     - **Material Design:** utilizado como referencia para los principios visuales y de diseño de la interfaz.
 
 - **Frontend Web Application:**
-    - **Vue Framework:** utilizado como framework principal para el desarrollo de la aplicación web.
+    - **Vue Framework:** utilizado como framework principal para el desarrollo de la aplicación web, que atiende a los roles de cliente, concesionario, entidad financiera y administrador.
     - **HTML5:** utilizado para la estructura de las interfaces.
     - **CSS3:** utilizado para los estilos y diseño visual.
     - **JavaScript:** utilizado para implementar la lógica e interactividad del frontend.
@@ -64,11 +64,11 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
     - **Material Design:** utilizado como referencia para mantener una interfaz consistente y orientada a la usabilidad.
 
 - **Backend:**
-    - **Next.js (App Router):** utilizado como framework principal para la implementación de los servicios y lógica del lado servidor.
-    - **TypeScript:** utilizado como lenguaje principal para el desarrollo del backend, proporcionando tipado estático y mayor seguridad durante la implementación.
-    - **Clean Architecture:** utilizada como patrón arquitectónico para separar responsabilidades y organizar la lógica del sistema.
-    - **Server Actions:** utilizadas para ejecutar operaciones directamente en el servidor mediante las capacidades de Next.js.
-    - **Route Handlers:** utilizados para implementar endpoints HTTP tradicionales, principalmente para integraciones y funcionalidades que requieren comunicación mediante API.
+    - **Spring Boot (Java):** utilizado como framework principal para la implementación de los servicios y la lógica del lado servidor, expuestos como una API RESTful.
+    - **Domain-Driven Design con Bounded Contexts:** utilizado como patrón arquitectónico para separar responsabilidades; el sistema se organiza en los contextos IAM, Profiles, Catalog, Partners, Financing, Scoring, Projections, Billing y Analytics.
+    - **Spring Security + JWT:** utilizados para la autenticación sin estado y la autorización basada en roles.
+    - **OpenAPI / Swagger UI:** utilizados para documentar y probar de forma interactiva los endpoints de la API.
+    - **Integraciones externas:** SUNAT, Chequea.pe y Factiliza para la verificación de RUC y DNI, Brevo para el envío de correos transaccionales y Stripe para la facturación de las membresías.
 
 - **Native Mobile Application:**
     - **Android / Kotlin:** utilizado para el desarrollo de la aplicación móvil nativa para dispositivos Android.
@@ -77,15 +77,15 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
     - **Retrofit + OkHttp:** utilizados para la comunicación con la API REST del backend y la gestión de llamadas HTTP.
     - **Gradle / Android Studio:** utilizados para la configuración del proyecto, dependencias y ejecución del entorno de desarrollo móvil.
     - **MVVM / Clean Architecture Style:** utilizado como enfoque estructural para separar la lógica de negocio, los casos de uso y la capa de presentación.
-    - **Auth + Catalog + Financing + Profiles + Settings + Messaging:** módulos implementados para cubrir la autenticación de usuarios, catálogo de vehículos, preevaluación crediticia, perfiles, configuración y mensajería interna.
+    - **Auth + Messaging:** módulos que cubren el alcance móvil definido por historias de usuario (US40 a US49): inicio y cierre de sesión y mensajería interna entre clientes, concesionarias y entidades financieras.
 
 **Database & Authentication**
 
-- **PostgreSQL:** sistema de gestión de bases de datos relacional utilizado para la persistencia de la información de SmartFinance Drive.
+- **PostgreSQL:** sistema de gestión de bases de datos relacional utilizado para la persistencia de la información de SmartFinance Drive, desplegado como servicio administrado en Aiven.
 
-- **Prisma:** ORM utilizado para facilitar la interacción entre el backend y PostgreSQL, permitiendo trabajar con los datos mediante modelos y operaciones tipadas.
+- **Flyway:** herramienta utilizada para el control de versiones y la evolución automatizada del esquema de la base de datos mediante scripts de migración.
 
-- **Supabase:** plataforma utilizada principalmente para la autenticación y gestión de sesiones de los usuarios. También se utiliza para almacenar información relacionada con los perfiles de usuario.
+- **Spring Security + JWT:** mecanismo utilizado para la autenticación y la gestión de sesiones de los usuarios, con autorización basada en roles.
 
 **Development Environment**
 
@@ -259,7 +259,7 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
 **TypeScript y Vue.js - Arquitectura de la Web App**
 
-Para el desarrollo del frontend de la aplicación principal (Dashboard de concesionarias y panel de comprador), nos adherimos a la *Vue Style Guide*. Utilizamos el *Composition API* con `<script setup>` para encapsular la lógica y *Pinia* para la gestión del estado global.
+Para el desarrollo del frontend de la aplicación principal (panel de la concesionaria y portal del cliente), nos adherimos a la *Vue Style Guide*. Utilizamos el *Composition API* con `<script setup>` para encapsular la lógica y *Pinia* para la gestión del estado global.
 
 ```vue
 <script setup lang="ts">
@@ -321,7 +321,7 @@ Para el despliegue de la base de datos relacional de la plataforma, optamos por 
 El backend fue desplegado en **Render** mediante contenedores Docker, aprovechando la facilidad que ofrece esta plataforma para alojar APIs y Web Services dentro de un entorno escalable y de alta disponibilidad. Para ello, conectamos el repositorio del backend a los Web Services de Render, el cual detecta automáticamente el código, ejecuta el `Dockerfile` y realiza el despliegue correspondiente bajo el dominio `smartfinance-drive-platform.onrender.com`. De este modo, pudimos definir las variables de entorno (como parámetros de JWT y cadenas de conexión a Aiven PostgreSQL) directamente desde el panel de la plataforma, beneficiándonos de certificados SSL integrados, despliegues continuos (CI/CD) y monitoreo en tiempo real.
 
 **Frontend (Vue.js Web Application):**
-Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrollado en **Vue.js**), también elegimos **Vercel**, aprovechando su excelente integración nativa con frameworks de Single Page Applications (SPA). Esta plataforma automatiza el proceso de compilación (`npm run build`) mediante herramientas como Vite, de manera que cada *Pull Request* genera una vista previa, y cada *merge* a la rama principal genera una nueva versión estable de la aplicación en producción. Además, Vercel gestiona automáticamente el enrutamiento del lado del cliente (Vue Router) mediante configuraciones de reescritura (`rewrites`) para asegurar que la navegación entre las vistas (ej. inventario, panel de prospectos) funcione correctamente sin devolver errores 404.
+Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrollado en **Vue.js**), también elegimos **Vercel**, aprovechando su excelente integración nativa con frameworks de Single Page Applications (SPA). Esta plataforma automatiza el proceso de compilación (`npm run build`) mediante herramientas como Vite, de manera que cada *Pull Request* genera una vista previa, y cada *merge* a la rama principal genera una nueva versión estable de la aplicación en producción. Además, Vercel gestiona automáticamente el enrutamiento del lado del cliente (Vue Router) mediante configuraciones de reescritura (`rewrites`) para asegurar que la navegación entre las vistas (ej. inventario, simulaciones) funcione correctamente sin devolver errores 404.
 
 * **Enlace web activo:** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
 
@@ -342,9 +342,9 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Location** | Reunión Virtual - Discord |
 | **Prepared By** | Machacca Soto, Aldo Jeanfranco |
 | **Attendees** | Castillo Yataco, Mauricio Sebastian / Cotrina Siclla, Sofia Alessandra / Jonseck Choque, Oliver / Machacca Soto, Aldo Jeanfranco / Acosta Elera, Abraam Bernabe |
-| **Sprint 0 Review Summary** | Configuración inicial de repositorios en GitHub, elección del stack tecnológico (Next.js, Vue, C# .NET, Render, Vercel) y definición preliminar del catálogo B2B. |
+| **Sprint 0 Review Summary** | Configuración inicial de repositorios en GitHub, elección del stack tecnológico (Vue, Spring Boot, PostgreSQL, Render, Vercel) y definición preliminar del catálogo B2B. |
 | **Sprint 0 Retrospective Summary** | Se identificó la necesidad de automatizar la validación de código (Linters) antes de realizar *Push* a la rama `develop` para evitar conflictos tempranos. |
-| **Sprint 1 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients (dealers and buyers). This will be confirmed when a user successfully views the unified catalog structure. |
+| **Sprint 1 Goal** | Our focus is on establishing the core modular backend architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients (dealers and buyers). This will be confirmed when a user successfully views the unified catalog structure. |
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
 
@@ -364,21 +364,21 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
-| US-01 | Visualizar información de la plataforma | TS1-01 | Maquetar estructura HTML5/CSS3 del Hero y sección Solución de la Landing Page | 4 | Castillo Yataco, Mauricio | Done |
-| US-02 | Conocer beneficios de la plataforma | TS1-02 | Construir componente interactivo de acordeón de problemas y beneficios | 3 | Castillo Yataco, Mauricio | Done |
-| US-03 | Conocer beneficios de los planes para concesionarias | TS1-03 | Construir componente de Pricing Cards con metodología BEM para planes B2B | 3 | Castillo Yataco, Mauricio | Done |
-| US-04 | Acceder al registro | TS1-04 | Implementar script Vanilla JS para Sticky Navbar, Smooth Scroll y acceso al registro | 3 | Castillo Yataco, Mauricio | Done |
-| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-05 | Desarrollar catálogo base de vehículos con filtros iniciales en la Web App (Vue) | 5 | Machacca Soto, Aldo | Done |
-| US-16 | Buscar y filtrar vehículos por precio máximo, año de fabricación, condición y marca | TS1-06 | Implementar servicio de consulta y filtrado de catálogo en el backend (Spring Boot) | 4 | Machacca Soto, Aldo | Done |
-| US-18 | Ver detalle de vehículo | TS1-07 | Maquetar ruta dinámica y vista de ficha detallada del vehículo en la Web App | 4 | Machacca Soto, Aldo | Done |
-| US-18 | Ver detalle de vehículo | TS1-08 | Diseñar endpoint y servicio de detalle de vehículo en el backend | 4 | Machacca Soto, Aldo | Done |
-| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-09 | Investigar fórmulas financieras de mercado y documentar algoritmo del método francés | 6 | Machacca Soto, Aldo | Done |
-| US-19 | Crear simulación de crédito vehicular | TS1-10 | Implementar simulador base de cuotas en la Web App y servicio de cálculo | 6 | Machacca Soto, Aldo | Done |
-| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-11 | Configurar cliente HTTP y mapeo de datos con la API de Factiliza para verificación de DNI | 5 | Cotrina Siclla, Sofia | Done |
-| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-12 | Implementar integración de Brevo para envío de notificaciones y verificación por correo | 4 | Cotrina Siclla, Sofia | Done |
-| US-05 | Registrar cuenta y perfil personal | TS1-13 | Maquetar formulario de Sign Up B2C e integración con servicio de autenticación | 4 | Machacca Soto, Aldo | Done |
-| US-05 | Registrar cuenta y perfil personal | TS1-14 | Inicializar proyecto Android con Jetpack Compose y flujo de registro móvil | 5 | Acosta Elera, Abraam | Done |
-| US-07 | Iniciar sesión | TS1-15 | Implementar pantalla de Login y manejo de tokens en la aplicación móvil | 5 | Acosta Elera, Abraam | Done |
+| LP-01 | Visualizar información de la plataforma | TS1-01 | (Landing) Maquetar estructura HTML5/CSS3 del Hero y sección Solución de la Landing Page | 4 | Castillo Yataco, Mauricio | Done |
+| LP-02 | Conocer beneficios de la plataforma | TS1-02 | (Landing) Construir componente interactivo de acordeón de problemas y beneficios | 3 | Castillo Yataco, Mauricio | Done |
+| LP-03 | Conocer beneficios de los planes para concesionarias | TS1-03 | (Landing) Construir componente de Pricing Cards con metodología BEM para planes B2B | 3 | Castillo Yataco, Mauricio | Done |
+| LP-04 | Acceder al registro | TS1-04 | (Landing) Implementar script Vanilla JS para Sticky Navbar, Smooth Scroll y acceso al registro | 3 | Castillo Yataco, Mauricio | Done |
+| US08 | Búsqueda y filtrado de vehículos | TS1-05 | (Web) Desarrollar catálogo base de vehículos con filtros iniciales en la Web App (Vue) | 5 | Machacca Soto, Aldo | Done |
+| US08 | Búsqueda y filtrado de vehículos | TS1-06 | (Backend) Implementar servicio de consulta y filtrado de catálogo en el backend (Spring Boot) | 4 | Machacca Soto, Aldo | Done |
+| US09 | Ver detalle de un vehículo | TS1-07 | (Web) Maquetar ruta dinámica y vista de ficha detallada del vehículo en la Web App | 4 | Machacca Soto, Aldo | Done |
+| US09 | Ver detalle de un vehículo | TS1-08 | (Backend) Diseñar endpoint y servicio de detalle de vehículo en el backend | 4 | Machacca Soto, Aldo | Done |
+| SP-01 | Investigar el cálculo de simulaciones de crédito vehicular | TS1-09 | (Backend) Investigar fórmulas financieras de mercado y documentar algoritmo del método francés | 6 | Machacca Soto, Aldo | Done |
+| US17 | Crear simulación de crédito vehicular | TS1-10 | (Web / Backend) Implementar simulador base de cuotas en la Web App y servicio de cálculo | 6 | Machacca Soto, Aldo | Done |
+| TS-01 | Integrar API de Factiliza para verificar DNI | TS1-11 | (Backend) Configurar cliente HTTP y mapeo de datos con la API de Factiliza para verificación de DNI | 5 | Cotrina Siclla, Sofia | Done |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS1-12 | (Backend) Implementar integración de Brevo para envío de notificaciones y verificación por correo | 4 | Cotrina Siclla, Sofia | Done |
+| US01 | Registro de cuenta | TS1-13 | (Web) Maquetar formulario de Sign Up B2C e integración con servicio de autenticación | 4 | Machacca Soto, Aldo | Done |
+| US01 / US40 | Registro de cuenta (Web) / Inicio de sesión (Mobile) | TS1-14 | (Mobile) Inicializar proyecto Android con Jetpack Compose y flujo de registro móvil | 5 | Acosta Elera, Abraam | Done |
+| US40 | Inicio de sesión (Mobile) | TS1-15 | (Mobile) Implementar pantalla de Login y manejo de tokens en la aplicación móvil | 5 | Acosta Elera, Abraam | Done |
 
 **Evidencia del Sprint Backlog 1 en Jira:**
 
@@ -389,7 +389,7 @@ El tablero de control del Sprint 1 se encuentra disponible de manera pública en
 
 ##### 5.2.1.4. Development Evidence for Sprint Review
 
-La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page, Backend y aplicación móvil nativa:
+La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page (Landing), el Backend (Backend) y la aplicación móvil nativa (Mobile), identificables por el repositorio de cada commit:
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -406,7 +406,7 @@ La implementación en los repositorios oficiales del proyecto se rigió por el m
 
 ### 5.2.1.5. Implemented Landing Page Evidence
 
-Durante el Sprint 1, se implementó exitosamente la **Landing Page de SmartFinance Drive** utilizando **HTML5, CSS3 y JavaScript (Vanilla)**, cumpliendo estrictamente con el diseño previamente definido y los requerimientos del proyecto. Este sitio web representa la cara pública del proyecto, desplegado eficientemente a través de **Vercel** para garantizar una alta disponibilidad y tiempos de carga rápidos.
+Durante el Sprint 1, se implementó exitosamente la **Landing Page de SmartFinance Drive (Landing)** utilizando **HTML5, CSS3 y JavaScript (Vanilla)**, cumpliendo estrictamente con el diseño previamente definido y los requerimientos del proyecto. Este sitio web representa la cara pública del proyecto, desplegado eficientemente a través de **Vercel** para garantizar una alta disponibilidad y tiempos de carga rápidos.
 
 La landing page funciona como el punto de entrada principal, presentando la identidad visual de la marca y explicando de forma interactiva el valor del ecosistema para conectar a compradores con concesionarias de vehículos en un solo lugar.
 
@@ -450,31 +450,27 @@ La Landing Page se encuentra desplegada y disponible en producción mediante **V
 
 ### 5.2.1.6. Implemented Frontend-Web Application Evidence
 
-> **Pendiente:** Evidencia del frontend desplegado de la aplicación web.
+La evidencia de la aplicación web (Web) desplegada, correspondiente a las vistas de inicio de sesión, creación de cuenta y catálogo, se presenta en la sección 5.2.2.5.
 
 ### 5.2.1.7. Acuerdo de Servicio - SaaS
 
 Este acuerdo establece los términos de uso de la plataforma **SmartFinance Drive** para las concesionarias aliadas (**SaaS Agreement**).
 
-* **Propiedad Intelectual:** tux-squad mantiene la propiedad intelectual de la plataforma, otorgando a las concesionarias una licencia de uso mediante suscripción mensual. Se garantiza el acceso al panel B2B, herramientas de simulación y gestión de leads, sin derecho a replicar o extraer el código fuente.
-* **Compromiso de Disponibilidad (SLA):** Nos comprometemos a mantener el catálogo y los Web Services operativos un **99.9 % del tiempo**, asegurando que las integraciones con pasarelas (Stripe) y validaciones (SUNAT) funcionen ininterrumpidamente para no perder prospectos comerciales.
-* **Seguridad y Resguardo de Datos:** Garantizamos la protección de las credenciales, historiales crediticios de los compradores y datos de inventario mediante protocolos JWT y encriptación.
+* **Propiedad Intelectual:** tux-squad mantiene la propiedad intelectual de la plataforma, otorgando a las concesionarias una licencia de uso mediante suscripción mensual. Se garantiza el acceso al panel B2B, herramientas de simulación, estadísticas por vehículo y datos de contacto de los clientes que simularon sobre sus vehículos, sin derecho a replicar o extraer el código fuente.
+* **Compromiso de Disponibilidad (SLA):** Nos comprometemos a mantener el catálogo y los Web Services operativos un **99.9 % del tiempo**, asegurando que las integraciones con pasarelas (Stripe) y validaciones (SUNAT) funcionen ininterrumpidamente para no interrumpir la operación comercial de las concesionarias.
+* **Seguridad y Resguardo de Datos:** Garantizamos la protección de las credenciales, información financiera y socioeconómica de los clientes y datos de inventario mediante protocolos JWT y encriptación.
 * **Uso Aceptable:** SmartFinance Drive se reserva el derecho de dar de baja publicaciones de vehículos fraudulentos, con información engañosa o que incumplan las normativas de financiamiento vigentes.
 
 ### 5.2.1.8. Implemented Native-Mobile Application Evidence
 
-Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración, mensajería y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
+Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive (Mobile)** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. El alcance móvil definido por historias de usuario (US40 a US49) comprende el inicio y cierre de sesión y la **mensajería** entre clientes, concesionarias y entidades financieras: bandeja de conversaciones, inicio de chat, envío y respuesta de mensajes, historial e indicador de mensajes no leídos. El resto de funcionalidades de la plataforma (catálogo, simulación, evaluación de solicitudes, inventario y membresías) pertenece a la aplicación web (Web). Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. En el Sprint 1 se registraron las tareas TS1-14 (inicialización del proyecto Android y flujo de registro móvil, vinculada a US01 / US40) y TS1-15 (pantalla de inicio de sesión y manejo de tokens, vinculada a US40) como evidencia histórica del arranque de la aplicación.
 
 * **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
 * **Stack tecnológico:** Kotlin, Jetpack Compose, Material 3, Retrofit, OkHttp, Gradle, Android Studio.
-* **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Messaging, Shared, Core.
-* **Evidencia de funcionalidades:**
-    - Pantalla de Login y Registro de usuarios.
-    - Catálogo de vehículos con vista de listado y filtros.
-    - Detalle del vehículo con información relevante y acceso a simulación.
-    - Pre-evaluación crediticia para clientes.
-    - Perfil de usuario, configuración y navegación principal.
-    - Módulo de mensajería y gestión de información de concesionarias.
+* **Módulos del alcance por historias:** IAM (inicio y cierre de sesión) y Messaging (mensajería); módulos de soporte: Shared, Core.
+* **Evidencia de funcionalidades (Mobile):**
+    - Pantalla de inicio de sesión (US40).
+    - Módulo de mensajería: conversaciones entre clientes, concesionarias y entidades financieras (US42 a US49).
 
 La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
 
@@ -488,7 +484,7 @@ La aplicación móvil fue desarrollada como una solución nativa para Android, p
 
 ### 5.2.1.9. Implemented RESTful API and/or Serverless Backend Evidence
 
-El backend de SmartFinance Drive está desarrollado utilizando el framework Spring Boot (Java), estructurado bajo un diseño de Bounded Contexts (IAM, Catalog, Partners, Financing, Billing) y desplegado de manera continua en la plataforma de alojamiento en la nube Render.
+El backend (Backend) de SmartFinance Drive está desarrollado utilizando el framework Spring Boot (Java), estructurado bajo un diseño de Bounded Contexts (IAM, Profiles, Catalog, Partners, Financing, Scoring, Projections, Billing, Analytics) y desplegado de manera continua en la plataforma de alojamiento en la nube Render.
 
 * **Persistencia y Migraciones:** Se utiliza PostgreSQL como base de datos relacional para garantizar la consistencia transaccional de los usuarios, el inventario de vehículos y el registro de simulaciones crediticias. El control de versiones y la evolución del esquema de la base de datos se gestionan de forma automatizada mediante scripts de Flyway.
 * **Seguridad:** Implementación de Spring Security respaldado por un esquema de tokens JWT (JSON Web Tokens) Bearer. Esto permite la autenticación sin estado (stateless) y una autorización granular basada en los roles del ecosistema (Comprador, Concesionaria, Entidad Financiera y Administrador).
@@ -497,7 +493,7 @@ El backend de SmartFinance Drive está desarrollado utilizando el framework Spri
 
 ### 5.2.1.10. RESTful API documentation
 
-Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
+Aquí se presenta el backend (Backend) del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
 
 ![Swager 1](../assets/Chapter-5/Swager-1.png)
 
@@ -540,9 +536,7 @@ Aquí se presenta el backend del proyecto completamente desplegado y documentado
 
 ##### 5.2.2.1. Sprint Planning 1
 
-En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
-
-
+En este segundo hito, el equipo definió como objetivo principal implementar en la aplicación web y en el backend los módulos de perfiles, inventario de vehículos de las concesionarias, gestión de simulaciones de crédito y evaluación de solicitudes por parte de las entidades financieras, junto con las integraciones externas de verificación de RUC y de correo transaccional.
 
 | Sprint # | Sprint 2 |
 | :--- | :--- |
@@ -551,13 +545,11 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Location** | Reunión Virtual - Discord |
 | **Prepared By** | Machacca Soto, Aldo Jeanfranco |
 | **Attendees** | Castillo Yataco, Mauricio Sebastian / Cotrina Siclla, Sofia Alessandra / Jonseck Choque, Oliver / Machacca Soto, Aldo Jeanfranco / Acosta Elera, Abraam Bernabe |
-| **Sprint 1 Review Summary** | **Logros completados:** Se desplegó la arquitectura backend en Spring Boot en la plataforma Render y la base de datos con Flyway. En el frontend Web se completó la Landing Page interactiva, el catálogo base con filtros y la ficha técnica de vehículos. En la aplicación móvil se inicializó el proyecto Android con su arquitectura modular, completando las pantallas y lógica segura de Login y Registro. Adicionalmente, se integraron los servicios de Factiliza para validación de identidad y Brevo para notificaciones, junto con el simulador de cuotas vehiculares bajo el método francés. |
-| **Sprint 1 Retrospective Summary** | **Éxitos:** Excelente acoplamiento técnico entre backend, base de datos y clientes web y móvil. La investigación previa del algoritmo financiero mitigó riesgos, permitiendo entregar el simulador a tiempo sin dejar tareas pendientes.<br>**Desafíos:** La configuración inicial del proyecto Android desde cero y la implementación del almacenamiento seguro de tokens locales requirieron un esfuerzo de diseño mayor al previsto. Las pruebas de integración con APIs externas tomaron tiempo extra por el mapeo de datos.<br>**Acciones:** Desarrollar el motor de búsqueda difusa e implementar estrategias de almacenamiento en caché y límite de peticiones en el backend. Iniciar con pruebas automatizadas en los flujos principales móviles antes de integrar Stripe Checkout. |
-| **Sprint 2 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients. This will be confirmed when a user successfully views the unified catalog structure. |
+| **Sprint 1 Review Summary** | . |
+| **Sprint 1 Retrospective Summary** | . |
+| **Sprint 2 Goal** | Our focus is on delivering the profile, vehicle inventory, saved simulation management and loan application evaluation modules, together with the external integrations (Chequea.pe and Brevo). We believe it enables dealers to publish and manage their vehicles and financial institutions to issue an official decision on client simulations. This will be confirmed when a dealer publishes a vehicle and a financial institution approves or rejects a client's simulation. |
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
-
-
 
 ##### 5.2.2.2. Aspects Leader Collaboration
 
@@ -573,38 +565,38 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 
 ##### 5.2.2.3. Sprint Backlog 2
 
-Durante el Sprint 2, el equipo se enfocó en implementar los módulos de gestión de perfiles, inventario de vehículos, publicación, consulta y eliminación de simulaciones, evaluación de solicitudes de crédito e integraciones externas.
+Durante el Sprint 2, el equipo se enfocó en implementar, en la aplicación web (Web) y en el backend (Backend), los módulos de gestión de perfiles, inventario de vehículos, publicación, consulta y eliminación de simulaciones, evaluación de solicitudes de crédito por la entidad financiera e integraciones externas.
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
-| US-06 | Verificar correo electrónico | TS2-01 | Diseñar y maquetar pantalla de verificación de código/OTP en la App Web (Vue) | 3 | Machacca Soto, Aldo | Done |
-| US-06 | Verificar correo electrónico | TS2-02 | Implementar lógica de reenvío de código y expiración de tokens en el backend | 4 | Machacca Soto, Aldo | Done |
-| US-09 | Visualizar perfil | TS2-03 | Maquetar vista de perfil de usuario en la App Web | 3 | Jonseck Choque, Oliver | Done |
-| US-09 | Visualizar perfil | TS2-04 | Crear endpoint para consultar datos de cuenta y roles desde base de datos | 4 | Machacca Soto, Aldo | Done |
-| US-10 | Editar perfil | TS2-05 | Desarrollar formularios reactivos de edición de datos personales con validación en Vue | 4 | Jonseck Choque, Oliver | Done |
-| US-10 | Editar perfil | TS2-06 | Implementar servicio en backend para actualizar campos e informar errores de data | 4 | Machacca Soto, Aldo | Done |
-| US-11 | Listar inventario de vehículos | TS2-07 | Diseñar interfaz de inventario de vehículos para concesionarias en la Web App | 4 | Jonseck Choque, Oliver | Done |
-| US-11 | Listar inventario de vehículos | TS2-08 | Implementar consulta de inventario por concesionaria en el backend | 4 | Machacca Soto, Aldo | Done |
-| US-12 | Registrar vehículo | TS2-09 | Maquetar formulario de registro de nueva unidad en el panel de concesionarias | 5 | Jonseck Choque, Oliver | Done |
-| US-12 | Registrar vehículo | TS2-10 | Desarrollar endpoint de registro de vehículo con validación de datos en el backend | 5 | Machacca Soto, Aldo | Done |
-| US-13 | Publicar vehículo | TS2-11 | Implementar acción de publicación y cambio de visibilidad en el catálogo | 3 | Jonseck Choque, Oliver | Done |
-| US-13 | Publicar vehículo | TS2-12 | Desarrollar lógica de publicación y estado de vehículos en el backend | 4 | Machacca Soto, Aldo | Done |
-| US-14 | Editar vehículo publicado | TS2-13 | Desarrollar vista de edición de campos comerciales y técnicos del vehículo | 4 | Jonseck Choque, Oliver | Done |
-| US-14 | Editar vehículo publicado | TS2-14 | Integrar servicio en backend para actualización de datos del vehículo | 4 | Machacca Soto, Aldo | Done |
-| US-15 | Eliminar vehículo | TS2-15 | Crear modal de confirmación de eliminación de unidades en el inventario B2B | 3 | Jonseck Choque, Oliver | Done |
-| US-15 | Eliminar vehículo | TS2-16 | Implementar lógica de borrado lógico y verificación de procesos activos | 4 | Machacca Soto, Aldo | Done |
-| US-17 | Ordenar resultados de búsqueda | TS2-17 | Agregar selectores de ordenamiento (precio, año, marca) en la UI del catálogo | 3 | Jonseck Choque, Oliver | Done |
-| US-17 | Ordenar resultados de búsqueda | TS2-18 | Implementar lógica de ordenamiento en backend y ordenamiento en cliente | 3 | Machacca Soto, Aldo | Done |
-| US-20 | Consultar simulaciones guardadas | TS2-19 | Diseñar sección de historial y listado de simulaciones crediticias previas del cliente | 4 | Machacca Soto, Aldo | Done |
-| US-20 | Consultar simulaciones guardadas | TS2-20 | Implementar servicio para recuperar colecciones de simulaciones guardadas por usuario | 4 | Machacca Soto, Aldo | Done |
-| US-21 | Eliminar simulación guardada | TS2-21 | Añadir botón de remoción y flujo de confirmación en la lista de simulaciones | 3 | Machacca Soto, Aldo | Done |
-| US-21 | Eliminar simulación guardada | TS2-22 | Crear endpoint en backend para eliminar registros específicos de simulaciones | 3 | Machacca Soto, Aldo | Done |
-| US-22 | Evaluar solicitud de crédito | TS2-23 | Diseñar bandeja de trabajo para Entidades Financieras con listado de expedientes | 5 | Castillo Yataco, Mauricio | Done |
-| US-22 | Evaluar solicitud de crédito | TS2-24 | Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales | 6 | Castillo Yataco, Mauricio | Done |
-| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-25 | Configurar la integración con los endpoints de Chequea.pe y validación de RUC | 5 | Cotrina Siclla, Sofia | Done |
-| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-26 | Desarrollar lógica de auto-llenado de datos empresariales tras validación de SUNAT | 4 | Cotrina Siclla, Sofia | Done |
-| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-27 | Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | Cotrina Siclla, Sofia | Done |
-| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-28 | Construir prototipo funcional de envío de correos transaccionales automatizados | 5 | Cotrina Siclla, Sofia | Done |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS2-01 | (Web) Diseñar y maquetar pantalla de verificación de código/OTP en la App Web (Vue) | 3 | Machacca Soto, Aldo | Done |
+| TS-03 | Integrar API de Brevo para correos transaccionales y verificación de correo | TS2-02 | (Backend) Implementar lógica de reenvío de código y expiración de tokens en el backend | 4 | Machacca Soto, Aldo | Done |
+| US07 | Edición de perfil | TS2-03 | (Web) Maquetar vista de perfil de usuario en la App Web | 3 | Jonseck Choque, Oliver | Done |
+| US07 | Edición de perfil | TS2-04 | (Backend) Crear endpoint para consultar datos de cuenta y roles desde base de datos | 4 | Machacca Soto, Aldo | Done |
+| US07 | Edición de perfil | TS2-05 | (Web) Desarrollar formularios reactivos de edición de datos personales con validación en Vue | 4 | Jonseck Choque, Oliver | Done |
+| US07 | Edición de perfil | TS2-06 | (Backend) Implementar servicio en backend para actualizar campos e informar errores de data | 4 | Machacca Soto, Aldo | Done |
+| US36 | Listar mis vehículos publicados | TS2-07 | (Web) Diseñar interfaz de inventario de vehículos para concesionarias en la Web App | 4 | Jonseck Choque, Oliver | Done |
+| US36 | Listar mis vehículos publicados | TS2-08 | (Backend) Implementar consulta de inventario por concesionaria en el backend | 4 | Machacca Soto, Aldo | Done |
+| US10 | Publicar vehículo en el catálogo | TS2-09 | (Web) Maquetar formulario de registro de nueva unidad en el panel de concesionarias | 5 | Jonseck Choque, Oliver | Done |
+| US10 | Publicar vehículo en el catálogo | TS2-10 | (Backend) Desarrollar endpoint de registro de vehículo con validación de datos en el backend | 5 | Machacca Soto, Aldo | Done |
+| US10 | Publicar vehículo en el catálogo | TS2-11 | (Web) Implementar acción de publicación y cambio de visibilidad en el catálogo | 3 | Jonseck Choque, Oliver | Done |
+| US10 | Publicar vehículo en el catálogo | TS2-12 | (Backend) Desarrollar lógica de publicación y estado de vehículos en el backend | 4 | Machacca Soto, Aldo | Done |
+| US11 | Editar vehículo publicado | TS2-13 | (Web) Desarrollar vista de edición de campos comerciales y técnicos del vehículo | 4 | Jonseck Choque, Oliver | Done |
+| US11 | Editar vehículo publicado | TS2-14 | (Backend) Integrar servicio en backend para actualización de datos del vehículo | 4 | Machacca Soto, Aldo | Done |
+| US12 | Eliminar vehículo del catálogo | TS2-15 | (Web) Crear modal de confirmación de eliminación de unidades en el inventario B2B | 3 | Jonseck Choque, Oliver | Done |
+| US12 | Eliminar vehículo del catálogo | TS2-16 | (Backend) Implementar lógica de borrado lógico y verificación de procesos activos | 4 | Machacca Soto, Aldo | Done |
+| US08 | Búsqueda y filtrado de vehículos | TS2-17 | (Web) Agregar selectores de ordenamiento (precio, año, marca) en la UI del catálogo | 3 | Jonseck Choque, Oliver | Done |
+| US08 | Búsqueda y filtrado de vehículos | TS2-18 | (Backend) Implementar lógica de ordenamiento en backend y ordenamiento en cliente | 3 | Machacca Soto, Aldo | Done |
+| US18 | Ver y eliminar simulaciones guardadas | TS2-19 | (Web) Diseñar sección de historial y listado de simulaciones crediticias previas del cliente | 4 | Machacca Soto, Aldo | Done |
+| US18 | Ver y eliminar simulaciones guardadas | TS2-20 | (Backend) Implementar servicio para recuperar colecciones de simulaciones guardadas por usuario | 4 | Machacca Soto, Aldo | Done |
+| US18 | Ver y eliminar simulaciones guardadas | TS2-21 | (Web) Añadir botón de remoción y flujo de confirmación en la lista de simulaciones | 3 | Machacca Soto, Aldo | Done |
+| US18 | Ver y eliminar simulaciones guardadas | TS2-22 | (Backend) Crear endpoint en backend para eliminar registros específicos de simulaciones | 3 | Machacca Soto, Aldo | Done |
+| US22 | Evaluación oficial de simulación por el banco | TS2-23 | (Web) Diseñar bandeja de trabajo para Entidades Financieras con listado de expedientes | 5 | Castillo Yataco, Mauricio | Done |
+| US22 | Evaluación oficial de simulación por el banco | TS2-24 | (Web / Backend) Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales | 6 | Castillo Yataco, Mauricio | Done |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-25 | (Backend) Configurar la integración con los endpoints de Chequea.pe y validación de RUC | 5 | Cotrina Siclla, Sofia | Done |
+| TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-26 | (Backend) Desarrollar lógica de auto-llenado de datos empresariales tras validación de SUNAT | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-27 | (Backend) Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-28 | (Backend) Construir prototipo funcional de envío de correos transaccionales automatizados | 5 | Cotrina Siclla, Sofia | Done |
 
 **Evidencia del Sprint Backlog 2 en Jira:**
 
@@ -614,6 +606,8 @@ El tablero de control del Sprint 2 se encuentra disponible de manera pública en
 
 
 ##### 5.2.2.4. Development Evidence for Sprint Review
+
+La evidencia de desarrollo corresponde a los repositorios de la Landing Page (Landing), el Backend (Backend) y la aplicación móvil nativa (Mobile), identificables por el repositorio de cada commit.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -638,13 +632,13 @@ El tablero de control del Sprint 2 se encuentra disponible de manera pública en
 
 ### 5.2.2.5. Implemented Frontend-Web Application Evidence
 
-Log In View
+Log In View (Web)
 ![FrontEnd_1](../assets/Chapter-5/FrontEnd-1.png)
 
-Account creation view
+Account creation view (Web)
 ![FrontEnd_2](../assets/Chapter-5/FrontEnd-2.png)
 
-Catalogue view
+Catalogue view (Web)
 ![FrontEnd_3](../assets/Chapter-5/FrontEnd-3.png)
 
 ## 5.3. Video About-the-Product
