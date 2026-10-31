@@ -161,65 +161,65 @@ En esta sección se traducen la arquitectura de la información y las decisiones
 
 ### 4.3.2. Landing Page Mock-up
 
-![smartfinance-drive-landing-mockup-part1](../assets/Chapter-4/smartfinance-drive-landing-mockup-part1.png){width=65%}
+![smartfinance-drive-landing-mockup-part1](../assets/Chapter-4/smartfinance-drive-landing-mockup-part1.png)
 
-![smartfinance-drive-landing-mockup-part2](../assets/Chapter-4/smartfinance-drive-landing-mockup-part2.png){width=65%}
+![smartfinance-drive-landing-mockup-part2](../assets/Chapter-4/smartfinance-drive-landing-mockup-part2.png)
 
 ## 4.4. Mobile Applications UX/UI Design
 
 ### 4.4.1. Mobile Applications Wireframes
 
-![mobile-wireframe-1](../assets/Chapter-4/mobile-wireframe-1.png){width=45%}
+![mobile-wireframe-1](../assets/Chapter-4/mobile-wireframe-1.png)
 
-![mobile-wireframe-2](../assets/Chapter-4/mobile-wireframe-2.png){width=45%}
+![mobile-wireframe-2](../assets/Chapter-4/mobile-wireframe-2.png)
 
-![mobile-wireframe-3](../assets/Chapter-4/mobile-wireframe-3.png){width=45%}
+![mobile-wireframe-3](../assets/Chapter-4/mobile-wireframe-3.png)
 
-![mobile-wireframe-4](../assets/Chapter-4/mobile-wireframe-4.png){width=45%}
+![mobile-wireframe-4](../assets/Chapter-4/mobile-wireframe-4.png)
 
-![mobile-wireframe-5](../assets/Chapter-4/mobile-wireframe-5.png){width=45%}
+![mobile-wireframe-5](../assets/Chapter-4/mobile-wireframe-5.png)
 
-![mobile-wireframe-6](../assets/Chapter-4/mobile-wireframe-6.png){width=45%}
+![mobile-wireframe-6](../assets/Chapter-4/mobile-wireframe-6.png)
 
-![mobile-wireframe-7](../assets/Chapter-4/mobile-wireframe-7.png){width=45%}
+![mobile-wireframe-7](../assets/Chapter-4/mobile-wireframe-7.png)
 
-![mobile-wireframe-8](../assets/Chapter-4/mobile-wireframe-8.png){width=45%}
+![mobile-wireframe-8](../assets/Chapter-4/mobile-wireframe-8.png)
 
-![mobile-wireframe-9](../assets/Chapter-4/mobile-wireframe-9.png){width=45%}
+![mobile-wireframe-9](../assets/Chapter-4/mobile-wireframe-9.png)
 
-![mobile-wireframe-10](../assets/Chapter-4/mobile-wireframe-10.png){width=45%}
+![mobile-wireframe-10](../assets/Chapter-4/mobile-wireframe-10.png)
 
-![mobile-wireframe-11](../assets/Chapter-4/mobile-wireframe-11.png){width=45%}
+![mobile-wireframe-11](../assets/Chapter-4/mobile-wireframe-11.png)
 
-![mobile-wireframe-12](../assets/Chapter-4/mobile-wireframe-12.png){width=45%}
+![mobile-wireframe-12](../assets/Chapter-4/mobile-wireframe-12.png)
 
-![mobile-wireframe-13](../assets/Chapter-4/mobile-wireframe-13.png){width=45%}
+![mobile-wireframe-13](../assets/Chapter-4/mobile-wireframe-13.png)
 
-![mobile-wireframe-14](../assets/Chapter-4/mobile-wireframe-14.png){width=45%}
+![mobile-wireframe-14](../assets/Chapter-4/mobile-wireframe-14.png)
 
-![mobile-wireframe-15](../assets/Chapter-4/mobile-wireframe-15.png){width=45%}
+![mobile-wireframe-15](../assets/Chapter-4/mobile-wireframe-15.png)
 
-![mobile-wireframe-16](../assets/Chapter-4/mobile-wireframe-16.png){width=45%}
+![mobile-wireframe-16](../assets/Chapter-4/mobile-wireframe-16.png)
 
-![mobile-wireframe-17](../assets/Chapter-4/mobile-wireframe-17.png){width=45%}
+![mobile-wireframe-17](../assets/Chapter-4/mobile-wireframe-17.png)
 
-![mobile-wireframe-18](../assets/Chapter-4/mobile-wireframe-18.png){width=45%}
+![mobile-wireframe-18](../assets/Chapter-4/mobile-wireframe-18.png)
 
-![mobile-wireframe-19](../assets/Chapter-4/mobile-wireframe-19.png){width=45%}
+![mobile-wireframe-19](../assets/Chapter-4/mobile-wireframe-19.png)
 
-![mobile-wireframe-20](../assets/Chapter-4/mobile-wireframe-20.png){width=45%}
+![mobile-wireframe-20](../assets/Chapter-4/mobile-wireframe-20.png)
 
-![mobile-wireframe-21](../assets/Chapter-4/mobile-wireframe-21.png){width=45%}
+![mobile-wireframe-21](../assets/Chapter-4/mobile-wireframe-21.png)
 
-![mobile-wireframe-22](../assets/Chapter-4/mobile-wireframe-22.png){width=45%}
+![mobile-wireframe-22](../assets/Chapter-4/mobile-wireframe-22.png)
 
-![mobile-wireframe-23](../assets/Chapter-4/mobile-wireframe-23.png){width=45%}
+![mobile-wireframe-23](../assets/Chapter-4/mobile-wireframe-23.png)
 
-![mobile-wireframe-24](../assets/Chapter-4/mobile-wireframe-24.png){width=45%}
+![mobile-wireframe-24](../assets/Chapter-4/mobile-wireframe-24.png)
 
-![mobile-wireframe-25](../assets/Chapter-4/mobile-wireframe-25.png){width=45%}
+![mobile-wireframe-25](../assets/Chapter-4/mobile-wireframe-25.png)
 
-![mobile-wireframe-26](../assets/Chapter-4/mobile-wireframe-26.png){width=45%}
+![mobile-wireframe-26](../assets/Chapter-4/mobile-wireframe-26.png)
 
 * **Enlace interactivo de Wireframes Móviles en Figma:** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 
@@ -261,57 +261,57 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil Andro
 
 ### 4.4.3. Mobile Applications Mock-ups
 
-![mobile-mockups-1](../assets/Chapter-4/mobile-mockups-1.png){width=45%}
+![mobile-mockups-1](../assets/Chapter-4/mobile-mockups-1.png)
 
-![mobile-mockups-2](../assets/Chapter-4/mobile-mockups-2.png){width=45%}
+![mobile-mockups-2](../assets/Chapter-4/mobile-mockups-2.png)
 
-![mobile-mockups-3](../assets/Chapter-4/mobile-mockups-3.png){width=45%}
+![mobile-mockups-3](../assets/Chapter-4/mobile-mockups-3.png)
 
-![mobile-mockups-4](../assets/Chapter-4/mobile-mockups-4.png){width=45%}
+![mobile-mockups-4](../assets/Chapter-4/mobile-mockups-4.png)
 
-![mobile-mockups-5](../assets/Chapter-4/mobile-mockups-5.png){width=45%}
+![mobile-mockups-5](../assets/Chapter-4/mobile-mockups-5.png)
 
-![mobile-mockups-6](../assets/Chapter-4/mobile-mockups-6.png){width=45%}
+![mobile-mockups-6](../assets/Chapter-4/mobile-mockups-6.png)
 
-![mobile-mockups-7](../assets/Chapter-4/mobile-mockups-7.png){width=45%}
+![mobile-mockups-7](../assets/Chapter-4/mobile-mockups-7.png)
 
-![mobile-mockups-8](../assets/Chapter-4/mobile-mockups-8.png){width=45%}
+![mobile-mockups-8](../assets/Chapter-4/mobile-mockups-8.png)
 
-![mobile-mockups-9](../assets/Chapter-4/mobile-mockups-9.png){width=45%}
+![mobile-mockups-9](../assets/Chapter-4/mobile-mockups-9.png)
 
-![mobile-mockups-10](../assets/Chapter-4/mobile-mockups-10.png){width=45%}
+![mobile-mockups-10](../assets/Chapter-4/mobile-mockups-10.png)
 
-![mobile-mockups-11](../assets/Chapter-4/mobile-mockups-11.png){width=45%}
+![mobile-mockups-11](../assets/Chapter-4/mobile-mockups-11.png)
 
-![mobile-mockups-12](../assets/Chapter-4/mobile-mockups-12.png){width=45%}
+![mobile-mockups-12](../assets/Chapter-4/mobile-mockups-12.png)
 
-![mobile-mockups-13](../assets/Chapter-4/mobile-mockups-13.png){width=45%}
+![mobile-mockups-13](../assets/Chapter-4/mobile-mockups-13.png)
 
-![mobile-mockups-14](../assets/Chapter-4/mobile-mockups-14.png){width=45%}
+![mobile-mockups-14](../assets/Chapter-4/mobile-mockups-14.png)
 
-![mobile-mockups-15](../assets/Chapter-4/mobile-mockups-15.png){width=45%}
+![mobile-mockups-15](../assets/Chapter-4/mobile-mockups-15.png)
 
-![mobile-mockups-16](../assets/Chapter-4/mobile-mockups-16.png){width=45%}
+![mobile-mockups-16](../assets/Chapter-4/mobile-mockups-16.png)
 
-![mobile-mockups-17](../assets/Chapter-4/mobile-mockups-17.png){width=45%}
+![mobile-mockups-17](../assets/Chapter-4/mobile-mockups-17.png)
 
-![mobile-mockups-18](../assets/Chapter-4/mobile-mockups-18.png){width=45%}
+![mobile-mockups-18](../assets/Chapter-4/mobile-mockups-18.png)
 
-![mobile-mockups-19](../assets/Chapter-4/mobile-mockups-19.png){width=45%}
+![mobile-mockups-19](../assets/Chapter-4/mobile-mockups-19.png)
 
-![mobile-mockups-20](../assets/Chapter-4/mobile-mockups-20.png){width=45%}
+![mobile-mockups-20](../assets/Chapter-4/mobile-mockups-20.png)
 
-![mobile-mockups-21](../assets/Chapter-4/mobile-mockups-21.png){width=45%}
+![mobile-mockups-21](../assets/Chapter-4/mobile-mockups-21.png)
 
-![mobile-mockups-22](../assets/Chapter-4/mobile-mockups-22.png){width=45%}
+![mobile-mockups-22](../assets/Chapter-4/mobile-mockups-22.png)
 
-![mobile-mockups-23](../assets/Chapter-4/mobile-mockups-23.png){width=45%}
+![mobile-mockups-23](../assets/Chapter-4/mobile-mockups-23.png)
 
-![mobile-mockups-24](../assets/Chapter-4/mobile-mockups-24.png){width=45%}
+![mobile-mockups-24](../assets/Chapter-4/mobile-mockups-24.png)
 
-![mobile-mockups-25](../assets/Chapter-4/mobile-mockups-25.png){width=45%}
+![mobile-mockups-25](../assets/Chapter-4/mobile-mockups-25.png)
 
-![mobile-mockups-26](../assets/Chapter-4/mobile-mockups-26.png){width=45%}
+![mobile-mockups-26](../assets/Chapter-4/mobile-mockups-26.png)
 
 * **Enlace interactivo de Mockups Móviles en Figma:** [https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0](https://www.figma.com/design/IsJBORA34fGF5Yn55ItYDy/SmartFinance-Drive?node-id=43-2&p=f&t=1a39oiBBrjhbTbCe-0)
 
