@@ -1,6 +1,6 @@
 # Capítulo VI: Product Verification & Validation
 
-Este capítulo documenta la estrategia de pruebas aplicada al backend de SmartFinance Drive (`smartfinance-drive-platform`), una aplicación Spring Boot 4.1.1 con Java 26 organizada en bounded contexts bajo Domain-Driven Design. Para el hito TB1 se cubren las cuatro secciones de **Testing Suites & Validation**: pruebas unitarias de entidades, pruebas de integración, Behavior-Driven Development y pruebas de sistema.
+Este capítulo documenta la estrategia de pruebas aplicada al backend (Backend) de SmartFinance Drive (`smartfinance-drive-platform`), una aplicación Spring Boot 4.1.1 con Java 26 organizada en bounded contexts bajo Domain-Driven Design, que da servicio a la aplicación web (Web). Las historias de la aplicación móvil (Mobile) se validan en su propio cliente. Para el hito TB1 se cubren las cuatro secciones de **Testing Suites & Validation**: pruebas unitarias de entidades, pruebas de integración, Behavior-Driven Development y pruebas de sistema.
 
 Los contextos que se consideran *core* son los más críticos para el negocio del marketplace y del simulador financiero:
 
@@ -387,11 +387,11 @@ class CucumberSuiteTest {
 
 | Feature | Archivo | Escenarios | Bounded context | User Story |
 | --- | --- | ---: | --- | --- |
-| Registro de usuario | `user-registration.feature` | 3 | IAM | US-01 Registro de cuenta y perfil personal (escenario 2: datos inválidos) |
-| Publicación de vehículos en el catálogo | `vehicle-listing.feature` | 4 | Catalog | US-16 Publicar vehículo (escenarios 1 y 2: publicación exitosa y con datos inválidos) |
-| Generación del plan de financiamiento | `financing-plan.feature` | 3 | Financing | US-29 Crear simulación de crédito vehicular; US-30 Ver cronograma detallado de pagos |
-| Evaluación de riesgo crediticio | `credit-scoring.feature` | 4 | Scoring | US-28 Pre-evaluación de riesgo crediticio |
-| Ciclo de vida de la solicitud de crédito | `credit-application.feature` | 5 | Financing | US-36 Evaluación oficial de solicitud de crédito |
+| Registro de usuario | `user-registration.feature` | 3 | IAM | US01 Registro de cuenta (escenario 2: datos inválidos) |
+| Publicación de vehículos en el catálogo | `vehicle-listing.feature` | 4 | Catalog | US10 Publicar vehículo en el catálogo (escenarios 1 y 2: publicación exitosa y con datos inválidos) |
+| Generación del plan de financiamiento | `financing-plan.feature` | 3 | Financing | US17 Crear simulación de crédito vehicular; US26 Ver cronograma detallado de pagos |
+| Evaluación de riesgo crediticio | `credit-scoring.feature` | 4 | Scoring | US15 Generar pre-evaluación de riesgo crediticio |
+| Ciclo de vida de la solicitud de crédito | `credit-application.feature` | 5 | Financing | US22 Evaluación oficial de simulación por el banco |
 
 **Feature 1: Generación del plan de financiamiento**
 
@@ -931,26 +931,26 @@ Las pruebas de sistema validan la aplicación **completa y en ejecución** (API 
 
 | ID | User Story | Caso de prueba | Petición | Resultado esperado | Resultado obtenido |
 | --- | --- | --- | --- | --- | --- |
-| ST-01 | US-01 | Registro exitoso | `POST /api/v1/auth/registrations` con correo, contraseña y datos válidos | `201 Created` | Pendiente de ejecutar |
-| ST-02 | US-01 | Registro con datos inválidos | `POST /api/v1/auth/registrations` con un correo mal formado | `400 Bad Request` | Pendiente de ejecutar |
-| ST-03 | US-02 | Inicio de sesión exitoso | `POST /api/v1/auth/sessions` con las credenciales registradas | `200 OK` con `token` y `refreshToken` | Pendiente de ejecutar |
-| ST-04 | US-03 | Cierre de sesión | `DELETE /api/v1/auth/sessions/current` con `Authorization: Bearer <token>` | `200 OK` con el mensaje `User signed out successfully` | Pendiente de ejecutar |
-| ST-05 | US-03 | Uso de la sesión anterior tras cerrar sesión | Cualquier endpoint protegido con el mismo token ya cerrado | Acceso rechazado (`401 Unauthorized`) | Pendiente de ejecutar |
-| ST-06 | US-08 | Modificar roles como administrador | `PUT /api/v1/users/{userId}/roles` con un usuario `ROLE_ADMIN` | `200 OK` con los roles actualizados | Pendiente de ejecutar |
-| ST-07 | US-08 | Modificar roles sin ser administrador | `PUT /api/v1/users/{userId}/roles` con un usuario `ROLE_USER` | `403 Forbidden` | Pendiente de ejecutar |
-| ST-08 | US-16 | Publicar un vehículo como concesionaria | `POST /api/v1/vehicles` con un usuario `ROLE_DEALER` y datos válidos | `201 Created` con el vehículo creado | Pendiente de ejecutar |
-| ST-09 | US-16 | Publicar un vehículo con datos inválidos | `POST /api/v1/vehicles` con año de fabricación 1899 | `400 Bad Request` y el vehículo no se registra | Pendiente de ejecutar |
-| ST-10 | US-23 | Buscar vehículos con filtros | `GET /api/v1/vehicles?brand=Toyota&minPrice=10000&maxPrice=30000&condition=NEW` | `200 OK` con la lista paginada que cumple los filtros | Pendiente de ejecutar |
-| ST-11 | US-25 | Ver el detalle de un vehículo | `GET /api/v1/vehicles/{vehicleId}` | `200 OK` con los datos del vehículo | Pendiente de ejecutar |
-| ST-12 | US-18 | Cambiar el estado de un vehículo ajeno | `PATCH /api/v1/vehicles/{vehicleId}/status` con una concesionaria que no es la propietaria | `403 Forbidden` (regla `isVehicleOwner`) | Pendiente de ejecutar |
-| ST-13 | US-28 | Pre-evaluación de riesgo crediticio | `POST /api/v1/credit-scores` con ingreso 5 000 PEN y cuota 1 200 PEN | `201 Created` con `riskTier = TIER_A` | Pendiente de ejecutar |
-| ST-14 | US-29 | Crear una simulación de crédito | `POST /api/v1/simulations` con precio 25 000 USD, cuota inicial 20 % y 24 meses | `201 Created`; el cronograma incluye 24 pagos (US-30) | Pendiente de ejecutar |
-| ST-15 | US-32 | Eliminar la simulación de otro cliente | `DELETE /api/v1/simulations/{id}` con un token distinto al del propietario | `403 Forbidden` (regla `isSimulationOwner`) | Pendiente de ejecutar |
-| ST-16 | US-36 | Evaluar una solicitud sin ser entidad financiera | `PATCH /api/v1/credit-applications/{id}/status` con un usuario `ROLE_USER` | `403 Forbidden` | Pendiente de ejecutar |
-| ST-17 | US-36 | Registrar la evaluación como entidad financiera | `PATCH /api/v1/credit-applications/{id}/status` con un usuario `ROLE_FINANCIAL_INSTITUTION` | `200 OK` con el nuevo estado de la solicitud | Pendiente de ejecutar |
-| ST-18 | US-21 | Consultar las estadísticas propias | `GET /api/v1/analytics/dealer` con un usuario `ROLE_DEALER` | `200 OK` con las métricas de la concesionaria | Pendiente de ejecutar |
+| ST-01 | US01 | Registro exitoso | `POST /api/v1/auth/registrations` con correo, contraseña y datos válidos | `201 Created` | Pendiente de ejecutar |
+| ST-02 | US01 | Registro con datos inválidos | `POST /api/v1/auth/registrations` con un correo mal formado | `400 Bad Request` | Pendiente de ejecutar |
+| ST-03 | US02 | Inicio de sesión exitoso | `POST /api/v1/auth/sessions` con las credenciales registradas | `200 OK` con `token` y `refreshToken` | Pendiente de ejecutar |
+| ST-04 | US03 | Cierre de sesión | `DELETE /api/v1/auth/sessions/current` con `Authorization: Bearer <token>` | `200 OK` con el mensaje `User signed out successfully` | Pendiente de ejecutar |
+| ST-05 | US03 | Uso de la sesión anterior tras cerrar sesión | Cualquier endpoint protegido con el mismo token ya cerrado | Acceso rechazado (`401 Unauthorized`) | Pendiente de ejecutar |
+| ST-06 | US20 | Modificar roles como administrador | `PUT /api/v1/users/{userId}/roles` con un usuario `ROLE_ADMIN` | `200 OK` con los roles actualizados | Pendiente de ejecutar |
+| ST-07 | US20 | Modificar roles sin ser administrador | `PUT /api/v1/users/{userId}/roles` con un usuario `ROLE_USER` | `403 Forbidden` | Pendiente de ejecutar |
+| ST-08 | US10 | Publicar un vehículo como concesionaria | `POST /api/v1/vehicles` con un usuario `ROLE_DEALER` y datos válidos | `201 Created` con el vehículo creado | Pendiente de ejecutar |
+| ST-09 | US10 | Publicar un vehículo con datos inválidos | `POST /api/v1/vehicles` con año de fabricación 1899 | `400 Bad Request` y el vehículo no se registra | Pendiente de ejecutar |
+| ST-10 | US08 | Buscar vehículos con filtros | `GET /api/v1/vehicles?brand=Toyota&minPrice=10000&maxPrice=30000&condition=NEW` | `200 OK` con la lista paginada que cumple los filtros | Pendiente de ejecutar |
+| ST-11 | US09 | Ver el detalle de un vehículo | `GET /api/v1/vehicles/{vehicleId}` | `200 OK` con los datos del vehículo | Pendiente de ejecutar |
+| ST-12 | US37 | Cambiar el estado de un vehículo ajeno | `PATCH /api/v1/vehicles/{vehicleId}/status` con una concesionaria que no es la propietaria | `403 Forbidden` (regla `isVehicleOwner`) | Pendiente de ejecutar |
+| ST-13 | US15 | Pre-evaluación de riesgo crediticio | `POST /api/v1/credit-scores` con ingreso 5 000 PEN y cuota 1 200 PEN | `201 Created` con `riskTier = TIER_A` | Pendiente de ejecutar |
+| ST-14 | US17 | Crear una simulación de crédito | `POST /api/v1/simulations` con precio 25 000 USD, cuota inicial 20 % y 24 meses | `201 Created`; el cronograma incluye 24 pagos (US26) | Pendiente de ejecutar |
+| ST-15 | US18 | Eliminar la simulación de otro cliente | `DELETE /api/v1/simulations/{id}` con un token distinto al del propietario | `403 Forbidden` (regla `isSimulationOwner`) | Pendiente de ejecutar |
+| ST-16 | US22 | Evaluar una solicitud sin ser entidad financiera | `PATCH /api/v1/credit-applications/{id}/status` con un usuario `ROLE_USER` | `403 Forbidden` | Pendiente de ejecutar |
+| ST-17 | US22 | Registrar la evaluación como entidad financiera | `PATCH /api/v1/credit-applications/{id}/status` con un usuario `ROLE_FINANCIAL_INSTITUTION` | `200 OK` con el nuevo estado de la solicitud | Pendiente de ejecutar |
+| ST-18 | US29 | Consultar las estadísticas propias | `GET /api/v1/analytics/dealer` con un usuario `ROLE_DEALER` | `200 OK` con las métricas de la concesionaria | Pendiente de ejecutar |
 
-Las historias de la aplicación móvil (US-38 a US-45) y las de interfaz exclusivamente visual se validan en sus propios clientes. Los códigos esperados se derivaron de las reglas de seguridad y de los controladores del backend; si al ejecutar un caso el código obtenido difiere, debe registrarse el obtenido y analizarse la causa.
+Las historias de la aplicación móvil (Mobile, US40 a US49) y las de interfaz exclusivamente visual se validan en sus propios clientes. Los códigos esperados se derivaron de las reglas de seguridad y de los controladores del backend; si al ejecutar un caso el código obtenido difiere, debe registrarse el obtenido y analizarse la causa.
 
 **Evidencia de ejecución**
 
