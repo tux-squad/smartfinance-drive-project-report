@@ -36,7 +36,7 @@ Se utiliza la familia tipográfica **Inter** de Google Fonts en pesos de 400, 50
 La paleta se divide en colores de confianza y colores de acción, aplicados a través de variables CSS para facilitar el mantenimiento y la consistencia temática.
 
 - **Primary Blue (`#1E56A0`) & Dark Blue (`#0D2149`):** Establecen la base visual de seguridad y profesionalismo. Utilizados en textos principales, fondos de sección y el pie de página.
-- **Teal / Cyan (`#00A896`):** Actúa como color de acento tecnológico (usado en la clase `liquid-glass--teal` y `badge--teal`). Representa las funciones de Inteligencia Artificial y validación.
+- **Teal / Cyan (`#00A896`):** Actúa como color de acento tecnológico (usado en la clase `liquid-glass--teal` y `badge--teal`). Representa los estados de validación y confirmación, como el RUC verificado, la evaluación aprobada o la simulación guardada.
 - **Orange / Warm (`#F4A261`):** Color de contraste para conversiones principales. Se aplica en botones de llamada a la acción primarios (clase `btn--warm` y `badge--orange`).
 - **Off-White (`#F8F9FA`):** Fondo base neutral que reduce la fatiga visual (usado en la variable `--bg-light` o similar).
 
@@ -54,7 +54,7 @@ El diseño general integra interacciones fluidas mediante JavaScript nativo, dis
 
 ### 4.1.2. Web Style Guidelines
 
-La interfaz web (incluyendo la Landing Page y futuras Web Apps) aplica un enfoque *Responsive* y prioriza la inmersión del usuario.
+La interfaz web (incluyendo la Landing Page y la Web Application desarrollada en Vue.js) aplica un enfoque *Responsive* y prioriza la inmersión del usuario.
 
 - **Estructura Base (Reset & Variables):** Separación modular de estilos en archivos dedicados (`reset.css`, `variables.css`, `typography.css`, `components.css`) para garantizar la escalabilidad.
 - **Efectos de Scroll (Scroll Reveal):** Los elementos clave (títulos, tarjetas de beneficios) ingresan al *viewport* con animaciones escalonadas controladas por `IntersectionObserver` (`data-reveal`), manteniendo la atención del usuario a medida que navega hacia abajo.
@@ -63,25 +63,23 @@ La interfaz web (incluyendo la Landing Page y futuras Web Apps) aplica un enfoqu
 
 ### 4.1.3. Mobile Style Guidelines
 
-El ecosistema móvil demanda adaptaciones específicas para mantener la usabilidad sin comprometer el estilo visual de la marca.
+El alcance de la aplicación móvil es Android y se centra en el inicio de sesión y la mensajería entre clientes, concesionarias y entidades financieras. Las adaptaciones específicas mantienen la usabilidad sin comprometer el estilo visual de la marca.
 
 #### 4.1.3.1. iOS Mobile Style Guidelines
 
-- **Navegación Táctil:** Reemplazo de los efectos de *hover* y cursores magnéticos (deshabilitados vía media queries táctiles) por *Tap Highlights* nativos.
-- **Componentes Modales:** Implementación de modales de pantalla inferior (Bottom Sheets) para la pre-evaluación crediticia externa, respetando las *Human Interface Guidelines* de Apple y evitando salidas disruptivas del flujo principal.
-- **Safe Areas:** Respeto estricto del *notch* superior y el indicador de inicio inferior en la estructura de vistas de la aplicación iOS.
+- **Alcance:** La aplicación móvil se desarrolla únicamente para Android; los lineamientos de estilo móviles se definen en la sección siguiente.
 
 #### 4.1.3.2. Android Mobile Style Guidelines
 
-- **Material Design 3:** Adopción de sombras modulares (Elevation) y efectos de ondas táctiles (Ripple effect) en listas de vehículos y botones de acción.
-- **Barra de Navegación (Bottom Navigation):** Controles fijos en la parte inferior para acceder rápidamente a: *Búsqueda, Mi Perfil, Recomendaciones IA*.
-- **Gestos:** Soporte total para gestos de deslizamiento horizontal (Swipe) en galerías de imágenes de los autos y para descartar tarjetas de recomendación de la IA.
+- **Material Design 3:** Adopción de sombras modulares (Elevation) y efectos de ondas táctiles (Ripple effect) en la lista de conversaciones y en los botones de acción.
+- **Barra de Navegación (Bottom Navigation):** Controles fijos en la parte inferior para acceder rápidamente a: *Chats, Nuevo chat, Perfil / Cerrar sesión*.
+- **Gestos:** Soporte de gestos de desplazamiento vertical en la bandeja de conversaciones y en el historial de mensajes de cada chat.
 
 ---
 
 ## 4.2. Information Architecture
 
-En esta sección el equipo plantea las decisiones y el sustento que dirigen la manera en que se organizará el contenido en las experiencias web y móvil, abarcando tanto el Landing Page promocional como la Aplicación Web (Marketplace/B2B). Estas propuestas están estrictamente orientadas a que los visitantes (compradores y concesionarias) se adapten con facilidad a la funcionalidad de cada producto, minimicen su carga cognitiva y encuentren rápidamente lo que necesitan sin esfuerzo.
+En esta sección el equipo plantea las decisiones y el sustento que dirigen la manera en que se organizará el contenido en las experiencias web y móvil, abarcando tanto el Landing Page promocional como la Aplicación Web (Marketplace B2B2C). Estas propuestas están estrictamente orientadas a que los visitantes (compradores, concesionarias y entidades financieras) se adapten con facilidad a la funcionalidad de cada producto, minimicen su carga cognitiva y encuentren rápidamente lo que necesitan sin esfuerzo.
 
 ### 4.2.1. Organization Systems
 
@@ -89,8 +87,8 @@ Para garantizar que los usuarios encuentren la información adecuada en el momen
 
 **Organización visual del contenido:**
 
-- **De forma jerárquica (Visual Hierarchy):** Se aplica intensivamente en el Dashboard B2B y en las fichas de detalle de vehículos de la aplicación. La información crítica (Precio del vehículo, Estado de pre-aprobación del lead) se ubica en la parte superior con tipografía de mayor peso, mientras que los datos secundarios (kilometraje, tracción, historial) se agrupan en niveles inferiores.
-- **Organización secuencial (Step-by-step):** Se utiliza exclusivamente para procesos transaccionales complejos que requieren alta concentración, como el embudo de pre-evaluación crediticia y el registro o *onboarding* de una nueva concesionaria. Dividir estos procesos en pasos secuenciales reduce drásticamente la tasa de abandono.
+- **De forma jerárquica (Visual Hierarchy):** Se aplica intensivamente en el panel de la concesionaria y en las fichas de detalle de vehículos de la aplicación. La información crítica (precio y condición del vehículo) se ubica en la parte superior con tipografía de mayor peso, mientras que los datos secundarios (kilometraje, tracción, historial) se agrupan en niveles inferiores.
+- **Organización secuencial (Step-by-step):** Se utiliza exclusivamente para procesos transaccionales complejos que requieren alta concentración, como el flujo de pre-evaluación de riesgo crediticio y simulación de crédito, y la solicitud de rol de una nueva concesionaria o entidad financiera con validación de RUC. Dividir estos procesos en pasos secuenciales reduce drásticamente la tasa de abandono.
 - **Organización matricial:** Implementada en la Landing Page mediante el "Segments Pager". En lugar de crear una página extensa, se utiliza una matriz horizontal deslizable que permite al visitante interactuar y alternar entre los tres perfiles del mercado (Compradores, Concesionarias Nuevos, Concesionarias Usados) dentro de un mismo bloque visual de la pantalla.
 
 **Esquemas de categorización:**
@@ -98,7 +96,7 @@ Para garantizar que los usuarios encuentren la información adecuada en el momen
 - **Según audiencia (Audience-based):** Es el pilar del Landing Page. El contenido se bifurca desde el Hero Section con llamados a la acción distintos ("Explorar vehículos" para la demanda vs. "Soy concesionaria" para la oferta B2B).
 - **Por tópicos:** Utilizado en el motor de búsqueda y catálogo de la Web App, agrupando el inventario en categorías universales como SUVs, Sedanes, Pick-ups y Hatchbacks.
 - **Alfabético:** Empleado estrictamente en los menús desplegables (dropdowns) de selección de Marcas y Modelos vehiculares para facilitar la ubicación rápida.
-- **Cronológico:** Utilizado en el Panel B2B para listar los *Leads* (prospectos) recibidos, priorizando visualmente a los clientes más recientes.
+- **Cronológico:** Utilizado en el historial de simulaciones del cliente, en la bandeja de solicitudes de la entidad financiera y en la lista de clientes que simularon sobre los vehículos de la concesionaria, priorizando visualmente los registros más recientes.
 
 ### 4.2.2. Labeling Systems
 
@@ -106,7 +104,7 @@ Las etiquetas de la plataforma están diseñadas con el mínimo número de palab
 
 - **Asociación de Negocio:** La etiqueta **"Membresías"** en la navegación asocia inmediatamente en la mente del usuario corporativo que encontrará los planes de precios, los beneficios B2B de la plataforma y el modelo de negocio, sin necesidad de usar títulos largos como "Planes para concesionarias".
 - **Asociación Institucional:** La etiqueta **"Equipo"** agrupa los perfiles, roles y códigos de los seis estudiantes fundadores (tux-squad) encargados del desarrollo del sistema.
-- **Llamados a la Acción (CTAs):** Se utilizan verbos imperativos directos. En la cabecera, **"Comenzar"** funciona como la entrada principal a la aplicación web. En el catálogo, se usarán etiquetas como **"Pre-evaluar Crédito"** (asociado al formulario financiero) y **"Agendar Test Drive"** (asociado al contacto físico).
+- **Llamados a la Acción (CTAs):** Se utilizan verbos imperativos directos. En la cabecera, **"Comenzar"** funciona como la entrada principal a la aplicación web. En el catálogo, se usarán etiquetas como **"Pre-evaluar Crédito"** (asociado a la pre-evaluación de riesgo crediticio), **"Simular Crédito"** (asociado a la simulación) y **"Ver contacto"** (asociado a los datos de contacto de la concesionaria).
 - **Asociación Legal Oculta:** Las etiquetas **"Términos"** y **"Privacidad"** ubicadas en el pie de página abren un panel lateral superpuesto (*Legal Drawer*) que asocia los documentos normativos sin redirigir al usuario a una nueva pestaña ni abrumarlo con texto en la página principal.
 
 ### 4.2.3. SEO Tags and Meta Tags
@@ -115,16 +113,16 @@ Para asegurar la correcta indexación y posicionamiento orgánico en motores de 
 
 **Sitio Web Estático (Landing Page)**
 
-- **Title:** `SmartFinance Drive | Marketplace inteligente de vehículos`
-- **Description:** `SmartFinance Drive conecta compradores y concesionarias con recomendaciones inteligentes, un catálogo unificado de vehículos nuevos y usados, y pre-evaluación crediticia externa.`
-- **Keywords:** `marketplace automotriz, comprar auto peru, autos nuevos, autos usados, financiamiento vehicular, pre-evaluación crediticia, recomendador IA`
+- **Title:** `SmartFinance Drive | Marketplace de vehículos con financiamiento`
+- **Description:** `SmartFinance Drive conecta compradores, concesionarias y entidades financieras con un catálogo unificado de vehículos nuevos y usados, comparación de entidades financieras y simulación de crédito vehicular.`
+- **Keywords:** `marketplace automotriz, comprar auto peru, autos nuevos, autos usados, financiamiento vehicular, pre-evaluación crediticia, simulador de crédito vehicular`
 - **Author:** `tux-squad`
 
 **Web Application (Catálogo y Panel B2B)**
 
 - **Title:** `Catálogo Unificado de Vehículos | SmartFinance Drive`
-- **Description:** `Explora el catálogo de vehículos nuevos y seminuevos. Descubre autos que se ajustan a tu presupuesto y obtén tu pre-aprobación crediticia 100% digital.`
-- **Keywords:** `catálogo de autos, crédito vehicular online, autos financiados, simulador de cuotas vehiculares, gestión de leads automotriz`
+- **Description:** `Explora el catálogo de vehículos nuevos y usados, compáralos y simula tu crédito vehicular con distintas entidades financieras.`
+- **Keywords:** `catálogo de autos, crédito vehicular online, autos financiados, simulador de cuotas vehiculares, comparador de entidades financieras`
 - **Author:** `tux-squad`
 
 ### 4.2.4. Searching Systems
@@ -132,10 +130,9 @@ Para asegurar la correcta indexación y posicionamiento orgánico en motores de 
 Dado el alto volumen de información que maneja un mercado unificado de vehículos, SmartFinance Drive provee herramientas de búsqueda robustas para evitar que el comprador se sienta abrumado o perdido.
 
 - **Opciones de Búsqueda Ofrecidas:**
-  - **Búsqueda Semántica (Recomendador IA):** El usuario no necesita conocer marcas o especificaciones técnicas. Ingresa un estilo de vida (ej. "Auto familiar seguro") y un límite de cuota mensual, y el sistema traduce esa intención en modelos específicos.
-  - **Búsqueda Directa (Predictiva):** Una barra de búsqueda libre con autocompletado en tiempo real que sugiere marcas, modelos o concesionarias a medida que el usuario teclea (ej. al escribir "Yar", despliega "Toyota Yaris").
-  - **Filtros Facetados (Faceted Search):** Los usuarios más experimentados contarán con un panel lateral en el catálogo para aplicar filtros acumulativos: *Condición* (Nuevo/Usado), *Presupuesto* (Rango de precios), *Año de fabricación*, *Transmisión* (Automática/Manual) y *Tipo de combustible*.
-- **Visualización de Datos Tras la Búsqueda:** Los resultados se presentan en una cuadrícula (*Grid*) de tarjetas de vehículos (Cards). Cada tarjeta resalta visualmente la fotografía principal, la marca/modelo, el precio total y un cálculo estimado de la cuota mensual. Si no hay resultados exactos, el sistema sugiere automáticamente vehículos con características similares o precios ligeramente superiores.
+  - **Búsqueda Directa:** Una barra de búsqueda libre en el catálogo que permite ubicar vehículos por marca o modelo.
+  - **Filtros Facetados (Faceted Search):** Los usuarios cuentan con un panel lateral en el catálogo para aplicar filtros acumulativos: *Marca*, *Precio máximo*, *Año de fabricación*, *Condición* (Nuevo/Usado) y *Concesionaria*.
+- **Visualización de Datos Tras la Búsqueda:** Los resultados se presentan en una cuadrícula (*Grid*) de tarjetas de vehículos (Cards). Cada tarjeta resalta visualmente la fotografía principal, la marca/modelo, la condición y el precio del vehículo.
 
 ### 4.2.5. Navigation Systems
 
@@ -146,8 +143,8 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
   - **Smooth Scrolling:** Los hipervínculos utilizan anclajes dinámicos que deslizan la pantalla suavemente hacia la sección de interés, calculando el margen exacto para no ocultar el título debajo de la cabecera fija.
   - **Mobile Drawer Menu:** En dispositivos móviles, la navegación se oculta tras un botón *hamburger* que despliega un panel superpuesto de pantalla completa, optimizando el espacio de lectura sin sacrificar acceso a las secciones.
 - **Navegación de la Web Application:**
-  - **Global Navigation:** Barra superior constante con acceso directo al Catálogo Unificado, Simulador IA y Perfil de Usuario.
-  - **Local Navigation (B2B):** Las concesionarias interactúan a través de un menú lateral izquierdo (*Sidebar*) que les permite navegar rápidamente entre los sub-módulos de su entorno privado: Dashboard, Mi Inventario (Stock), Gestión de Leads y Configuración de Cuenta.
+  - **Global Navigation:** Barra superior constante con acceso directo al Catálogo, el Comparador, Financiamiento (entidades financieras, pre-evaluación, simulaciones y depreciación) y Mi panel, cuyo contenido varía según el rol del usuario (cliente, concesionaria, entidad financiera o administrador).
+  - **Local Navigation (B2B):** Las concesionarias interactúan a través de un menú lateral izquierdo (*Sidebar*) que les permite navegar rápidamente entre los sub-módulos de su entorno privado: Mi Inventario (publicar, editar, listar y estado de stock), Estadísticas, Membresía y Configuración de Cuenta. Las entidades financieras acceden desde su panel a la bandeja de solicitudes asignadas y a la evaluación de cada expediente.
   - **Contextual Navigation (Breadcrumbs):** Para evitar que el comprador se desoriente en el catálogo, se implementan migas de pan en la parte superior de las fichas técnicas (ej. `Inicio > Autos Usados > Toyota > Yaris 2021`), permitiendo retroceder a categorías superiores con un solo clic.
 
 ---
@@ -228,37 +225,37 @@ En esta sección se traducen la arquitectura de la información y las decisiones
 
 ### 4.4.2. Mobile Applications Wireflow Diagrams
 
-Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada diagrama refleja un User Goal específico para los distintos User Personas, mostrando cómo la interacción en la pantalla táctil genera representaciones de nuevos estados en el flujo de la aplicación.
+Esta sección presenta los Wireflows propuestos para la aplicación móvil Android, cuyo alcance es el inicio de sesión y la mensajería. Cada diagrama refleja un User Goal específico para los distintos User Personas, mostrando cómo la interacción en la pantalla táctil genera representaciones de nuevos estados en el flujo de la aplicación.
 
-**Wireflow 1: Descubrimiento y Pre-evaluación Crediticia Móvil**
+**Wireflow 1 (Mobile): Inicio de Sesión y Bandeja de Chats**
 
 ![mobile-wireflow-1](../assets/Chapter-4/mobile-wireflow-1.png)
 
 - **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Descubrir vehículos a través de recomendaciones personalizadas, comparar opciones y solicitar la pre-evaluación financiera desde su smartphone.
+- **User Goal:** Iniciar sesión desde su smartphone, revisar sus conversaciones activas e identificar los mensajes no leídos.
 
-- **Explicación del Flujo y Estados UI:** El flujo inicia en la pantalla de "Bienvenida" del comprador, la cual exhibe recomendaciones iniciales basadas en el perfil. El usuario puede transitar hacia el "Asistente Inteligente", donde ingresa su presupuesto interactuando con la interfaz conversacional. A partir de las sugerencias, navega hacia la vista de "Detalle del Vehículo". Si desea contrastar opciones, activa el estado de "Comparar Vehículos", dividiendo la pantalla para evaluar dos unidades simultáneamente. Finalmente, al decidirse, avanza al formulario de "Pre-evaluación Crediticia", cambiando el estado de la aplicación para procesar sus datos de identidad y financieros.
+- **Explicación del Flujo y Estados UI:** El flujo inicia en la pantalla de "Inicio de Sesión", donde el usuario ingresa sus credenciales. Al autenticarse, la aplicación transita a la "Bandeja de Chats", que lista las conversaciones activas e indica con un contador las que tienen mensajes no leídos. Al seleccionar una conversación, se abre la vista de "Chat" con el historial de mensajes, desde la cual el usuario puede redactar y enviar un nuevo mensaje. Desde el menú de perfil puede cerrar sesión y regresar a la pantalla de inicio de sesión.
 
-**Wireflow 2: Monitoreo de Rendimiento y Creación de Campañas (B2B)**
+**Wireflow 2 (Mobile): Nuevo Chat con Concesionaria o Entidad Financiera**
 
 ![mobile-wireflow-2](../assets/Chapter-4/mobile-wireflow-2.png)
 
-- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Revisar las métricas de captación de leads en tiempo real y aplicar bonos de descuento inmediatos a su inventario para acelerar ventas.
+- **User Goal:** Iniciar una conversación con una concesionaria o con la entidad financiera que evalúa su crédito y enviar su primera consulta.
 
-- **Explicación del Flujo y Estados UI:** El flujo comienza en el "Resumen Mensual" del panel de administración (Drive Admin), donde la concesionaria visualiza métricas clave como Prospectos IA e Interacciones Diarias. Desde allí, el usuario transita a la pantalla "Bono de Descuento" para configurar una campaña especial, ingresando el nombre y el monto del descuento. Al presionar "Crear y Aplicar Bono", el sistema genera un estado de vista previa en tarjeta. El flujo concluye actualizando la vista de "Inventario Activo", donde el vehículo seleccionado refleja el nuevo precio ajustado y la etiqueta de disponibilidad.
+- **Explicación del Flujo y Estados UI:** El flujo comienza en la "Bandeja de Chats", desde donde el usuario presiona "Nuevo chat". La aplicación presenta la selección del interlocutor, que puede ser una concesionaria o la entidad financiera que evalúa su crédito. Tras elegir al interlocutor, se abre la vista de "Chat" sin mensajes previos. Al enviar el primer mensaje, la conversación queda registrada y se refleja como una nueva entrada en la "Bandeja de Chats".
 
-**Wireflow 3: Gestión de Inventario y Certificación de Seminuevos (B2B)**
+**Wireflow 3 (Mobile): Respuesta de Mensajes como Concesionaria**
 
 ![mobile-wireflow-3](../assets/Chapter-4/mobile-wireflow-3.png)
 
-- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
 
-- **User Goal:** Administrar el catálogo de seminuevos desde el patio de ventas, actualizar estados y registrar nuevas certificaciones de inspección.
+- **User Goal:** Atender desde su smartphone las consultas recibidas de los clientes y responderlas.
 
-- **Explicación del Flujo y Estados UI:** El flujo inicia en el módulo de "Gestión de Seminuevos", que muestra indicadores de rotación y calidad de inventario. El usuario navega hacia el "Inventario Activo", visualizando la lista completa de unidades publicadas. Al seleccionar una unidad para certificar, la aplicación transita al formulario de "Nueva Certificación", permitiendo registrar los detalles de la inspección mecánica y legal. Finalmente, tras confirmar la certificación, el sistema avanza a la pantalla de "Datos del Vehículo" para completar la publicación, alterando el estado de la unidad en la base de datos a "Certificado".
+- **Explicación del Flujo y Estados UI:** El flujo inicia en la "Bandeja de Chats" de la concesionaria, donde las conversaciones con mensajes pendientes se destacan mediante el indicador de no leídos. Al abrir una conversación, la aplicación muestra el historial de mensajes del cliente. La concesionaria redacta su respuesta y la envía, tras lo cual el mensaje se agrega al historial y el indicador de no leídos de esa conversación se actualiza. El mismo flujo aplica a la entidad financiera cuando responde a los clientes cuyo crédito evalúa.
 
 * **Enlace interactivo de Wireflows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
@@ -320,45 +317,45 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 
 ### 4.4.4. Mobile Applications User Flow Diagrams
 
-Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz de la aplicación móvil, garantizando coherencia lógica con la versión web pero optimizados para interacciones táctiles y pantallas reducidas.
+Esta sección detalla los flujos de usuario (User Flows) de la aplicación móvil, enfocados en el inicio de sesión y la mensajería, y optimizados para interacciones táctiles y pantallas reducidas.
 
-### Mobile User Flow 1: Pre-evaluación Crediticia Móvil
+**Mobile User Flow 1 (Mobile): Inicio de Sesión y Bandeja de Chats**
 
 ![mobile-userflow-1](../assets/Chapter-4/mobile-userflow-1.png)
 
 - **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Completar la solicitud de pre-evaluación financiera desde la aplicación móvil.
+- **User Goal:** Iniciar sesión en la aplicación móvil y acceder a sus conversaciones.
 
-- **Explicación del Flujo, Decisiones y Errores:** El flujo comienza en la vista "Detalle del Vehículo", donde el usuario presiona "Solicitar Pre-evaluación". El sistema despliega un modal inferior donde se ingresan los datos de DNI, ingresos mensuales y situación laboral. A continuación, un nodo de decisión bifurca el flujo según la validación del Buró Crediticio:
-  - **Happy Path:** Si el historial es positivo, el sistema aprueba la viabilidad del crédito y navega automáticamente a la pantalla "Resultado Aprobado", permitiendo descargar la constancia y conectarse con la concesionaria.
-  - **Unhappy Path:** Si el historial crediticio presenta observaciones o no califica, la app despliega el estado alternativo "Evaluación No Favorable", sugiriendo al usuario ajustar su cuota inicial o explorar vehículos de menor valor.
+- **Explicación del Flujo, Decisiones y Errores:** El flujo comienza en la pantalla "Inicio de Sesión", donde el usuario ingresa sus credenciales y presiona "Ingresar". Un nodo de decisión valida las credenciales:
+  - **Happy Path:** Si las credenciales son válidas, la app navega a la "Bandeja de Chats", donde se listan las conversaciones activas con su indicador de mensajes no leídos.
+  - **Unhappy Path:** Si las credenciales no son válidas, la app permanece en la pantalla de inicio de sesión y muestra un mensaje de error para que el usuario corrija sus datos.
 
-**Mobile User Flow 2: Gestión Móvil de Bonos y Campañas**
+**Mobile User Flow 2 (Mobile): Nuevo Chat con Concesionaria o Entidad Financiera**
 
 ![mobile-userflow-2](../assets/Chapter-4/mobile-userflow-2.png)
 
-- **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
+- **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Crear un bono de descuento para un lote de vehículos específicos.
+- **User Goal:** Iniciar una conversación con una concesionaria o con la entidad financiera que evalúa su crédito y enviar un mensaje.
 
-- **Explicación del Flujo, Decisiones y Errores:** Desde el menú lateral de la app administrativa, el usuario accede a "Campañas y Bonos" y selecciona "Crear Nuevo Bono". Ingresa el porcentaje y fecha de vigencia. El sistema evalúa:
-  - **Happy Path:** Si los campos son válidos y el descuento no supera el margen permitido, el bono se aplica exitosamente, retornando a la lista con la confirmación "Bono Activo".
-  - **Unhappy Path:** Si el usuario ingresa un descuento superior al límite configurado por la gerencia, el sistema bloquea el botón y resalta el campo en rojo con el mensaje de error "Descuento excede el límite permitido".
+- **Explicación del Flujo, Decisiones y Errores:** Desde la "Bandeja de Chats", el usuario presiona "Nuevo chat", selecciona el tipo de interlocutor (concesionaria o entidad financiera) y elige al destinatario. Redacta su mensaje y presiona "Enviar". El sistema evalúa:
+  - **Happy Path:** Si el mensaje se envía correctamente, la conversación se crea, el mensaje aparece en el historial del chat y la conversación se agrega a la "Bandeja de Chats".
+  - **Unhappy Path:** Si el mensaje no puede enviarse, la app lo señala como no enviado y permite al usuario reintentar el envío.
 
-**Mobile User Flow 3: Atención de Prospectos Móvil**
+**Mobile User Flow 3 (Mobile): Respuesta de Mensajes**
 
 ![mobile-userflow-3](../assets/Chapter-4/mobile-userflow-3.png)
 
 - **User Persona:** Roberto García (Concesionaria de Autos Usados)
 
-- **User Goal:** Revisar notificaciones de leads y responder consultas en tiempo real.
+- **User Goal:** Revisar los mensajes no leídos de sus clientes y responderlos.
 
-- **Descripción del Happy Path:** El asesor inicia el flujo en la tarjeta móvil del prospecto "Carlos Mendoza". El primer rombo de decisión representa la evaluación de viabilidad del lead por parte del asesor. Al considerarlo apto, transita a la interfaz de "Bandeja de Entrada" de la app. En el chat, el segundo rombo de decisión espera la confirmación de la cita por parte del cliente. Con el acuerdo logrado, el flujo llega al nodo de éxito final.
+- **Descripción del Happy Path:** El usuario inicia el flujo en la "Bandeja de Chats", donde identifica las conversaciones con mensajes no leídos. El primer nodo de decisión evalúa si existe una conversación pendiente. Al haberla, transita al chat, donde revisa el historial de mensajes. En el segundo nodo de decisión, el usuario redacta y envía su respuesta; con el envío exitoso, el mensaje queda registrado en el historial y el flujo llega al nodo de éxito final. El mismo flujo aplica a la entidad financiera al responder a los clientes cuyo crédito evalúa.
 
-- **Descripción del Unhappy Path 1 (Rechazo de Lead):** Si el asesor determina en el primer rombo que el prospecto no es apto, finaliza el flujo anticipadamente, archivando el registro.
+- **Descripción del Unhappy Path 1 (Sin conversaciones pendientes):** Si en el primer nodo de decisión no existen conversaciones con mensajes no leídos, el flujo finaliza anticipadamente mostrando la bandeja sin pendientes.
 
-- **Descripción del Unhappy Path 2 (Interacción fallida):** Si en el segundo rombo el cliente no da respuesta en el chat, el flujo termina en un nodo pendiente inferior, a la espera de seguimiento.
+- **Descripción del Unhappy Path 2 (Envío fallido):** Si en el segundo nodo de decisión el mensaje no puede enviarse, la app lo señala como no enviado y permite reintentar el envío.
 
 * **Enlace interactivo de User Flows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
@@ -434,35 +431,35 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 
 Esta sección presenta los Wireflows propuestos para la aplicación web. Los flujos ilustran cómo la interacción del usuario genera cambios de estado en la interfaz para cumplir sus objetivos principales.
 
-**Wireflow 1: Búsqueda Multicanal y Solicitud de Pre-evaluación**
+**Wireflow 1 (Web): Búsqueda, Comparación, Pre-evaluación y Simulación**
 
 ![webapp-wireflow-1](../assets/Chapter-4/webapp-wireflow-1.png)
 
 - **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Explorar el catálogo unificado mediante filtros avanzados en pantalla grande y completar la solicitud de pre-evaluación crediticia.
+- **User Goal:** Explorar el catálogo mediante filtros, comparar vehículos, obtener su pre-evaluación de riesgo crediticio y simular el crédito con varias entidades financieras para enviarlo a evaluación.
 
-- **Explicación del Flujo y Estados UI:** El flujo comienza en la "Página de Inicio Web", donde el usuario interactúa con la barra de búsqueda principal. Al aplicar filtros por rango de precio y tipo de vehículo, la plataforma transita al "Catálogo de Resultados", actualizando dinámicamente la grilla de vehículos disponibles. El usuario hace clic en una tarjeta para abrir la "Ficha Técnica Completa", visualizando especificaciones detalladas, galería y simulador de cuotas. Al presionar "Pre-evaluar Crédito", el sistema activa un modal en primer plano con el formulario financiero. Al enviarlo con éxito, se despliega el estado de "Confirmación de Envío", mostrando el resumen de la solicitud y las entidades bancarias asociadas.
+- **Explicación del Flujo y Estados UI:** El flujo comienza en la "Página de Inicio Web", desde donde el usuario accede al catálogo. Al aplicar filtros por marca, precio máximo, año, condición o concesionaria, la plataforma actualiza dinámicamente la grilla de vehículos disponibles. El usuario hace clic en una tarjeta para abrir la "Ficha Técnica Completa", donde visualiza las especificaciones y el simulador de cuotas, y puede añadir el vehículo al comparador (máximo 2 unidades). Al presionar "Pre-evaluar Crédito", el sistema presenta el resultado de la pre-evaluación de riesgo (score, DTI y Risk Tier). Desde allí, el usuario crea la simulación de crédito, compara las cotizaciones de distintas entidades financieras y envía la simulación elegida a evaluación, tras lo cual se despliega el estado de "Confirmación de Envío".
 
-**Wireflow 2: Panel de Rendimiento y Gestión de Bonos B2B**
+**Wireflow 2 (Web): Publicación de Vehículo y Estadísticas de la Concesionaria**
 
 ![webapp-wireflow-2](../assets/Chapter-4/webapp-wireflow-2.png)
 
 - **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
 
-- **User Goal:** Monitorear el embudo de ventas en el dashboard de escritorio y configurar bonos promocionales para acelerar la rotación de stock.
+- **User Goal:** Publicar un vehículo en el catálogo y consultar las estadísticas y los datos de contacto de los clientes que simularon sobre sus unidades.
 
-- **Explicación del Flujo y Estados UI:** El usuario inicia sesión en el portal "Drive Admin B2B" accediendo al "Dashboard Principal", el cual consolida gráficos de conversión y prospectos recientes. Desde la barra lateral, navega a la sección "Campañas y Bonos", pasando al estado de listado de promociones activas. Al accionar el botón "Nuevo Bono", el sistema abre una vista dividida con el formulario de configuración a la izquierda y la vista previa del catálogo a la derecha. Tras ingresar los parámetros y guardar, el sistema recarga la tabla de "Inventario", reflejando los nuevos precios promocionales con etiquetas destacadas.
+- **Explicación del Flujo y Estados UI:** El usuario inicia sesión y accede a "Mi panel", desde donde navega a "Mi Inventario" mediante la barra lateral. Al accionar el botón "Publicar vehículo", el sistema abre el formulario con los datos técnicos y las imágenes de la unidad. Tras guardar, la tabla de inventario se recarga reflejando el vehículo publicado y su estado de stock. Desde la sección "Estadísticas", la concesionaria consulta las vistas y simulaciones por vehículo y accede a los datos de contacto de los clientes que simularon sobre sus unidades.
 
-**Wireflow 3: Administración de Equipo de Ventas y Asignaciones**
+**Wireflow 3 (Web): Bandeja de la Entidad Financiera y Evaluación de Solicitudes**
 
 ![webapp-wireflow-3](../assets/Chapter-4/webapp-wireflow-3.png)
 
-- **User Persona:** Administrador de Concesionaria / Gerente Comercial
+- **User Persona:** Entidad Financiera
 
-- **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos asesores y reasignar prospectos para optimizar la tasa de cierre.
+- **User Goal:** Revisar las solicitudes asignadas y emitir la evaluación oficial de cada simulación.
 
-- **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Asesor" donde se pueden modificar roles o reasignar carteras de leads. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
+- **Explicación del Flujo y Estados UI:** El flujo inicia en "Mi panel" de la entidad financiera, desde donde accede a la "Bandeja de Solicitudes", que lista las simulaciones asignadas. Al seleccionar una solicitud, la vista cambia al "Detalle del Expediente" del cliente. Desde allí, la entidad registra su evaluación como aprobada o rechazada junto con sus notas. Al guardar, el flujo finaliza confirmando la acción, actualizando el estado de la solicitud en la bandeja y notificando por correo al cliente.
 
 * **Enlace interactivo de Wireflows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
@@ -526,43 +523,43 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 
 Esta sección presenta la propuesta de User Flows para la aplicación web. Se ha considerado un User Flow para cada objetivo principal, incluyendo los mock-ups de las pantallas, la ruta esperada (Happy Path) y las rutas alternativas de error (Unhappy Paths) dictadas por los nodos de decisión del sistema.
 
-**Web User Flow 1: Solicitud de Pre-evaluación Crediticia**
+**User Flow 1 (Web): Pre-evaluación de Riesgo y Simulación Multi-banco**
 
 ![webapp-userflow-1](../assets/Chapter-4/webapp-userflow-1.png)
 
 - **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Solicitar la evaluación de crédito vehicular para una unidad específica desde la plataforma web.
+- **User Goal:** Obtener la pre-evaluación de riesgo crediticio para una unidad específica, simular el crédito con varias entidades financieras y enviarlo a evaluación.
 
-- **Explicación del Flujo, Decisiones y Errores:** Desde la ficha del vehículo, el usuario hace clic en "Solicitar Financiamiento". El sistema valida si el usuario ha iniciado sesión; de lo contrario, abre el modal de autenticación. Una vez autenticado, se completa el formulario de ingresos y datos bancarios:
-  - **Happy Path:** Si el sistema bancario responde con aprobación, se genera la ficha de pre-aprobación en PDF y se envía una notificación a la concesionaria.
-  - **Unhappy Path:** Si la entidad financiera rechaza la solicitud por capacidad de endeudamiento insuficiente, el sistema muestra la pantalla de "Propuestas Alternativas", sugiriendo modelos con cuotas menores acordes al perfil evaluado.
+- **Explicación del Flujo, Decisiones y Errores:** Desde la ficha del vehículo, el usuario hace clic en "Pre-evaluar Crédito". El sistema valida si el usuario ha iniciado sesión; de lo contrario, abre el modal de autenticación. Una vez autenticado, el sistema verifica que el perfil socioeconómico esté registrado:
+  - **Happy Path:** Si el perfil está completo, la plataforma genera la pre-evaluación de riesgo (score, DTI y Risk Tier). El usuario crea la simulación, compara las cotizaciones de las entidades financieras y envía la simulación elegida a evaluación de la entidad.
+  - **Unhappy Path:** Si el perfil socioeconómico no está registrado, el sistema redirige al usuario a completarlo antes de continuar. Si la pre-evaluación indica un nivel de riesgo alto por capacidad de endeudamiento insuficiente, el sistema muestra el resultado y permite ajustar la cuota inicial, el plazo o explorar vehículos de menor valor.
 
-**Web User Flow 2: Aplicación de Campañas y Bonos**
+**User Flow 2 (Web): Publicación de Vehículo**
 
 ![webapp-userflow-2](../assets/Chapter-4/webapp-userflow-2.png)
 
 - **User Persona:** Valeria Rojas (Concesionaria de Autos Nuevos)
 
-- **User Goal:** Crear y publicar una campaña de descuento masivo para vehículos en stock prolongado.
+- **User Goal:** Publicar un vehículo en el catálogo para exponer su inventario a los compradores.
 
-- **Explicación del Flujo, Decisiones y Errores:** Desde el panel B2B, la concesionaria selecciona múltiples unidades y hace clic en "Aplicar Descuento Masivo". Ingresa el monto o porcentaje:
-  - **Happy Path:** Si las unidades seleccionadas son elegibles, el sistema calcula los nuevos precios y actualiza el catálogo público instantáneamente.
-  - **Unhappy Path:** Si alguna unidad seleccionada ya cuenta con una promoción activa incompatible, el sistema señala el conflicto y solicita confirmación para sobreescribir la oferta anterior.
+- **Explicación del Flujo, Decisiones y Errores:** Desde "Mi Inventario", la concesionaria hace clic en "Publicar vehículo". El sistema verifica que la concesionaria cuente con una membresía activa:
+  - **Happy Path:** Si la membresía está activa y los datos e imágenes del vehículo son válidos, el sistema publica la unidad, que pasa a aparecer en el catálogo público y en el listado de vehículos publicados de la concesionaria.
+  - **Unhappy Path:** Si la concesionaria no cuenta con una membresía activa, el sistema la redirige a la selección de membresía. Si faltan datos obligatorios del vehículo, el sistema señala los campos incompletos y no permite publicar hasta corregirlos.
 
-**Web User Flow 3: Gestión y Atención de Prospectos**
+**User Flow 3 (Web): Evaluación de Solicitudes por la Entidad Financiera**
 
 ![webapp-userflow-3](../assets/Chapter-4/webapp-userflow-3.png)
 
-- **User Persona:** Roberto García (Concesionaria de Autos Usados)
+- **User Persona:** Entidad Financiera
 
-- **User Goal:** Evaluar la viabilidad de un prospecto y contactarlo para agendar una cita.
+- **User Goal:** Revisar una solicitud asignada y emitir la evaluación oficial de la simulación.
 
-- **Descripción del Happy Path:** El gerente comercial inicia en el detalle del prospecto "Carlos Mendoza". En el primer rombo de decisión, el gerente evalúa si el perfil del comprador es viable. Al determinar que sí, transita a la "Bandeja de Entrada" (Mensajes) para contactar al cliente. Durante la conversación, un segundo rombo de decisión evalúa si el cliente confirma la disponibilidad para la cita. Al recibir respuesta afirmativa, el flujo termina exitosamente en la confirmación.
+- **Descripción del Happy Path:** La entidad financiera inicia en la "Bandeja de Solicitudes". En el primer nodo de decisión se verifica si existen solicitudes asignadas. Al haberlas, selecciona una y accede al detalle del expediente del cliente. En el segundo nodo de decisión, la entidad emite su evaluación como aprobada junto con sus notas, el sistema notifica al cliente por correo y el flujo termina exitosamente en la confirmación.
 
-- **Descripción del Unhappy Path 1 (Lead descartado):** Si en el primer rombo el perfil financiero del prospecto no es apto, el flujo se desvía hacia el final, descartando el contacto.
+- **Descripción del Unhappy Path 1 (Sin solicitudes asignadas):** Si en el primer nodo de decisión no existen solicitudes asignadas, el flujo finaliza mostrando la bandeja vacía.
 
-- **Descripción del Unhappy Path 2 (Sin respuesta):** Si el cliente no confirma la cita en el segundo rombo, el flujo se pausa derivando a un estado alternativo pendiente.
+- **Descripción del Unhappy Path 2 (Solicitud rechazada):** Si en el segundo nodo de decisión la entidad rechaza la solicitud, registra sus notas, el sistema notifica el resultado al cliente por correo y el flujo finaliza con la solicitud en estado rechazado.
 
 * **Enlace interactivo de User Flows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
@@ -582,15 +579,17 @@ El diagrama de contexto (Nivel 1) ilustra la plataforma SmartFinance Drive como 
 
 ![Context Diagram](../assets/Chapter-4/ContextDiagram.png)
 
-- **Comprador Interesado**: Usuario final que busca vehículos, recibe recomendaciones de inteligencia artificial y solicita pre-evaluaciones crediticias.
+- **Cliente (Comprador Interesado)**: Usuario final que busca y compara vehículos, compara entidades financieras, genera su pre-evaluación de riesgo crediticio, simula créditos y se comunica por mensajería con concesionarias y entidades financieras.
 
-- **Concesionaria**: Cliente corporativo que publica su inventario de vehículos nuevos o usados, atiende a los prospectos (leads) y gestiona el pago de sus membresías B2B.
+- **Concesionaria**: Cliente corporativo que publica su inventario de vehículos nuevos o usados, consulta las estadísticas de sus vehículos y los datos de contacto de los clientes que simularon, responde mensajes y gestiona el pago de sus membresías B2B.
 
-- **Super Administrador**: Actor encargado de gestionar la configuración global de la plataforma, administrar usuarios, entidades financieras y definir los planes de negocio.
+- **Entidad Financiera**: Rol de usuario registrado en la plataforma que recibe las simulaciones asignadas, emite la evaluación oficial (aprobada o rechazada con notas) y responde mensajes de los clientes.
+
+- **Super Administrador**: Actor encargado de gestionar la configuración global de la plataforma y administrar usuarios y roles.
 
 - **Servicios SUNAT (Externo)**: Sistema gubernamental utilizado para la validación de números de RUC, estado y condición de las empresas.
 
-- **Entidades Financieras (Externo)**: Bancos aliados que proveen las tasas de referencia (TEA/TCEA) y ejecutan la validación externa de las pre-aprobaciones crediticias.
+- **Brevo (Externo)**: Servicio de correo transaccional utilizado para la verificación de correo y las notificaciones de resultado de evaluación.
 
 - **Stripe (Externo)**: Pasarela de pagos encargada de procesar los cobros de las suscripciones B2B y la facturación de las concesionarias.
 
@@ -604,11 +603,11 @@ El diagrama de contenedores (Nivel 2) desglosa el sistema SmartFinance Drive en 
 
 - **Landing Page**: Aplicación web estática (HTML/CSS/JS) orientada a la presentación del producto y conversión de visitantes.
 
-- **Web Application**: Frontend tipo SPA desarrollado en Vue.js, que proporciona las interfaces para el catálogo de compradores, el panel B2B de concesionarias y el backoffice administrativo.
+- **Web Application**: Frontend tipo SPA desarrollado en Vue.js, que proporciona las interfaces para todos los roles: el catálogo y las herramientas de financiamiento del cliente, el panel de concesionarias, la bandeja de entidades financieras y la administración de roles.
 
-- **Mobile App**: Aplicación móvil nativa para iOS y Android, enfocada en la búsqueda ágil de autos para el comprador y la gestión en patio para el vendedor.
+- **Mobile App**: Aplicación móvil nativa para Android (Kotlin y Jetpack Compose), enfocada en el inicio de sesión y la mensajería entre clientes, concesionarias y entidades financieras.
 
-- **Backend API**: Implementado como un monolito modular basado en Java Spring Boot y Next.js. Este contenedor centraliza toda la lógica de negocio estructurada en 8 Bounded Contexts independientes.
+- **Backend API**: Implementado como un monolito modular basado en Java Spring Boot. Este contenedor centraliza toda la lógica de negocio estructurada en 8 Bounded Contexts independientes: IAM, Profiles, Catalog, Partners, Financing, Scoring, Projections y Billing.
 
 - **Base de Datos**: Sistema de gestión de bases de datos relacional PostgreSQL, encargado de almacenar de forma persistente la información de usuarios, simulaciones, inventario y facturación de todos los contextos.
 
@@ -624,7 +623,7 @@ El contexto IAM encapsula la lógica de autenticación, autorización y control 
 
 ![Component Diagram IAM](../assets/Chapter-4/ComponentDiagram_IAM.png)
 
-- **Responsabilidad**: Gestión del ciclo de vida de identidades, tokens JWT, revocaciones y roles (Comprador, Concesionaria, Administrador).
+- **Responsabilidad**: Gestión del ciclo de vida de identidades, tokens JWT, revocaciones y roles (Cliente, Concesionaria, Entidad Financiera, Administrador).
 
 - **Componentes clave**: El servicio de dominio `AuthenticationService` coordina la emisión y validación de credenciales a través del adaptador de persistencia en PostgreSQL.
 
@@ -634,7 +633,7 @@ El contexto Profiles gestiona la información demográfica, de contacto y el his
 
 ![Component Diagram Profiles](../assets/Chapter-4/ComponentDiagram_Profiles.png)
 
-- **Responsabilidad**: Administración de perfiles individuales de compradores y perfiles corporativos de concesionarias.
+- **Responsabilidad**: Administración de perfiles individuales de clientes y perfiles corporativos de concesionarias y entidades financieras.
 
 - **Componentes clave**: Implementa validaciones de completitud de perfil necesarias para desbloquear la funcionalidad de pre-evaluación crediticia.
 
@@ -650,7 +649,7 @@ El contexto Catalog gestiona el inventario completo de vehículos nuevos y usado
 
 **Component Diagram: Partners Context**
 
-El contexto Partners centraliza las integraciones con concesionarias y entidades financieras externas.
+El contexto Partners centraliza las integraciones con concesionarias y entidades financieras registradas en la plataforma.
 
 ![Component Diagram Partners](../assets/Chapter-4/ComponentDiagram_Partners.png)
 
@@ -680,13 +679,13 @@ El contexto Scoring se encarga del análisis de viabilidad crediticia.
 
 **Component Diagram: Projections Context**
 
-El contexto Projections añade la capa de innovación para las decisiones inteligentes.
+El contexto Projections gestiona la proyección de depreciación para apoyar la decisión de compra.
 
 ![Component Diagram Projections](../assets/Chapter-4/ComponentDiagram_Projections.png)
 
 - **Responsabilidad**: Estima la depreciación técnica y comercial del vehículo a lo largo del tiempo (2, 3 o 5 años).
 
-- **Componentes clave**: A través del agregado `DepreciationProjection`, contrasta la curva de valor del vehículo contra la cuota balón del crédito para aconsejar al usuario sobre la rentabilidad de su compra.
+- **Componentes clave**: A través del agregado `DepreciationProjection`, contrasta la curva de valor del vehículo contra la cuota balón del crédito para informar al usuario sobre la conveniencia de su compra.
 
 **Component Diagram: Billing Context**
 
@@ -744,7 +743,7 @@ Este esquema representa el contexto Simulation, el motor matemático y central d
 
 **Bounded Context: Planning**
 
-El contexto de Planning aborda la proyección y viabilidad de las decisiones del usuario. Modela clases analíticas como `CreditScore`, que evalúa la capacidad de endeudamiento, ratio DTI (Debt-to-Income) y el nivel de riesgo del perfil frente a una simulación; y `DepreciationProjection`, que encapsula el comportamiento del valor del vehículo a lo largo del tiempo, permitiendo generar recomendaciones estratégicas al usuario.
+El contexto de Planning aborda la proyección y viabilidad de las decisiones del usuario. Modela clases analíticas como `CreditScore`, que evalúa la capacidad de endeudamiento, ratio DTI (Debt-to-Income) y el nivel de riesgo del perfil frente a una simulación; y `DepreciationProjection`, que encapsula el comportamiento del valor del vehículo a lo largo del tiempo, permitiendo contrastarlo con la cuota balón del crédito.
 
 ![Class diagram planning](../assets/Chapter-4/oop7.png "Planning")
 
@@ -753,7 +752,7 @@ El contexto de Planning aborda la proyección y viabilidad de las decisiones del
 | Entidad | Descripción |
 | :--- | :--- |
 | **User** | Entidad raíz de seguridad que representa a cualquier persona que interactúa con la plataforma, almacenando sus credenciales de acceso y estado de cuenta. |
-| **Role** | Define los permisos y el nivel de acceso asignado a un usuario dentro del sistema (ej. Cliente, Administrador). |
+| **Role** | Define los permisos y el nivel de acceso asignado a un usuario dentro del sistema (ej. Cliente, Concesionario, Entidad Financiera, Administrador). |
 | **RevokedToken** | Entidad de seguridad utilizada para llevar el registro de tokens de sesión que han sido invalidados o han expirado. |
 | **Profile** | Contiene la información personal, laboral y financiera detallada del usuario, fundamental para la evaluación de perfiles crediticios. |
 | **SunatRuc** | Entidad de apoyo (o Value Object) utilizada para consultar y verificar información tributaria y empresarial conectada al usuario. |
@@ -767,7 +766,7 @@ El contexto de Planning aborda la proyección y viabilidad de las decisiones del
 | **Simulation** | Representa un escenario de crédito vehicular generado por el usuario, consolidando el vehículo, la entidad financiera elegida, plazos y montos totales. |
 | **SimulationPaymentPeriod** | Modela el detalle individual de cada cuota dentro del cronograma de pagos de una simulación (desglose de interés, amortización de capital, seguros y saldos). |
 | **CreditScore** | Evaluación de riesgo financiero calculada para un perfil específico, indicando métricas clave como el ratio deuda-ingreso (DTI) para determinar viabilidad. |
-| **DepreciationProjection** | Análisis predictivo de la pérdida de valor de un vehículo en el tiempo, utilizado para aconsejar al usuario sobre la rentabilidad de su inversión a mediano y largo plazo. |
+| **DepreciationProjection** | Proyección de la pérdida de valor de un vehículo en el tiempo, utilizada para informar al usuario sobre su inversión a mediano y largo plazo. |
 
 ## 4.10. Database Design
 
@@ -813,6 +812,6 @@ Este esquema define el núcleo de cálculo del sistema. La tabla `simulations` c
 
 **Bounded Context: Planning**
 
-Este esquema se enfoca en el análisis predictivo y la viabilidad del crédito. La tabla `credit_scores` evalúa el riesgo financiero del perfil asociado a una simulación particular, determinando ratios de deuda e ingresos. La tabla `depreciation_projections` planifica el valor futuro del vehículo, calculando la depreciación anual para ofrecer acciones recomendadas al cliente.
+Este esquema se enfoca en el análisis de la viabilidad del crédito y la proyección del valor del vehículo. La tabla `credit_scores` evalúa el riesgo financiero del perfil asociado a una simulación particular, determinando ratios de deuda e ingresos. La tabla `depreciation_projections` proyecta el valor futuro del vehículo, calculando la depreciación anual.
 
 ![Database diagram planning](../assets/Chapter-4/db7.png "Planning")
