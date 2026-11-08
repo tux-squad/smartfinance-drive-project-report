@@ -25,7 +25,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Validar la monetización B2B:** Confirmar que las concesionarias pagan y renuevan la membresía (retención ≥ 80% y churn mensual < 5%).
 * **Demostrar valor a la concesionaria:** Medir si las estadísticas por vehículo y los datos de contacto de los clientes se traducen en acciones (ajuste de precio y contacto).
 * **Consolidar la comunicación móvil:** Lograr que las consultas por chat reciban respuesta de la concesionaria o del banco en menos de una hora.
-* 
+  
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
 **Assumptions (Suposiciones):**
@@ -50,6 +50,16 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Piloto de membresía:** Ofrecer un periodo de prueba de 30 días y un botón "Solicitar demo" en la sección de planes de la Landing Page.
 * **Resumen de estadísticas:** Enviar a la concesionaria un resumen semanal de vistas, simulaciones y clientes interesados por vehículo.
 * **Chat con contexto:** Abrir el chat móvil con un mensaje inicial que incluya el vehículo y la simulación en curso.
+
+### 8.1.3. Experiment-Ready Questions
+
+| Question | Confidence | Risk | Impact | Interest | Total Score |
+| --- | --- | --- | --- | --- | --- |
+| ¿Aumentará la cantidad de clientes que guardan una simulación si ven su **capacidad máxima de endeudamiento (pre-evaluación)** antes de simular? | 7 | 8 | 9 | 8 | **32** |
+| ¿Aumentarán los envíos a evaluación de la entidad financiera si el cliente puede **comparar cotizaciones multi-banco** y enviar la oferta elegida desde el mismo cuadro? | 7 | 7 | 9 | 8 | **31** |
+| ¿Están las concesionarias dispuestas a **pagar una membresía mensual** y a iniciar un piloto con la propuesta actual? | 5 | 9 | 9 | 7 | **30** |
+| ¿Actuarán las concesionarias sobre las **estadísticas por vehículo y los datos de contacto** de los clientes que simularon, ajustando precios y contactándolos? | 6 | 7 | 8 | 7 | **28** |
+| ¿Se responderán más consultas en menos de una hora si el cliente puede **conversar por chat móvil** con la concesionaria y con la entidad financiera? | 5 | 6 | 7 | 8 | **26** |
 
 **Claims (Afirmaciones):**
 
