@@ -60,3 +60,19 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | ¿Están las concesionarias dispuestas a **pagar una membresía mensual** y a iniciar un piloto con la propuesta actual? | 5 | 9 | 9 | 7 | **30** |
 | ¿Actuarán las concesionarias sobre las **estadísticas por vehículo y los datos de contacto** de los clientes que simularon, ajustando precios y contactándolos? | 6 | 7 | 8 | 7 | **28** |
 | ¿Se responderán más consultas en menos de una hora si el cliente puede **conversar por chat móvil** con la concesionaria y con la entidad financiera? | 5 | 6 | 7 | 8 | **26** |
+
+### 8.1.4. Question Backlog
+
+| Prioridad (1,2,3,5,8) | Pregunta |
+| --- | --- |
+| 8 | ¿Aumentará la cantidad de clientes que guardan una simulación si ven su capacidad máxima de endeudamiento (pre-evaluación) antes de simular? |
+| 5 | ¿Aumentarán los envíos a evaluación de la entidad financiera si el cliente puede comparar cotizaciones multi-banco y enviar la oferta elegida desde el mismo cuadro? |
+| 5 | ¿Están las concesionarias dispuestas a pagar una membresía mensual y a iniciar un piloto con la propuesta actual? |
+| 3 | ¿Actuarán las concesionarias sobre las estadísticas por vehículo y los datos de contacto de los clientes que simularon, ajustando precios y contactándolos? |
+| 3 | ¿Se responderán más consultas en menos de una hora si el cliente puede conversar por chat móvil con la concesionaria y con la entidad financiera? |
+
+**Claims (Afirmaciones):**
+
+* Una pre-evaluación previa reducirá el abandono y permitirá que al menos 50% de los clientes que la inician guarden una simulación.
+* Las concesionarias pagarán la membresía solo si las estadísticas y los contactos les permiten reducir el tiempo de rotación de su inventario.
+* Responder en menos de una hora por chat aumenta el envío de simulaciones a evaluación.
