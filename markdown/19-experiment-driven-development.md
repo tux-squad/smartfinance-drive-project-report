@@ -101,7 +101,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | --- | --- |
 | **Why** | Las concesionarias de usados buscan rotar su inventario y las de nuevos reducir su costo de prospección. El panel de estadísticas (US29) y los datos de contacto del cliente (US39) son el principal beneficio de la membresía, pero no sabemos si generan acciones. |
 | **What** | Entregar durante 3 semanas a 4 a 6 concesionarias, con un resumen semanal por correo armado por el equipo, las vistas y simulaciones por vehículo y los clientes que simularon sobre sus unidades. Al final se registra cuántas ajustaron un precio, contactaron a un cliente o marcaron un vehículo como vendido. |
-| **Hypothesis** | Se espera que al menos el 70% de las concesionarias participantes actúen sobre al menos un vehículo cada semana y que el número de simulaciones por vehículo publicado aumente en 20% frente a la semana previa al piloto. |
+| **Hypothesis** | Se espera que al menos el 70% de las concesionarias participantes actúen sobre al menos un vehiculo cada semana y que el número de simulaciones por vehículo publicado aumente en 20% frente a la semana previa al piloto. |
 
 | Question | ¿Se responderán más consultas en menos de una hora si el cliente puede conversar por chat móvil con la concesionaria y con la entidad financiera? (Mobile) |
 | --- | --- |
