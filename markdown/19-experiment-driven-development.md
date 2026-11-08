@@ -26,3 +26,27 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Demostrar valor a la concesionaria:** Medir si las estadísticas por vehículo y los datos de contacto de los clientes se traducen en acciones (ajuste de precio y contacto).
 * **Consolidar la comunicación móvil:** Lograr que las consultas por chat reciban respuesta de la concesionaria o del banco en menos de una hora.
   
+### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
+
+**Assumptions (Suposiciones):**
+
+* **Disposición a compartir datos financieros:** Se asume que los clientes ingresarán sus ingresos y deudas en la plataforma para conocer su capacidad de endeudamiento antes de simular.
+* **Valor de la comparación multi-banco:** Se asume que ver la cuota, la TCEA y el VAN de varias entidades en un solo cuadro ayuda al cliente a decidir y a enviar su simulación.
+* **Pago de la membresía:** Se asume que las concesionarias de vehículos nuevos y usados pagarán una membresía mensual si la plataforma les genera visibilidad y clientes interesados.
+* **Uso de las estadísticas:** Se asume que las concesionarias ajustarán precios y contactarán a los clientes a partir de las vistas y simulaciones por vehículo.
+* **Preferencia por el chat móvil:** Se asume que los clientes preferirán consultar a la concesionaria y al banco desde el celular, el dispositivo principal de los 9 entrevistados.
+
+**Knowledge Gaps (Brechas de conocimiento):**
+
+* Se desconoce cuánto tiempo tarda hoy un cliente en encontrar una alternativa viable y cuántos abandonan antes de simular, por lo que no existe línea base para demostrar la reducción de 35%.
+* Carecemos de evidencia sobre la disposición de pago y el precio aceptable de la membresía, ya que las entrevistas no exploraron este punto.
+* No sabemos si el Risk Tier calculado por la plataforma anticipa la evaluación oficial de la entidad financiera.
+* Se desconoce el tiempo de respuesta que las concesionarias y las entidades financieras pueden sostener por chat.
+
+**Ideas:**
+
+* **Pre-evaluación previa a la simulación:** Mostrar la capacidad máxima de endeudamiento antes de simular y precargar la cuota máxima en el simulador.
+* **Envío desde el comparador multi-banco:** Permitir guardar y enviar a evaluación la oferta elegida directamente desde el cuadro comparativo.
+* **Piloto de membresía:** Ofrecer un periodo de prueba de 30 días y un botón "Solicitar demo" en la sección de planes de la Landing Page.
+* **Resumen de estadísticas:** Enviar a la concesionaria un resumen semanal de vistas, simulaciones y clientes interesados por vehículo.
+* **Chat con contexto:** Abrir el chat móvil con un mensaje inicial que incluya el vehículo y la simulación en curso.
