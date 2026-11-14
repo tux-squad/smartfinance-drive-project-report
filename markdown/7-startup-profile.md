@@ -1,3 +1,5 @@
+# Part I: As-Is Software Project
+
 # Capítulo I: Introducción
 
 ## 1.1. Startup Profile
@@ -41,10 +43,10 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-| Foto | Integrante | Descripción |
-| :---: | :--- | :--- |
-| ![Abraam Photo](../assets/Chapter-1/abraam-photo.png) | **Acosta Elera, Abraam Bernabe**<br/>*(U202219199 - @AbraamAcostae)*<br/>*Full Stack Developer / Solutions Architect* | Estudiante de Ingeniería de Software con experiencia en desarrollo Full Stack, integración de servicios REST y soporte en la arquitectura modular de la plataforma. |
-| ![Mauricio Photo](../assets/Chapter-1/mauricio-photo.png) | **Castillo Yataco, Mauricio Sebastian**<br/>*(U202113229 - @M4uricioCastillo)*<br/>*Backend Developer / Database Administrator* | Estudiante de Ingeniería de Software enfocado en desarrollo Backend y lógica de negocios. Responsable del diseño de servicios RESTful y arquitectura de la plataforma. |
-| ![Sofia Photo](../assets/Chapter-1/sofia-photo.png) | **Cotrina Siclla, Sofia Alessandra**<br/>*(U20231B120 - @IamAndreek)*<br/>*Frontend Developer / UX-UI Specialist* | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
-| ![Oliver Photo](../assets/Chapter-1/oliver-photo.png) | **Jonseck Choque, Oliver**<br/>*(U202312912 - @Olizzy-upc)*<br/>*DevOps Engineer / QA Specialist* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
-| ![Aldo Photo](../assets/Chapter-1/aldo-photo.png) | **Machacca Soto, Aldo Jeanfranco**<br/>*(U202419485 - @MarkOne-dev)*<br/>*Full Stack Developer / Solutions Architect* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |
+| Integrante | Rol y Datos | Descripción |
+| :--- | :--- | :--- |
+| **Acosta Elera, Abraam Bernabe** | U202219199 (@AbraamAcostae)<br>*Full Stack Developer / Solutions Architect* | Estudiante de Ingeniería de Software con experiencia en desarrollo Full Stack, integración de servicios REST y soporte en la arquitectura modular de la plataforma. |
+| **Castillo Yataco, Mauricio Sebastian** | U202113229 (@M4uricioCastillo)<br>*Backend Developer / Database Administrator* | Estudiante de Ingeniería de Software enfocado en desarrollo Backend y lógica de negocios. Responsable del diseño de servicios RESTful y arquitectura de la plataforma. |
+| **Cotrina Siclla, Sofia Alessandra** | U20231B120 (@IamAndreek)<br>*Frontend Developer / UX-UI Specialist* | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
+| **Jonseck Choque, Oliver** | U202312912 (@Olizzy-upc)<br>*DevOps Engineer / QA Specialist* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
+| **Machacca Soto, Aldo Jeanfranco** | U202419485 (@MarkOne-dev)<br>*Full Stack Developer / Solutions Architect* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |

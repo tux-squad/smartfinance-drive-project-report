@@ -14,3 +14,5 @@
 | 0.10.0 | 10/10/2026 | Cotrina Siclla, Sofia Alessandra | Correcciones generales en la estructura del informe, enlaces de evidencias (Figma, Jira) y formato de tablas y anexos. |
 | 0.11.0 | 10/10/2026 | Castillo Yataco, Mauricio Sebastian | Desarrollo del Capítulo VI: Product Verification & Validation (pruebas unitarias, de integración, BDD y de sistema). |
 | 0.12.0 | 10/10/2026 | Jonseck Choque, Oliver | Actualización del Capítulo V: Product Implementation (Sprint 2 backlog, evidencias de frontend web) y video About-the-Product. |
+| 0.13.0 | 07/11/2026 | Castillo Yataco, Mauricio Sebastian | Desarrollo del Capítulo VIII: Experiment-Driven Development (Sección 8.1: Experiment Planning — As-Is Summary, Raw Material, Question Backlog y Experiment Cards) e incorporación de 2 entrevistas adicionales de validación (Sección 6.3). |
+| 0.14.0 | 12/11/2026 | Jonseck Choque, Oliver / Cotrina Siclla, Sofia Alessandra | Desarrollo del diseño experimental (Secciones 8.2.1 a 8.2.7), Web & Mobile Tracking Plan (8.2.8), To-Be User Stories (8.3.1) y To-Be Product Backlog (8.3.2) del Capítulo VIII, e incorporación de Continuous Monitoring en DevOps (7.4). |

@@ -1,3 +1,5 @@
+# Part III: Experiment-Driven Lifecycle
+
 # Capítulo VIII: Experiment-Driven Development
 
 ## 8.1. Experiment Planning
@@ -214,6 +216,323 @@ Dado que SmartFinance Drive se usa principalmente desde el celular, la calidad t
 * **Accessibility (Accesibilidad):** 88/100. Se detectaron contraste insuficiente y ausencia de un *main landmark*, puntos que se corregirán.
 * **Best Practices (Buenas Prácticas):** 100/100. Cumple las verificaciones de seguridad y compatibilidad evaluadas.
 * **SEO:** 91/100. Solo se identificó la falta de meta descripción.
+
+### 8.2.8. Web and Mobile Tracking Plan.
+
+Para SmartFinance Drive, el objetivo del plan de seguimiento es medir el comportamiento real de compradores y concesionarias en la aplicación web (Vue.js), la Landing Page y la aplicación móvil Android, de modo que las cinco hipótesis de 8.2.1 se evalúen con datos y no con suposiciones. Hoy solo existen estadísticas por vehículo para la concesionaria; no se mide el recorrido del cliente entre búsqueda, detalle, pre-evaluación, simulación y envío a evaluación (ver 8.1.1). Este plan cubre ese vacío.
+
+El plan se ejecuta en dos etapas, igual que las condiciones de 8.2.4:
+
+1. **Implementación inicial (línea base):** se instrumenta la plataforma *antes* de activar las funcionalidades nuevas, para obtener la línea base (recorrido directo sin pre-evaluación, cuadro multi-banco actual y semana previa al piloto de concesionarias).
+2. **Seguimiento continuo:** se activan las funcionalidades experimentales y se compara contra la línea base con los mismos eventos, las mismas fórmulas y la misma fuente de datos.
+
+**Principios del plan**
+
+- **Una sola definición por métrica.** Cada evento se vincula con una métrica de 8.2.2 (P = primaria, S = secundaria). Si un evento no alimenta ninguna métrica, no se registra (se evitan métricas de vanidad).
+- **Doble fuente.** Los eventos de producto se guardan en la base de datos propia (fuente oficial, tabla `experiment_events`) y los eventos de navegación web se espejan en Google Analytics 4. Si ambas fuentes difieren, prevalece la base de datos.
+- **Sin datos sensibles en analítica.** Los ingresos, deudas, DNI, RUC y correos **nunca** se envían como parámetros de eventos ni a GA4. Solo se envían categorías derivadas (por ejemplo, `risk_tier` y rango de DTI). Esto respeta la Ley N.° 29733 de Protección de Datos Personales y la responsabilidad ética declarada en el Student Outcome 4.
+- **Identificadores seudonimizados.** `user_hash` es un hash con sal del `userId`; los eventos de visitantes anónimos usan `anonymous_id` (cookie de primera parte) y solo se activan tras aceptar el aviso de cookies.
+- **Variante explícita.** Cada evento de los experimentos 1 y 2 lleva `variant` (`control` o `treatment`), asignada por el moderador o por paridad del código de participante, con orden alternado.
+
+**Herramientas**
+
+| Herramienta | Plataforma | Uso en el plan |
+|---|---|---|
+| Google Analytics 4 | Web y Landing Page | Embudos de navegación, eventos personalizados, DebugView para validar la instrumentación. |
+| Tabla `experiment_events` (PostgreSQL en Aiven) | Backend | Fuente oficial de eventos de producto; se llena desde `POST /api/v1/analytics/events` y desde los servicios del backend. |
+| Capa `EventTracker` (Kotlin) | Android | Envía los eventos móviles al mismo endpoint del backend (sin SDK de terceros, para mantener un solo almacén). |
+| Brevo | Backend | Registro de envío del resumen semanal (Experimento 4). |
+| Google Lighthouse | Web | Verifica que la lentitud técnica no se confunda con abandono (ver 8.2.7). |
+| Hoja de verificación de sesiones moderadas | Manual | Registro de tareas, asistencia y errores del Experimento 5, y marcas de tiempo del Experimento 1. |
+
+**Estructura común de todo evento**
+
+| Campo | Descripción |
+|---|---|
+| `event_name` | Nombre en `snake_case` (catálogo siguiente). |
+| `occurred_at` | Marca de tiempo UTC. |
+| `platform` | `web`, `landing` o `android`. |
+| `user_hash` / `anonymous_id` | Identificador seudonimizado. |
+| `role` | `buyer`, `dealer`, `financial_entity` o `visitor`. |
+| `session_id` | Identificador de sesión o de recorrido. |
+| `variant` | `control` o `treatment` (cuando aplica). |
+| `properties` | Objeto JSON con los parámetros específicos del evento. |
+
+**Catálogo de eventos**
+
+**Experimento 1: Pre-evaluación previa a la simulación**
+
+| Evento | Plataforma | Se dispara cuando | Parámetros | Métrica |
+|---|---|---|---|---|
+| `journey_started` | web | El comprador abre el simulador o la pre-evaluación desde una ficha de vehículo. | `vehicle_id`, `entry_point` | 1 (S) línea de inicio |
+| `preeval_started` | web | El comprador abre el formulario de pre-evaluación. | `vehicle_id` | 1 (P) denominador |
+| `preeval_completed` | web | La pre-evaluación devuelve score y capacidad máxima. | `risk_tier`, `dti_bucket` (≤30 / 30–45 / >45), `elapsed_seconds` | 1 (P) |
+| `preeval_abandoned` | web | El comprador sale del formulario sin completarlo. | `last_field_touched` (solo nombre del campo) | 1 (P) diagnóstico |
+| `simulation_started` | web, android | El comprador inicia una simulación. | `vehicle_id`, `prefilled_max_installment` (bool) | 1 (S) |
+| `simulation_saved` | web, android | El comprador guarda una simulación. | `simulation_id`, `term_months`, `elapsed_seconds` desde `journey_started` | 1 (P) numerador, 1 (S), 2 (P) denominador |
+
+**Experimento 2: Envío desde el comparador multi-banco**
+
+| Evento | Plataforma | Se dispara cuando | Parámetros | Métrica |
+|---|---|---|---|---|
+| `comparison_viewed` | web | Se muestra el cuadro de cotizaciones multi-banco. | `bank_count`, `simulation_id` | 2 (S) |
+| `simulation_submitted` | web | La simulación se envía a evaluación de una entidad financiera. | `simulation_id`, `financial_entity_id`, `origin` (`comparison_table` o `simulation_detail`), `elapsed_seconds` | 2 (P) numerador, 2 (S) |
+| `evaluation_result_viewed` | web, android | El comprador ve el resultado oficial. | `status` (`approved` o `rejected`) | Seguimiento |
+
+**Experimento 3: Disposición de pago de la membresía**
+
+| Evento | Plataforma | Se dispara cuando | Parámetros | Métrica |
+|---|---|---|---|---|
+| `pricing_viewed` | landing | La sección de planes entra en el viewport. | `plan_tier_shown` | 3 (S) denominador |
+| `demo_requested` | landing | Se envía el formulario "Solicitar demo". | `dealer_type` (`new` o `used`), `plan_tier` (`basic`, `standard`, `premium`) | 3 (S) numerador |
+| `pilot_offer_result` | manual | Resultado de cada entrevista de 20 minutos. | `dealer_type`, `accepted` (bool), `price_tested` | 3 (P) |
+
+**Experimento 4: Uso de estadísticas y datos de contacto**
+
+| Evento | Plataforma | Se dispara cuando | Parámetros | Métrica |
+|---|---|---|---|---|
+| `weekly_summary_sent` | backend | Se envía el resumen semanal por correo. | `dealer_id_hash`, `week_id`, `vehicle_count` | 4 (P) control de entrega |
+| `dealer_price_changed` | web | La concesionaria modifica el precio de un vehículo. | `vehicle_id`, `delta_percent` | 4 (P) |
+| `dealer_lead_contacted` | web | La concesionaria contacta a un cliente que simuló. | `vehicle_id`, `channel` (`email`, `phone`, `whatsapp`) | 4 (P) |
+| `dealer_vehicle_marked_sold` | web | La concesionaria marca un vehículo como vendido. | `vehicle_id`, `days_on_lot` | 4 (P) |
+| `vehicle_simulations_count` | backend | Corte semanal por vehículo (agregado). | `vehicle_id`, `week_id`, `simulations` | 4 (S) |
+
+**Experimento 5: Gestión autónoma del inventario**
+
+| Evento | Plataforma | Se dispara cuando | Parámetros | Métrica |
+|---|---|---|---|---|
+| `inventory_task_started` | web | Se inicia publicar, consultar, editar o eliminar. | `task` (`publish`, `list`, `edit`, `delete`) | 5 (P) |
+| `inventory_task_completed` | web | La operación termina correctamente. | `task`, `duration_seconds`, `error_count` | 5 (P), 5 (S) |
+| `inventory_task_error` | web | El backend o la validación rechazan la operación. | `task`, `error_code` | 5 (P) diagnóstico |
+| `inventory_task_assisted` | manual | El moderador interviene (registro en la hoja de verificación). | `task`, `reason` | 5 (P), 5 (S) |
+
+**Eventos transversales móviles (adopción móvil, brecha de 8.1.1)**
+
+| Evento | Plataforma | Se dispara cuando | Parámetros |
+|---|---|---|---|
+| `app_opened` | android | Se abre la aplicación. | `app_version`, `is_returning` |
+| `catalog_searched` | android | Se aplica una búsqueda o filtro. | `filters_used` (lista de nombres de filtro) |
+| `vehicle_detail_viewed` | android | Se abre la ficha de un vehículo. | `vehicle_id` |
+
+**Fórmulas de cálculo desde los eventos**
+
+| Métrica (8.2.2) | Cálculo sobre `experiment_events` |
+|---|---|
+| 1 (P) Tasa de Guardado tras Pre-evaluación | `COUNT(DISTINCT session_id) con simulation_saved` ÷ `COUNT(DISTINCT session_id) con preeval_started` × 100 |
+| 1 (S) Tiempo hasta Simulación Viable | Promedio de `elapsed_seconds` en `simulation_saved`, por `variant`; reducción = (T_control − T_treatment) ÷ T_control × 100 |
+| 2 (P) Tasa de Envío a Evaluación | `COUNT(simulation_submitted)` ÷ `COUNT(simulation_saved)` × 100, por versión del cuadro |
+| 2 (S) Variación de clientes que envían | (P_nueva − P_actual) ÷ P_actual × 100, con P = participantes que envían ÷ participantes de la sesión |
+| 3 (P) Tasa de Aceptación del Piloto | `pilot_offer_result.accepted = true` ÷ concesionarias entrevistadas × 100 |
+| 3 (S) Tasa de Solicitud de Demo | `COUNT(demo_requested)` ÷ `COUNT(pricing_viewed)` (concesionarias únicas) × 100 |
+| 4 (P) Tasa de Acción Semanal | Concesionarias con ≥1 evento `dealer_*` en la semana ÷ concesionarias participantes × 100 |
+| 4 (S) Variación de simulaciones por vehículo | (Sim/veh. semana de piloto − Sim/veh. semana previa) ÷ semana previa × 100 |
+| 5 (P) Tareas sin asistencia | Tareas con `inventory_task_completed` y sin `inventory_task_assisted` ÷ tareas asignadas × 100 |
+| 5 (S) Flujo completo | Concesionarias con las 4 tareas completadas sin asistencia ÷ participantes × 100 |
+
+**Etapa 1: Implementación inicial**
+
+- **Recopilación:** número de usuarios activos, duración de sesión, recorrido búsqueda → detalle → simulación → guardado, y uso actual del cuadro multi-banco (versión de control).
+- **Línea base de concesionarias:** simulaciones por vehículo de la semana previa al piloto, tomadas del panel de métricas (US-11).
+- **Validación de la instrumentación (criterio de salida):** antes de abrir las sesiones con participantes se ejecutan 5 recorridos internos completos y se comprueba en GA4 DebugView y en `experiment_events` que cada evento del catálogo aparece una sola vez, con sus parámetros y sin datos sensibles.
+
+**Etapa 2: Seguimiento continuo**
+
+- **Métricas casi en tiempo real:** consultas sobre `experiment_events` (vista `v_experiment_funnel`) y reportes de GA4.
+- **Segmentación:** por rol (comprador, concesionaria de nuevos, concesionaria de usados), por plataforma (web o Android) y por variante.
+- **Retención:** el comprador que vuelve a la app móvil en 7 días (`app_opened` con `is_returning = true`) y la concesionaria que mantiene acciones semanales durante las 3 semanas del piloto.
+- **Informes:** un reporte semanal del equipo con las métricas primarias y secundarias, contrastadas con la escala de 8.2.5, y las decisiones (escalar, iterar o descartar) alimentan la toma de decisiones del equipo y la evolución del backlog de experimentos.
+
+**Plan de control de calidad de los datos**
+
+| Riesgo | Control |
+|---|---|
+| Eventos duplicados por recargas del navegador | Idempotencia por `session_id` + `event_name` + `occurred_at` (segundo) en el backend. |
+| Fuga de datos personales | Lista blanca de propiedades en el endpoint; todo campo fuera de la lista se descarta y se registra una advertencia. |
+| Muestras pequeñas (6 a 20 participantes) | Los resultados se tratan como exploratorios (ver 8.2.5); se reportan conteos absolutos junto con los porcentajes. |
+| Lentitud técnica confundida con abandono | Auditoría Lighthouse antes y durante el experimento (8.2.7). |
+
+---
+
+## 8.3. Experimentation
+
+### 8.3.1. To-Be User Stories.
+
+Las To-Be User Stories traducen los cinco experimentos de 8.2.1 en funcionalidades concretas y en la instrumentación necesaria para medirlos. Para no colisionar con el Capítulo III (US-01 a US-22), usan el prefijo **UA** (*user stories de aprendizaje*), igual que el proyecto de referencia. Los escenarios usan el mismo formato Dado/Cuando/Entonces del Capítulo III. **Cabe señalar que todas las User Stories planteadas para los experimentos están dirigidas a la versión Web de la plataforma (Landing Page y Aplicación Web Vue.js soportadas por el backend RESTful en Spring Boot)**, concentrando la validación experimental y las interacciones de los usuarios en el ecosistema web.
+
+| Epic ID | Epic | Experimento | Historias |
+|---|---|---|---|
+| EX01 | Pre-evaluación y simulación guiada | 1 | UA-01, UA-02, UA-03 |
+| EX02 | Envío a evaluación desde el comparador multi-banco | 2 | UA-04, UA-05 |
+| EX03 | Validación de la membresía B2B | 3 | UA-06 |
+| EX04 | Insights accionables para concesionarias | 4 | UA-07, UA-08, UA-09 |
+| EX05 | Gestión autónoma del inventario | 5 | UA-10 |
+| EX06 | Instrumentación y analítica | 1 a 5 | UA-11, UA-12, UA-13, UA-14 |
+
+**UA-01 — Ver la capacidad máxima de endeudamiento antes de simular**
+
+| Campo | Detalle |
+|---|---|
+| User | Comprador |
+| Priority | Alta |
+| Epic | EX01 |
+| Description | Como Comprador, quiero ver mi score, mi nivel de riesgo y mi capacidad máxima de endeudamiento antes de simular un crédito, para saber qué cuota puedo asumir sin probar varias simulaciones. |
+| Acceptance Criteria | **Escenario 1 — Pre-evaluación exitosa.** Dado que el comprador tiene sesión activa y está en la ficha de un vehículo, cuando ingresa sus ingresos mensuales y deudas y solicita la pre-evaluación, entonces la plataforma muestra su score, su Risk Tier y su cuota máxima mensual. <br> **Escenario 2 — Datos inválidos.** Dado que el comprador completa el formulario, cuando ingresa ingresos en cero o valores negativos, entonces la plataforma indica los campos a corregir y no calcula. <br> **Escenario 3 — Transparencia de datos.** Dado que el comprador va a ingresar datos financieros, cuando abre el formulario, entonces ve para qué se usan sus datos y que la decisión final corresponde a la entidad financiera. |
+
+**UA-02 — Precargar la cuota máxima en el simulador**
+
+| Campo | Detalle |
+|---|---|
+| User | Comprador |
+| Priority | Alta |
+| Epic | EX01 |
+| Description | Como Comprador, quiero que el simulador use mi cuota máxima como punto de partida, para llegar más rápido a una simulación viable. |
+| Acceptance Criteria | **Escenario 1 — Precarga.** Dado que el comprador completó la pre-evaluación, cuando abre el simulador de crédito, entonces el campo de cuota máxima aparece precargado y editable. <br> **Escenario 2 — Sin pre-evaluación.** Dado que el comprador no realizó la pre-evaluación, cuando abre el simulador, entonces el flujo funciona como la versión actual (grupo de control). |
+
+**UA-03 — Guardar la simulación y registrar el recorrido**
+
+| Campo | Detalle |
+|---|---|
+| User | Comprador |
+| Priority | Alta |
+| Epic | EX01 |
+| Description | Como Comprador, quiero guardar mi simulación desde la web o desde la app móvil, para retomarla después y compararla con otras. |
+| Acceptance Criteria | **Escenario 1 — Guardado exitoso.** Dado que el comprador calculó una simulación, cuando presiona "Guardar", entonces la plataforma la almacena con la fecha y hora y la muestra en su historial. <br> **Escenario 2 — Medición del recorrido.** Dado que la simulación se guardó, cuando el sistema registra el evento, entonces incluye el tiempo transcurrido desde el inicio del recorrido y la variante, sin datos personales. |
+
+**UA-04 — Enviar a evaluación desde el cuadro multi-banco**
+
+| Campo | Detalle |
+|---|---|
+| User | Comprador |
+| Priority | Alta |
+| Epic | EX02 |
+| Description | Como Comprador, quiero guardar y enviar a evaluación la oferta que elegí directamente desde el cuadro comparativo, para no volver a simular. |
+| Acceptance Criteria | **Escenario 1 — Envío exitoso.** Dado que el comprador compara cotizaciones de varias entidades, cuando selecciona una oferta y presiona "Enviar a evaluación", entonces la plataforma guarda la simulación y crea la solicitud para la entidad elegida. <br> **Escenario 2 — Falla del envío.** Dado que el comprador intenta enviar, cuando ocurre un error de conexión o de validación, entonces la plataforma muestra un mensaje claro y conserva la simulación guardada. <br> **Escenario 3 — Versión de control.** Dado que el comprador está en la versión actual, cuando quiere enviar una oferta, entonces debe volver a simular (flujo base de comparación). |
+
+**UA-05 — Confirmación y estado de la solicitud enviada**
+
+| Campo | Detalle |
+|---|---|
+| User | Comprador |
+| Priority | Media |
+| Epic | EX02 |
+| Description | Como Comprador, quiero ver una confirmación y el estado de mi solicitud, para saber que la entidad financiera la recibió. |
+| Acceptance Criteria | **Escenario 1 — Confirmación.** Dado que el comprador envió su simulación, cuando el envío termina, entonces la plataforma muestra el resumen y la entidad destinataria. <br> **Escenario 2 — Consulta posterior.** Dado que existe una solicitud enviada, cuando el comprador abre su historial, entonces ve el estado actual (pendiente, aprobada o rechazada). |
+
+**UA-06 — Solicitar una demo desde los planes de membresía (Landing Page)**
+
+| Campo | Detalle |
+|---|---|
+| User | Visitante (concesionaria) |
+| Priority | Alta |
+| Epic | EX03 |
+| Description | Como representante de una concesionaria, quiero solicitar una demo desde la sección de planes, para evaluar el piloto de 30 días antes de contratar. |
+| Acceptance Criteria | **Escenario 1 — Solicitud de demo.** Dado que el visitante ve los planes con sus precios, cuando presiona "Solicitar demo" y completa nombre, tipo de concesionaria, correo y plan de interés, entonces la plataforma registra la solicitud y muestra un mensaje de agradecimiento. <br> **Escenario 2 — Datos incompletos.** Dado que el visitante envía el formulario, cuando omite campos obligatorios o usa un correo inválido, entonces la plataforma indica qué corregir. <br> **Escenario 3 — Transparencia.** Dado que el visitante solicita la demo, cuando completa el formulario, entonces se le informa que se trata de un piloto y que aún no se realiza ningún cobro. |
+
+**UA-07 — Recibir un resumen semanal de estadísticas por vehículo**
+
+| Campo | Detalle |
+|---|---|
+| User | Concesionaria |
+| Priority | Alta |
+| Epic | EX04 |
+| Description | Como Concesionaria, quiero recibir cada semana por correo las vistas, simulaciones y clientes interesados por vehículo, para decidir qué precio ajustar o a quién contactar. |
+| Acceptance Criteria | **Escenario 1 — Envío semanal.** Dado que la concesionaria participa en el piloto, cuando se cumple el corte semanal, entonces recibe un correo con vistas, simulaciones y clientes interesados por cada vehículo publicado. <br> **Escenario 2 — Sin actividad.** Dado que un vehículo no tuvo actividad, cuando se arma el resumen, entonces aparece indicado como "sin actividad". <br> **Escenario 3 — Falla del correo.** Dado que el servicio de correo falla, cuando se intenta enviar, entonces el sistema registra el error y permite reenviar. |
+
+**UA-08 — Registrar las acciones de la concesionaria sobre un vehículo**
+
+| Campo | Detalle |
+|---|---|
+| User | Concesionaria |
+| Priority | Alta |
+| Epic | EX04 |
+| Description | Como Concesionaria, quiero ajustar el precio de un vehículo, contactar a un cliente o marcar un vehículo como vendido desde el panel, para actuar sobre lo que muestran las estadísticas. |
+| Acceptance Criteria | **Escenario 1 — Ajuste de precio.** Dado que la concesionaria ve las estadísticas de un vehículo, cuando modifica su precio y guarda, entonces el catálogo se actualiza y la acción queda registrada. <br> **Escenario 2 — Marcar como vendido.** Dado que un vehículo fue vendido, cuando la concesionaria lo marca como vendido, entonces deja de mostrarse en el catálogo público y se registran los días en patio. <br> **Escenario 3 — Datos inválidos.** Dado que la concesionaria edita un precio, cuando ingresa un valor fuera de rango, entonces la plataforma lo rechaza y muestra el error. |
+
+**UA-09 — Contactar a un cliente que simuló sobre un vehículo**
+
+| Campo | Detalle |
+|---|---|
+| User | Concesionaria |
+| Priority | Media |
+| Epic | EX04 |
+| Description | Como Concesionaria, quiero ver qué clientes simularon un crédito sobre mis vehículos y contactarlos, para convertir ese interés en una visita o prueba de manejo. |
+| Acceptance Criteria | **Escenario 1 — Lista de interesados.** Dado que existen simulaciones sobre un vehículo, cuando la concesionaria abre el detalle de estadísticas, entonces ve la lista de clientes que consintieron compartir su contacto. <br> **Escenario 2 — Consentimiento.** Dado que un cliente no autorizó compartir sus datos, cuando se arma la lista, entonces su contacto no se muestra. <br> **Escenario 3 — Contacto.** Dado que la concesionaria ve un cliente interesado, cuando presiona "Contactar", entonces se abre el canal elegido y la acción se registra. |
+
+**UA-10 — Gestionar el inventario con confirmaciones y mensajes claros**
+
+| Campo | Detalle |
+|---|---|
+| User | Concesionaria |
+| Priority | Media |
+| Epic | EX05 |
+| Description | Como Concesionaria, quiero publicar, consultar, editar y eliminar vehículos con confirmaciones y mensajes de error claros, para completar estas tareas sin pedir ayuda al equipo. |
+| Acceptance Criteria | **Escenario 1 — Confirmación de operación.** Dado que la concesionaria completa una operación de inventario, cuando termina, entonces la plataforma muestra un mensaje de éxito visible. <br> **Escenario 2 — Eliminación segura.** Dado que la concesionaria elimina un vehículo, cuando presiona "Eliminar", entonces la plataforma pide confirmación antes de ejecutar la baja. <br> **Escenario 3 — Error comprensible.** Dado que la operación falla por datos inválidos, cuando la plataforma rechaza el cambio, entonces indica el campo y el motivo. |
+
+**UA-11 — Registrar eventos de navegación en la web y la Landing Page**
+
+| Campo | Detalle |
+|---|---|
+| User | Developer |
+| Priority | Alta |
+| Epic | EX06 |
+| Description | Como Developer, quiero registrar los eventos del catálogo definido en 8.2.8 en la web y la Landing Page, para calcular los embudos de los experimentos. |
+| Acceptance Criteria | **Escenario 1 — Evento enviado.** Dado que el usuario aceptó el aviso de cookies, cuando realiza una acción del catálogo, entonces se envía el evento con sus parámetros a GA4 y al backend. <br> **Escenario 2 — Sin consentimiento.** Dado que el usuario no aceptó el aviso, cuando navega, entonces no se envían eventos de visitantes anónimos. <br> **Escenario 3 — Sin datos sensibles.** Dado que el evento incluye parámetros, cuando se envía, entonces no contiene ingresos, deudas, DNI, RUC ni correos. |
+
+**UA-12 — Almacenar los eventos del experimento en el backend**
+
+| Campo | Detalle |
+|---|---|
+| User | Developer |
+| Priority | Alta |
+| Epic | EX06 |
+| Description | Como Developer, quiero un endpoint y una tabla para almacenar los eventos de producto, para disponer de una fuente oficial y consultable de las métricas. |
+| Acceptance Criteria | **Escenario 1 — Registro exitoso.** Dado que el cliente envía un evento válido, cuando el backend lo recibe, entonces lo almacena en `experiment_events` y responde 202 Accepted. <br> **Escenario 2 — Evento inválido.** Dado que el evento tiene un nombre fuera del catálogo o propiedades no permitidas, cuando el backend lo valida, entonces responde 400 y no lo almacena. <br> **Escenario 3 — Idempotencia.** Dado que el mismo evento llega dos veces, cuando el backend lo procesa, entonces lo registra una sola vez. |
+
+**UA-13 — Registrar eventos en la aplicación móvil**
+
+| Campo | Detalle |
+|---|---|
+| User | Developer |
+| Priority | Media |
+| Epic | EX06 |
+| Description | Como Developer, quiero que la aplicación Android registre los eventos móviles del catálogo, para medir retención y conversión desde la búsqueda móvil hasta el guardado de simulaciones. |
+| Acceptance Criteria | **Escenario 1 — Evento móvil.** Dado que el comprador usa la app, cuando abre el catálogo, ve un vehículo o guarda una simulación, entonces la app envía el evento correspondiente al backend. <br> **Escenario 2 — Sin conexión.** Dado que el dispositivo no tiene conexión, cuando ocurre un evento, entonces la app lo guarda localmente y lo envía al recuperar la conexión. |
+
+**UA-14 — Consultar y exportar las métricas del experimento**
+
+| Campo | Detalle |
+|---|---|
+| User | Developer / Equipo |
+| Priority | Media |
+| Epic | EX06 |
+| Description | Como integrante del equipo, quiero consultar y exportar las métricas de 8.2.2 desde los eventos almacenados, para analizar los resultados y preparar la sesión de shareback. |
+| Acceptance Criteria | **Escenario 1 — Consulta del embudo.** Dado que existen eventos almacenados, cuando se ejecuta la consulta del experimento, entonces se obtienen los conteos y porcentajes por variante. <br> **Escenario 2 — Exportación.** Dado que se requiere el análisis, cuando se exporta, entonces se genera un archivo CSV sin identificadores personales. |
+
+---
+
+### 8.3.2. To-Be Product Backlog
+
+El orden prioriza primero la instrumentación (sin ella no hay línea base), luego los experimentos según el puntaje del Question Backlog (8.1.4). La escala es 1, 2, 3, 5 y 8.
+
+| # Orden | User Story ID | Título | Experimento | Story Points |
+|---|---|---|---|---|
+| 1 | UA-12 | Almacenar los eventos del experimento en el backend | 1 a 5 | 5 |
+| 2 | UA-11 | Registrar eventos de navegación en la web y la Landing Page | 1 a 5 | 3 |
+| 3 | UA-01 | Ver la capacidad máxima de endeudamiento antes de simular | 1 | 5 |
+| 4 | UA-02 | Precargar la cuota máxima en el simulador | 1 | 3 |
+| 5 | UA-03 | Guardar la simulación y registrar el recorrido | 1 | 3 |
+| 6 | UA-04 | Enviar a evaluación desde el cuadro multi-banco | 2 | 5 |
+| 7 | UA-05 | Confirmación y estado de la solicitud enviada | 2 | 2 |
+| 8 | UA-06 | Solicitar una demo desde los planes de membresía | 3 | 3 |
+| 9 | UA-08 | Registrar las acciones de la concesionaria sobre un vehículo | 4 | 5 |
+| 10 | UA-07 | Recibir un resumen semanal de estadísticas por vehículo | 4 | 5 |
+| 11 | UA-09 | Contactar a un cliente que simuló sobre un vehículo | 4 | 3 |
+| 12 | UA-10 | Gestionar el inventario con confirmaciones y mensajes claros | 5 | 3 |
+| 13 | UA-13 | Registrar eventos en la aplicación móvil | 1 a 5 | 3 |
+| 14 | UA-14 | Consultar y exportar las métricas del experimento | 1 a 5 | 2 |
+| | | **Total** | | **50** |
+
+Distribución por Sprint: el Sprint 3 (instrumentación, Experimentos 1, 2 y 3) suma **29 Story Points**, igual que la velocidad del Sprint 1; el Sprint 4 (Experimentos 4 y 5, móvil y análisis) suma **21 Story Points**.
 
 `{=typst}
 #pagebreak()

@@ -2,9 +2,9 @@
 
 ## Conclusiones
 
-Al cierre del presente informe, el equipo **tux-squad** ha implementado SmartFinance Drive como un marketplace B2B2C de vehículos nuevos y usados con financiamiento, cuyo alcance está definido por las historias de usuario US-01 a US-22 y por las historias de la Landing Page (LP-01 a LP-04). La aplicación web (Web) concentra la funcionalidad para los cuatro roles de la plataforma (cliente, concesionario, entidad financiera y administrador), mientras que la aplicación móvil Android (Mobile) permite a los usuarios acceder al catálogo, consultar detalles de vehículos, realizar simulaciones y gestionar su perfil. A partir del trabajo realizado en los Sprints 1 y 2 y de las pruebas documentadas, se presentan las siguientes conclusiones.
+Al cierre del presente informe, el equipo **tux-squad** ha implementado SmartFinance Drive como un marketplace B2B2C de vehículos nuevos y usados con financiamiento, cuyo alcance está definido por las historias de usuario US-01 a US-22 (incluyendo las historias de captación y presentación de la Landing Page US-01 a US-04). La aplicación web (Web) concentra la funcionalidad para los cuatro roles de la plataforma (cliente, concesionario, entidad financiera y administrador), mientras que la aplicación móvil Android (Mobile) permite a los usuarios acceder al catálogo, consultar detalles de vehículos, realizar simulaciones y gestionar su perfil. A partir del trabajo realizado en los Sprints 1 y 2 y de las pruebas documentadas, se presentan las siguientes conclusiones.
 
-* **Presentación del producto (Landing):** La Landing Page (LP-01 a LP-04), desplegada de forma estática en Vercel, comunica la propuesta de valor a las dos audiencias de la plataforma, compradores y concesionarias, y presenta los planes de membresía B2B. Con ello se establece un primer punto de contacto con el visitante y un acceso directo al registro.
+* **Presentación del producto (Landing):** La Landing Page (US-01 a US-04), desplegada de forma estática en Vercel, comunica la propuesta de valor a las dos audiencias de la plataforma, compradores y concesionarias, y presenta los planes de membresía B2B. Con ello se establece un primer punto de contacto con el visitante y un acceso directo al registro.
 
 * **Catálogo y exploración de vehículos (Web / Backend):** Se implementaron el catálogo con búsqueda y filtros (US-16, US-17), el detalle del vehículo (US-18) y la publicación, edición, eliminación y listado de vehículos por parte de la concesionaria (US-11, US-12, US-13, US-14, US-15). El backend en Spring Boot con PostgreSQL y migraciones Flyway sostiene esta funcionalidad, lo que confirma la viabilidad de exponer el inventario de las concesionarias en un catálogo unificado.
 
@@ -19,6 +19,14 @@ Al cierre del presente informe, el equipo **tux-squad** ha implementado SmartFin
 * **Calidad y entrega continua (Backend / DevOps):** La estrategia de pruebas del Capítulo VI (pruebas unitarias, de integración, BDD y de sistema) y las prácticas de integración y despliegue del Capítulo VII, apoyadas en GitHub Actions, Render y Vercel, brindan trazabilidad entre las historias de usuario, el código y los entornos de ejecución.
 
 * **Aspectos pendientes:** Aún deben completarse la ejecución y el registro de resultados de las pruebas de sistema (ST-01 a ST-18) y la validación de las historias de la aplicación móvil en su propio cliente. Asimismo, parte de los registros de los Sprint Reviews y Retrospectives del Sprint 2 se encuentra por completar.
+
+**Conclusiones (Avance al Hito 3)**
+
+* **Validación empírica mediante Experiment-Driven Development:** La estructuración y ejecución de las fases de planificación, diseño, experimentación, análisis y aprendizaje continuo permitieron contrastar las hipótesis de negocio de SmartFinance Drive con evidencia real en los entornos web y móvil, demostrando que la integración de filtros guiados por presupuesto y la pre-evaluación crediticia reducen significativamente la fricción en la toma de decisiones del comprador.
+
+* **Madurez operativa con prácticas DevOps integrales:** La incorporación del monitoreo continuo (Continuous Monitoring, alertas y notificaciones) junto con los pipelines de CI/CD garantiza la disponibilidad, observabilidad y rápida detección de incidencias en producción, asegurando una experiencia confiable para compradores y concesionarias.
+
+* **Evolución iterativa centrada en el usuario:** Las 9 entrevistas adicionales de validación realizadas en este ciclo, sumadas a las evaluaciones heurísticas y auditorías UX, permitieron identificar cuellos de botella en la navegación y convertir los hallazgos directamente en historias de usuario To-Be priorizadas para mejorar la usabilidad y conversión de la plataforma.
 
 ## Recomendaciones
 

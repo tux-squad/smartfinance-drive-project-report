@@ -18,7 +18,7 @@
 
 ## 3.2. User Stories
 
-En esta sección se definen los requisitos funcionales, no funcionales y técnicos de SmartFinance Drive mediante un conjunto estructurado de Epics y User Stories. La redacción contempla los tres segmentos objetivo (Compradores, Concesionarias de nuevos y Concesionarias de usados), así como las historias técnicas necesarias para la viabilidad de la plataforma.
+En esta sección se definen los requisitos funcionales, no funcionales y técnicos de SmartFinance Drive mediante un conjunto estructurado de Epics y User Stories. La redacción contempla los tres segmentos objetivo (Compradores, Concesionarias de nuevos y Concesionarias de usados), así como las historias técnicas necesarias para la viabilidad de la plataforma. **Cabe precisar y enfatizar que la totalidad de las 22 User Stories (US-01 a US-22) están dirigidas y desarrolladas para la versión Web de la solución (Landing Page promocional y Aplicación Web responsiva desarrollada en Vue.js, soportadas por la API RESTful de backend en Spring Boot)**, centralizando en este entorno todas las operaciones de los diferentes roles.
 
 **US-01 — Visualizar información de la plataforma**
 
@@ -816,7 +816,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 <br>
 ## 3.3. Product Backlog
 
-En esta sección se presenta el Product Backlog priorizado del proyecto. Siguiendo las directrices del curso, el orden de los elementos se ha determinado por el valor que aportan al negocio, colocando en las primeras posiciones las historias relacionadas con el sitio web estático (Landing Page) para asegurar su inclusión desde el primer sprint. Asimismo, se prioriza la visualización del catálogo y la propuesta de valor antes de las historias de autenticación.
+En esta sección se presenta el Product Backlog priorizado del proyecto. Siguiendo las directrices del curso, el orden de los elementos se ha determinado por el valor que aportan al negocio, colocando en las primeras posiciones las historias relacionadas con el sitio web estático (Landing Page) para asegurar su inclusión desde el primer sprint. Asimismo, se prioriza la visualización del catálogo y la propuesta de valor antes de las historias de autenticación. **Se recalca que la totalidad de las historias de usuario de este backlog van dirigidas y corresponden a la versión Web de la plataforma.**
 
 La estimación utiliza la escala de Story Points (1, 2, 3, 5, 8).
 

@@ -64,11 +64,12 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
     - **Material Design:** utilizado como referencia para mantener una interfaz consistente y orientada a la usabilidad.
 
 - **Backend:**
-    - **Next.js (App Router):** utilizado como framework principal para la implementación de los servicios y lógica del lado servidor.
-    - **TypeScript:** utilizado como lenguaje principal para el desarrollo del backend, proporcionando tipado estático y mayor seguridad durante la implementación.
-    - **Clean Architecture:** utilizada como patrón arquitectónico para separar responsabilidades y organizar la lógica del sistema.
-    - **Server Actions:** utilizadas para ejecutar operaciones directamente en el servidor mediante las capacidades de Next.js.
-    - **Route Handlers:** utilizados para implementar endpoints HTTP tradicionales, principalmente para integraciones y funcionalidades que requieren comunicación mediante API.
+    - **Java 17:** utilizado como lenguaje principal para el desarrollo del backend, proporcionando tipado estático estricto, alto rendimiento y soporte empresarial.
+    - **Spring Boot:** framework principal utilizado para implementar los microservicios y servicios RESTful, inyección de dependencias y configuración del servidor web.
+    - **Spring Data JPA / Hibernate:** framework ORM utilizado para la persistencia de datos y el mapeo objeto-relacional entre las entidades de dominio y PostgreSQL.
+    - **Spring Security + JWT:** componentes encargados de la autenticación sin estado (stateless) y autorización basada en roles (RBAC) para proteger los endpoints.
+    - **Flyway:** herramienta de migración y versionado de base de datos para mantener la consistencia del esquema relacional en cada despliegue.
+    - **Maven:** utilizado como gestor de dependencias, automatización de construcción y empaquetado del artefacto backend.
 
 - **Native Mobile Application:**
     - **Android / Kotlin:** utilizado para el desarrollo de la aplicación móvil nativa para dispositivos Android.
@@ -81,11 +82,11 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
 
 **Database & Authentication**
 
-- **PostgreSQL:** sistema de gestión de bases de datos relacional utilizado para la persistencia de la información de SmartFinance Drive.
+- **PostgreSQL (Aiven):** sistema gestor de bases de datos relacional administrado en la nube utilizado para la persistencia íntegra de usuarios, vehículos, simulaciones y solicitudes de financiamiento.
 
-- **Prisma:** ORM utilizado para facilitar la interacción entre el backend y PostgreSQL, permitiendo trabajar con los datos mediante modelos y operaciones tipadas.
+- **Spring Data JPA / Hibernate:** ORM utilizado para interactuar con PostgreSQL mediante repositorios fuertemente tipados, facilitando transacciones seguras y optimización de consultas.
 
-- **Supabase:** plataforma utilizada principalmente para la autenticación y gestión de sesiones de los usuarios. También se utiliza para almacenar información relacionada con los perfiles de usuario.
+- **Spring Security + JWT:** arquitectura de autenticación y autorización basada en JSON Web Tokens, que valida la identidad del usuario y sus permisos de acceso en cada petición HTTP sin requerir almacenamiento de sesiones en servidor.
 
 **Development Environment**
 
@@ -327,11 +328,15 @@ Para el despliegue de la aplicación web principal (el portal B2C y B2B desarrol
 
 ## 5.2. Product Implementation & Deployment
 
-En esta sección se documenta la gestión del tiempo, tareas y recursos mediante la metodología Scrum para el desarrollo del ecosistema SmartFinance Drive.
+En esta sección se documenta la gestión del tiempo, tareas y recursos mediante la metodología Scrum para el desarrollo del ecosistema SmartFinance Drive. **Cabe resaltar que todas las User Stories abordadas, desarrolladas y verificadas a lo largo de los Sprints van dirigidas a la versión Web del producto (Landing Page promocional y Aplicación Web desarrollada en Vue.js con soporte del backend RESTful en Spring Boot).**
 
-#### 5.2.1. Sprint 1
+### 5.2.1. Sprint Backlogs
 
-##### 5.2.1.1. Sprint Planning 1
+**Sprint 1**
+
+
+**Sprint Planning 1**
+
 
 En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
 
@@ -342,13 +347,14 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Location** | Reunión Virtual - Discord |
 | **Prepared By** | Machacca Soto, Aldo Jeanfranco |
 | **Attendees** | Castillo Yataco, Mauricio Sebastian / Cotrina Siclla, Sofia Alessandra / Jonseck Choque, Oliver / Machacca Soto, Aldo Jeanfranco / Acosta Elera, Abraam Bernabe |
-| **Sprint 0 Review Summary** | Configuración inicial de repositorios en GitHub, elección del stack tecnológico (Next.js, Vue, C# .NET, Render, Vercel) y definición preliminar del catálogo B2B. |
+| **Sprint 0 Review Summary** | Configuración inicial de repositorios en GitHub, elección del stack tecnológico (Vue.js, Java Spring Boot, PostgreSQL en Aiven, Render, Vercel) y definición preliminar del catálogo B2B. |
 | **Sprint 0 Retrospective Summary** | Se identificó la necesidad de automatizar la validación de código (Linters) antes de realizar *Push* a la rama `develop` para evitar conflictos tempranos. |
 | **Sprint 1 Goal** | Our focus is on establishing core microservices architecture and a responsive presentation for the landing page. We believe it delivers a solid foundation and clear business scope to potential clients (dealers and buyers). This will be confirmed when a user successfully views the unified catalog structure. |
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
 
-##### 5.2.1.2. Aspects Leader Collaboration
+**Aspects Leader Collaboration**
+
 
 Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
 
@@ -360,7 +366,8 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 | Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 
-##### 5.2.1.3. Sprint Backlog 1
+**Sprint Backlog 1**
+
 
 | **User Story Id** | **Title** | **Work-Item / Task Id** | **Title / Description** | **Estimation (Hours)** | **Assigned To** | **Status** |
 | :--- | :--- | :--- | :--- | ---: | :--- | :--- |
@@ -387,7 +394,8 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 El tablero de control del Sprint 1 se encuentra disponible de manera pública en el siguiente enlace de Jira: [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
 
 
-##### 5.2.1.4. Development Evidence for Sprint Review
+**Development Evidence for Sprint Review**
+
 
 La implementación en los repositorios oficiales del proyecto se rigió por el modelo GitFlow y la nomenclatura de Conventional Commits, dejando la siguiente evidencia técnica en las ramas principales de la Landing Page, Backend y aplicación móvil nativa:
 
@@ -404,141 +412,11 @@ La implementación en los repositorios oficiales del proyecto se rigió por el m
 | tux-squad/smartfinance-drive-mobile-app | develop | `f142f42` | Document and prepare SmartFinance Drive mobile app | - | 2026-09-19 |
 | tux-squad/smartfinance-drive-mobile-app | develop | `4a7a833` | feat: removal of unnecessary mds | - | 2026-09-19 |
 
-### 5.2.1.5. Implemented Landing Page Evidence
-
-Durante el Sprint 1, se implementó exitosamente la **Landing Page de SmartFinance Drive** utilizando **HTML5, CSS3 y JavaScript (Vanilla)**, cumpliendo estrictamente con el diseño previamente definido y los requerimientos del proyecto. Este sitio web representa la cara pública del proyecto, desplegado eficientemente a través de **Vercel** para garantizar una alta disponibilidad y tiempos de carga rápidos.
-
-La landing page funciona como el punto de entrada principal, presentando la identidad visual de la marca y explicando de forma interactiva el valor del ecosistema para conectar a compradores con concesionarias de vehículos en un solo lugar.
-
-A continuación, se presentan las capturas de pantalla del producto real en funcionamiento:
-
-#### 1. Home / Hero Section
-
-La pantalla inicial presenta la propuesta de valor principal **"Tu próximo auto está más cerca"**, junto con botones de llamado a la acción claros (**"Explorar vehículos"** y **"Soy concesionaria"**) y una barra de navegación superior (*Sticky Navbar*) que incluye un selector de idioma.
-
-![Landing Page 1](assets/Chapter-5/LandingPage-1.png)
-
-#### 2. Sección del Problema (Acordeón Interactivo)
-
-Se implementó un componente de acordeón interactivo en JavaScript que desglosa las fricciones del proceso actual de búsqueda y comercialización de vehículos, permitiendo al usuario desplegar preguntas como **"Qué problema existe"** o **"Cuándo ocurre"**.
-
-![Landing Page 2](assets/Chapter-5/LandingPage-2.png)
-
-#### 3. Perfiles y Segmentos Objetivo
-
-Se implementó un carrusel interactivo estructurado con botones de navegación que detalla los tres perfiles de la plataforma. En la imagen se aprecia la vista enfocada en la oferta B2B para **"Concesionarias de autos usados"**, detallando sus puntos de dolor y necesidades.
-
-![Landing Page 3](assets/Chapter-5/LandingPage-3.png)
-
-#### 4. Membresías B2B (Pricing)
-
-Se desarrolló una grilla de planes estructurada con **CSS Grid** y metodología **BEM**. Esta sección muestra claramente el modelo de negocio para las concesionarias, resaltando visualmente en el centro la tarjeta del **"Panel de gestión B2B"**, aplicable a ambos planes de venta (**Nueva** y **Usada**).
-
-![Landing Page 4](assets/Chapter-5/LandingPage-4.png)
-
-#### 5. Equipo (Team Slider)
-
-Se presenta a los miembros del equipo *tux-squad*. Se implementó un slider horizontal arrastrable (*draggable*) con JavaScript que permite visualizar las fotografías, nombres, códigos universitarios y roles de los estudiantes de Ingeniería de Software involucrados en el desarrollo.
-
-![Landing Page 5](assets/Chapter-5/LandingPage-5.png)
-
-**URL de Despliegue en Producción**
-
-La Landing Page se encuentra desplegada y disponible en producción mediante **Vercel**:
-
-* **Enlace web activo:** [https://smartfinance-drive-landingpage.vercel.app/](https://smartfinance-drive-landingpage.vercel.app/)
-
-### 5.2.1.6. Implemented Frontend-Web Application Evidence
-
-> **Pendiente:** Evidencia del frontend desplegado de la aplicación web.
-
-### 5.2.1.7. Acuerdo de Servicio - SaaS
-
-Este acuerdo establece los términos de uso de la plataforma **SmartFinance Drive** para las concesionarias aliadas (**SaaS Agreement**).
-
-* **Propiedad Intelectual:** tux-squad mantiene la propiedad intelectual de la plataforma, otorgando a las concesionarias una licencia de uso mediante suscripción mensual. Se garantiza el acceso al panel B2B, herramientas de simulación y gestión de leads, sin derecho a replicar o extraer el código fuente.
-* **Compromiso de Disponibilidad (SLA):** Nos comprometemos a mantener el catálogo y los Web Services operativos un **99.9 % del tiempo**, asegurando que las integraciones con pasarelas (Stripe) y validaciones (SUNAT) funcionen ininterrumpidamente para no perder prospectos comerciales.
-* **Seguridad y Resguardo de Datos:** Garantizamos la protección de las credenciales, historiales crediticios de los compradores y datos de inventario mediante protocolos JWT y encriptación.
-* **Uso Aceptable:** SmartFinance Drive se reserva el derecho de dar de baja publicaciones de vehículos fraudulentos, con información engañosa o que incumplan las normativas de financiamiento vigentes.
-
-### 5.2.1.8. Implemented Native-Mobile Application Evidence
-
-Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
-
-* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
-* **Stack tecnológico:** Kotlin, Jetpack Compose, Material 3, Retrofit, OkHttp, Gradle, Android Studio.
-* **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Shared, Core.
-* **Evidencia de funcionalidades:**
-    - Pantalla de Login y Registro de usuarios.
-    - Catálogo de vehículos con vista de listado y filtros.
-    - Detalle del vehículo con información relevante y acceso a simulación.
-    - Pre-evaluación crediticia para clientes.
-    - Perfil de usuario, configuración y navegación principal.
-    - Módulo de consulta de inventario y gestión de información de concesionarias.
-
-La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
-
-**Evidencia visual de la aplicación móvil**
-
-![Mobile App 1](assets/Chapter-5/mobile1.jpeg)
-![Mobile App 1](assets/Chapter-5/mobile2.jpeg)
-![Mobile App 1](assets/Chapter-5/mobile3.jpeg)
-![Mobile App 1](assets/Chapter-5/mobile4.jpeg)
+**Sprint 2**
 
 
-### 5.2.1.9. Implemented RESTful API and/or Serverless Backend Evidence
+**Sprint Planning 2**
 
-El backend de SmartFinance Drive está desarrollado utilizando el framework Spring Boot (Java), estructurado bajo un diseño de Bounded Contexts (IAM, Catalog, Partners, Financing, Billing) y desplegado de manera continua en la plataforma de alojamiento en la nube Render.
-
-* **Persistencia y Migraciones:** Se utiliza PostgreSQL como base de datos relacional para garantizar la consistencia transaccional de los usuarios, el inventario de vehículos y el registro de simulaciones crediticias. El control de versiones y la evolución del esquema de la base de datos se gestionan de forma automatizada mediante scripts de Flyway.
-* **Seguridad:** Implementación de Spring Security respaldado por un esquema de tokens JWT (JSON Web Tokens) Bearer. Esto permite la autenticación sin estado (stateless) y una autorización granular basada en los roles del ecosistema (Comprador, Concesionaria, Entidad Financiera y Administrador).
-* **Integraciones y Lógica de Negocio:** El servidor cuenta con un motor de búsqueda difusa híbrida (Levenshtein + Trigram) para el catálogo, y se conecta síncronamente con servicios de terceros como la SUNAT para la validación de RUCs (con estrategias de *caching* y *rate limiting*) y Stripe Checkout para la facturación recurrente B2B.
-* **Enlace base de la API en Producción:** [https://smartfinance-drive-platform.onrender.com](https://smartfinance-drive-platform.onrender.com)
-
-### 5.2.1.10. RESTful API documentation
-
-Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
-
-![Swager 1](assets/Chapter-5/Swager-1.png)
-
-![Swager 2](assets/Chapter-5/Swager-2.png)
-
-![Swager 3](assets/Chapter-5/Swager-3.png)
-
-![Swager 4](assets/Chapter-5/Swager-4.png)
-
-![Swager 5](assets/Chapter-5/Swager-5.png)
-
-![Swager 6](assets/Chapter-5/Swager-6.png)
-
-![Swager 7](assets/Chapter-5/Swager-7.png)
-
-![Swager 8](assets/Chapter-5/Swager-8.png)
-
-![Swager 9](assets/Chapter-5/Swager-9.png)
-
-### 5.2.1.10. Team Collaboration Insights
-
-* **Landing Page**
-
-![Team Collaboration Insights 1 - Landing](assets/Chapter-5/TeamCollaborationInsightsLanding-1.png)
-
-* **Backend**
-
-![Team Collaboration Insights 1 - Backend](assets/Chapter-5/TeamCollaborationInsightsBackend-1.png)
-
-![Team Collaboration Insights 2 - Backend](assets/Chapter-5/TeamCollaborationInsightsBackend-2.png)
-
-* **Frontend**
-
-![Team Collaboration Insights 1 - Frontend](assets/Chapter-5/TeamCollaborationInsightsFrontend-1.png)
-
-![Team Collaboration Insights 2 - Frontend](assets/Chapter-5/TeamCollaborationInsightsFrontend-2.png)
-
-
-#### 5.2.2. Sprint 2
-
-##### 5.2.2.1. Sprint Planning 1
 
 En este primer hito, el equipo definió como objetivo principal sentar las bases arquitectónicas de la plataforma y desarrollar la interfaz responsiva inicial de la Landing Page promocional para presentar el valor del producto al mercado.
 
@@ -555,7 +433,8 @@ En este primer hito, el equipo definió como objetivo principal sentar las bases
 | **Sprint 1 Velocity** | 29 Story Points |
 | **Sum of Story Points** | 29 Story Points |
 
-##### 5.2.2.2. Aspects Leader Collaboration
+**Aspects Leader Collaboration**
+
 
 Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** para delegar responsabilidades técnicas específicas sobre los distintos componentes arquitectónicos del sistema y la documentación. Esto asegura la participación activa y estructurada de todo el equipo de ingeniería.
 
@@ -567,7 +446,8 @@ Se estableció la matriz **LACX (Leader, Assistant, Collaborator, Executive)** p
 | Castillo Yataco, Mauricio Sebastian | **\@M4uricioCastillo** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 | Jonseck Choque, Oliver | **\@Olizzy-upc** | Collaborator (C) | Collaborator (C) | Collaborator (C) | Collaborator (C) |
 
-##### 5.2.2.3. Sprint Backlog 2
+**Sprint Backlog 2**
+
 
 Durante el Sprint 2, el equipo se enfocó en implementar los módulos de gestión de perfiles, inventario de vehículos, publicación, consulta y eliminación de simulaciones, evaluación de solicitudes de crédito e integraciones externas.
 
@@ -609,7 +489,8 @@ Durante el Sprint 2, el equipo se enfocó en implementar los módulos de gestió
 El tablero de control del Sprint 2 se encuentra disponible de manera pública en el siguiente enlace de Jira: [https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog](https://smartdrive-finance.atlassian.net/jira/software/projects/PB/boards/2/backlog)
 
 
-##### 5.2.2.4. Development Evidence for Sprint Review
+**Development Evidence for Sprint Review**
+
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -632,16 +513,159 @@ El tablero de control del Sprint 2 se encuentra disponible de manera pública en
 | tux-squad/smartfinance-drive-mobile-app | develop | `9aef325` | feat: delete mds | - | 2026-10-10 |
 | tux-squad/smartfinance-drive-mobile-app | develop | `dc3a778` | feat: code refactoring, addition of real endpoints | - | 2026-10-10 |
 
-### 5.2.2.5. Implemented Frontend-Web Application Evidence
+### 5.2.2. Implemented Landing Page Evidence
 
-Log In View
+Durante el Sprint 1, se implementó exitosamente la **Landing Page de SmartFinance Drive** utilizando **HTML5, CSS3 y JavaScript (Vanilla)**, cumpliendo estrictamente con el diseño previamente definido y los requerimientos del proyecto. Este sitio web representa la cara pública del proyecto, desplegado eficientemente a través de **Vercel** para garantizar una alta disponibilidad y tiempos de carga rápidos.
+
+La landing page funciona como el punto de entrada principal, presentando la identidad visual de la marca y explicando de forma interactiva el valor del ecosistema para conectar a compradores con concesionarias de vehículos en un solo lugar.
+
+A continuación, se presentan las capturas de pantalla del producto real en funcionamiento:
+
+**1. Home / Hero Section**
+
+
+La pantalla inicial presenta la propuesta de valor principal **"Tu próximo auto está más cerca"**, junto con botones de llamado a la acción claros (**"Explorar vehículos"** y **"Soy concesionaria"**) y una barra de navegación superior (*Sticky Navbar*) que incluye un selector de idioma.
+
+![Landing Page 1](assets/Chapter-5/LandingPage-1.png)
+
+**2. Sección del Problema (Acordeón Interactivo)**
+
+
+Se implementó un componente de acordeón interactivo en JavaScript que desglosa las fricciones del proceso actual de búsqueda y comercialización de vehículos, permitiendo al usuario desplegar preguntas como **"Qué problema existe"** o **"Cuándo ocurre"**.
+
+![Landing Page 2](assets/Chapter-5/LandingPage-2.png)
+
+**3. Perfiles y Segmentos Objetivo**
+
+
+Se implementó un carrusel interactivo estructurado con botones de navegación que detalla los tres perfiles de la plataforma. En la imagen se aprecia la vista enfocada en la oferta B2B para **"Concesionarias de autos usados"**, detallando sus puntos de dolor y necesidades.
+
+![Landing Page 3](assets/Chapter-5/LandingPage-3.png)
+
+**4. Membresías B2B (Pricing)**
+
+
+Se desarrolló una grilla de planes estructurada con **CSS Grid** y metodología **BEM**. Esta sección muestra claramente el modelo de negocio para las concesionarias, resaltando visualmente en el centro la tarjeta del **"Panel de gestión B2B"**, aplicable a ambos planes de venta (**Nueva** y **Usada**).
+
+![Landing Page 4](assets/Chapter-5/LandingPage-4.png)
+
+**5. Equipo (Team Slider)**
+
+
+Se presenta a los miembros del equipo *tux-squad*. Se implementó un slider horizontal arrastrable (*draggable*) con JavaScript que permite visualizar las fotografías, nombres, códigos universitarios y roles de los estudiantes de Ingeniería de Software involucrados en el desarrollo.
+
+![Landing Page 5](assets/Chapter-5/LandingPage-5.png)
+
+**URL de Despliegue en Producción**
+
+La Landing Page se encuentra desplegada y disponible en producción mediante **Vercel**:
+
+* **Enlace web activo:** [https://smartfinance-drive-landingpage.vercel.app/](https://smartfinance-drive-landingpage.vercel.app/)
+
+### 5.2.3. Implemented Frontend-Web Application Evidence
+
+Durante los Sprints 1 y 2, se desarrolló la aplicación web responsiva de **SmartFinance Drive** utilizando el framework **Vue.js 3** con Composition API, TypeScript, Vite, Pinia para el manejo reactivo del estado global y Vue Router para el enrutamiento protegido por tokens JWT.
+
+La aplicación concentra las funcionalidades orientadas a los cuatro roles del ecosistema (compradores, concesionarias, entidades financieras y administradores), incluyendo autenticación, exploración de vehículos con filtros avanzados, visualización de fichas detalladas y simulación crediticia con el método francés.
+
+* **Repositorio Web:** [https://github.com/tux-squad/smartfinance-drive-webapp](https://github.com/tux-squad/smartfinance-drive-webapp)
+* **Despliegue en producción (Vercel):** [https://smartfinance-drive-webapp.vercel.app/](https://smartfinance-drive-webapp.vercel.app/)
+
+**Evidencias de la aplicación web en producción:**
+
+**Log In View**
+
 ![FrontEnd_1](assets/Chapter-5/FrontEnd-1.png)
 
-Account creation view
+**Account creation view**
+
 ![FrontEnd_2](assets/Chapter-5/FrontEnd-2.png)
 
-Catalogue view
+**Catalogue view**
+
 ![FrontEnd_3](assets/Chapter-5/FrontEnd-3.png)
+
+### 5.2.4. Acuerdo de Servicio - SaaS
+
+Este acuerdo establece los términos de uso de la plataforma **SmartFinance Drive** para las concesionarias aliadas (**SaaS Agreement**).
+
+* **Propiedad Intelectual:** tux-squad mantiene la propiedad intelectual de la plataforma, otorgando a las concesionarias una licencia de uso mediante suscripción mensual. Se garantiza el acceso al panel B2B, herramientas de simulación y gestión de leads, sin derecho a replicar o extraer el código fuente.
+* **Compromiso de Disponibilidad (SLA):** Nos comprometemos a mantener el catálogo y los Web Services operativos un **99.9 % del tiempo**, asegurando que las integraciones con pasarelas (Stripe) y validaciones (SUNAT) funcionen ininterrumpidamente para no perder prospectos comerciales.
+* **Seguridad y Resguardo de Datos:** Garantizamos la protección de las credenciales, historiales crediticios de los compradores y datos de inventario mediante protocolos JWT y encriptación.
+* **Uso Aceptable:** SmartFinance Drive se reserva el derecho de dar de baja publicaciones de vehículos fraudulentos, con información engañosa o que incumplan las normativas de financiamiento vigentes.
+
+### 5.2.5. Implemented Native-Mobile Application Evidence
+
+Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
+
+* **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
+* **Stack tecnológico:** Kotlin, Jetpack Compose, Material 3, Retrofit, OkHttp, Gradle, Android Studio.
+* **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Shared, Core.
+* **Evidencia de funcionalidades:**
+    - Pantalla de Login y Registro de usuarios.
+    - Catálogo de vehículos con vista de listado y filtros.
+    - Detalle del vehículo con información relevante y acceso a simulación.
+    - Pre-evaluación crediticia para clientes.
+    - Perfil de usuario, configuración y navegación principal.
+    - Módulo de consulta de inventario y gestión de información de concesionarias.
+
+La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
+
+**Evidencia visual de la aplicación móvil**
+
+![Mobile App 1](assets/Chapter-5/mobile1.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile2.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile3.jpeg)
+![Mobile App 1](assets/Chapter-5/mobile4.jpeg)
+
+### 5.2.6. Implemented RESTful API and/or Serverless Backend Evidence
+
+El backend de SmartFinance Drive está desarrollado utilizando el framework Spring Boot (Java), estructurado bajo un diseño de Bounded Contexts (IAM, Catalog, Partners, Financing, Billing) y desplegado de manera continua en la plataforma de alojamiento en la nube Render.
+
+* **Persistencia y Migraciones:** Se utiliza PostgreSQL como base de datos relacional para garantizar la consistencia transaccional de los usuarios, el inventario de vehículos y el registro de simulaciones crediticias. El control de versiones y la evolución del esquema de la base de datos se gestionan de forma automatizada mediante scripts de Flyway.
+* **Seguridad:** Implementación de Spring Security respaldado por un esquema de tokens JWT (JSON Web Tokens) Bearer. Esto permite la autenticación sin estado (stateless) y una autorización granular basada en los roles del ecosistema (Comprador, Concesionaria, Entidad Financiera y Administrador).
+* **Integraciones y Lógica de Negocio:** El servidor cuenta con un motor de búsqueda difusa híbrida (Levenshtein + Trigram) para el catálogo, y se conecta síncronamente con servicios de terceros como la SUNAT para la validación de RUCs (con estrategias de *caching* y *rate limiting*) y Stripe Checkout para la facturación recurrente B2B.
+* **Enlace base de la API en Producción:** [https://smartfinance-drive-platform.onrender.com](https://smartfinance-drive-platform.onrender.com)
+
+### 5.2.7. RESTful API documentation
+
+Aquí se presenta el backend del proyecto completamente desplegado y documentado siguiendo el estándar de especificación OpenAPI (v3) a través de la interfaz gráfica de Swagger UI. Esta herramienta permite visualizar, comprender y probar de forma interactiva todos los endpoints de la API RESTful directamente desde el navegador web.
+
+![Swager 1](assets/Chapter-5/Swager-1.png)
+
+![Swager 2](assets/Chapter-5/Swager-2.png)
+
+![Swager 3](assets/Chapter-5/Swager-3.png)
+
+![Swager 4](assets/Chapter-5/Swager-4.png)
+
+![Swager 5](assets/Chapter-5/Swager-5.png)
+
+![Swager 6](assets/Chapter-5/Swager-6.png)
+
+![Swager 7](assets/Chapter-5/Swager-7.png)
+
+![Swager 8](assets/Chapter-5/Swager-8.png)
+
+![Swager 9](assets/Chapter-5/Swager-9.png)
+
+### 5.2.8. Team Collaboration Insights
+
+* **Landing Page**
+
+![Team Collaboration Insights 1 - Landing](assets/Chapter-5/TeamCollaborationInsightsLanding-1.png)
+
+* **Backend**
+
+![Team Collaboration Insights 1 - Backend](assets/Chapter-5/TeamCollaborationInsightsBackend-1.png)
+
+![Team Collaboration Insights 2 - Backend](assets/Chapter-5/TeamCollaborationInsightsBackend-2.png)
+
+* **Frontend**
+
+![Team Collaboration Insights 1 - Frontend](assets/Chapter-5/TeamCollaborationInsightsFrontend-1.png)
+
+![Team Collaboration Insights 2 - Frontend](assets/Chapter-5/TeamCollaborationInsightsFrontend-2.png)
 
 ## 5.3. Video About-the-Product
 Enlace y presentación del video demostrativo del producto.

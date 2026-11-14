@@ -624,7 +624,7 @@ El diagrama de contenedores (Nivel 2) desglosa el sistema SmartFinance Drive en 
 
 - **Mobile App**: Aplicación móvil nativa para iOS y Android, enfocada en la búsqueda ágil de autos para el comprador y la gestión en patio para el vendedor.
 
-- **Backend API**: Implementado como un monolito modular basado en Java Spring Boot y Next.js. Este contenedor centraliza toda la lógica de negocio estructurada en 8 Bounded Contexts independientes.
+- **Backend API**: Implementado como una arquitectura monolítica modular basada en Java con Spring Boot. Este contenedor centraliza toda la lógica de negocio estructurada en 8 Bounded Contexts independientes.
 
 - **Base de Datos**: Sistema de gestión de bases de datos relacional PostgreSQL, encargado de almacenar de forma persistente la información de usuarios, simulaciones, inventario y facturación de todos los contextos.
 

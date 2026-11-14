@@ -10,7 +10,7 @@
 
 ---
 
-# Informe del Trabajo Final
+# Informe de Avance 2 (Sprint Review)
 
 ---
 
@@ -31,6 +31,6 @@
 
 <br>
 
-**Período 202620 -- Setiembre 2026**
+**Período 202620 -- Noviembre 2026**
 
 </div>
