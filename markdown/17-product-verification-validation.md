@@ -1123,7 +1123,7 @@ Cada entrevista se documenta con una ficha que contiene los datos del participan
 | Nombre y apellidos | Andrea Arango |
 | Edad y distrito | 28 años, San Juan de Lurigancho |
 | Segmento | Compradores interesados |
-| Fecha y facilitador | |
+| Fecha y facilitador | 12 de Noviembre - Mauricio Castillo |
 | Captura del video | ![Captura de la entrevista 1 - Segmento 1](../assets/Chapter-6/entrevista-s1-1.png) |
 | URL en Microsoft Stream | |
 | Timing de inicio y duración | Inicio: — / Duración: 15:27 |
@@ -1205,7 +1205,7 @@ Cada entrevista se documenta con una ficha que contiene los datos del participan
 | Nombre y apellidos | Yarkin Quispe |
 | Edad y distrito | 28 años, Chorrillos |
 | Segmento | Concesionarias de vehículos usados |
-| Fecha y facilitador | |
+| Fecha y facilitador | 11 de Noviembre - Mauricio Castillo |
 | Captura del video | ![Captura de la entrevista 1 - Segmento 3](../assets/Chapter-6/entrevista-s3-1.png) |
 | URL en Microsoft Stream | |
 | Timing de inicio y duración | Inicio: — / Duración: 12:14 |
