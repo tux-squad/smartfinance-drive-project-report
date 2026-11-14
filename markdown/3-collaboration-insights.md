@@ -62,4 +62,30 @@ La colaboración realizada durante el TB1 se evidencia mediante los commits y lo
 
 Las evidencias presentadas permiten visualizar la actividad registrada en el repositorio durante la elaboración del **Trabajo Parcial (TB1)** y su relación con las modificaciones realizadas en el Project Report.
 
+**Avance 2 (AV2)**
+
+Durante el Avance 2 (AV2) se consolidaron las actividades de validación, prácticas completas de DevOps (incluyendo monitoreo continuo) y el desarrollo integral del Capítulo VIII (Experiment-Driven Development), bajo la coordinación y consolidación documental de Cotrina Siclla, Sofia Alessandra.
+
+- **Cotrina Siclla, Sofia Alessandra:** Lideró la consolidación del informe, la corrección de observaciones de hitos previos y la actualización del Capítulo VII (incorporando Continuous Monitoring). Asimismo, realizó 7 entrevistas de validación y desarrolló las secciones de instrumentación (Web & Mobile Tracking Plan 8.2.8) y especificación de experimentos (To-Be User Stories 8.3.1 y To-Be Product Backlog 8.3.2).
+
+- **Castillo Yataco, Mauricio Sebastian:** Desarrolló la fase de planificación de experimentos (Sección 8.1: As-Is Summary, Raw Material, Experiment-Ready Questions, Question Backlog y Experiment Cards) y aportó 2 entrevistas de validación en el Capítulo VI.
+
+- **Jonseck Choque, Oliver:** Elaboró el diseño experimental (Secciones 8.2.1 a 8.2.7: hipótesis, métricas de dominio, medidas, condiciones, cálculo de escala y selección de métodos), además de apoyar en la corrección de observaciones del documento.
+
+- **Machacca Soto, Aldo Jeanfranco:** Continuó con el desarrollo y actualización de funcionalidades en la plataforma web y resolvió incidencias técnicas detectadas durante las pruebas en el entorno web.
+
+- **Acosta Elera, Abraam Bernabe:** No registró contribuciones ni actividad documentada en el repositorio ni en los entregables correspondientes a este tercer hito (sin participación reportada).
+
+La colaboración realizada durante el AV2 se evidencia mediante los commits y los analíticos de colaboración registrados en el repositorio de GitHub del Project Report.
+
+**GitHub Collaboration Insights**
+
+![Team Collaboration Insights - AV2](../assets/Chapter-1/Team-Collaboration-Insights-AV2.png)
+
+**GitHub Commits**
+
+![GitHub Commits - AV2](../assets/Chapter-1/GitHub-Commits-AV2.png)
+
+Las evidencias presentadas permiten visualizar la actividad registrada en el repositorio durante la elaboración del **Avance 2 (AV2)** y su relación con las modificaciones realizadas en el Project Report.
+
 La información presentada mantiene coherencia con el **Registro de Versiones del Informe**, permitiendo identificar la evolución del documento y las contribuciones realizadas por los integrantes durante esta entrega.
