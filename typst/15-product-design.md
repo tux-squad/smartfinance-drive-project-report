@@ -264,7 +264,7 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 
 - **User Goal:** Revisar las métricas de captación de leads en tiempo real y aplicar bonos de descuento inmediatos a su inventario para acelerar ventas.
 
-- **Explicación del Flujo y Estados UI:** El flujo comienza en el "Resumen Mensual" del panel de administración (Drive Admin), donde la concesionaria visualiza métricas clave como Prospectos IA e Interacciones Diarias. Desde allí, el usuario transita a la pantalla "Bono de Descuento" para configurar una campaña especial, ingresando el nombre y el monto del descuento. Al presionar "Crear y Aplicar Bono", el sistema genera un estado de vista previa en tarjeta. El flujo concluye actualizando la vista de "Inventario Activo", donde el vehículo seleccionado refleja el nuevo precio ajustado y la etiqueta de disponibilidad.
+- **Explicación del Flujo y Estados UI:** El flujo comienza en el "Resumen Mensual" del panel de administración (Drive Admin), donde la concesionaria visualiza métricas clave como Prospectos calificados e Interacciones Diarias. Desde allí, el usuario transita a la pantalla "Bono de Descuento" para configurar una campaña especial, ingresando el nombre y el monto del descuento. Al presionar "Crear y Aplicar Bono", el sistema genera un estado de vista previa en tarjeta. El flujo concluye actualizando la vista de "Inventario Activo", donde el vehículo seleccionado refleja el nuevo precio ajustado y la etiqueta de disponibilidad.
 
 **Wireflow 3: Gestión de Inventario y Certificación de Seminuevos (B2B)**
 
