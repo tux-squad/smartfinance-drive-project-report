@@ -957,3 +957,282 @@ Las historias de la aplicación móvil (Mobile, US40 a US49) y las de interfaz e
 ![Core System Tests 1](../assets/Chapter-6/CoreSystemTests-1.jpeg)
 
 ![Core System Tests 2](../assets/Chapter-6/CoreSystemTests-2.jpeg)
+
+## 6.3. Validation Interviews
+
+Las entrevistas de validación permiten comprobar con usuarios reales si SmartFinance Drive resuelve el problema planteado, si la plataforma es usable y si los segmentos objetivo perciben valor y confianza en ella. En el caso de las concesionarias, además se explora el precio y la disposición de pago por la membresía.
+
+### 6.3.1. Diseño de Entrevistas
+
+Cada sesión dura aproximadamente 25 minutos y se graba en pantalla y audio. Se realizan entre 3 y 5 entrevistas por segmento. En los pasos marcados con **(SEQ)** se pregunta además: *«Del 1 (muy difícil) al 7 (muy fácil), ¿qué tan fácil fue esto?»*.
+
+#### Segmento 1 — Compradores interesados
+
+**Paso 0 · Perfil**
+- ¿Cómo te llamas, qué edad tienes y en qué distrito vives?
+- ¿A qué te dedicas? ¿Has comprado o financiado un vehículo antes?
+- Hoy, ¿estás explorando sin saber qué auto elegir o ya sabes qué modelo quieres? ¿Nuevo, usado o ambos?
+
+**Paso 1 · Primera impresión del Landing Page**
+- ¿Qué crees que ofrece esta página y para quién es?
+- ¿Qué harías primero? ¿Qué te daría confianza o desconfianza?
+
+**Paso 2 · Navegación desde el Landing Page**
+- Encuentra cómo ver los vehículos disponibles o cómo crear una cuenta.
+
+**Paso 3 · Registro y perfil (SEQ)**
+- ¿Había algún dato que no quisieras dar o que no entendieras por qué lo pedimos?
+
+**Paso 4 · Búsqueda de un auto (SEQ)**
+- ¿Los filtros te llevaron a opciones acordes a tu presupuesto?
+- ¿Qué filtro esperabas y no encontraste?
+
+**Paso 5 · Pre-evaluación (SEQ)**
+- Aquí pedimos ingresos y deudas. ¿Qué pensaste al verlo? ¿Los pondrías reales? ¿Qué te daría seguridad?
+- Explica con tus palabras qué significan tu score y tu capacidad de endeudamiento.
+
+**Paso 6 · Simulación (SEQ)**
+- ¿Cuánto pagarías al mes por el auto que elegiste?
+- ¿Qué entendiste por TCEA? ¿Cómo se lo explicarías a un familiar?
+
+**Paso 7 · Comparación de bancos y envío (SEQ)**
+- ¿Qué banco elegirías y qué información usaste? ¿Qué te faltó?
+- ¿Enviarías esta simulación? ¿Qué te frenaría o te empujaría?
+
+**Paso 8 · Depreciación** *(opcional)*
+- ¿Esto cambiaría tu decisión sobre el vehículo, el plazo o si comprar nuevo o usado?
+
+**Paso 9 · Valor y confianza**
+- Con tus palabras, ¿qué problema resuelve esta plataforma?
+- Si mañana buscaras un auto, ¿qué usarías primero: esta plataforma, Facebook Marketplace, Google u otra? ¿Por qué?
+- ¿Qué parte te habría ahorrado tiempo y cuál te lo habría hecho perder?
+- ¿Qué te hace confiar o desconfiar de un vehículo publicado aquí? ¿Qué datos esperabas ver?
+- La plataforma no aprueba créditos, los evalúan los bancos. ¿Quedó claro? ¿Qué esperas que pase si el banco rechaza?
+- ¿Qué te preocuparía de que tus datos lleguen a la concesionaria y al banco?
+- *Si es explorador:* si no supieras qué auto elegir, ¿qué esperarías que la plataforma hiciera por ti?
+- *Si es decidido:* ¿cuántos pasos te parecen razonables desde que encuentras el modelo hasta contactar a la concesionaria?
+
+#### Segmento 2 — Concesionarias de vehículos nuevos
+
+**Paso 0 · Perfil**
+- ¿Cómo se llama, qué edad tiene y en qué distrito vive?
+- ¿Cuál es su función y cuánto tiempo lleva en ella? ¿Participa en la decisión de contratar publicidad o herramientas digitales, o la toma otra persona?
+- ¿Con cuántas unidades y marcas trabajan y qué canales usan hoy para captar compradores?
+
+**Paso 1 · Primera impresión del Landing Page**
+- ¿Qué cree que ofrece esta página y para quién es?
+
+**Paso 2 · Planes (SEQ)**
+- ¿Le queda claro qué obtiene a cambio de la membresía? ¿Qué le falta para decidir?
+
+**Paso 3 · Registro de la concesionaria (SEQ)**
+- ¿Fue claro que se pida el RUC?
+
+**Paso 4 · Elección de membresía (SEQ)**
+- ¿Qué plan elegiría y por qué? ¿Qué esperaría ver antes de pagar?
+
+**Paso 5 · Publicación de un 0 km (SEQ)**
+- ¿Qué datos son indispensables en la ficha de un 0 km? ¿Falta o sobra algo?
+- ¿La marca o casa matriz restringe publicar precios o promociones en un portal externo? ¿Quién lo autoriza?
+
+**Paso 6 · Edición de precio y marcado como vendido**
+- Cambie el precio de un vehículo y marque otro como vendido. ¿Qué tan fácil le resultó encontrarlo?
+
+**Paso 7 · Estadísticas (SEQ)**
+- ¿Qué decisión tomaría con esta información: ajustar precio, lanzar una promoción o contactar clientes? ¿Qué dato falta?
+
+**Paso 8 · Contacto de clientes (SEQ)**
+- ¿Qué tan útil le resulta el contacto de un cliente que simuló un crédito? ¿Qué haría en las siguientes 24 horas con ese contacto?
+- Comparado con los contactos de Facebook o Google Ads y los del salón, ¿cómo califica este contacto? ¿Qué datos mínimos necesita?
+- Hoy, ¿cuánto tarda su equipo en calificar un contacto y, de cada 10, cuántos llegan a prueba de manejo?
+
+**Paso 9 · Dinero y valor**
+- ¿Cuánto invierten al mes en publicidad digital o portales? ¿Cuántos de esos contactos terminan en prueba de manejo y en venta?
+- Pensando en una membresía mensual con exposición y contactos con crédito pre-evaluado:
+  1. ¿A qué precio le parecería tan barata que dudaría de su calidad?
+  2. ¿A qué precio le parecería conveniente?
+  3. ¿A cuál le parecería cara, pero todavía la consideraría?
+  4. ¿A cuál le parecería demasiado cara para considerarla?
+- Si hubiera una prueba de 30 días, ¿la tomaría? ¿Qué necesitaría para empezar?
+- ¿Qué resultado en el primer mes haría que renueve? ¿Y qué haría que cancele?
+- ¿Qué le preocuparía de los datos de sus clientes y de su inventario en una plataforma externa?
+
+#### Segmento 3 — Concesionarias de vehículos usados
+
+**Paso 0 · Perfil**
+- ¿Cómo se llama, qué edad tiene y en qué distrito vive?
+- ¿Cuál es su función y cuánto tiempo lleva en ella? ¿Participa en la decisión de contratar publicidad o herramientas digitales, o la toma otra persona?
+- ¿Cuántas unidades tiene en el patio, de qué tipo, antigüedad y kilometraje? ¿Cuántos días tarda en rotar una unidad?
+
+**Paso 1 · Primera impresión del Landing Page**
+- ¿Qué cree que ofrece esta página y para quién es?
+
+**Paso 2 · Planes (SEQ)**
+- ¿Le queda claro qué obtiene a cambio de la membresía? ¿Qué le falta para decidir?
+
+**Paso 3 · Registro de la concesionaria (SEQ)**
+- ¿Fue claro que se pida el RUC?
+
+**Paso 4 · Elección de membresía (SEQ)**
+- ¿Qué plan elegiría y por qué? ¿Qué esperaría ver antes de pagar?
+
+**Paso 5 · Publicación de un usado (SEQ)**
+- ¿Qué datos de un usado generan confianza en el comprador? *(luego se indaga por: kilometraje real, historial de mantenimiento, documentos, fotos o video, informe mecánico)*
+- ¿Qué le faltó a la ficha?
+
+**Paso 6 · Baja de precio y marcado como vendido (SEQ)**
+- ¿Después de cuántos días sin vender baja el precio y cómo decide el nuevo valor?
+- ¿Cuánto le cuesta al negocio una unidad parada un mes más?
+
+**Paso 7 · Estadísticas (SEQ)**
+- ¿Qué decisión tomaría con la unidad de menor interés: bajar el precio, mejorar la publicación o contactar clientes? ¿Qué dato falta?
+
+**Paso 8 · Contacto de clientes (SEQ)**
+- ¿Qué tan útil le resulta el contacto de un cliente que simuló un crédito? ¿Qué haría en las siguientes 24 horas con ese contacto?
+- ¿Qué proporción de sus clientes compra con financiamiento y qué lo limita (antigüedad de la unidad, entidad financiera, documentos)? ¿Un cliente con crédito pre-evaluado cambiaría cómo lo atiende?
+
+**Paso 9 · Dinero y valor**
+- ¿Cuánto paga hoy por publicar (portales, impulsar publicaciones)? ¿Qué canal le trae más ventas?
+- Pensando en una membresía mensual con exposición y contactos con crédito pre-evaluado:
+  1. ¿A qué precio le parecería tan barata que dudaría de su calidad?
+  2. ¿A qué precio le parecería conveniente?
+  3. ¿A cuál le parecería cara, pero todavía la consideraría?
+  4. ¿A cuál le parecería demasiado cara para considerarla?
+- ¿Cuántos días menos en el patio haría que la membresía valga la pena?
+- Si hubiera una prueba de 30 días, ¿la tomaría? ¿Qué necesitaría para empezar?
+- ¿Cómo prefiere recibir las estadísticas: en el panel, por correo o por WhatsApp? ¿Con qué frecuencia las revisaría?
+- ¿Qué le preocuparía de los datos de sus clientes y de su inventario en una plataforma externa?
+
+#### Cierre (los tres segmentos)
+
+- Del 0 al 10, ¿qué tan probable es que recomiende SmartFinance Drive a un conocido o colega? ¿Por qué?
+- Dígame tres palabras para describir la plataforma.
+- Si pudiera cambiar una sola cosa, ¿cuál sería?
+- ¿Hay algo que no le preguntamos y quiera comentar?
+
+### 6.3.2. Registro de Entrevistas
+
+Cada entrevista se documenta con una ficha que contiene los datos del participante, la evidencia de la grabación y un resumen de lo ocurrido en cada paso. En el caso de las concesionarias, el resumen incluye además el precio y la disposición de pago.
+
+#### Segmento 1 — Compradores interesados
+
+**Entrevista 1**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | Andrea Arango |
+| Edad y distrito | 28 años, San Juan de Lurigancho |
+| Segmento | Compradores interesados |
+| Fecha y facilitador | 12 de Noviembre - Mauricio Castillo |
+| Captura del video | ![Captura de la entrevista 1 - Segmento 1](../assets/Chapter-6/entrevista-s1-1.png) |
+| URL en Microsoft Stream | [Ver grabación de la entrevista](https://1drv.ms/v/c/bb1bb7d896cb1613/IQAmnQvWDcFVS6RzJGTbNNfOAdi-OkalIbtHoUEqFLuoc2U?e=LNbd3L) |
+| Timing de inicio y duración | Inicio: — / Duración: 15:27 |
+| Resumen | La participante está interesada en comprar un auto y, en general, la plataforma le gustó. Señaló que le parece segura y viable. Como oportunidades de mejora, pidió optimizar el proceso de inicio de sesión (login) y agilizar la sugerencia de autos según sus gustos y preferencias. |
+
+**Entrevista 2**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Compradores interesados |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 2 - Segmento 1](../assets/Chapter-6/entrevista-s1-2.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
+
+**Entrevista 3**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Compradores interesados |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 3 - Segmento 1](../assets/Chapter-6/entrevista-s1-3.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
+
+#### Segmento 2 — Concesionarias de vehículos nuevos
+
+**Entrevista 1**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Concesionarias de vehículos nuevos |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 1 - Segmento 2](../assets/Chapter-6/entrevista-s2-1.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
+
+**Entrevista 2**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Concesionarias de vehículos nuevos |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 2 - Segmento 2](../assets/Chapter-6/entrevista-s2-2.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
+
+**Entrevista 3**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Concesionarias de vehículos nuevos |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 3 - Segmento 2](../assets/Chapter-6/entrevista-s2-3.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
+
+#### Segmento 3 — Concesionarias de vehículos usados
+
+**Entrevista 1**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | Yarkin Quispe |
+| Edad y distrito | 28 años, Chorrillos |
+| Segmento | Concesionarias de vehículos usados |
+| Fecha y facilitador | 11 de Noviembre - Mauricio Castillo |
+| Captura del video | ![Captura de la entrevista 1 - Segmento 3](../assets/Chapter-6/entrevista-s3-1.png) |
+| URL en Microsoft Stream | https://1drv.ms/v/c/bb1bb7d896cb1613/IQAm7syVnbNjQoUTJ65IqCC6AcMexMP8Fns131mBI-oxS5Y?e=yTZ0cv |
+| Timing de inicio y duración | Inicio: — / Duración: 12:14 |
+| Resumen | El participante es vendedor de autos usados en una concesionaria. Sus respuestas fueron generales y mostró pocas dudas durante el recorrido. Su valoración de la plataforma fue neutral: no expresó rechazo, pero tampoco un entusiasmo marcado ni observaciones específicas de mejora. |
+
+**Entrevista 2**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Concesionarias de vehículos usados |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 2 - Segmento 3](../assets/Chapter-6/entrevista-s3-2.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
+
+**Entrevista 3**
+
+| Campo | Detalle |
+| :-- | :-- |
+| Nombre y apellidos | |
+| Edad y distrito | |
+| Segmento | Concesionarias de vehículos usados |
+| Fecha y facilitador | |
+| Captura del video | ![Captura de la entrevista 3 - Segmento 3](../assets/Chapter-6/entrevista-s3-3.png) |
+| URL | |
+| Timing de inicio y duración | |
+| Resumen | |
