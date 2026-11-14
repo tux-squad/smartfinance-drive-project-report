@@ -16,6 +16,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Pre-evaluación que exige datos sensibles (Web):** El cliente debe ingresar ingresos y deudas antes de simular su crédito, y se desconoce cuántos clientes lo completan o abandonan por desconfianza.
 * **Comparación de entidades sin validar (Web):** El cuadro comparativo multi-banco existe, pero no se sabe si cambia la decisión del cliente ni si aumenta los envíos a evaluación.
 * **Valor de la membresía sin validar (Web):** Las concesionarias deben seleccionar un plan antes de operar, pero no existe evidencia de que estén dispuestas a pagar ni de que usen las estadísticas y los datos de contacto de los clientes que simularon.
+* **Gestión del inventario sin validar (Web):** Las concesionarias cuentan con funcionalidades para publicar, consultar, editar y eliminar vehículos, pero no se ha evaluado si pueden completar estas operaciones de forma autónoma, sencilla y sin errores.
 * **Adopción móvil sin medir (Mobile):** La app móvil cubre catálogo y simulación para compradores, pero aún no se mide la retención ni la tasa de conversión desde la búsqueda móvil hacia el guardado de simulaciones; las cuentas de concesionaria y entidad financiera se gestionan desde la web.
 
 **Objetivos de mejora:**
@@ -24,6 +25,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Aumentar los envíos a evaluación:** Alcanzar que 30% de las simulaciones guardadas se envíen a la entidad financiera y reciban una evaluación oficial.
 * **Validar la monetización B2B:** Confirmar que las concesionarias pagan y renuevan la membresía (retención ≥ 80% y churn mensual < 5%).
 * **Demostrar valor a la concesionaria:** Medir si las estadísticas por vehículo y los datos de contacto de los clientes se traducen en acciones (ajuste de precio y contacto).
+* **Facilitar la gestión del inventario:** Lograr que al menos el 80% de las tareas de publicación, consulta, edición y eliminación de vehículos se completen correctamente y sin asistencia.
   
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
@@ -33,6 +35,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Valor de la comparación multi-banco:** Se asume que ver la cuota, la TCEA y el VAN de varias entidades en un solo cuadro ayuda al cliente a decidir y a enviar su simulación.
 * **Pago de la membresía:** Se asume que las concesionarias de vehículos nuevos y usados pagarán una membresía mensual si la plataforma les genera visibilidad y clientes interesados.
 * **Uso de las estadísticas:** Se asume que las concesionarias ajustarán precios y contactarán a los clientes a partir de las vistas y simulaciones por vehículo.
+* **Autonomía en la gestión del inventario:** Se asume que las concesionarias podrán administrar sus publicaciones desde el panel web sin depender del soporte del equipo de SmartFinance Drive.
 * **Uso móvil para simulación:** Se asume que los compradores valoran explorar el catálogo y calcular cuotas desde el smartphone antes de visitar la concesionaria.
 
 **Knowledge Gaps (Brechas de conocimiento):**
@@ -40,6 +43,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * Se desconoce cuánto tiempo tarda hoy un cliente en encontrar una alternativa viable y cuántos abandonan antes de simular, por lo que no existe línea base para demostrar la reducción de 35%.
 * Carecemos de evidencia sobre la disposición de pago y el precio aceptable de la membresía, ya que las entrevistas no exploraron este punto.
 * No sabemos si el Risk Tier calculado por la plataforma anticipa la evaluación oficial de la entidad financiera.
+* Se desconoce si las concesionarias pueden publicar, consultar, editar y eliminar vehículos de manera autónoma, cuánto tiempo les toma cada operación y qué errores encuentran durante el proceso.
 
 **Ideas:**
 
@@ -47,6 +51,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Envío desde el comparador multi-banco:** Permitir guardar y enviar a evaluación la oferta elegida directamente desde el cuadro comparativo.
 * **Piloto de membresía:** Ofrecer un periodo de prueba de 30 días y un botón "Solicitar demo" en la sección de planes de la Landing Page.
 * **Resumen de estadísticas:** Enviar a la concesionaria un resumen semanal de vistas, simulaciones y clientes interesados por vehículo.
+* **Prueba de gestión del inventario:** Evaluar con concesionarias las tareas de publicación, consulta, edición y eliminación de vehículos desde el panel web.
 
 ### 8.1.3. Experiment-Ready Questions
 
@@ -55,6 +60,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | ¿Aumentará la cantidad de clientes que guardan una simulación si ven su **capacidad máxima de endeudamiento (pre-evaluación)** antes de simular? | 7 | 8 | 9 | 8 | **32** |
 | ¿Aumentarán los envíos a evaluación de la entidad financiera si el cliente puede **comparar cotizaciones multi-banco** y enviar la oferta elegida desde el mismo cuadro? | 7 | 7 | 9 | 8 | **31** |
 | ¿Están las concesionarias dispuestas a **pagar una membresía mensual** y a iniciar un piloto con la propuesta actual? | 5 | 9 | 9 | 7 | **30** |
+| ¿Podrán las concesionarias **gestionar autónomamente sus vehículos publicados** (publicar, consultar, editar y eliminar) desde el panel web? | 7 | 6 | 8 | 8 | **29** |
 | ¿Actuarán las concesionarias sobre las **estadísticas por vehículo y los datos de contacto** de los clientes que simularon, ajustando precios y contactándolos? | 6 | 7 | 8 | 7 | **28** |
 
 ### 8.1.4. Question Backlog
@@ -65,11 +71,13 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | 5 | ¿Aumentarán los envíos a evaluación de la entidad financiera si el cliente puede comparar cotizaciones multi-banco y enviar la oferta elegida desde el mismo cuadro? |
 | 5 | ¿Están las concesionarias dispuestas a pagar una membresía mensual y a iniciar un piloto con la propuesta actual? |
 | 3 | ¿Actuarán las concesionarias sobre las estadísticas por vehículo y los datos de contacto de los clientes que simularon, ajustando precios y contactándolos? |
+| 3 | ¿Podrán las concesionarias gestionar autónomamente sus vehículos publicados (publicar, consultar, editar y eliminar) desde el panel web? |
 
 **Claims (Afirmaciones):**
 
 * Una pre-evaluación previa reducirá el abandono y permitirá que al menos 50% de los clientes que la inician guarden una simulación.
 * Las concesionarias pagarán la membresía solo si las estadísticas y los contactos les permiten reducir el tiempo de rotación de su inventario.
+* Un panel web claro y consistente permitirá que las concesionarias administren sus publicaciones de vehículos sin asistencia y mantengan actualizado el catálogo.
 
 ### 8.1.5. Experiment Cards
 
@@ -97,6 +105,11 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | **What** | Entregar durante 3 semanas a 4 a 6 concesionarias, con un resumen semanal por correo armado por el equipo, las vistas y simulaciones por vehículo y los clientes que simularon sobre sus unidades. Al final se registra cuántas ajustaron un precio, contactaron a un cliente o marcaron un vehículo como vendido. |
 | **Hypothesis** | Se espera que al menos el 70% de las concesionarias participantes actúen sobre al menos un vehiculo cada semana y que el número de simulaciones por vehículo publicado aumente en 20% frente a la semana previa al piloto. |
 
+| Question | ¿Podrán las concesionarias gestionar autónomamente sus vehículos publicados (publicar, consultar, editar y eliminar) desde el panel web? (Web) |
+| --- | --- |
+| **Why** | Las concesionarias necesitan mantener actualizado su inventario para ofrecer vehículos disponibles a los clientes. SmartFinance Drive contempla las operaciones de publicación (US10), consulta (US36), edición (US11) y eliminación (US12), pero aún no se ha validado si los concesionarios pueden completar estas tareas de forma autónoma, sencilla y sin errores. Una experiencia poco intuitiva podría dificultar la actualización del catálogo y provocar que los clientes encuentren información desactualizada. |
+| **What** | Realizar una prueba de usabilidad moderada con entre 6 y 8 concesionarias. Cada participante deberá publicar un vehículo, consultar sus vehículos publicados, modificar el precio de uno de ellos y eliminar un vehículo propio. Se registrará si cada tarea se completa correctamente y sin asistencia, el tiempo empleado y los errores cometidos durante cada operación. |
+| **Hypothesis** | Se espera que al menos el 80% de las tareas asignadas se completen correctamente y sin asistencia del moderador, y que al menos el 70% de las concesionarias participantes complete las cuatro operaciones del flujo de gestión de inventario. |
 
 ## 8.2. Experiment Design
 
@@ -130,6 +143,12 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | **Hypothesis** | Al menos el 70% de las concesionarias participantes actuarán sobre al menos un vehículo cada semana, y el número de simulaciones por vehículo publicado aumentará en 20% frente a la semana previa al piloto. |
 | **Null Hypothesis** | Menos del 70% de las concesionarias participantes actuarán sobre al menos un vehículo cada semana, o el número de simulaciones por vehículo publicado no aumentará en 20% respecto de la semana previa al piloto. |
 
+| Atributo | Detalle de la Hipótesis: Experimento 5 (Gestión autónoma del inventario de vehículos) |
+| --- | --- |
+| **Question** | ¿Podrán las concesionarias gestionar autónomamente sus vehículos publicados (publicar, consultar, editar y eliminar) desde el panel web? |
+| **Belief** | Creemos que un panel web claro y consistente permitirá a las concesionarias administrar sus publicaciones sin depender del soporte del equipo de SmartFinance Drive, manteniendo actualizado el catálogo para los clientes. |
+| **Hypothesis** | Al menos el 80% de las tareas asignadas se completarán correctamente y sin asistencia del moderador, y al menos el 70% de las concesionarias participantes completará las cuatro operaciones del flujo de gestión de inventario. |
+| **Null Hypothesis** | Menos del 80% de las tareas asignadas se completarán correctamente y sin asistencia, o menos del 70% de las concesionarias participantes completará las cuatro operaciones de gestión de inventario. |
 ### 8.2.2. Domain Business Metrics
 
 Para evitar que las decisiones sobre SmartFinance Drive se fundamenten en métricas irrelevantes o de vanidad, cada hipótesis de 8.2.1 se vincula con una métrica primaria (P) y, cuando corresponde, una secundaria (S), que miden decisiones concretas del cliente o de la concesionaria (guardar, enviar, aceptar, actuar o responder). Las métricas aquí definidas constituyen los únicos indicadores autorizados para evaluar las condiciones de las *Experiment Cards*.
@@ -144,6 +163,8 @@ Para evitar que las decisiones sobre SmartFinance Drive se fundamenten en métri
 | **3 (S)** | **Tasa de Solicitud de Demo o Contratación** | Mide la intención de compra tras ver el precio, mediante el *fake door* de la Landing Page y las entrevistas. | `(Solicitudes de demo o contratación / Concesionarias que vieron el precio) * 100` | Envíos del formulario "Solicitar demo" en la sección de planes de la Landing Page y registro de las entrevistas. | **≥ 33.0% (1 de cada 3)** |
 | **4 (P)** | **Tasa de Acción Semanal de la Concesionaria** | Mide si las estadísticas y los datos de contacto generan acciones (ajustar precio, contactar cliente o marcar vendido), que es el valor principal de la membresía. | `(Concesionarias con al menos una acción sobre un vehículo en la semana / Concesionarias participantes) * 100` | Registro semanal de acciones en la base de datos (cambio de precio, contacto, marcado como vendido) y verificación en el cierre de la tercera semana. | **≥ 70.0%** |
 | **4 (S)** | **Variación de Simulaciones por Vehículo Publicado** | Mide si las acciones de la concesionaria se traducen en mayor interés del cliente en sus unidades. | `((Simulaciones por vehículo en semana de piloto − Simulaciones por vehículo en semana previa) / Simulaciones por vehículo en semana previa) * 100` | Conteo de simulaciones por vehículo desde el panel de estadísticas (US29), comparando la semana previa con cada semana del piloto. | **≥ +20.0%** |
+| **5 (P)** | **Tasa de Tareas Completadas sin Asistencia** | Mide la proporción de operaciones de inventario que las concesionarias completan correctamente sin intervención del moderador. | `(Tareas completadas correctamente y sin asistencia / Total de tareas asignadas) * 100` | Lista de verificación completada durante las sesiones moderadas; se registra el resultado de las cuatro tareas de cada participante. | **≥ 80.0%** |
+| **5 (S)** | **Tasa de Concesionarias que Completan el Flujo Completo** | Mide qué proporción de participantes logra publicar, consultar, editar y eliminar un vehículo sin asistencia. | `(Concesionarias que completan las cuatro tareas / Total de concesionarias participantes) * 100` | Registro de resultados por participante en las sesiones de usabilidad moderadas. | **≥ 70.0%** |
 
 ### 8.2.3. Measures
 
@@ -153,11 +174,12 @@ Las variables cuantitativas empleadas para contrastar las hipótesis corresponde
 * **Simulaciones guardadas, simulaciones enviadas a evaluación y participantes que envían, por versión del cuadro multi-banco:** Datos utilizados para calcular la Tasa de Envío a Evaluación y su variación frente a la versión actual.
 * **Concesionarias entrevistadas, que aceptan el piloto y que dejan solicitud de demo tras ver el precio:** Datos para la Tasa de Aceptación del Piloto y la Tasa de Solicitud de Demo o Contratación.
 * **Acciones semanales por concesionaria (ajuste de precio, contacto, vehículo vendido) y simulaciones por vehículo publicado:** Datos para la Tasa de Acción Semanal y la variación de simulaciones por vehículo.
+* **Tareas de publicación, consulta, edición y eliminación completadas, asistencia requerida, errores y tiempos por tarea:** Datos para la Tasa de Tareas Completadas sin Asistencia y la Tasa de Concesionarias que Completan el Flujo Completo.
 
 ### 8.2.4. Conditions
 
-* **Condición Experimental (Grupo Expuesto):** Segmento de clientes y concesionarias que usa las funcionalidades nuevas de SmartFinance Drive: la pre-evaluación previa a la simulación con cuota máxima precargada, el envío a evaluación desde el cuadro multi-banco, el piloto de membresía con el botón "Solicitar demo", y el resumen semanal de estadísticas por vehículo.
-* **Condición de Control (Grupo Base):** Segmento que usa la versión actual de la plataforma, en la que el cliente simula directamente sin pre-evaluación, debe volver a simular para enviar su oferta desde el cuadro multi-banco, la concesionaria opera sin resumen de estadísticas (línea base de la semana previa) y no existe un piloto de membresía. En el experimento 3, que es una prueba de validación sin control paralelo, el resultado se compara contra el umbral definido en la hipótesis.
+* **Condición Experimental (Grupo Expuesto):** Segmento de clientes y concesionarias que usa las funcionalidades nuevas de SmartFinance Drive: la pre-evaluación previa a la simulación con cuota máxima precargada, el envío a evaluación desde el cuadro multi-banco, el piloto de membresía con el botón "Solicitar demo", y el resumen semanal de estadísticas por vehículo. Para el experimento 5, concesionarias que realizan las cuatro tareas de gestión de inventario desde el panel web: publicar un vehículo (US10), consultar sus vehículos publicados (US36), editar el precio de un vehículo propio (US11) y eliminar un vehículo propio (US12). Para los experimentos 1 a 4, se mantienen las condiciones experimentales descritas en sus respectivas hipótesis.
+* **Condición de Control (Grupo Base):** Segmento que usa la versión actual de la plataforma, en la que el cliente simula directamente sin pre-evaluación, debe volver a simular para enviar su oferta desde el cuadro multi-banco, la concesionaria opera sin resumen de estadísticas (línea base de la semana previa) y no existe un piloto de membresía. En los experimentos 3 y 5, que son pruebas de validación sin control paralelo, el resultado se compara contra el umbral definido en sus respectivas hipótesis.
 
 ### 8.2.5. Scale Calculations and Decisions
 
@@ -173,6 +195,7 @@ Para controlar el azar en la evaluación de los experimentos, se establecen los 
 | **Experimento 2: Envío desde el comparador multi-banco** | Creemos que enviar la oferta elegida desde el mismo cuadro aumentará los envíos a evaluación. Sabremos que esto es cierto cuando el 30% de las simulaciones guardadas se envíen. | Menos del 15%. | Entre 15% y 29%. | **30%.** | Más del 40%. (X) |
 | **Experimento 3: Disposición de pago de la membresía** | Creemos que las concesionarias pagarán por la membresía si perciben visibilidad y clientes interesados. Sabremos que esto es cierto cuando el 50% acepte el piloto de 30 días. | Menos de 2 de 6 (< 33%). | 2 de 6 (33%). | **3 de 6 (50%).** | 4 o más de 6 (≥ 67%). (X) |
 | **Experimento 4: Uso de estadísticas y datos de contacto** | Creemos que el resumen semanal llevará a las concesionarias a actuar sobre sus vehículos. Sabremos que esto es cierto cuando el 70% actúe cada semana. | Menos del 40%. | Entre 40% y 69%. | **70%.** | Más del 85%. (X) |
+| **Experimento 5: Gestión autónoma del inventario de vehículos** | Creemos que las concesionarias podrán administrar sus publicaciones sin asistencia. Sabremos que esto es cierto cuando al menos el 80% de las tareas se complete correctamente y sin ayuda. | Menos del 60%. | Entre 60% y 79%. | **80%.** | Más del 90%. (X) |
 
 ### 8.2.6. Methods Selection
 
@@ -180,7 +203,7 @@ Para controlar el azar en la evaluación de los experimentos, se establecen los 
 | --- | --- | --- | --- | --- |
 | **Google Lighthouse** | Acceso gratuito. | Auditorías automatizadas de rendimiento, accesibilidad y buenas prácticas de la versión web. | Ejecución sencilla desde Chrome DevTools. | Verifica que la pre-evaluación, el simulador y el cuadro multi-banco carguen con rapidez en el celular, para que la lentitud técnica no se confunda con abandono por desconfianza. |
 | **Google Analytics 4** | Acceso gratuito. | Rastreo de eventos personalizados y de embudos de conversión en la web. | Nivel de aprendizaje moderado. | Permite medir el recorrido del cliente (pre-evaluación, simulación guardada y envío a evaluación) y calcular la Tasa de Guardado y la Tasa de Envío a Evaluación. |
-| **Registros del backend (base de datos propia)** | Incluido en la infraestructura existente. | Conteo exacto de simulaciones, envíos a evaluación y acciones de concesionarias. | Consultas directas sin configuración adicional. | Es la fuente más confiable para las métricas de los experimentos 2 y 4 (conteo de simulaciones, envíos a evaluación y acciones registradas). |
+| **Registros del backend (base de datos propia)** | Incluido en la infraestructura existente. | Conteo exacto de simulaciones, envíos a evaluación, acciones de concesionarias y registros de cambios en publicaciones. | Consultas directas sin configuración adicional. | Es la fuente más confiable para las métricas de los experimentos 2, 4 y 5, incluidos los registros de publicación, edición y eliminación de vehículos. |
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 
