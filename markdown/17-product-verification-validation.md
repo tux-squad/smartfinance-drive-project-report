@@ -1207,7 +1207,7 @@ Cada entrevista se documenta con una ficha que contiene los datos del participan
 | Segmento | Concesionarias de vehículos usados |
 | Fecha y facilitador | 11 de Noviembre - Mauricio Castillo |
 | Captura del video | ![Captura de la entrevista 1 - Segmento 3](../assets/Chapter-6/entrevista-s3-1.png) |
-| URL en Microsoft Stream | |
+| URL en Microsoft Stream | https://1drv.ms/v/c/bb1bb7d896cb1613/IQAm7syVnbNjQoUTJ65IqCC6AcMexMP8Fns131mBI-oxS5Y?e=yTZ0cv |
 | Timing de inicio y duración | Inicio: — / Duración: 12:14 |
 | Resumen | El participante es vendedor de autos usados en una concesionaria. Sus respuestas fueron generales y mostró pocas dudas durante el recorrido. Su valoración de la plataforma fue neutral: no expresó rechazo, pero tampoco un entusiasmo marcado ni observaciones específicas de mejora. |
 
