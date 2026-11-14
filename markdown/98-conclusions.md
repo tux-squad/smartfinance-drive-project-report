@@ -2,7 +2,7 @@
 
 ## Conclusiones
 
-Al cierre del presente informe, el equipo **tux-squad** ha implementado SmartFinance Drive como un marketplace B2B2C de vehículos nuevos y usados con financiamiento, cuyo alcance está definido por las historias de usuario US01 a US49 y por las historias de la Landing Page (LP-01 a LP-04). La aplicación web (Web) concentra la funcionalidad para los cuatro roles de la plataforma (cliente, concesionario, entidad financiera y administrador), mientras que la aplicación móvil Android (Mobile) se limita al inicio y cierre de sesión y a la mensajería (US40 a US49). A partir del trabajo realizado en los Sprints 1 y 2 y de las pruebas documentadas, se presentan las siguientes conclusiones.
+Al cierre del presente informe, el equipo **tux-squad** ha implementado SmartFinance Drive como un marketplace B2B2C de vehículos nuevos y usados con financiamiento, cuyo alcance está definido por las historias de usuario US01 a US49 y por las historias de la Landing Page (LP-01 a LP-04). La aplicación web (Web) concentra la funcionalidad para los cuatro roles de la plataforma (cliente, concesionario, entidad financiera y administrador), mientras que la aplicación móvil Android (Mobile) permite a los usuarios acceder al catálogo, consultar detalles de vehículos, realizar simulaciones y gestionar su perfil. A partir del trabajo realizado en los Sprints 1 y 2 y de las pruebas documentadas, se presentan las siguientes conclusiones.
 
 * **Presentación del producto (Landing):** La Landing Page (LP-01 a LP-04), desplegada de forma estática en Vercel, comunica la propuesta de valor a las dos audiencias de la plataforma, compradores y concesionarias, y presenta los planes de membresía B2B. Con ello se establece un primer punto de contacto con el visitante y un acceso directo al registro.
 
@@ -14,7 +14,7 @@ Al cierre del presente informe, el equipo **tux-squad** ha implementado SmartFin
 
 * **Membresías y valor para la concesionaria (Web / Backend):** La membresía obligatoria para concesionarias mediante Stripe (US28), junto con las estadísticas de vistas y simulaciones por vehículo (US29) y los datos de contacto de los clientes que simularon sobre sus vehículos (US39), sustentan el modelo de negocio basado en la exposición del inventario y en información útil para la gestión comercial.
 
-* **Mensajería móvil (Mobile):** La aplicación Android desarrollada en Kotlin con Jetpack Compose acota su alcance a la autenticación y a la mensajería entre clientes, concesionarias y entidades financieras (US40 a US49). Este recorte permite que cada canal cumpla un propósito definido: la web para la operación completa del marketplace y el móvil para la comunicación directa.
+* **Aplicación móvil (Mobile):** La aplicación Android desarrollada en Kotlin con Jetpack Compose permite a los usuarios explorar vehículos, consultar detalles técnicos y de financiamiento, y gestionar su perfil desde dispositivos móviles, asegurando una experiencia ágil y responsiva.
 
 * **Calidad y entrega continua (Backend / DevOps):** La estrategia de pruebas del Capítulo VI (pruebas unitarias, de integración, BDD y de sistema) y las prácticas de integración y despliegue del Capítulo VII, apoyadas en GitHub Actions, Render y Vercel, brindan trazabilidad entre las historias de usuario, el código y los entornos de ejecución.
 
@@ -30,7 +30,7 @@ Considerando el estado actual del producto, se establecen las siguientes recomen
 
 * **Validar con usuarios reales:** Realizar sesiones de prueba de usabilidad con clientes, concesionarias y entidades financieras sobre los flujos de simulación, publicación de vehículos y evaluación, a fin de contrastar las hipótesis del proceso Lean UX con el comportamiento observado.
 
-* **Consolidar la mensajería móvil:** Completar y probar los flujos de chat con la concesionaria y con la entidad financiera, la respuesta de cada parte y el indicador de mensajes no leídos (US42 a US49), manteniendo la aplicación móvil enfocada en este alcance.
+* **Optimizar la experiencia móvil:** Continuar ampliando la cobertura de pruebas y optimizar el rendimiento de la aplicación Android en la navegación del catálogo y la visualización de fichas de vehículos.
 
 * **Fortalecer la seguridad y la observabilidad:** Mantener la gestión de secretos fuera del código fuente, revisar periódicamente las reglas de autorización por rol y habilitar monitoreo de los servicios desplegados en Render para detectar fallos tempranamente.
 

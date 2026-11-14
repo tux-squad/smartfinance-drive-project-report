@@ -691,7 +691,7 @@ En esta sección se definen los requisitos funcionales, no funcionales y técnic
 +---------------------------+--------------------------------------------------------------------------------------+
 | **Epic**                  | Simulación y seguimiento crediticio                                                  |
 +---------------------------+--------------------------------------------------------------------------------------+
-| **Description**           | Como Developer, quiero investigar pasarelas y servicios de mensajería, con el        |
+| **Description**           | Como Developer, quiero investigar servicios de notificaciones push y correo, con el  |
 |                           | objetivo de seleccionar la herramienta más eficiente y compatible con nuestro        |
 |                           | backend para automatizar las notificaciones de cambio de estado en los créditos.     |
 +---------------------------+--------------------------------------------------------------------------------------+
@@ -909,9 +909,9 @@ La estimación utiliza la escala de Story Points (1, 2, 3, 5, 8).
 |         |                 | verificar RUC                       | verificar números de RUC peruanos, para que el sistema pueda obtener y validar   |                |
 |         |                 |                                     | la información tributaria de las empresas.                                       |                |
 +---------+-----------------+-------------------------------------+----------------------------------------------------------------------------------+----------------+
-| 27      | SP-02           | Investigar servicios de             | Como Developer, quiero investigar pasarelas y servicios de mensajería, con el    | 2              |
-|         |                 | notificaciones por correo y push    | objetivo de seleccionar la herramienta más eficiente y compatible con nuestro    |                |
-|         |                 |                                     | backend para automatizar las notificaciones de cambio de estado en los créditos. |                |
+| 27      | SP-02           | Investigar servicios de             | Como Developer, quiero investigar servicios de notificaciones push y correo, con | 2              |
+|         |                 | notificaciones por correo y push    | el objetivo de seleccionar la herramienta más eficiente y compatible con         |                |
+|         |                 |                                     | nuestro backend para automatizar las notificaciones de cambio de estado.         |                |
 +---------+-----------------+-------------------------------------+----------------------------------------------------------------------------------+----------------+
 
 **Gestión del Product Backlog en Jira**

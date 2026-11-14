@@ -12,7 +12,7 @@ Debido al alcance definido para esta primera entrega del proyecto (AV1), la impl
 
 * **Gestión de Identidades e Internacionalización:** La implementación exitosa de los módulos de registro e inicio de sesión segmentados por rol (US-05, US-06, US-07), junto con la historia técnica de internacionalización mediante Vanilla JS (TS-01, US-03), demuestra que la arquitectura base del frontend es robusta. El sistema es capaz de manejar sesiones seguras y adaptarse dinámicamente al idioma del visitante (inglés/español) sin recargar la página, mejorando sustancialmente la experiencia del usuario.
 
-* **Alcance Controlado vs. Hipótesis Lean UX:** Es importante concluir que, dado que el desarrollo actual se limitó a las historias fundacionales del catálogo y la autenticación, las hipótesis más complejas del modelo de negocio (como el "Recomendador Asistido por IA" o la "Pre-evaluación Crediticia Externa") aún no han sido validadas en código. El alcance de este AV1 cumplió con su objetivo de establecer la infraestructura visual y transaccional base.
+* **Alcance Controlado vs. Hipótesis Lean UX:** Es importante concluir que, dado que el desarrollo actual se limitó a las historias fundacionales del catálogo y la autenticación, las hipótesis más complejas del modelo de negocio (como el "Búsqueda Guiada para Compradores Exploradores" o la "Pre-evaluación Crediticia Externa") aún no han sido validadas en código. El alcance de este AV1 cumplió con su objetivo de establecer la infraestructura visual y transaccional base.
 
 ## Recomendaciones
 

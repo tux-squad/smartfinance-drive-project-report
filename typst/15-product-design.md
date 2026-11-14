@@ -48,7 +48,7 @@ Se utiliza la familia tipográfica **Inter** de Google Fonts en pesos de 400, 50
 La paleta se divide en colores de confianza y colores de acción, aplicados a través de variables CSS para facilitar el mantenimiento y la consistencia temática.
 
 - **Primary Blue (`#1E56A0`) & Dark Blue (`#0D2149`):** Establecen la base visual de seguridad y profesionalismo. Utilizados en textos principales, fondos de sección y el pie de página.
-- **Teal / Cyan (`#00A896`):** Actúa como color de acento tecnológico (usado en la clase `liquid-glass--teal` y `badge--teal`). Representa las funciones de Inteligencia Artificial y validación.
+- **Teal / Cyan (`#00A896`):** Actúa como color de acento tecnológico (usado en la clase `liquid-glass--teal` y `badge--teal`). Representa las funciones de simulación financiera y validación crediticia.
 - **Orange / Warm (`#F4A261`):** Color de contraste para conversiones principales. Se aplica en botones de llamada a la acción primarios (clase `btn--warm` y `badge--orange`).
 - **Off-White (`#F8F9FA`):** Fondo base neutral que reduce la fatiga visual (usado en la variable `--bg-light` o similar).
 
@@ -90,8 +90,8 @@ El ecosistema móvil demanda adaptaciones específicas para mantener la usabilid
 #### 4.1.3.2. Android Mobile Style Guidelines
 
 - **Material Design 3:** Adopción de sombras modulares (Elevation) y efectos de ondas táctiles (Ripple effect) en listas de vehículos y botones de acción.
-- **Barra de Navegación (Bottom Navigation):** Controles fijos en la parte inferior para acceder rápidamente a: *Búsqueda, Mi Perfil, Recomendaciones IA*.
-- **Gestos:** Soporte total para gestos de deslizamiento horizontal (Swipe) en galerías de imágenes de los autos y para descartar tarjetas de recomendación de la IA.
+- **Barra de Navegación (Bottom Navigation):** Controles fijos en la parte inferior para acceder rápidamente a: *Búsqueda, Catálogo, Mi Perfil*.
+- **Gestos:** Soporte total para gestos de deslizamiento horizontal (Swipe) en galerías de imágenes de los autos y navegación entre fichas de vehículos.
 
 ---
 
@@ -132,8 +132,8 @@ Para asegurar la correcta indexación y posicionamiento orgánico en motores de 
 **Sitio Web Estático (Landing Page)**
 
 - **Title:** `SmartFinance Drive | Marketplace inteligente de vehículos`
-- **Description:** `SmartFinance Drive conecta compradores y concesionarias con recomendaciones inteligentes, un catálogo unificado de vehículos nuevos y usados, y pre-evaluación crediticia externa.`
-- **Keywords:** `marketplace automotriz, comprar auto peru, autos nuevos, autos usados, financiamiento vehicular, pre-evaluación crediticia, recomendador IA`
+- **Description:** `SmartFinance Drive conecta compradores y concesionarias con recomendaciones por presupuesto, un catálogo unificado de vehículos nuevos y usados, y pre-evaluación crediticia externa.`
+- **Keywords:** `marketplace automotriz, comprar auto peru, autos nuevos, autos usados, financiamiento vehicular, pre-evaluación crediticia, filtros avanzados por presupuesto`
 - **Author:** `tux-squad`
 
 **Web Application (Catálogo y Panel B2B)**
@@ -148,7 +148,7 @@ Para asegurar la correcta indexación y posicionamiento orgánico en motores de 
 Dado el alto volumen de información que maneja un mercado unificado de vehículos, SmartFinance Drive provee herramientas de búsqueda robustas para evitar que el comprador se sienta abrumado o perdido.
 
 - **Opciones de Búsqueda Ofrecidas:**
-  - **Búsqueda Semántica (Recomendador IA):** El usuario no necesita conocer marcas o especificaciones técnicas. Ingresa un estilo de vida (ej. "Auto familiar seguro") y un límite de cuota mensual, y el sistema traduce esa intención en modelos específicos.
+  - **Búsqueda Paramétrica por Presupuesto:** El usuario puede explorar opciones ingresando su presupuesto mensual y tipo de vehículo, permitiendo encontrar modelos acordes a su capacidad de pago de forma directa y estructurada.
   - **Búsqueda Directa (Predictiva):** Una barra de búsqueda libre con autocompletado en tiempo real que sugiere marcas, modelos o concesionarias a medida que el usuario teclea (ej. al escribir "Yar", despliega "Toyota Yaris").
   - **Filtros Facetados (Faceted Search):** Los usuarios más experimentados contarán con un panel lateral en el catálogo para aplicar filtros acumulativos: *Condición* (Nuevo/Usado), *Presupuesto* (Rango de precios), *Año de fabricación*, *Transmisión* (Automática/Manual) y *Tipo de combustible*.
 - **Visualización de Datos Tras la Búsqueda:** Los resultados se presentan en una cuadrícula (*Grid*) de tarjetas de vehículos (Cards). Cada tarjeta resalta visualmente la fotografía principal, la marca/modelo, el precio total y un cálculo estimado de la cuota mensual. Si no hay resultados exactos, el sistema sugiere automáticamente vehículos con características similares o precios ligeramente superiores.
@@ -162,7 +162,7 @@ El sistema de navegación define las acciones y técnicas que guían a los usuar
   - **Smooth Scrolling:** Los hipervínculos utilizan anclajes dinámicos que deslizan la pantalla suavemente hacia la sección de interés, calculando el margen exacto para no ocultar el título debajo de la cabecera fija.
   - **Mobile Drawer Menu:** En dispositivos móviles, la navegación se oculta tras un botón *hamburger* que despliega un panel superpuesto de pantalla completa, optimizando el espacio de lectura sin sacrificar acceso a las secciones.
 - **Navegación de la Web Application:**
-  - **Global Navigation:** Barra superior constante con acceso directo al Catálogo Unificado, Simulador IA y Perfil de Usuario.
+  - **Global Navigation:** Barra superior constante con acceso directo al Catálogo Unificado, Simulador de Crédito y Perfil de Usuario.
   - **Local Navigation (B2B):** Las concesionarias interactúan a través de un menú lateral izquierdo (*Sidebar*) que les permite navegar rápidamente entre los sub-módulos de su entorno privado: Dashboard, Mi Inventario (Stock), Gestión de Leads y Configuración de Cuenta.
   - **Contextual Navigation (Breadcrumbs):** Para evitar que el comprador se desoriente en el catálogo, se implementan migas de pan en la parte superior de las fichas técnicas (ej. `Inicio > Autos Usados > Toyota > Yaris 2021`), permitiendo retroceder a categorías superiores con un solo clic.
 
@@ -252,9 +252,9 @@ Esta sección presenta los Wireflows propuestos para la aplicación móvil. Cada
 
 - **User Persona:** Carlos Mendoza (Comprador Interesado)
 
-- **User Goal:** Descubrir vehículos a través de recomendaciones personalizadas, comparar opciones y solicitar la pre-evaluación financiera desde su smartphone.
+- **User Goal:** Explorar el catálogo de vehículos filtrando por presupuesto, comparar opciones y solicitar la pre-evaluación crediticia desde su smartphone.
 
-- **Explicación del Flujo y Estados UI:** El flujo inicia en la pantalla de "Bienvenida" del comprador, la cual exhibe recomendaciones iniciales basadas en el perfil. El usuario puede transitar hacia el "Asistente Inteligente", donde ingresa su presupuesto interactuando con la interfaz conversacional. A partir de las sugerencias, navega hacia la vista de "Detalle del Vehículo". Si desea contrastar opciones, activa el estado de "Comparar Vehículos", dividiendo la pantalla para evaluar dos unidades simultáneamente. Finalmente, al decidirse, avanza al formulario de "Pre-evaluación Crediticia", cambiando el estado de la aplicación para procesar sus datos de identidad y financieros.
+- **Explicación del Flujo y Estados UI:** El flujo inicia en la pantalla de "Bienvenida" del comprador, donde se destacan vehículos según rango de precio. El usuario navega hacia el catálogo y aplica filtros por presupuesto y características. A partir de los resultados, accede a la vista de "Detalle del Vehículo". Si desea contrastar opciones, activa la función de "Comparar Vehículos", dividiendo la pantalla para evaluar dos unidades simultáneamente. Finalmente, al decidirse, avanza al formulario de "Pre-evaluación Crediticia", completando sus datos de identidad y financieros para estimar su capacidad crediticia.
 
 **Wireflow 2: Monitoreo de Rendimiento y Creación de Campañas (B2B)**
 
@@ -368,13 +368,13 @@ Esta sección detalla los flujos de usuario (User Flows) adaptados a la interfaz
 
 - **User Persona:** Roberto García (Concesionaria de Autos Usados)
 
-- **User Goal:** Revisar notificaciones de leads y responder consultas en tiempo real.
+- **User Goal:** Revisar notificaciones de prospectos y coordinar el seguimiento comercial de solicitudes.
 
-- **Descripción del Happy Path:** El asesor inicia el flujo en la tarjeta móvil del prospecto "Carlos Mendoza". El primer rombo de decisión representa la evaluación de viabilidad del lead por parte del asesor. Al considerarlo apto, transita a la interfaz de "Bandeja de Entrada" de la app. En el chat, el segundo rombo de decisión espera la confirmación de la cita por parte del cliente. Con el acuerdo logrado, el flujo llega al nodo de éxito final.
+- **Descripción del Happy Path:** El representante comercial inicia el flujo en la tarjeta móvil del prospecto "Carlos Mendoza". El primer rombo de decisión representa la evaluación de viabilidad del prospecto. Al considerarlo apto, transita a la interfaz de detalle de solicitud en la app para consultar los datos de contacto y la simulación asociada. El segundo rombo de decisión representa la confirmación del contacto telefónico o por correo para coordinar la cita de prueba de manejo (*test drive*). Con la cita acordada, el flujo llega al nodo de éxito final.
 
-- **Descripción del Unhappy Path 1 (Rechazo de Lead):** Si el asesor determina en el primer rombo que el prospecto no es apto, finaliza el flujo anticipadamente, archivando el registro.
+- **Descripción del Unhappy Path 1 (Rechazo de Lead):** Si el representante comercial determina en el primer rombo que el prospecto no es apto o los datos son inválidos, finaliza el flujo anticipadamente, archivando el registro.
 
-- **Descripción del Unhappy Path 2 (Interacción fallida):** Si en el segundo rombo el cliente no da respuesta en el chat, el flujo termina en un nodo pendiente inferior, a la espera de seguimiento.
+- **Descripción del Unhappy Path 2 (Sin respuesta de contacto):** Si en el segundo rombo el cliente no responde a la llamada o correo de contacto, el flujo termina en un nodo pendiente inferior, a la espera de un nuevo intento de seguimiento.
 
 * **Enlace interactivo de User Flows Móviles en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
@@ -476,9 +476,9 @@ Esta sección presenta los Wireflows propuestos para la aplicación web. Los flu
 
 - **User Persona:** Administrador de Concesionaria / Gerente Comercial
 
-- **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos asesores y reasignar prospectos para optimizar la tasa de cierre.
+- **User Goal:** Monitorear el desempeño del equipo de ventas, registrar nuevos ejecutivos comerciales y reasignar prospectos para optimizar la tasa de cierre.
 
-- **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Asesor" donde se pueden modificar roles o reasignar carteras de leads. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
+- **Explicación del Flujo y Estados UI:** El flujo inicia en el panel general, desde donde el administrador accede a la sección "Control de Asesores" o "Equipo de Ventas". La interfaz presenta una lista de los ejecutivos registrados junto con sus métricas operativas. Al seleccionar la acción de editar sobre un perfil, la vista cambia a un formulario de "Edición de Ejecutivo" donde se pueden modificar roles o reasignar carteras de prospectos. Al guardar, el flujo finaliza confirmando la acción y reflejando el nuevo estado organizativo de la agencia en el sistema.
 
 * **Enlace interactivo de Wireflows Web en Overflow:** [https://overflow.io/s/JPKMSWFD](https://overflow.io/s/JPKMSWFD)
 
@@ -598,7 +598,7 @@ El diagrama de contexto (Nivel 1) ilustra la plataforma SmartFinance Drive como 
 
 ![Context Diagram](assets/Chapter-4/ContextDiagram.png)
 
-- **Comprador Interesado**: Usuario final que busca vehículos, recibe recomendaciones de inteligencia artificial y solicita pre-evaluaciones crediticias.
+- **Comprador Interesado**: Usuario final que busca vehículos en el catálogo, realiza simulaciones de crédito y solicita pre-evaluaciones crediticias.
 
 - **Concesionaria**: Cliente corporativo que publica su inventario de vehículos nuevos o usados, atiende a los prospectos (leads) y gestiona el pago de sus membresías B2B.
 

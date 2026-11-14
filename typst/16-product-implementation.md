@@ -77,7 +77,7 @@ El desarrollo de SmartFinance Drive se divide principalmente en la **Landing Pag
     - **Retrofit + OkHttp:** utilizados para la comunicación con la API REST del backend y la gestión de llamadas HTTP.
     - **Gradle / Android Studio:** utilizados para la configuración del proyecto, dependencias y ejecución del entorno de desarrollo móvil.
     - **MVVM / Clean Architecture Style:** utilizado como enfoque estructural para separar la lógica de negocio, los casos de uso y la capa de presentación.
-    - **Auth + Catalog + Financing + Profiles + Settings + Messaging:** módulos implementados para cubrir la autenticación de usuarios, catálogo de vehículos, preevaluación crediticia, perfiles, configuración y mensajería interna.
+    - **Auth + Catalog + Financing + Profiles + Settings:** módulos implementados para cubrir la autenticación de usuarios, catálogo de vehículos, simulación y preevaluación crediticia, perfiles y configuración.
 
 **Database & Authentication**
 
@@ -463,18 +463,18 @@ Este acuerdo establece los términos de uso de la plataforma **SmartFinance Driv
 
 ### 5.2.1.8. Implemented Native-Mobile Application Evidence
 
-Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración, mensajería y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
+Durante el Sprint 1, se desarrolló la primera versión funcional de la aplicación nativa **SmartFinance Drive** para Android, implementada en **Kotlin** con **Jetpack Compose** y una arquitectura modular orientada a separar responsabilidades por dominio y capa de presentación. La app incluye módulos de **IAM, catálogo, financiación, perfiles, configuración y navegación principal**. Se incorporó consumo de APIs REST mediante **Retrofit** y **OkHttp**, además de manejo seguro de autenticación con almacenamiento local de tokens. La aplicación está orientada a usuarios compradores y concesionarias, permitiendo explorar vehículos, iniciar sesión, registrar cuentas, consultar detalles, realizar pre-evaluaciones crediticias y gestionar información de perfil.
 
 * **Repositorio GitHub:** [https://github.com/tux-squad/smartfinance-drive-mobile-app](https://github.com/tux-squad/smartfinance-drive-mobile-app)
 * **Stack tecnológico:** Kotlin, Jetpack Compose, Material 3, Retrofit, OkHttp, Gradle, Android Studio.
-* **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Messaging, Shared, Core.
+* **Módulos implementados:** IAM, Catalog, Financing, Profiles, Settings, Shared, Core.
 * **Evidencia de funcionalidades:**
     - Pantalla de Login y Registro de usuarios.
     - Catálogo de vehículos con vista de listado y filtros.
     - Detalle del vehículo con información relevante y acceso a simulación.
     - Pre-evaluación crediticia para clientes.
     - Perfil de usuario, configuración y navegación principal.
-    - Módulo de mensajería y gestión de información de concesionarias.
+    - Módulo de consulta de inventario y gestión de información de concesionarias.
 
 La aplicación móvil fue desarrollada como una solución nativa para Android, priorizando una experiencia visual moderna y un flujo de navegación sencillo e intuitivo para el usuario final. La estructura del proyecto refleja una organización por dominios funcionales, lo que facilita la escalabilidad y la futura integración con nuevos servicios del ecosistema SmartFinance Drive.
 
@@ -599,7 +599,7 @@ Durante el Sprint 2, el equipo se enfocó en implementar los módulos de gestió
 | US-22 | Evaluar solicitud de crédito | TS2-24 | Implementar flujo de dictamen (Aprobar/Rechazar) con guardado de causales | 6 | Castillo Yataco, Mauricio | Done |
 | TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-25 | Configurar la integración con los endpoints de Chequea.pe y validación de RUC | 5 | Cotrina Siclla, Sofia | Done |
 | TS-02 | Integrar API de Chequea.pe para verificar RUC | TS2-26 | Desarrollar lógica de auto-llenado de datos empresariales tras validación de SUNAT | 4 | Cotrina Siclla, Sofia | Done |
-| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-27 | Realizar matriz comparativa de pasarelas de mensajería (SendGrid, Firebase, Brevo) | 4 | Cotrina Siclla, Sofia | Done |
+| SP-02 | Investigar servicios de notificaciones por correo y push | TS2-27 | Realizar matriz comparativa de pasarelas de notificaciones y correo (SendGrid, Firebase, Brevo) | 4 | Cotrina Siclla, Sofia | Done |
 | SP-02 | Investigar servicios de notificaciones por correo y push | TS2-28 | Construir prototipo funcional de envío de correos transaccionales automatizados | 5 | Cotrina Siclla, Sofia | Done |
 
 **Evidencia del Sprint Backlog 2 en Jira:**

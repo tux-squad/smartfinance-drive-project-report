@@ -6,7 +6,7 @@ En esta sección se define **qué se investigará, por qué importa y qué exper
 
 ### 8.1.1. As-Is Summary
 
-SmartFinance Drive es un marketplace B2B2C de vehículos nuevos y usados con financiamiento, que conecta a clientes, concesionarias y entidades financieras. La aplicación web ya cubre el flujo principal para los cuatro roles de la plataforma: registro y solicitud de rol validando el RUC, catálogo con búsqueda, filtros y comparador de vehículos, comparador de entidades financieras, pre-evaluación de riesgo crediticio (score, DTI y Risk Tier), simulación de crédito con método francés (cuota, TCEA, TIR y VAN), comparación de cotizaciones multi-banco, proyección de depreciación, evaluación oficial de las simulaciones por la entidad financiera, membresías B2B y panel de estadísticas para la concesionaria. La aplicación móvil Android cubre el inicio y cierre de sesión y la mensajería entre clientes, concesionarias y entidades financieras.
+SmartFinance Drive es un marketplace B2B2C de vehículos nuevos y usados con financiamiento, que conecta a clientes, concesionarias y entidades financieras. La aplicación web ya cubre el flujo principal para los cuatro roles de la plataforma: registro y solicitud de rol validando el RUC, catálogo con búsqueda, filtros y comparador de vehículos, comparador de entidades financieras, pre-evaluación de riesgo crediticio (score, DTI y Risk Tier), simulación de crédito con método francés (cuota, TCEA, TIR y VAN), comparación de cotizaciones multi-banco, proyección de depreciación, evaluación oficial de las simulaciones por la entidad financiera, membresías B2B y panel de estadísticas para la concesionaria. La aplicación móvil Android cubre el inicio y cierre de sesión, la exploración del catálogo vehicular con fichas técnicas, la simulación de créditos y el perfil del comprador.
 
 No obstante, la plataforma aún no ha medido el comportamiento real de sus usuarios ni ha validado con ellos las funciones que la diferencian de NeoAuto y Autocosmos, por lo que la decisión de qué mejorar o ampliar descansa en suposiciones.
 
@@ -16,7 +16,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Pre-evaluación que exige datos sensibles (Web):** El cliente debe ingresar ingresos y deudas antes de simular su crédito, y se desconoce cuántos clientes lo completan o abandonan por desconfianza.
 * **Comparación de entidades sin validar (Web):** El cuadro comparativo multi-banco existe, pero no se sabe si cambia la decisión del cliente ni si aumenta los envíos a evaluación.
 * **Valor de la membresía sin validar (Web):** Las concesionarias deben seleccionar un plan antes de operar, pero no existe evidencia de que estén dispuestas a pagar ni de que usen las estadísticas y los datos de contacto de los clientes que simularon.
-* **Mensajería móvil sin medir (Mobile):** La app móvil se limita a inicio de sesión y chat, y se desconoce si clientes, concesionarias y bancos la usan y cuánto tardan en responder; las cuentas de concesionaria y entidad financiera se crean solo desde la web.
+* **Adopción móvil sin medir (Mobile):** La app móvil cubre catálogo y simulación para compradores, pero aún no se mide la retención ni la tasa de conversión desde la búsqueda móvil hacia el guardado de simulaciones; las cuentas de concesionaria y entidad financiera se gestionan desde la web.
 
 **Objetivos de mejora:**
 
@@ -24,7 +24,6 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Aumentar los envíos a evaluación:** Alcanzar que 30% de las simulaciones guardadas se envíen a la entidad financiera y reciban una evaluación oficial.
 * **Validar la monetización B2B:** Confirmar que las concesionarias pagan y renuevan la membresía (retención ≥ 80% y churn mensual < 5%).
 * **Demostrar valor a la concesionaria:** Medir si las estadísticas por vehículo y los datos de contacto de los clientes se traducen en acciones (ajuste de precio y contacto).
-* **Consolidar la comunicación móvil:** Lograr que las consultas por chat reciban respuesta de la concesionaria o del banco en menos de una hora.
   
 ### 8.1.2. Raw Material: Assumptions, Knowledge Gaps, Ideas, Claims
 
@@ -34,14 +33,13 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Valor de la comparación multi-banco:** Se asume que ver la cuota, la TCEA y el VAN de varias entidades en un solo cuadro ayuda al cliente a decidir y a enviar su simulación.
 * **Pago de la membresía:** Se asume que las concesionarias de vehículos nuevos y usados pagarán una membresía mensual si la plataforma les genera visibilidad y clientes interesados.
 * **Uso de las estadísticas:** Se asume que las concesionarias ajustarán precios y contactarán a los clientes a partir de las vistas y simulaciones por vehículo.
-* **Preferencia por el chat móvil:** Se asume que los clientes preferirán consultar a la concesionaria y al banco desde el celular, el dispositivo principal de los 9 entrevistados.
+* **Uso móvil para simulación:** Se asume que los compradores valoran explorar el catálogo y calcular cuotas desde el smartphone antes de visitar la concesionaria.
 
 **Knowledge Gaps (Brechas de conocimiento):**
 
 * Se desconoce cuánto tiempo tarda hoy un cliente en encontrar una alternativa viable y cuántos abandonan antes de simular, por lo que no existe línea base para demostrar la reducción de 35%.
 * Carecemos de evidencia sobre la disposición de pago y el precio aceptable de la membresía, ya que las entrevistas no exploraron este punto.
 * No sabemos si el Risk Tier calculado por la plataforma anticipa la evaluación oficial de la entidad financiera.
-* Se desconoce el tiempo de respuesta que las concesionarias y las entidades financieras pueden sostener por chat.
 
 **Ideas:**
 
@@ -49,7 +47,6 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 * **Envío desde el comparador multi-banco:** Permitir guardar y enviar a evaluación la oferta elegida directamente desde el cuadro comparativo.
 * **Piloto de membresía:** Ofrecer un periodo de prueba de 30 días y un botón "Solicitar demo" en la sección de planes de la Landing Page.
 * **Resumen de estadísticas:** Enviar a la concesionaria un resumen semanal de vistas, simulaciones y clientes interesados por vehículo.
-* **Chat con contexto:** Abrir el chat móvil con un mensaje inicial que incluya el vehículo y la simulación en curso.
 
 ### 8.1.3. Experiment-Ready Questions
 
@@ -59,7 +56,6 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | ¿Aumentarán los envíos a evaluación de la entidad financiera si el cliente puede **comparar cotizaciones multi-banco** y enviar la oferta elegida desde el mismo cuadro? | 7 | 7 | 9 | 8 | **31** |
 | ¿Están las concesionarias dispuestas a **pagar una membresía mensual** y a iniciar un piloto con la propuesta actual? | 5 | 9 | 9 | 7 | **30** |
 | ¿Actuarán las concesionarias sobre las **estadísticas por vehículo y los datos de contacto** de los clientes que simularon, ajustando precios y contactándolos? | 6 | 7 | 8 | 7 | **28** |
-| ¿Se responderán más consultas en menos de una hora si el cliente puede **conversar por chat móvil** con la concesionaria y con la entidad financiera? | 5 | 6 | 7 | 8 | **26** |
 
 ### 8.1.4. Question Backlog
 
@@ -69,13 +65,11 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | 5 | ¿Aumentarán los envíos a evaluación de la entidad financiera si el cliente puede comparar cotizaciones multi-banco y enviar la oferta elegida desde el mismo cuadro? |
 | 5 | ¿Están las concesionarias dispuestas a pagar una membresía mensual y a iniciar un piloto con la propuesta actual? |
 | 3 | ¿Actuarán las concesionarias sobre las estadísticas por vehículo y los datos de contacto de los clientes que simularon, ajustando precios y contactándolos? |
-| 3 | ¿Se responderán más consultas en menos de una hora si el cliente puede conversar por chat móvil con la concesionaria y con la entidad financiera? |
 
 **Claims (Afirmaciones):**
 
 * Una pre-evaluación previa reducirá el abandono y permitirá que al menos 50% de los clientes que la inician guarden una simulación.
 * Las concesionarias pagarán la membresía solo si las estadísticas y los contactos les permiten reducir el tiempo de rotación de su inventario.
-* Responder en menos de una hora por chat aumenta el envío de simulaciones a evaluación.
 
 ### 8.1.5. Experiment Cards
 
@@ -103,11 +97,6 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | **What** | Entregar durante 3 semanas a 4 a 6 concesionarias, con un resumen semanal por correo armado por el equipo, las vistas y simulaciones por vehículo y los clientes que simularon sobre sus unidades. Al final se registra cuántas ajustaron un precio, contactaron a un cliente o marcaron un vehículo como vendido. |
 | **Hypothesis** | Se espera que al menos el 70% de las concesionarias participantes actúen sobre al menos un vehiculo cada semana y que el número de simulaciones por vehículo publicado aumente en 20% frente a la semana previa al piloto. |
 
-| Question | ¿Se responderán más consultas en menos de una hora si el cliente puede conversar por chat móvil con la concesionaria y con la entidad financiera? (Mobile) |
-| --- | --- |
-| **Why** | Los 9 entrevistados usan el smartphone como dispositivo principal y los compradores desean resolver dudas sobre disponibilidad y requisitos antes de decidir. La mensajería móvil (US42 a US49) es hoy la única función de la app, y de su uso depende que el móvil justifique su existencia. |
-| **What** | Realizar un piloto de 2 semanas con 10 clientes, 3 concesionarias y 1 o 2 entidades financieras, que usan el chat móvil para consultas reales o de prueba sobre un vehículo y una simulación. Se miden las conversaciones iniciadas, el tiempo de primera respuesta y el porcentaje de consultas respondidas. |
-| **Hypothesis** | Se espera que al menos el 60% de las consultas reciban respuesta en menos de una hora y que el 50% de los clientes con una evaluación en curso inicien un chat con la entidad financiera. |
 
 ## 8.2. Experiment Design
 
@@ -141,13 +130,6 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | **Hypothesis** | Al menos el 70% de las concesionarias participantes actuarán sobre al menos un vehículo cada semana, y el número de simulaciones por vehículo publicado aumentará en 20% frente a la semana previa al piloto. |
 | **Null Hypothesis** | Menos del 70% de las concesionarias participantes actuarán sobre al menos un vehículo cada semana, o el número de simulaciones por vehículo publicado no aumentará en 20% respecto de la semana previa al piloto. |
 
-| Atributo | Detalle de la Hipótesis: Experimento 5 (Chat móvil con tiempo de respuesta) |
-| --- | --- |
-| **Question** | ¿Se responderán más consultas en menos de una hora si el cliente puede conversar por chat móvil con la concesionaria y con la entidad financiera? |
-| **Belief** | Creemos que, al ser el smartphone el dispositivo principal de los 9 entrevistados, un canal de mensajería móvil directo con la concesionaria y el banco permitirá resolver dudas sobre disponibilidad y requisitos con rapidez, antes de que el cliente decida. |
-| **Hypothesis** | Al menos el 60% de las consultas iniciadas por chat móvil recibirán respuesta en menos de una hora, y el 50% de los clientes con una evaluación en curso iniciarán un chat con la entidad financiera. |
-| **Null Hypothesis** | Menos del 60% de las consultas iniciadas por chat móvil recibirán respuesta en menos de una hora, o menos del 50% de los clientes con una evaluación en curso iniciarán un chat con la entidad financiera. |
-
 ### 8.2.2. Domain Business Metrics
 
 Para evitar que las decisiones sobre SmartFinance Drive se fundamenten en métricas irrelevantes o de vanidad, cada hipótesis de 8.2.1 se vincula con una métrica primaria (P) y, cuando corresponde, una secundaria (S), que miden decisiones concretas del cliente o de la concesionaria (guardar, enviar, aceptar, actuar o responder). Las métricas aquí definidas constituyen los únicos indicadores autorizados para evaluar las condiciones de las *Experiment Cards*.
@@ -162,8 +144,6 @@ Para evitar que las decisiones sobre SmartFinance Drive se fundamenten en métri
 | **3 (S)** | **Tasa de Solicitud de Demo o Contratación** | Mide la intención de compra tras ver el precio, mediante el *fake door* de la Landing Page y las entrevistas. | `(Solicitudes de demo o contratación / Concesionarias que vieron el precio) * 100` | Envíos del formulario "Solicitar demo" en la sección de planes de la Landing Page y registro de las entrevistas. | **≥ 33.0% (1 de cada 3)** |
 | **4 (P)** | **Tasa de Acción Semanal de la Concesionaria** | Mide si las estadísticas y los datos de contacto generan acciones (ajustar precio, contactar cliente o marcar vendido), que es el valor principal de la membresía. | `(Concesionarias con al menos una acción sobre un vehículo en la semana / Concesionarias participantes) * 100` | Registro semanal de acciones en la base de datos (cambio de precio, contacto, marcado como vendido) y verificación en el cierre de la tercera semana. | **≥ 70.0%** |
 | **4 (S)** | **Variación de Simulaciones por Vehículo Publicado** | Mide si las acciones de la concesionaria se traducen en mayor interés del cliente en sus unidades. | `((Simulaciones por vehículo en semana de piloto − Simulaciones por vehículo en semana previa) / Simulaciones por vehículo en semana previa) * 100` | Conteo de simulaciones por vehículo desde el panel de estadísticas (US29), comparando la semana previa con cada semana del piloto. | **≥ +20.0%** |
-| **5 (P)** | **Tasa de Respuesta en Menos de 1 Hora** | Evalúa la capacidad real de concesionarias y bancos de responder por chat móvil, condición para que el canal sea útil. | `(Consultas con primera respuesta en menos de 60 minutos / Consultas iniciadas) * 100` | Marcas de tiempo del primer mensaje del cliente y de la primera respuesta, registradas en la mensajería móvil durante las 2 semanas del piloto. | **≥ 60.0%** |
-| **5 (S)** | **Tasa de Inicio de Chat con la Entidad Financiera** | Mide si el cliente usa el chat como apoyo durante una evaluación en curso. | `(Clientes con evaluación en curso que inician un chat con la entidad / Clientes con evaluación en curso) * 100` | Cruce de conversaciones iniciadas con evaluaciones en curso en la base de datos del piloto. | **≥ 50.0%** |
 
 ### 8.2.3. Measures
 
@@ -173,12 +153,11 @@ Las variables cuantitativas empleadas para contrastar las hipótesis corresponde
 * **Simulaciones guardadas, simulaciones enviadas a evaluación y participantes que envían, por versión del cuadro multi-banco:** Datos utilizados para calcular la Tasa de Envío a Evaluación y su variación frente a la versión actual.
 * **Concesionarias entrevistadas, que aceptan el piloto y que dejan solicitud de demo tras ver el precio:** Datos para la Tasa de Aceptación del Piloto y la Tasa de Solicitud de Demo o Contratación.
 * **Acciones semanales por concesionaria (ajuste de precio, contacto, vehículo vendido) y simulaciones por vehículo publicado:** Datos para la Tasa de Acción Semanal y la variación de simulaciones por vehículo.
-* **Consultas iniciadas por chat, marcas de tiempo de primera respuesta y clientes con evaluación en curso que inician chat con la entidad:** Datos para la Tasa de Respuesta en Menos de 1 Hora y la Tasa de Inicio de Chat con la Entidad Financiera.
 
 ### 8.2.4. Conditions
 
-* **Condición Experimental (Grupo Expuesto):** Segmento de clientes y concesionarias que usa las funcionalidades nuevas de SmartFinance Drive: la pre-evaluación previa a la simulación con cuota máxima precargada, el envío a evaluación desde el cuadro multi-banco, el piloto de membresía con el botón "Solicitar demo", el resumen semanal de estadísticas por vehículo y el chat móvil con contexto de vehículo y simulación.
-* **Condición de Control (Grupo Base):** Segmento que usa la versión actual de la plataforma, en la que el cliente simula directamente sin pre-evaluación, debe volver a simular para enviar su oferta desde el cuadro multi-banco, la concesionaria opera sin resumen de estadísticas (línea base de la semana previa) y no existe un piloto de membresía ni chat móvil piloto. En los experimentos 3 y 5, que son pruebas de validación sin control paralelo, el resultado se compara contra el umbral definido en la hipótesis.
+* **Condición Experimental (Grupo Expuesto):** Segmento de clientes y concesionarias que usa las funcionalidades nuevas de SmartFinance Drive: la pre-evaluación previa a la simulación con cuota máxima precargada, el envío a evaluación desde el cuadro multi-banco, el piloto de membresía con el botón "Solicitar demo", y el resumen semanal de estadísticas por vehículo.
+* **Condición de Control (Grupo Base):** Segmento que usa la versión actual de la plataforma, en la que el cliente simula directamente sin pre-evaluación, debe volver a simular para enviar su oferta desde el cuadro multi-banco, la concesionaria opera sin resumen de estadísticas (línea base de la semana previa) y no existe un piloto de membresía. En el experimento 3, que es una prueba de validación sin control paralelo, el resultado se compara contra el umbral definido en la hipótesis.
 
 ### 8.2.5. Scale Calculations and Decisions
 
@@ -194,7 +173,6 @@ Para controlar el azar en la evaluación de los experimentos, se establecen los 
 | **Experimento 2: Envío desde el comparador multi-banco** | Creemos que enviar la oferta elegida desde el mismo cuadro aumentará los envíos a evaluación. Sabremos que esto es cierto cuando el 30% de las simulaciones guardadas se envíen. | Menos del 15%. | Entre 15% y 29%. | **30%.** | Más del 40%. (X) |
 | **Experimento 3: Disposición de pago de la membresía** | Creemos que las concesionarias pagarán por la membresía si perciben visibilidad y clientes interesados. Sabremos que esto es cierto cuando el 50% acepte el piloto de 30 días. | Menos de 2 de 6 (< 33%). | 2 de 6 (33%). | **3 de 6 (50%).** | 4 o más de 6 (≥ 67%). (X) |
 | **Experimento 4: Uso de estadísticas y datos de contacto** | Creemos que el resumen semanal llevará a las concesionarias a actuar sobre sus vehículos. Sabremos que esto es cierto cuando el 70% actúe cada semana. | Menos del 40%. | Entre 40% y 69%. | **70%.** | Más del 85%. (X) |
-| **Experimento 5: Chat móvil con tiempo de respuesta** | Creemos que el chat móvil permitirá resolver consultas con rapidez. Sabremos que esto es cierto cuando el 60% de las consultas reciba respuesta en menos de una hora. | Menos del 40%. | Entre 40% y 59%. | **60%.** | Más del 75%. (X) |
 
 ### 8.2.6. Methods Selection
 
@@ -202,7 +180,7 @@ Para controlar el azar en la evaluación de los experimentos, se establecen los 
 | --- | --- | --- | --- | --- |
 | **Google Lighthouse** | Acceso gratuito. | Auditorías automatizadas de rendimiento, accesibilidad y buenas prácticas de la versión web. | Ejecución sencilla desde Chrome DevTools. | Verifica que la pre-evaluación, el simulador y el cuadro multi-banco carguen con rapidez en el celular, para que la lentitud técnica no se confunda con abandono por desconfianza. |
 | **Google Analytics 4** | Acceso gratuito. | Rastreo de eventos personalizados y de embudos de conversión en la web. | Nivel de aprendizaje moderado. | Permite medir el recorrido del cliente (pre-evaluación, simulación guardada y envío a evaluación) y calcular la Tasa de Guardado y la Tasa de Envío a Evaluación. |
-| **Registros del backend (base de datos propia)** | Incluido en la infraestructura existente. | Conteo exacto de simulaciones, envíos a evaluación, acciones de concesionarias y marcas de tiempo de mensajes. | Consultas directas sin configuración adicional. | Es la fuente más confiable para las métricas de los experimentos 2, 4 y 5, incluido el tiempo de primera respuesta en el chat móvil, donde GA4 no aplica. |
+| **Registros del backend (base de datos propia)** | Incluido en la infraestructura existente. | Conteo exacto de simulaciones, envíos a evaluación y acciones de concesionarias. | Consultas directas sin configuración adicional. | Es la fuente más confiable para las métricas de los experimentos 2 y 4 (conteo de simulaciones, envíos a evaluación y acciones registradas). |
 
 ### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
 

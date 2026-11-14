@@ -30,7 +30,7 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 **Características principales**
 
 * **Marketplace automotriz:** Conecta compradores con vehículos nuevos y usados disponibles en diferentes concesionarias.
-* **Recomendaciones inteligentes:** Analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
+* **Recomendaciones guiadas por presupuesto:** Analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
 * **Experiencia personalizada:** Diferencia el proceso de compra entre usuarios que necesitan orientación y aquellos que ya tienen definida su decisión.
 * **Canal retail guiado:** Acompaña a los compradores que necesitan ayuda para identificar qué vehículo se adapta mejor a sus necesidades.
 * **Canal virtual directo:** Permite a compradores con una decisión definida encontrar rápidamente vehículos disponibles y avanzar hacia el proceso de adquisición.
@@ -42,11 +42,9 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 ### 1.1.2. Perfiles de integrantes del equipo
 
 | Foto | Integrante | Descripción |
-| :---: | :---: | :---: |
-| ![Abraam Photo](../assets/Chapter-1/abraam-photo.png) | **Acosta Elera, Abraam Bernabe**<br/>*(U202219199)* | Estudiante de Ingeniería de Software con experiencia en desarrollo Full Stack, integración de servicios REST y soporte en la arquitectura modular de la plataforma. |
-| ![Mauricio Photo](../assets/Chapter-1/mauricio-photo.png) | **Castillo Yataco, Mauricio Sebastian**<br/>*(U202113229)* | Estudiante de Ingeniería de Software enfocado en desarrollo Backend y lógica de negocios. Responsable del diseño de servicios RESTful y arquitectura de la plataforma. |
-| ![Sofia Photo](../assets/Chapter-1/sofia-photo.png) | **Cotrina Siclla, Sofia Alessandra**<br/>*(U20231B120)* | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
-| ![Oliver Photo](../assets/Chapter-1/oliver-photo.png) | **Jonseck Choque, Oliver**<br/>*(U202312912)* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
-| ![Aldo Photo](../assets/Chapter-1/aldo-photo.png) | **Machacca Soto, Aldo Jeanfranco**<br/>*(U202419485)* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |
-
-
+| :---: | :--- | :--- |
+| ![Abraam Photo](../assets/Chapter-1/abraam-photo.png) | **Acosta Elera, Abraam Bernabe**<br/>*(U202219199 - @AbraamAcostae)*<br/>*Full Stack Developer / Solutions Architect* | Estudiante de Ingeniería de Software con experiencia en desarrollo Full Stack, integración de servicios REST y soporte en la arquitectura modular de la plataforma. |
+| ![Mauricio Photo](../assets/Chapter-1/mauricio-photo.png) | **Castillo Yataco, Mauricio Sebastian**<br/>*(U202113229 - @M4uricioCastillo)*<br/>*Backend Developer / Database Administrator* | Estudiante de Ingeniería de Software enfocado en desarrollo Backend y lógica de negocios. Responsable del diseño de servicios RESTful y arquitectura de la plataforma. |
+| ![Sofia Photo](../assets/Chapter-1/sofia-photo.png) | **Cotrina Siclla, Sofia Alessandra**<br/>*(U20231B120 - @IamAndreek)*<br/>*Frontend Developer / UX-UI Specialist* | Estudiante de Ingeniería de Software con conocimientos en C++, C#, Python y Java, con un enfoque principal orientado al desarrollo Frontend y diseño en Figma. Me considero una persona creativa, colaborativa y comprometida con el trabajo en equipo, dispuesta a aportar soluciones visuales e interfaces atractivas para los proyectos. |
+| ![Oliver Photo](../assets/Chapter-1/oliver-photo.png) | **Jonseck Choque, Oliver**<br/>*(U202312912 - @Olizzy-upc)*<br/>*DevOps Engineer / QA Specialist* | Estudiante de Ingeniería de Software con interés en DevOps y Aseguramiento de Calidad (QA). Encargado de la automatización de pipelines y pruebas de software. |
+| ![Aldo Photo](../assets/Chapter-1/aldo-photo.png) | **Machacca Soto, Aldo Jeanfranco**<br/>*(U202419485 - @MarkOne-dev)*<br/>*Full Stack Developer / Solutions Architect* | Estudiante de Ingeniería de Software enfocado en desarrollo Full Stack y arquitectura de software. Responsable de la integración entre componentes web y móviles. |
