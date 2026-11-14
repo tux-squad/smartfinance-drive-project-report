@@ -1120,14 +1120,14 @@ Cada entrevista se documenta con una ficha que contiene los datos del participan
 
 | Campo | Detalle |
 | :-- | :-- |
-| Nombre y apellidos | |
-| Edad y distrito | |
+| Nombre y apellidos | Andrea Arango |
+| Edad y distrito | 28 años, San Juan de Lurigancho |
 | Segmento | Compradores interesados |
 | Fecha y facilitador | |
 | Captura del video | ![Captura de la entrevista 1 - Segmento 1](../assets/Chapter-6/entrevista-s1-1.png) |
-| URL | |
-| Timing de inicio y duración | |
-| Resumen | |
+| URL en Microsoft Stream | |
+| Timing de inicio y duración | Inicio: — / Duración: 15:27 |
+| Resumen | La participante está interesada en comprar un auto y, en general, la plataforma le gustó. Señaló que le parece segura y viable. Como oportunidades de mejora, pidió optimizar el proceso de inicio de sesión (login) y agilizar la sugerencia de autos según sus gustos y preferencias. |
 
 **Entrevista 2**
 
@@ -1202,14 +1202,14 @@ Cada entrevista se documenta con una ficha que contiene los datos del participan
 
 | Campo | Detalle |
 | :-- | :-- |
-| Nombre y apellidos | |
-| Edad y distrito | |
+| Nombre y apellidos | Yarkin Quispe |
+| Edad y distrito | 28 años, Chorrillos |
 | Segmento | Concesionarias de vehículos usados |
 | Fecha y facilitador | |
 | Captura del video | ![Captura de la entrevista 1 - Segmento 3](../assets/Chapter-6/entrevista-s3-1.png) |
-| URL | |
-| Timing de inicio y duración | |
-| Resumen | |
+| URL en Microsoft Stream | |
+| Timing de inicio y duración | Inicio: — / Duración: 12:14 |
+| Resumen | El participante es vendedor de autos usados en una concesionaria. Sus respuestas fueron generales y mostró pocas dudas durante el recorrido. Su valoración de la plataforma fue neutral: no expresó rechazo, pero tampoco un entusiasmo marcado ni observaciones específicas de mejora. |
 
 **Entrevista 2**
 
