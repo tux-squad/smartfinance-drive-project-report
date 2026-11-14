@@ -205,3 +205,13 @@ Para controlar el azar en la evaluación de los experimentos, se establecen los 
 | **Google Lighthouse** | Acceso gratuito. | Auditorías automatizadas de rendimiento, accesibilidad y buenas prácticas de la versión web. | Ejecución sencilla desde Chrome DevTools. | Verifica que la pre-evaluación, el simulador y el cuadro multi-banco carguen con rapidez en el celular, para que la lentitud técnica no se confunda con abandono por desconfianza. |
 | **Google Analytics 4** | Acceso gratuito. | Rastreo de eventos personalizados y de embudos de conversión en la web. | Nivel de aprendizaje moderado. | Permite medir el recorrido del cliente (pre-evaluación, simulación guardada y envío a evaluación) y calcular la Tasa de Guardado y la Tasa de Envío a Evaluación. |
 | **Registros del backend (base de datos propia)** | Incluido en la infraestructura existente. | Conteo exacto de simulaciones, envíos a evaluación, acciones de concesionarias y marcas de tiempo de mensajes. | Consultas directas sin configuración adicional. | Es la fuente más confiable para las métricas de los experimentos 2, 4 y 5, incluido el tiempo de primera respuesta en el chat móvil, donde GA4 no aplica. |
+
+### 8.2.7. Data Analytics: Goals, KPIs and Metrics Selection
+
+Dado que SmartFinance Drive se usa principalmente desde el celular, la calidad técnica de la web es una condición necesaria para que el abandono medido en los experimentos se deba a la propuesta y no a fallas técnicas. Se ejecutó una auditoría con Google Lighthouse en perfil móvil emulado (4G lento) sobre la pantalla pública de inicio de sesión:
+
+* **Ruta bajo evaluación:** `https://smartfinance-drive-webapp.vercel.app/` (Perfil Móvil)
+* **Performance (Rendimiento):** 97/100. FCP y LCP de 1.5 s, TBT de 110 ms y CLS de 0.001, dentro del rango óptimo.
+* **Accessibility (Accesibilidad):** 88/100. Se detectaron contraste insuficiente y ausencia de un *main landmark*, puntos que se corregirán.
+* **Best Practices (Buenas Prácticas):** 100/100. Cumple las verificaciones de seguridad y compatibilidad evaluadas.
+* **SEO:** 91/100. Solo se identificó la falta de meta descripción.
