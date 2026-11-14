@@ -237,6 +237,48 @@ La aplicación móvil se compila con Gradle y se empaqueta como un APK de Androi
 
 En conjunto, las prácticas de integración continua, entrega continua y despliegue continuo permiten mantener un flujo controlado desde el cambio de código hasta la publicación. GitHub y GitHub Actions apoyan la integración y la verificación; los Pull Requests establecen el control de revisión; Render y Aiven proporcionan el entorno de la API y su base de datos; Vercel publica las interfaces web; y Gradle genera el paquete instalable de Android.
 
+## 7.4. Continuous Monitoring
+
+El monitoreo continuo (*Continuous Monitoring*) en SmartFinance Drive asegura la observabilidad, disponibilidad y rendimiento de los servicios en producción. Permite identificar fallos de infraestructura, cuellos de botella en la base de datos o degradación en los tiempos de respuesta de la API antes de que afecten negativamente la experiencia de compradores y concesionarias.
+
+### 7.4.1. Tools and Practices
+
+Para mantener una observabilidad integral del ecosistema, se combinan herramientas en las capas de aplicación, infraestructura y red:
+
+| Herramienta | Capa | Propósito en SmartFinance Drive |
+| :--- | :--- | :--- |
+| **Spring Boot Actuator** | Aplicación Backend | Expone endpoints de salud (`/actuator/health`), métricas internas de memoria JVM, hilos de ejecución y estadísticas de conexión a PostgreSQL. |
+| **Micrometer & Prometheus** | Métricas de Rendimiento | Instrumenta y recolecta métricas de latencia de peticiones HTTP, tasa de throughput y consumo de CPU en formato estándar. |
+| **Render Monitoring Dashboard** | Infraestructura | Supervisa en tiempo real el consumo de CPU, memoria RAM, reinicios de contenedores y tráfico de red del servicio backend desplegado. |
+| **Aiven Metrics Panel** | Base de Datos | Monitorea el pool de conexiones de PostgreSQL, lecturas/escrituras en disco (IOPS) y consultas lentas (*slow queries*). |
+| **Vercel Analytics & Speed Insights** | Frontend Web & Landing | Registra métricas de rendimiento web en tiempo real (*Core Web Vitals*: FCP, LCP, CLS, FID) y disponibilidad global de los sitios estáticos. |
+| **Better Uptime / Health Checker** | Disponibilidad Externa | Realiza peticiones periódicas (*ping*) cada 60 segundos hacia el endpoint de salud de la API para certificar el acuerdo de nivel de servicio (SLA 99.9%). |
+
+### 7.4.2. Monitoring Pipeline Components
+
+El pipeline de monitoreo continuo está integrado por componentes que capturan, procesan y almacenan telemetría en tiempo real:
+
+1. **Agente de Salud y Métricas:** Spring Boot Actuator expone `/actuator/health` con comprobaciones de conectividad activa hacia PostgreSQL, validación de espacio en disco y disponibilidad del servicio de correo Brevo.
+2. **Recolector de Telemetría HTTP:** Un filtro de interceptación registra el código de estado HTTP (2xx, 4xx, 5xx) y la duración de cada petición hacia los endpoints de autenticación, catálogo y simulación.
+3. **Sonda de Comprobación Externa (Health Check Probe):** El servicio de Render ejecuta sondeos periódicos en `/actuator/health`. Si el contenedor no responde satisfactoriamente tras 3 reintentos consecutivos, el orquestador reinicia la instancia automáticamente para restablecer el servicio.
+
+### 7.4.3. Alerting Pipeline Components
+
+El pipeline de alertas define reglas de umbral estrictas para clasificar eventos y disparar advertencias tempranas:
+
+* **Alerta de Disponibilidad (Crítica):** Se dispara cuando el endpoint de salud no responde durante más de 2 minutos consecutivos o cuando la tasa de errores HTTP 5xx supera el 2% del tráfico total en una ventana de 5 minutos.
+* **Alerta de Degradación de Rendimiento (Advertencia):** Se genera cuando el tiempo de respuesta del percentil 95 (P95) en endpoints de búsqueda o simulación supera los 2 500 ms durante 3 minutos consecutivos.
+* **Alerta de Saturación de Recursos (Advertencia):** Se dispara si el consumo de memoria RAM del contenedor en Render supera el 85% de su capacidad asignada, o si el pool de conexiones activas a Aiven PostgreSQL supera el 80% del límite.
+* **Alerta de Falla en Integraciones Externas (Media):** Se activa si las consultas de validación de RUC ante la SUNAT o verificación de DNI ante Factiliza fallan repetidamente por indisponibilidad del proveedor.
+
+### 7.4.4. Notification Pipeline Components.
+
+El componente de notificaciones canaliza las alertas hacia los integrantes del equipo responsable de DevOps y mantenimiento:
+
+* **Canal de Discord / Slack (DevOps Alerts Webhook):** Las alertas críticas y de advertencia se envían automáticamente mediante Webhooks a un canal privado de ingeniería (`#devops-alerts`), incluyendo el mensaje de error, servicio afectado, timestamp y enlace directo a los logs del servidor.
+* **Notificaciones por Correo Electrónico:** Notificaciones dirigidas al líder de infraestructura y al líder de backend ante incidentes críticos que comprometan la disponibilidad de la plataforma.
+* **Escalamiento y Registro de Incidentes:** Cada alerta confirmada genera un ticket en Jira para dar seguimiento al incidente, documentar la causa raíz (*post-mortem*) y registrar la solución aplicada.
+
 ```{=typst}
 #pagebreak()
 ```

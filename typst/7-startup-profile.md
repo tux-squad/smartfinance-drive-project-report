@@ -1,3 +1,5 @@
+# Part I: As-Is Software Project
+
 # Capítulo I: Introducción
 
 ## 1.1. Startup Profile
@@ -30,7 +32,7 @@ La plataforma adapta la experiencia de acuerdo con el nivel de decisión del com
 **Características principales**
 
 * **Marketplace automotriz:** Conecta compradores con vehículos nuevos y usados disponibles en diferentes concesionarias.
-* **Recomendaciones inteligentes:** Analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
+* **Recomendaciones guiadas por presupuesto:** Analiza las necesidades, estilo de vida y presupuesto del usuario para sugerir alternativas vehiculares relevantes.
 * **Experiencia personalizada:** Diferencia el proceso de compra entre usuarios que necesitan orientación y aquellos que ya tienen definida su decisión.
 * **Canal retail guiado:** Acompaña a los compradores que necesitan ayuda para identificar qué vehículo se adapta mejor a sus necesidades.
 * **Canal virtual directo:** Permite a compradores con una decisión definida encontrar rápidamente vehículos disponibles y avanzar hacia el proceso de adquisición.

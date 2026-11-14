@@ -12,5 +12,5 @@ En este glosario solo se incluyen términos del dominio y se excluyen los térmi
 * **Down Payment (Cuota inicial):** Monto de dinero que el comprador paga por adelantado al contado al momento de adquirir el vehículo, determinando así el saldo restante a financiar.
 * **Inventory Turnover (Rotación de inventario):** Métrica de negocio que indica la velocidad con la que los vehículos de una concesionaria son vendidos y reemplazados por nuevo stock, impactando directamente en el flujo de caja.
 * **Lead (Prospecto comercial):** Cliente potencial que ha mostrado interés en un vehículo específico y ha proporcionado sus datos de contacto con intención de compra real.
-* **Retail Channel (Canal retail / guiado):** Perfil o flujo de venta enfocado en brindar asesoramiento y recomendaciones paso a paso mediante inteligencia artificial a clientes indecisos.
+* **Retail Channel (Canal retail / guiado):** Perfil o flujo de navegación enfocado en orientar paso a paso según presupuesto y preferencias de uso a compradores indecisos.
 * **Test Drive (Prueba de manejo):** Cita presencial agendada por un prospecto cualificado en la concesionaria con el propósito de conducir y evaluar físicamente un vehículo antes del cierre del contrato. 

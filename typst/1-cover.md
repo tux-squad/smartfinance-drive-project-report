@@ -16,7 +16,7 @@
   #v(1.5em)
 
   #rect(width: 100%, fill: rgb("#f8fafc"), stroke: 1pt + rgb("#1e3a8a"), radius: 6pt, inset: 14pt)[
-    #text(size: 20pt, weight: "bold", fill: rgb("#1e3a8a"))[Informe del Trabajo Final]
+    #text(size: 20pt, weight: "bold", fill: rgb("#1e3a8a"))[Informe de Avance 2 (Sprint Review)]
   ]
 
   #v(1.2em)
@@ -52,7 +52,7 @@
 
   #v(1.5cm)
 
-  #text(size: 11pt, weight: "bold", fill: rgb("#64748b"))[Período 202620 -- Setiembre 2026]
+  #text(size: 11pt, weight: "bold", fill: rgb("#64748b"))[Período 202620 -- Noviembre 2026]
 ]
 #pagebreak()
 ```

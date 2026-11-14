@@ -1,6 +1,6 @@
 ## 1.2. Solution Profile
 
-**SmartFinance Drive** es una solución digital desarrollada por **tux-squad**, orientada a facilitar el proceso de búsqueda y adquisición de vehículos nuevos y usados. La plataforma conecta a compradores con concesionarias mediante un marketplace digital, incorporando recomendaciones inteligentes, búsqueda de vehículos y acceso a alternativas de evaluación crediticia mediante entidades financieras externas.
+**SmartFinance Drive** es una solución digital desarrollada por **tux-squad**, orientada a facilitar el proceso de búsqueda y adquisición de vehículos nuevos y usados. La plataforma conecta a compradores con concesionarias mediante un marketplace digital, incorporando recomendaciones guiadas por presupuesto, búsqueda de vehículos y acceso a alternativas de evaluación crediticia mediante entidades financieras externas.
 
 La solución busca reducir el tiempo y esfuerzo que los compradores invierten en identificar un vehículo adecuado, considerando factores como sus necesidades, estilo de vida y presupuesto. Asimismo, proporciona a las concesionarias un canal digital para promocionar su inventario y conectar con potenciales compradores.
 
@@ -88,8 +88,8 @@ Sabremos que la solución es exitosa cuando observemos:
 **Feature Assumptions**
 
 - **FA01 - Marketplace Integrado con Filtro por Tipo de Vehículo:** Creemos que unificar la oferta de autos nuevos y usados en un catálogo estructurado para compradores activos permitirá simplificar la comparación. Sabremos que es correcto cuando la tasa de clics de detalle (*CTR*) desde las búsquedas sea superior al **25%**.
-- **FA02 - Asistente de Recomendación IA:** Creemos que un asistente interactivo para compradores indecisos logrará sugerir tanto autos nuevos como usados según presupuesto y estilo de vida. Sabremos que es correcto cuando el **50%** de los usuarios que inician el asistente guarden al menos una opción recomendada.
-- **FA03 - Perfil de Inventario Específico para Usados vs. Nuevos:** Creemos que adaptar la ficha del vehículo (detallando kilometraje y condición para usados; versiones y promociones para nuevos) para los compradores lograrar aumentar la confianza. Sabremos que es correcto cuando la conversión a solicitud de contacto aumente un **18%**.
+- **FA02 - Filtros Guiados por Presupuesto:** Creemos que un sistema de filtros guiados por presupuesto y estilo de vida para compradores indecisos logrará sugerir tanto autos nuevos como usados según sus posibilidades económicas. Sabremos que es correcto cuando el **50%** de los usuarios que utilicen los filtros guiados guarden al menos una opción recomendada.
+- **FA03 - Perfil de Inventario Específico para Usados vs. Nuevos:** Creemos que adaptar la ficha del vehículo (detallando kilometraje y condición para usados; versiones y promociones para nuevos) para los compradores logrará aumentar la confianza. Sabremos que es correcto cuando la conversión a solicitud de contacto aumente un **18%**.
 - **FA04 - Embudo Dual de Navegación (Retail vs. Directo):** Creemos que ofrecer una ruta guiada (Retail) y una ruta rápida (Directa) para los dos perfiles de compradores logrará maximizar la retención. Sabremos que es correcto si la tasa de abandono durante la búsqueda se mantiene por debajo del **15%**.
 - **FA05 - Pre-evaluación Crediticia Externa:** Creemos que integrar la pre-aprobación financiera con entidades externas para compradores interesados acortará el ciclo de decisión. Sabremos que es correcto cuando el **30%** de las solicitudes enviadas a los concesionarios incluyan perfil financiero validado.
 - **FA06 - Panel de Gestión y Membresías B2B:** Creemos que un portal de administración de inventario con analítica diferenciada para concesionarios de nuevos y usados justificará el cobro del plan. Sabremos que es correcto si el **80%** de los concesionarios renueva su suscripción tras el periodo de prueba.
@@ -98,15 +98,15 @@ Sabremos que la solución es exitosa cuando observemos:
 
 A continuación se presentan las hipótesis priorizadas del proyecto SmartFinance Drive:
 
-**Hypothesis Statement 1: Recomendador Asistido para Compradores Exploradores**
+**Hypothesis Statement 1: Búsqueda Guiada para Compradores Exploradores**
 
 **Declaración:**
-Creemos que incrementaremos la retención y reduciremos la tasa de abandono en la fase de descubrimiento inicial si los compradores indecisos/exploradores obtienen recomendaciones personalizadas de vehículos nuevos y usados a través de un asistente interactivo guiado según su presupuesto mensual y estilo de vida.
+Creemos que incrementaremos la retención y reduciremos la tasa de abandono en la fase de descubrimiento inicial si los compradores indecisos/exploradores obtienen recomendaciones personalizadas de vehículos nuevos y usados a través de una búsqueda guiada según su presupuesto mensual y tipo de uso.
 
 **Criterio de Validación:**
 Sabremos que tuvimos éxito cuando observemos que:
 
-- Al menos el 50% de los usuarios que inician el asistente interactivo completan el flujo y guardan o solicitan cotización de al menos una de las alternativas sugeridas.
+- Al menos el 50% de los usuarios que utilizan la búsqueda guiada completan el flujo y guardan al menos una de las alternativas sugeridas.
 - El tiempo promedio invertido en encontrar opciones viables se reduzca en un 35% en comparación con la búsqueda tradicional por filtros genéricos.
 
 **Hypothesis Statement 2: Canal Virtual Directo y Pre-evaluación Crediticia Externa**
