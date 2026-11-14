@@ -109,9 +109,7 @@ No obstante, la plataforma aún no ha medido el comportamiento real de sus usuar
 | **What** | Realizar un piloto de 2 semanas con 10 clientes, 3 concesionarias y 1 o 2 entidades financieras, que usan el chat móvil para consultas reales o de prueba sobre un vehículo y una simulación. Se miden las conversaciones iniciadas, el tiempo de primera respuesta y el porcentaje de consultas respondidas. |
 | **Hypothesis** | Se espera que al menos el 60% de las consultas reciban respuesta en menos de una hora y que el 50% de los clientes con una evaluación en curso inicien un chat con la entidad financiera. |
 
-## 8.2 Experiment Design
-
-### 8.2.1 Hypothesis
+## 8.2. Experiment Design
 
 ### 8.2.1. Hypotheses
 
