@@ -1125,7 +1125,7 @@ Cada entrevista se documenta con una ficha que contiene los datos del participan
 | Segmento | Compradores interesados |
 | Fecha y facilitador | 12 de Noviembre - Mauricio Castillo |
 | Captura del video | ![Captura de la entrevista 1 - Segmento 1](../assets/Chapter-6/entrevista-s1-1.png) |
-| URL en Microsoft Stream | |
+| URL en Microsoft Stream | [Ver grabación de la entrevista](https://1drv.ms/v/c/bb1bb7d896cb1613/IQAmnQvWDcFVS6RzJGTbNNfOAdi-OkalIbtHoUEqFLuoc2U?e=LNbd3L) |
 | Timing de inicio y duración | Inicio: — / Duración: 15:27 |
 | Resumen | La participante está interesada en comprar un auto y, en general, la plataforma le gustó. Señaló que le parece segura y viable. Como oportunidades de mejora, pidió optimizar el proceso de inicio de sesión (login) y agilizar la sugerencia de autos según sus gustos y preferencias. |
 
